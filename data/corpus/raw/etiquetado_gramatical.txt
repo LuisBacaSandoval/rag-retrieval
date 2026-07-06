@@ -1,0 +1,34 @@
+# titulo: Etiquetado gramatical
+# fuente: https://es.wikipedia.org/wiki/Etiquetado_gramatical
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+En lingüística computacional, el  etiquetado gramatical (conocido también por su nombre en inglés, part-of-speech tagging, POS tagging o POST) es el proceso de asignar (o etiquetar) a cada una de las palabras de un texto su categoría gramatical. Este proceso se puede realizar de acuerdo con la definición de la palabra o el contexto en que aparece, por ejemplo su relación con las palabras adyacentes en una frase, oración (como realiza el desambiguador léxico en ventana deslizante), o en un párrafo.
+Uno de los usos de este etiquetado tiene lugar en el contexto de la lingüística computacional, mediante el empleo de algoritmos que realizan el etiquetado mediante etiquetas descriptivas predefinidas.
+
+
+Problemática
+El etiquetado morfológico es más complejo de lo que parece a primera vista, ya que no se reduce a tener una lista de palabras y sus correspondientes categorías gramaticales, puesto que algunas palabras pueden tener distintas categorías gramaticales en función del contexto en que aparecen. Este hecho suele ocurrir a menudo en el lenguaje natural (al contrario que con los lenguajes artificiales), donde una gran cantidad de las palabras son ambiguas. Por ejemplo, la palabra 'dado' puede ser un nombre singular o una forma del verbo 'dar'.
+
+
+Algoritmos para el etiquetado léxico
+
+Las soluciones propuestas en la literatura para el etiquetado léxico se pueden dividir en dos grandes grupos fundamentados en el aprendizaje automático: 'Aproximaciones Lingüísticas' basadas en un conjunto de reglas establecidas manualmente por expertos o aprendidas de forma (semi)automática, y las 'Aproximaciones de Aprendizaje Automático' (basadas en corpus) que usan textos, generalmente anotados con información lingüística para establecer los modelos subyacentes. También se pueden encontrar 'Aproximaciones Híbridas' que combinan ciertos aspectos de las anteriores.
+
+
+Aproximaciones Lingüísticas
+Estas aproximaciones abarcan las primeras tentativas de resolución de la ambigüedad léxica en los años 60 y 70. Los primeros etiquetadores​​ estaban compuestos por un conjunto de reglas, escritas manualmente por lingüistas, con el objeto de restringir o predecir las posibles categorías de una palabra. Dentro de estas aproximaciones está el sistema TAGGIT, que fue utilizado para la construcción de grandes corpus como el 'Brown'.​ 
+El problema de estos sistemas es que eran totalmente dependientes de la lengua para la que se habían diseñado, y requerían un gran coste humano para la definición de las reglas. Además empleaban un léxico muy restringido, por lo que aparecían muchas situaciones no contempladas. Debido a esto, la cobertura (conjunto de casos de ambigüedad contemplados en las reglas) era baja, y se dificultaba enormemente la exportación de las reglas a otros idiomas.
+A pesar de que el esfuerzo humano requerido por estas aproximaciones es muy elevado, la principal ventaja es que se construyen modelos de lenguaje desde un punto de vista lingüístico, por lo que se pueden incluir muchas y complejas fuentes de información, difíciles de capturar de manera automática. Este hecho las hace más expresivas, por lo que en general, suelen proporcionar mejores prestaciones en tareas de desambiguación si se comparan con otro tipo de aproximaciones.
+
+
+Aproximaciones de Aprendizaje Automático
+Estas aproximaciones construyen un modelo de lenguaje utilizando métodos de aprendizaje a partir de datos. Estas aproximaciones difieren entre sí en el método de aprendizaje y en la complejidad del modelo construido. Muchos son los formalismos utilizados: Modelos de Markov o n-gramas, reglas de transformación, árboles de decisión, redes neuronales, autómatas y transductores de estados finitos, etc. 
+La aproximación más utilizada son los Modelos de Markov Ocultos o n-gramas. 
+Esta técnica consiste en construir un modelo de lenguaje estadístico, que se utiliza para obtener, a partir de una frase de entrada, la secuencia de etiquetados léxicos que tiene mayor probabilidad. Por ejemplo, si hemos etiquetado una palabra como artículo, la próxima palabra será un nombre con un 40% de probabilidad, un adjetivo con otro 40% y un número el 20% restante. Conociendo esta información, un sistema puede decidir que la palabra "vino" en la frase "el vino" es más probable que sea un nombre a que sea un verbo.
+Algunos MMO más avanzados aprenden las probabilidades de pares, triples e incluso secuencias más largas. Por ejemplo, si acabamos de etiquetar un artículo y un verbo, la siguiente palabra probablemente será una preposición, un artículo o un nombre, pero difícilmente será otro verbo.
+Cuando aparecen varias palabras ambiguas juntas, las posibilidades se multiplican. Sin embargo, se puede calcular la probabilidad de cada secuencia de posibles etiquetados y seleccionar la secuencia de etiquetados con mayor probabilidad. El etiquetador CLAWS emplea este sistema y consigue un porcentaje de aciertos en el rango 93-95%.
+El problema de CLAWS es considerar todos los posibles etiquetados, lo que aumenta el tiempo de generación del etiquetado. En 1987 Steve DeRose y Ken Church desarrollaron sendos algoritmos de programación dinámica similares al Algoritmo de Viterbi que reducían enormemente el tiempo de etiquetado. Ambos algoritmos alcanzaron un porcentaje de aciertos de alrededor del 95%.
+
+
+Referencias

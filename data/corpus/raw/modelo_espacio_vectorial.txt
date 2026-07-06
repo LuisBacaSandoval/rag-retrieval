@@ -1,0 +1,164 @@
+# titulo: Modelo de espacio vectorial
+# fuente: https://es.wikipedia.org/wiki/Modelo_de_espacio_vectorial
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+Se conoce como modelo de espacio vectorial a un modelo algebraico utilizado para filtrado, recuperación, indexado y cálculo de relevancia de información. Representa documentos en lenguaje natural de una manera formal mediante el uso de vectores (de identificadores, por ejemplo términos de búsqueda) en un espacio lineal multidimensional. Fue usado por primera vez por el sistema SMART de recuperación de información.
+
+Muchas de las tareas de recuperación de información como la búsqueda, agrupamiento o categorización de textos tienen como primer objetivo procesar documentos en lenguaje natural. El problema que surge es que los algoritmos que pretenden resolver estas tareas necesitan representaciones internas explícitas de los documentos. En el área de recuperación de información normalmente se usa una expresión vectorial, donde las dimensiones del vector representan términos, frases o conceptos que aparecen en el documento. En este aspecto la representación más adoptada es la conocida como bolsa de palabras: una colección de documentos compuesta por n documentos indexados y m términos representados por una matriz documento-término de n x m. Donde los n vectores renglón representan los n documentos; y el valor asignado a cada componente refleja la importancia o frecuencia ponderada que produce el término, frase o concepto ti en la representación semántica del documento j.
+
+  
+    
+      
+        
+          d
+          
+            j
+          
+        
+        =
+        (
+        
+          w
+          
+            1
+            j
+          
+        
+        ,
+        
+          w
+          
+            2
+            j
+          
+        
+        .
+        .
+        .
+        
+          w
+          
+            m
+            j
+          
+        
+        )
+      
+    
+    {\displaystyle d_{j}=(w_{1j},w_{2j}...w_{mj})}
+  
+
+Donde m es la cardinalidad del diccionario (una lista de términos únicos que aparecen en un conjunto de documentos) y 
+  
+    
+      
+        0
+        ≤
+        
+          w
+          
+            i
+            j
+          
+        
+        ≤
+        1
+      
+    
+    {\displaystyle 0\leq w_{ij}\leq 1}
+  
+ representa la contribución del término ti para la representación semántica del documento dj.
+
+En esta representación vectorial de documentos el éxito o fracaso se basa en la ponderación o peso de los términos. Aunque ha habido mucha investigación sobre técnicas de ponderación de términos, en realidad no hay un consenso sobre cuál método es el mejor. También hay que destacar que el espacio de renglones de la matriz documento-término determinan el contenido semántico de la colección de documentos. Sin embargo, una combinación lineal de dos vectores-documento no representa necesariamente un documento viable de la colección. Más importante aún, mediante el modelo espacio vectorial se pueden explotar las relaciones geométricas entre dos vectores documento (y términos) a fin de expresar las similitudes y diferencias entre términos.
+
+Si bien el rendimiento de un sistema de recuperación de información depende en gran medida de las medidas de similitud entre documentos, la ponderación de términos desempeña un papel fundamental para que esa similitud entre documentos sea más confiable. Así, por ejemplo, mientras que una representación de documentos basada solo en las frecuencias o apariciones de términos no es capaz de representar adecuadamente el contenido semántico de los documentos, la representación de términos ponderados (Aplicación de métodos de normalización a la matriz documento-término) hace frente a errores o incertidumbres asociadas a la representación simple de documentos.
+
+
+Construcción
+Una colección de n documentos indexados por m términos puede ser representada por una matriz A de dimensión n x m, donde cada elemento aij es usualmente definido por una frecuencia ponderada del término i en el documento j cuyo objetivo principal es mejorar el rendimiento en la recuperación de información; entendiendo como rendimiento la habilidad de recuperar información relevante y descartar información irrelevante. La siguiente figura (ver figura 1) muestra una matriz documento-término simple, donde cada columna representa un término en la colección, cada renglón un documento y cada celda o elemento de la matriz la ocurrencia del término en el documento.
+
+Figura 1 – Matriz documento-término simple
+En ella podemos ver que el término 1 aparece en el documento 1 y 3, pero no en los otros dos docu-mentos. Se demuestra así que cada renglón de la matriz de 4×3 puede ser representado en un espacio de tres dimensiones.
+Cada elemento aij de la matriz documento-término A queda definido como
+
+  
+    
+      
+        
+          a
+          
+            i
+            j
+          
+        
+        =
+        
+          l
+          
+            i
+            j
+          
+        
+        ∗
+        
+          g
+          
+            i
+          
+        
+        ∗
+        
+          d
+          
+            j
+          
+          
+            −
+            1
+          
+        
+      
+    
+    {\displaystyle a_{ij}=l_{ij}*g_{i}*d_{j}^{-1}}
+  
+
+donde lij  es el peso local del término i en el documento j, el cual mide la importancia de dicho término en el documento, gi el peso global del término i en la colección de documentos y dj es el factor de normalización para el j-ésimo documento. Los siguientes apartados contienen las fórmulas más populares usadas en sistemas de indexado automático. Usualmente los componentes principales son el factor término-frecuencia (TF) y el factor de frecuencia inversa del documento, inverse document frequency (IDF).
+
+
+Peso local
+El peso local mide la importancia del término i en el documento j y solo depende de las frecuencias en el documento y no de otros documentos.
+
+
+Peso global
+Son aquellas que toman información de la colección de documentos para obtener el peso de un término en un documento
+
+
+Normalización
+
+
+Limitaciones del modelo de espacio vectorial
+El modelo de espacio vectorial tiene las siguientes limitaciones:
+
+Los documentos largos quedan poco representados ya que contienen pocos valores en común (un producto escalar menor y una gran dimensionalidad)
+Las palabras de búsqueda deben coincidir con las palabras del documento, partes de una palabra pueden dar en falsos positivos.
+Sensibilidad semántica, documentos con contextos similares pero con diferente vocabulario no serán asociados, resultando en falsos negativos
+
+
+Bibliografía
+G. Salton, A. Wong, and C. S. Yang (1975), "A Vector Space Model for Automatic Indexing," Communications of the ACM, vol. 18, nr. 11, pages 613–620. (The article in which the vector space model was first presented)
+Descripción del modelo de espacio vectorial
+Descripción del modelo de espacio vectorial basado en tópicos
+Descripción del modelo de espacio vectorial clásico por Dr E García
+
+
+Véase también
+Okapi BM25
+Índice invertido
+Modelo booleano
+Recuperación de información
+Indización automática
+
+
+Enlaces externos
+Modelos de recuperación de información

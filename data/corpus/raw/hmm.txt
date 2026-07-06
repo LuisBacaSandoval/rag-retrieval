@@ -1,0 +1,750 @@
+# titulo: Modelo oculto de Márkov
+# fuente: https://es.wikipedia.org/wiki/Modelo_oculto_de_M%C3%A1rkov
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+Un modelo oculto de Márkov o HMM (por sus siglas del inglés, Hidden Markov Model) es un modelo estadístico en el que se asume que el sistema a modelar es un proceso de Márkov de parámetros desconocidos. El objetivo es determinar los parámetros desconocidos (u ocultos, de ahí el nombre) de dicha cadena a partir de los parámetros observables. Los parámetros extraídos se pueden emplear para llevar a cabo sucesivos análisis, por ejemplo en aplicaciones de reconocimiento de patrones. Un HMM se puede considerar como la red bayesiana dinámica más simple.
+En un modelo de Márkov normal, el estado es visible directamente para el observador, por lo que las probabilidades de transición entre estados son los únicos parámetros. En un modelo oculto de Márkov, el estado no es visible directamente, sino que sólo lo son las variables influidas por el estado. Cada estado tiene una distribución de probabilidad sobre los posibles símbolos de salida. Consecuentemente, la secuencia de símbolos generada por un HMM proporciona cierta información acerca de la secuencia de estados.
+Los modelos ocultos de Márkov son especialmente aplicados a reconocimiento de formas temporales, como reconocimiento del habla, de escritura manual, de gestos, etiquetado gramatical o en bioinformática. En el reconocimiento de voz se emplea para modelar una frase completa, una palabra, un fonema o trifonema en el modelo acústico. Por ejemplo la palabra "gato" puede estar formada por dos HMM para los dos trifonemas que la componen /gat/ y /ato/
+
+
+Historia
+Los modelos ocultos de Markov fueron descritos por primera vez en una serie de artículos estadísticos por Leonard E. Baum y otros autores en la segunda mitad de la década de 1960. Una de las primeras aplicaciones de HMM fue reconocimiento del habla, comenzando en la mitad de la década de 1970.​
+En la segunda mitad de la década de 1980, los HMMs comenzaron a ser aplicados al análisis de secuencias biológicas, en particular de ADN. Desde entonces, se han hecho ubicuos en el campo de la bioinformática.​
+
+
+Arquitectura de un modelo oculto de Márkov
+El diagrama que se encuentra más abajo muestra la arquitectura general de un HMM. Cada óvalo representa una variable aleatoria que puede tomar determinados valores. La variable aleatoria 
+  
+    
+      
+        x
+        (
+        t
+        )
+      
+    
+    {\displaystyle x(t)}
+  
+ es el valor de la variable oculta en el instante de tiempo 
+  
+    
+      
+        t
+      
+    
+    {\displaystyle t}
+  
+. La variable aleatoria 
+  
+    
+      
+        y
+        (
+        t
+        )
+      
+    
+    {\displaystyle y(t)}
+  
+ es el valor de la variable observada en el mismo instante de tiempo 
+  
+    
+      
+        t
+      
+    
+    {\displaystyle t}
+  
+. Las flechas indican dependencias condicionales.
+Del diagrama queda claro que el valor de la variable oculta 
+  
+    
+      
+        x
+        (
+        t
+        )
+      
+    
+    {\displaystyle x(t)}
+  
+ (en el instante 
+  
+    
+      
+        t
+      
+    
+    {\displaystyle t}
+  
+) solo depende del valor de la variable oculta 
+  
+    
+      
+        x
+        (
+        t
+        −
+        1
+        )
+      
+    
+    {\displaystyle x(t-1)}
+  
+ (en el instante 
+  
+    
+      
+        t
+        −
+        1
+      
+    
+    {\displaystyle t-1}
+  
+). A esto se le llama propiedad de Márkov. De forma similar, el valor de la variable observada 
+  
+    
+      
+        y
+        (
+        t
+        )
+      
+    
+    {\displaystyle y(t)}
+  
+ solo depende del valor de la variable oculta 
+  
+    
+      
+        x
+        (
+        t
+        )
+      
+    
+    {\displaystyle x(t)}
+  
+ (ambas en el instante 
+  
+    
+      
+        t
+      
+    
+    {\displaystyle t}
+  
+).
+
+
+Probabilidad de una secuencia observada
+La probabilidad de observar la secuencia 
+  
+    
+      
+        Y
+        =
+        y
+        (
+        0
+        )
+        ,
+        y
+        (
+        1
+        )
+        ,
+        …
+        ,
+        y
+        (
+        L
+        −
+        1
+        )
+      
+    
+    {\displaystyle Y=y(0),y(1),\dots ,y(L-1)}
+  
+ de longitud 
+  
+    
+      
+        L
+      
+    
+    {\displaystyle L}
+  
+ está dada por
+
+  
+    
+      
+        P
+        (
+        Y
+        )
+        =
+        
+          ∑
+          
+            X
+          
+        
+        P
+        (
+        Y
+        ∣
+        X
+        )
+        P
+        (
+        X
+        )
+        ,
+      
+    
+    {\displaystyle P(Y)=\sum _{X}P(Y\mid X)P(X),}
+  
+
+donde la sumatoria se extiende sobre todas las secuencias de nodos ocultos 
+  
+    
+      
+        X
+        =
+        x
+        (
+        0
+        )
+        ,
+        x
+        (
+        1
+        )
+        ,
+        …
+        ,
+        x
+        (
+        L
+        −
+        1
+        )
+        .
+        
+      
+    
+    {\displaystyle X=x(0),x(1),\dots ,x(L-1).\,}
+  
+ El cálculo por fuerza bruta de 
+  
+    
+      
+        P
+        (
+        Y
+        )
+      
+    
+    {\displaystyle P(Y)}
+  
+ es impráctico para la mayoría de los problemas reales, dado que el número de secuencias de nodos ocultos será extremadamente alto en tal caso. Sin embargo, el cálculo puede acelerarse notoriamente usando un algoritmo conocido como el procedimiento de avance-retroceso.​
+
+
+Definición formal de un Modelo Oculto de Márkov
+Una notación habitual de un MOM es la representación como una tupla 
+  
+    
+      
+        (
+        Q
+        ,
+        V
+        ,
+        π
+        ,
+        A
+        ,
+        B
+        )
+      
+    
+    {\displaystyle (Q,V,\pi ,A,B)}
+  
+:
+
+El conjunto de estados 
+  
+    
+      
+        Q
+        =
+        {
+        1
+        ,
+        2
+        ,
+        …
+        ,
+        N
+        }
+      
+    
+    {\displaystyle Q=\{1,2,\dots ,N\}}
+  
+. El estado inicial se denota como 
+  
+    
+      
+        
+          q
+          
+            t
+          
+        
+      
+    
+    {\displaystyle q_{t}}
+  
+. En el caso de la etiquetación categorial, cada valor de 
+  
+    
+      
+        t
+      
+    
+    {\displaystyle t}
+  
+ hace referencia a la posición de la palabra en la oración.
+El conjunto 
+  
+    
+      
+        V
+      
+    
+    {\displaystyle V}
+  
+ de posibles valores 
+  
+    
+      
+        {
+        
+          v
+          
+            1
+          
+        
+        ,
+        
+          v
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          v
+          
+            M
+          
+        
+        }
+      
+    
+    {\displaystyle \{v_{1},v_{2},\dots ,v_{M}\}}
+  
+ observables en cada estado. 
+  
+    
+      
+        M
+      
+    
+    {\displaystyle M}
+  
+ es el número de palabras posibles y cada 
+  
+    
+      
+        
+          v
+          
+            k
+          
+        
+      
+    
+    {\displaystyle v_{k}}
+  
+ hace referencia a una palabra diferente.
+Las probabilidades iniciales 
+  
+    
+      
+        π
+        =
+        {
+        
+          π
+          
+            i
+          
+        
+        }
+      
+    
+    {\displaystyle \pi =\{\pi _{i}\}}
+  
+, donde 
+  
+    
+      
+        
+          π
+          
+            i
+          
+        
+      
+    
+    {\displaystyle \pi _{i}}
+  
+ es la probabilidad de que el primer estado sea el estado 
+  
+    
+      
+        
+          Q
+          
+            i
+          
+        
+      
+    
+    {\displaystyle Q_{i}}
+  
+.
+El conjunto de probabilidades 
+  
+    
+      
+        A
+        =
+        {
+        
+          a
+          
+            i
+            j
+          
+        
+        }
+      
+    
+    {\displaystyle A=\{a_{ij}\}}
+  
+ de transiciones entre estados.
+
+  
+    
+      
+        
+          a
+          
+            i
+            j
+          
+        
+        =
+        P
+        (
+        
+          q
+          
+            t
+          
+        
+        =
+        j
+        
+          |
+        
+        
+          q
+          
+            t
+            −
+            1
+          
+        
+        =
+        i
+        )
+      
+    
+    {\displaystyle a_{ij}=P(q_{t}=j|q_{t-1}=i)}
+  
+, es decir, 
+  
+    
+      
+        
+          a
+          
+            i
+            j
+          
+        
+      
+    
+    {\displaystyle a_{ij}}
+  
+ es la probabilidad de estar en el estado 
+  
+    
+      
+        j
+      
+    
+    {\displaystyle j}
+  
+ en el instante 
+  
+    
+      
+        t
+      
+    
+    {\displaystyle t}
+  
+ si en el instante anterior 
+  
+    
+      
+        t
+        −
+        1
+      
+    
+    {\displaystyle t-1}
+  
+ se estaba en el estado 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+.
+El conjunto de probabilidades 
+  
+    
+      
+        B
+        =
+        {
+        
+          b
+          
+            j
+          
+        
+        (
+        
+          v
+          
+            k
+          
+        
+        )
+        }
+      
+    
+    {\displaystyle B=\{b_{j}(v_{k})\}}
+  
+ de las observaciones.
+
+  
+    
+      
+        
+          b
+          
+            j
+          
+        
+        (
+        
+          v
+          
+            k
+          
+        
+        )
+        =
+        P
+        (
+        
+          o
+          
+            t
+          
+        
+        =
+        
+          v
+          
+            k
+          
+        
+        
+          |
+        
+        
+          q
+          
+            t
+          
+        
+        =
+        j
+        )
+      
+    
+    {\displaystyle b_{j}(v_{k})=P(o_{t}=v_{k}|q_{t}=j)}
+  
+, es decir, la probabilidad de observar 
+  
+    
+      
+        
+          v
+          
+            k
+          
+        
+      
+    
+    {\displaystyle v_{k}}
+  
+ cuando se está en el estado 
+  
+    
+      
+        j
+      
+    
+    {\displaystyle j}
+  
+ en el instante 
+  
+    
+      
+        t
+      
+    
+    {\displaystyle t}
+  
+.
+La secuencia de observables se denota como un conjunto 
+  
+    
+      
+        O
+        =
+        (
+        
+          o
+          
+            1
+          
+        
+        ,
+        
+          o
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          o
+          
+            T
+          
+        
+        )
+      
+    
+    {\displaystyle O=(o_{1},o_{2},\dots ,o_{T})}
+  
+.
+
+
+Uso de modelos ocultos de Márkov
+Existen tres problemas canónicos asociados con HMM:
+
+Dados los parámetros del modelo, compútese la probabilidad de una secuencia de salida en particular. Este problema se resuelve con el algoritmo de avance-retroceso.
+Dados los parámetros del modelo, encuéntrese la secuencia más probable de estados ocultos que puedan haber generado una secuencia de salida dada. Este problema se resuelve con el algoritmo de Viterbi.
+Dada una secuencia de salida o un conjunto de tales secuencias, encuéntrese el conjunto de estados de transición y probabilidades de salida más probables. En otras palabras, entrénense a los parámetros del HMM dada una secuencia de datos. Este problema se resuelve con el algoritmo de Baum-Welch.
+
+
+Ejemplo de utilización
+Imagínese que tiene un amigo que vive lejos y con quien habla a diario por teléfono acerca de lo que hizo durante el día. A su amigo le interesan tres actividades: caminar por la plaza, salir de compras y limpiar su departamento. Lo que su amigo hace depende exclusivamente del estado del tiempo en ese día. Usted no tiene información clara acerca del estado del tiempo donde su amigo vive, pero conoce tendencias generales. Basándose en lo que su amigo le dice que hizo en el día, usted intenta adivinar el estado del tiempo.
+Supóngase que el estado del tiempo se comporta como una cadena de Márkov discreta. Existen dos estados, "Lluvioso" y "Soleado", pero usted no los puede observar directamente, es decir, están ocultos. Existe también una cierta posibilidad de que su amigo haga una de sus actividades cada día, dependiendo del estado del tiempo: "caminar", "comprar" o "limpiar". Dado que su amigo le cuenta sus actividades del día, esas son las observaciones. El sistema completo es un modelo oculto de Márkov.
+Usted conoce las tendencias generales del tiempo en el área y lo que a su amigo le gusta hacer. En otras palabras, los parámetros del HMM son conocidos. Pueden escribirse usando el lenguaje de programación Python:
+
+En esta porción de código se tiene:
+La probabilidad_inicial que representa el estado en el que usted cree que se encuentra el HMM la primera vez que su amigo lo llama (es decir, sabe que es un poco más probable que esté lluvioso). La distribución de probabilidades que se usó aquí no es la de equilibrio, que es (dadas las probabilidades de transición) aproximadamente {'Lluvioso': 0.571, 'Soleado': 0.429}.
+La probabilidad_transicion representa el cambio del tiempo en la cadena de Márkov por detrás del modelo. En este ejemplo, hay un 30% de probabilidad de que mañana esté soleado si hoy llovió.
+La probabilidad_emision representa con cuanta probabilidad su amigo realiza una actividad determinada cada día. Si llueve, hay un 50% de probabilidad de que esté limpiando su casa; si hay sol, hay un 60% de probabilidades de que haya salido a caminar.
+
+
+Aplicaciones de modelos ocultos de Márkov
+Criptoanálisis
+Reconocimiento del habla, de gestos y de movimientos corporales, reconocimiento óptico de caracteres
+Traducción automática
+Seguimiento de partituras musicales​
+Bioinformática y Genómica
+predicción de regiones que codifican proteínas dentro de genomas
+modelado de familias de secuencias de proteína o ADN relacionado
+predicción de elementos de estructura secundaria en secuencias primarias de proteína
+
+
+Referencias
+
+
+Véase también
+Andréi Márkov
+Algoritmo de Baum-Welch
+Inferencia bayesiana
+Estimación estadística
+Algoritmo de Viterbi
+Modelo oculto de Márkov jerárquico
+Modelo oculto de Márkov por capas
+Modelo oculto de semi-Márkov
+Modelo de Márkov de orden variable
+
+
+Enlaces externos
+Información general de los HMM
+Hidden Markov Model (HMM) Toolbox para Matlab (por Kevin Murphy)
+Hidden Markov Model Toolkit (HTK) (un toolkit portable para construcción y manipulación de modelos ocultos de Márkov)
+Hidden Markov Models (presentación con matemática básica)
+GHMM Library (página inicial del proyecto GHMM Library)
+Jahmm Java Library (biblioteca Java y aplicaciones gráficas asociadas)
+Tutorial paso a paso de HMMs (University of Leeds)
+Software para modelos de Márkov Models y procesos  (TreeAge Software)
+Hidden Markov Models (por Narada Warakagoda)
+HMM y otros programas estadísticos (Implementación de algoritmos de HMMs en C)

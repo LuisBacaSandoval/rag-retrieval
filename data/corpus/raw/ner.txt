@@ -1,0 +1,65 @@
+# titulo: Reconocimiento de entidades nombradas
+# fuente: https://es.wikipedia.org/wiki/Reconocimiento_de_entidades_nombradas
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-05
+# ---
+El Reconocimiento de entidades nombradas (NER por sus siglas en inglés) (también conocido como extracción de entidades) es una tarea de extracción de información que busca localizar y clasificar en categorías predefinidas, como personas, organizaciones, lugares, expresiones de tiempo y cantidades, las entidades nombradas encontradas en un texto.
+La mayor parte de la investigación en NER han sido realizadas sobre bloques de texto no anotado, como el siguiente:
+
+Jim compró 300 acciones de Acmé Corp. en 2006.
+Y produce un bloque de texto anotado que destaca los nombres de entidades:
+
+[Jim] (persona) compró 300 acciones de [Acmé Corp.] (organización) en [2006] (tiempo).
+En este ejemplo, han sido detectados y clasificados el nombre de una persona que consta de un token o componente léxico, un nombre de compañía de dos tokens  y una expresión temporal.
+Los sistemas de reconocimiento de entidades para el inglés tienen un rendimiento cercano al humano. Por ejemplo, el mejor sistema presentado en el MUC-7 obtuvo una puntuación de 93.39% de valor-F mientras que anotadores humanos puntuaron 97.60% y 96.95%.​​
+
+
+Definición del problema
+En la expresión entidad nombrada, la palabra nombrada restringe la tarea a aquellas entidades para las cuales existe uno o más de un designador_rígido, definidos por Kripke. Por ejemplo, la compañía automotriz creada por Henry Ford en 1903 está relacionada con los designadores Ford o Ford Motor Company. Los designadores rígidos incluyen tanto nombres propios como términos para ciertas especies biológicas y sustancias.​
+El Reconocimiento de entidades nombradas a menudo se divide, conceptualmente y posiblemente también en su implementación, en dos problemas distintos: detección de nombres, y clasificación de los nombres según el tipo de entidad al que hacen referencia a (persona, organización, ubicación y otro).​​
+La primera fase generalmente se reduce a un problema de segmentación: los nombres son una secuencia contigua de tokens, sin solapamiento ni anidamiento, de modo que "Bank of America" es un nombre único, a pesar del hecho de que dentro de este nombre aparezca, la subcadena América que es a su vez un nombre.
+Las expresiones temporales y algunas expresiones numéricas (dinero, porcentajes, etc.) también pueden ser considerados entidades en el contexto del NER. Mientras algunos casos de estos tipos son ejemplos buenos de designadores rígidos (p. ej., el año 2001),  hay también muchos inválidos (p. ej.,  tomo mis vacaciones en “junio”). En el primer caso, el año 2001 refiere al 2001.º año del calendario gregoriano. En el segundo caso, el mes de junio puede referir al mes de cualquier año (junio pasado, el próximo junio, junio 2020, etc.). La definición de entidad nombrada no es estricta y a menudo tiene que ser explicada en el contexto en qué se está utilizado.​
+En la literatura se han propuesto diversas jerarquías de tipos de entidades nombradas. BBN categories, propuesta en 2002, se utiliza para Búsqueda de respuestas y consta de 29 tipos y 64 subtipos.​ La jerarquía de Sekine, propuesta en 2002, está compuesta de 200 subtipos.​ Más recientemente, en 2011, Alan Ritter utilizó una jerarquía basada en los tipos de entidades de Freebase en experimentos de vanguardia de reconocimiento de entidades en textos de medios de comunicación sociales.​
+
+
+Evaluación formal
+Para evaluar la calidad de un sistema de NER se han definido varias medidas. La exactitud a nivel de token es una posibilidad, pero tiene dos problemas: la mayoría de los tokens en textos de la vida real no son parte de entidades nombradas, así que la exactitud de un sistema que pronostica siempre "no una entidad" es muy alto, generalmente mayor que el 90%; y un error en la delimitación de una entidad nombrada no es debidamente penalizado. Por ejemplo, detectar solo el primer nombre de la persona cuando le sigue su apellido se puntúa con ½ exactitud).
+En conferencias académicas como CoNLL, se ha definido una variante del valor-F de la siguiente manera:
+
+Precisión es el número de entidades nombradas que coinciden exactamente con conjunto de evaluación. I.e. cuando se predice [Persona Hans] [Persona Blick], pero lo correcto era [Person Hans Blick], la precisión es cero. La precisión es después promediada por cada una de la entidades nombradas.
+El recobrado es el número de entidades del conjunto de evaluación que aparecen exactamente en la misma posición en las predicciones.
+El Valor-F es la media armónica de estos dos valores. Se deriva de la anterior definición que cualquier predicción que reconozca erróneamente un token como parte de una entidad nombrada o que deje de detectar un token que sí es una entidad nombrada o lo clasifique erróneamente no contribuirá ni a la precisión ni al recobrado.
+Se han propuesto modelos de evaluación basados en un emparejamiento token-por-token.​ Tales modelos permiten una evaluación más detallada y hacer una comparación de los sistemas de extracción existentes, teniendo en cuenta también el grado de disparidad en predicciones no exactas.
+
+
+Aproximaciones
+Se han creado sistemas NER empleando técnicas basadas en gramáticas lingüísticas y modelos estadísticos, i.e. aprendizaje de máquina. Los sistema basados en gramáticas y elaborados a manos obtienen generalmente una mejor precisión, pero a expensas de un menor recobrado y meses de trabajo de lingüistas computacionales experimentados. El NER estadístico comúnmente requieren un conjunto entrenante grande de datos anotados manualmente. Se han propuesto métodos semisupervisedos para evitar parte del esfuerzo de anotación.​​
+Muchos clasificadores diferentes han sido utilizados para NER usando aprendizaje de máquina. Los campos aleatorios condicionales son una elección común.​
+
+
+Dominios del problema
+Las investigaciones realizadas indican que incluso los sistemas NER más avanzadas son frágiles, dado que los sistemas NER desarrollados para un dominio no suelen comportarse bien en otros dominios.​ La puesta a punto de un sistema NER para un nuevo dominio conlleva un esfuerzo considerable. Esto es cierto para modelos basados en reglas y para sistemas estadísticos.
+Los primeros sistemas NER desarrollados en los 90 estuvieron encaminados a la extracción de entidades en artículos periodísticos. Más adelante la atención se centró en el procesamiento de informes y despachos militares. Tras esto la extracción de contenido automática se extendió a varios tipos de textos de estilo informal, como weblogs y transcripciones de conversaciones telefónicas. Desde 1998 aproximadamente,  ha habido un gran interés en la identificación de entidades en la biología molecular, bioinformática, y el procesamiento de lenguaje natural. Las entidades de mayor interés han sido nombres de genes y productos génicos. Ha habido también un interés considerable en el reconocimiento de fármacos y entidades químicas en el contexto de la competición CHEMDNER, que cuenta con la participación de 27 equipos.​
+
+
+Investigación y retos actuales
+A pesar de los altos valores F obtenidos en el conjunto de dato MUC-7, el problema de Reconocimiento de Entidades Nombradas está lejos de estar solucionado. Los mayores esfuerzos están dirigidos a reducir el trabajo de anotación empleando aprendizaje semisupervisado, rendimiento robusto en varios dominios y lograr los mismos resultados con tipos de entidades más específicos.​​​​​​ En años recientes, muchos proyectos han empleado crowdsourcing. Esta es una solución prometedora para obtener
+conjuntos entrenantes de alta calidad y anotados por humanos para ser usados en sistemas NER estadísticos.​ Otra tarea desafiante es encontrar modelos para lidiar con contextos lingüísticamente complejos como Twitter y consultas de búsqueda.​
+Una tarea incipiente es la de identificar "expresiones importantes" en un texto y enlazarlas a páginas de Wikipedia. Esto puede ser visto como un caso particular del reconocimiento de entidades nombradas, donde los tipos son las páginas de Wikipedia que describen conceptos (potencialmente ambiguos).​​​ El siguiente es un ejemplo de la salida de un sistema que enlaza entidades a páginas de Wikipedia:
+
+
+Software
+GATE permite desarrollar sistemas NER en varios idiomas y dominios. Puede emplearse a través de su interfaz gráfica y de su API para Java.
+OpenNLP incluye NER estadístico y basado en reglas
+Universidad de Stanford desarrolló el Stanford Named Entity Recognizer
+Baleen es un framework para el desarrollo de sistemas de extracción de relaciones y entidades estadísticos y basados en reglas
+
+
+Véase también
+Resolución de Correferencia 
+Extracción de información
+Vocabulario controlado
+Onomastics
+
+
+Referencias

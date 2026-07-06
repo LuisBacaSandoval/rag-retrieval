@@ -1,0 +1,53 @@
+# titulo: Búsqueda semántica
+# fuente: https://es.wikipedia.org/wiki/B%C3%BAsqueda_sem%C3%A1ntica
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-05
+# ---
+La búsqueda semántica es un proceso utilizado para mejorar la búsqueda por Internet mediante el uso de datos de las redes semánticas para desambiguar las consultas y el texto de la web con la finalidad de encontrar los resultados más relevantes en relación con la demanda del usuario.
+
+
+Introducción
+Debido a la rápida evolución de la web (desde la primera generación o web 1.0 pasando por la web 2.0 y llegando a la web 3.0 o web semántica) y el gran incremento de contenidos presentes en Internet como red global, cada vez se hace más necesario tener métodos eficientes de recuperación de información. 
+La recuperación de información consiste en encontrar el material (normalmente documentos) de entre grandes colecciones de datos para satisfacer la necesidad de un usuario. El principal objetivo del sistema de recuperación de información debe ser obtener los documentos más relevantes posibles en relación con una consulta particular. 
+Hoy en día es imprescindible el uso de motores de búsqueda para realizar las consultas en Internet y es posible que un mismo motor de búsqueda proporcione respuestas diferentes para diferentes versiones de una misma pregunta. Estos resultados pueden depender de las palabras clave utilizadas y no siempre son correctos.
+Estas son las principales motivaciones para el desarrollo de métodos de búsqueda semántica, aprovechar las propiedades de la semántica (como el estudio del significado de las palabras) para orientar la búsqueda y así intentar obtener resultados óptimos.
+La dificultad de este tipo de búsqueda recae en que para los seres humanos es fácil establecer equivalencias semánticas entre diferentes expresiones pero este proceso no es evidente para los sistemas automatizados. Un sistema de búsqueda semántica ideal tendría que emular un hipotético sistema de búsqueda humano con una memoria suficientemente grande para recordar y relacionar todas las preguntas y respuestas anteriormente consultadas. Es cierto que diferentes personas pueden dar diferentes respuestas a una misma pregunta pero por mucho que re-formulemos la consulta la respuesta será similar ya que semánticamente serán consultas equivalentes.
+Finalmente el objetivo definitivo para un sistema artificial de búsqueda semántica será obtener los mismos resultados y en el mismo orden de relevancia respecto a diferentes consultas semánticamente equivalentes.
+Hildebrand et al.​ proporciona una visión general enumerando sistemas de búsqueda semántica e identifica otros usos de la semántica en los procesos de búsqueda.
+
+
+Desambiguación
+Típicamente el caso que suele presentarse es el de un usuario con una necesidad de información más o menos concreta que propone una consulta a un motor de búsqueda, esta consulta contiene palabras clave que el usuario considera necesarias o correctas para obtener la información deseada. Entonces el motor de búsqueda convierte en metadatos (crea una representación) las palabras clave utilizadas en la consulta y realiza la búsqueda en su base de datos. Esta contiene la relación de metadatos con todos los documentos que conoce y devuelve una lista de resultados en función de la relevancia establecida por el orden de clasificación. Este sistema tiene dos limitaciones principales: a veces el usuario no es capaz de definir correctamente su objetivo mediante palabras clave además de que los motores de búsqueda no entienden el lenguaje natural.
+El lenguaje natural es muy complejo debido, en gran parte, al gran número de sinónimos y palabras polisémicas que contiene. En este punto entra en juego la importancia de la aplicación de sistemas de búsqueda semántica en los motores de búsqueda. En general el proceso de búsqueda semántica es:
+A. Interpretar la pregunta del usuario extrayendo los conceptos más relevantes de la frase.
+B. Utilizar este grupo de conceptos para crear una consulta y utilizarla contra la ontología del sistema.
+C. Presentar los resultados al usuario.
+Con tal de entender que es lo que el usuario está buscando (punto A del proceso), se debe desambiguar el significado de las palabras clave utilizadas en la pregunta. Se considera que un término es ambiguo cuando este puede tener un considerado número de significados posibles, por ejemplo la palabra hoja como "la hoja de un árbol", "una hoja de papel" o "una hoja de afeitar". Gracias a los procesos de desambiguación se elige el significado más probable de entre todos los posibles.
+Estos procesos tienen en cuenta el significado del resto de palabras presentes en la frase y el resto del texto de las webs. La determinación de cada significado influye en la desambiguación de los demás hasta llegar a una situación de máxima verosimilitud y coherencia para la frase inicial consultada. Toda la información fundamental para el proceso de desambiguación, es decir, todo el conocimiento utilizado por el sistema, se ve representada en forma de una red semántica organizada alrededor de un núcleo conceptual.
+
+
+Red semántica
+El principal objetivo de la investigación de redes semánticas es el desarrollo de una serie de lenguajes y la tecnología necesaria para expresar información semántica que pueda ser entendida y procesada por las computadoras para poder aplicarlo al entorno del trabajo en red. 
+Una estructura de este tipo pretende representar el conocimiento lingüístico mostrando las interrelaciones entre conceptos. Cada concepto léxico coincide con el nodo de una red semántica y está conectado con otros por relaciones semánticas específicas en una estructura jerárquica y hereditaria. De esta forma, cada concepto enriquece con sus características y su significado a los nodos cercanos.
+Cada nodo de la red agrupa un conjunto de sinónimos que representan el mismo concepto léxico y pueden contener:
+
+Lemas simples ('asiento', 'vacaciones', 'trabajo', 'rápido', 'más', etc.).
+Compuestos ('guardaespaldas', 'pararrayos', 'aguardiente', etc.).
+Colocaciones ('plan de choque', 'paquete bomba', 'llevar a cabo', 'bajo consumo', etc.).
+Los enlaces que identifican las relaciones semánticas entre los conjuntos de sinónimos son las directrices a seguir para la organización de la red semántica de conceptos.
+
+
+Ontología
+Antes se ha mencionado el concepto de ontología que aparece en la parte del proceso de la búsqueda semántica en que ya se ha desambiguado el mensaje inicial del usuario y se pretende realizar la consulta definitiva. 
+Ontología es un término originalmente utilizado en filosofía y ahora relacionado con la informática como un conjunto de términos jerárquicamente estructurado para describir un dominio que puede ser utilizado como núcleo de una base de conocimientos. Con tal de que las ontologias puedan ser interpretadas por los ordenadores, los conceptos, propiedades y sus relaciones, restricciones y normas se describen en un lenguaje formal. Por lo tanto la ontología de un dominio de conocimiento proporciona un vocabulario con el que se representa el conocimiento de ese dominio de conocimiento y el conjunto de relaciones que mantienen los términos utilizados en el vocabulario.
+La definición de ontologías es un proceso básico para el desarrollo de búsquedas semánticas ya que con ellas se obtienen muchos beneficios. Definen la terminología de un dominio de búsqueda de forma detallada con lo que los conceptos semánticos quedan establecidos de forma no ambigua además de obtener una relación directa entre conceptos semánticos similares. 
+
+
+Referencias
+
+Artículos:
+
+Tomasz, Imielinski y Alessio, Signorini: «If you ask nicely, I will answer: Semantic Search and Today's Search Engines». IEEE International Conference on Semantic Computing (2009).
+Junaidah, Mohamed Kassim y Mahathir, Rahmany: «Introduction to Semantic Search Engine». International Conference on Electrical Engineering and Informatics (del 5 al 7 de agosto de 2009; Selangor. Malasya).
+DU, Zhi-Qiang; HU, Jing; YI, Hong-Xia y HU, Jin-Zhu: «The Research of the Semantic Search Engine based on the Ontology».
+WEI-DONG, Fang; LING, Zhang; YAN-XUAN, Wang y SHOU-BIN, Dong: «Toward a Semantic Search Engine Based on Ontologies». Proceedings of the Fourth International Conference on Machine Learningand Cybernetics (del 18 al 21 de agosto de 2005; Guangzhou, China).

@@ -1,0 +1,106 @@
+# titulo: Lingüística computacional
+# fuente: https://es.wikipedia.org/wiki/Ling%C3%BC%C3%ADstica_computacional
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+La lingüística computacional es un campo interdisciplinario que se ocupa del desarrollo de formalismos del funcionamiento del lenguaje natural, tales que puedan ser transformados en programas ejecutables para un ordenador. Dicho desarrollo se sitúa entre el modelado basado en reglas y el modelado estadístico del lenguaje natural desde una perspectiva computacional, y en él participan lingüistas e informáticos especializados en inteligencia artificial, psicólogos cognoscitivos y expertos en lógica, entre otros.
+Algunas de las áreas de estudio de la lingüística computacional son:
+
+Corpus lingüístico asistido por ordenador.
+Diseño de analizadores sintácticos (en inglés: parser), para lenguajes naturales.
+Diseño de etiquetadores o lematizadores, tales como el POS-tagger.
+Definición de lógicas especializadas que sirvan como fuente para el Procesamiento de Lenguajes Naturales.
+Estudio de la posible relación entre lenguajes formales y naturales.
+Traducción automática.
+
+
+Orígenes
+La lingüística computacional surgió en los EE. UU. en los años 1950 como un esfuerzo para obtener computadoras capaces de traducir textos automáticamente de lenguas extranjeras al inglés, particularmente de revistas científicas rusas. Surgió como resultado de las aseveraciones de Warren Weaver, quien veía en la traducción una forma de descifrado. Cuando la inteligencia artificial apareció en la década de los sesenta, la lingüística computacional se convirtió en una rama de la IA, tratando con el nivel de comprensión humano y la producción de los lenguajes naturales.
+Para traducir un lenguaje en otro, se observó que uno tenía que entender la gramática de ambos lenguajes, al menos en el nivel de morfología (la formación de las palabras) y las frases enteras. Para entender la gramática, uno debe entender la semántica del vocabulario (el significado de las palabras) y la pragmática del lenguaje (el uso en la vida diaria). Lo que empezó como un esfuerzo para traducir textos se convirtió en una disciplina encargada de entender cómo representar y procesar el lenguaje natural individual usando ordenadores. 
+Este tipo de estudios se conocen también como ingeniería lingüística o procesamiento del lenguaje natural, ya que la denominación "computacional" puede prestarse a confusión.
+
+
+Ramas de estudio
+La lingüística computacional se ha dividido en dos ramas:
+
+
+Lingüística computacional teórica
+Basa sus temas de trabajo en la lingüística teórica y en la ciencia cognitiva. Los aportes de la psicología cognitiva, en especial de la psicolingüística, también son de especial relevancia, y han dado como resultado la aparición de una nueva ciencia, la psicolingüística computacional.
+Su objetivo es desarrollar teorías lingüísticas computables, es decir, que puedan ser aplicadas sutilmente a los ordenadores. Dado que las teorías formales existentes no dan cuenta de todos los fenómenos lingüísticos posibles, la lingüística computacional teórica se perfila como un incentivo para la comprensión formal de los procesos lingüísticos, así como un medio para su demostración práctica. Esto ocurre, por ejemplo, mediante el análisis automático de grandes corpus lingüísticos, para investigar un fenómeno lingüístico o probar la validez de una teoría.
+Sin embargo, no todas las teorías lingüísticas tienen la pretensión de ser aplicadas al dominio informático. En efecto, la lingüística cognitiva estudia las motivaciones de un hablante determinado para expresarse, lo que naturalmente está lejos de poder ser modelado con un ordenador.
+
+
+Lingüística computacional aplicada
+Es una vertiente de la lingüística computacional con una evidente orientación tecnológica, lo que ha provocado que con frecuencia sea referida con nombres como ingeniería lingüística o tecnología del lenguaje humano. Se centra en los aspectos prácticos que se puedan derivar de la simulación de la conducta lingüística con medios informáticos.
+Su objetivo es crear productos informáticos que incorporen algún componente en el que intervenga el lenguaje, oral o escrito. Entre ellos figuran:
+
+El apoyo a los usuarios de computadores con el procesamiento de texto, por ejemplo, corrección de errores de digitación y ortográficos, prueba de la corrección gramatical, cambio en ideogramas en japonés o chino.
+La búsqueda automática en pasajes de texto (búsqueda inteligente de información) y, no solo su forma, sino también su significado (recuperación de información y motores de búsqueda).
+El apoyo al traducir textos en otra lengua (traducción asistida por ordenador) o también la traducción automática.
+El procesamiento del lenguaje hablado (reconocimiento del habla y síntesis de habla), por ejemplo, en el servicio de información telefónico o en aparatos de lectura para ciegos.
+De la búsqueda de información en grande de bibliografías a la contestación directa de preguntas sobre la base de grandes bancos de datos (recuperación de información, minería de datos, extracción de la información).
+El tratamiento de datos presentes lingüísticamente, por ejemplo, la indexación de literatura, la creación de índices y listas de materias, la producción de resúmenes y abstracts.
+El apoyo a los autores en la redacción de textos, por ejemplo, en la búsqueda de la palabra precisa o la terminología correcta.
+La interacción de los usuarios con el computador en lenguaje natural, tal que los computadores sean accesibles también a las personas que no tienen suficiente conocimiento de las órdenes específicas (interfaces hombre-máquina).
+
+
+Problemas de la lingüística computacional
+Algunos de los problemas que se deben resolver son:
+
+Determinar la semántica. La misma forma de palabra puede presentar en función del contexto un significado diferente (comparar homónimo). Se debe elegir el significado pertinente al contexto. Por otro lado, se necesitan formalismos para la representación de los significados de las palabras.
+Resolución de la ambigüedad sintáctica. En algunos casos, una frase se deja analizar e interpretar de varias formas. Elegir la correcta exige algunas veces información semántica sobre el acto de habla y la intención del hablante, pero, al menos, conocimientos estadísticos previos sobre la co-ocurrencia (aparición conjunta) de las palabras.
+Por ejemplo: «Pedro vio a María con los binoculares» —aquí no está claro si Pedro ha visto a María, la que sostiene unos binoculares en la mano, o si Pedro con la ayuda de unos binoculares pudo ver a María.
+
+Reconocer el propósito de una expresión lingüística (ver Pragmática). Algunas frases no deben entenderse textualmente. Por ejemplo, se espera de la pregunta «¿Puede darme la sal por favor?» no la respuesta «Sí» o «No» sino en lugar de ello que se entregue la sal.
+Si y cómo estos pueden resolverse automáticamente no está definido solo por el estado de la tecnología computacional sino que depende naturalmente mucho de las características de la lengua. Más aún: se aspirará, por cierto, a procedimientos que sean aplicables a todas las lenguas; sin embargo, los detalles serán elaborados separadamente para cada una. Un programa para la separación automática de palabras que fuera diseñado para el inglés, no será utilizable sin adaptación para el alemán, porque aquí los principios de separación de palabras son otros. A diferencia de la informática, la cual trata generalmente de la programación de computadores, el campo de aplicación de la lingüística computacional yace, por tanto, en la parte específica del lenguaje de los programas computacionales.
+Una ciencia no se define solo mediante un campo de aplicación, sino también mediante un interés teórico. Los computadores son autómatas, los que manipulan símbolos según reglas definidas. Igual como los números, también los lenguajes son —ciertamente, muy complejos— sistemas de símbolos. Resulta evidente, por consiguiente, diseñar programas computacionales que simulen las operaciones que el hombre realiza con las palabras de una lengua, al menos en parte. Se pueden probar así las hipótesis lingüísticas con el computador. La lingüística computacional es, en este sentido, una lingüística en la cual la simulación computacional se utiliza como medio metódico para profundizar nuestros conocimientos sobre la lengua humana.
+Al fin y al cabo, plantea este enfoque, sin duda, diversas preguntas psicológicas y filosóficas. El computador es una máquina, la lengua es algo intelectual. ¿Cuán lejos se pueden realizar cálculos con el lenguaje? ¿Pensarán los computadores un día o funcionará el intelecto humano como una máquina simbólica? La fascinación de la simulación computacional del comportamiento de la lengua es precisamente sondear sus límites. Un interés de conocimiento por el cual uno se puede dedicar a la lingüística computacional es descubrir si y como la comunicación humana es procesable por los ordenadores y en caso de que se encuentren límites, cómo son estos. ¿Son estos límites solo prácticos o teóricos primordiales? Este conocimiento es muy importante para el lugar que nosotros queremos ceder a los computadores en la sociedad.
+
+
+Aplicaciones de la lingüística computacional
+Analizador sintáctico
+Analizador morfológico
+Analizador semántico
+Alineador
+Conjugador
+Conversor de lenguajes
+Corpus lingüístico
+Corrector ortográfico
+Desambiguador funcional
+Flexionador
+Lematizador
+Motor de indexación = Motor de indización
+Ontologías
+
+
+Véase también
+Human Speechome Project
+Gestor terminológico
+Procesamiento de lenguaje natural
+Sistemas de traducción asistida por ordenador
+Memorias de traducción
+Traducción automática
+Ordenador pizarra
+Lingüística cuantitativa
+
+
+Más información
+Un libro introductorio (en inglés)
+Libro que explica varias aplicaciones de la lingüística computacional
+Congreso internacional CICLing (se organiza en México y en otros países)
+Natural Language Computing and Generative Grammar in Prolog (libro electrónico en inglés)
+Juan Carlos Tordera Yllescas (2011), El abecé de la lingüística computacional. Arco-Libros
+Breve introducción a la lingüística computacional (en español)
+
+
+Enlaces externos
+CLiC-Centre de Llenguatge i Computació, Universitat de Barcelona
+Grupo de Ingeniería Lingüística de la Universidad Nacional Autónoma de México
+Laboratorio de Lenguaje Natural y Procesamiento de Texto, CIC-IPN, México
+Grupo de Estructuras de Datos y Lingüística Computacional Archivado el 30 de marzo de 2004 en Wayback Machine.
+Seminario de Lingüística Informática (SLI) del departamento de lingüística de la Universidad de Vigo (mayormente en gallego)
+Grupo COLE (grupo que reúne a investigadores de varias universidades y centros de investigación gallegos)
+Grupo LYS (Lengua y Sociedad de la Información) de la Universidad de La Coruña
+Text & Information Processing (TIP) del Departamento de Informática y Sistemas de la Universidad de Las Palmas de Gran Canaria
+Molino de Ideas del Departamento de Lingüística de la Universidad Complutense de Madrid
+MeaningCloud Ingeniería Lingüística.

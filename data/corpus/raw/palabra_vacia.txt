@@ -1,0 +1,23 @@
+# titulo: Palabra vacía
+# fuente: https://es.wikipedia.org/wiki/Palabra_vac%C3%ADa
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+Palabras vacías es el nombre que reciben las palabras sin significado como artículos, pronombres, preposiciones, etc. que son filtradas antes o después del procesamiento de datos en lenguaje natural (texto). A Hans Peter Luhn, uno de los pioneros en recuperación de información, se le atribuye la acuñación de la locución inglesa stop words y el uso del concepto en su diseño. Está controlada por introducción humana y no automática.
+No hay una lista definitiva de palabras vacías que todas las herramientas de procesamiento de lenguajes naturales incorporen. No todas las herramientas de procesamiento de lenguajes naturales usan una lista de palabras vacías. Algunas herramientas evitan usarlo específicamente para soportar búsquedas por frase. El uso de un algoritmo de stemming puede reducir parte de la base lógica o dependencia de una lista de palabras vacías a filtrar.
+Las palabras vacías pueden causar problemas al usar un motor de búsqueda para buscar frases que las incluyen, especialmente en nombres como 'La verdad' o 'Nunca Jamás'. 
+
+
+Véase también
+Minería de textos
+Extracción de la información
+Procesamiento de lenguajes naturales
+Stemming
+
+
+Enlaces externos
+El proyecto Snowball actualmente proporciona listas de palabras vacías en inglés, francés, español, catalán,  portugués, italiano, alemán, neerlandés, sueco, noruego, danés, ruso, finés y húngaro como parte de un proyecto de software de stemming. Estas listas son usadas también en otros programas, como el módulo Lingua::StopWords de Perl.
+Palabras vacías en inglés.
+Palabras vacías en hindi
+Lista de palabras vacías en alemán
+Colección de palabras vacías en 29 idiomas, y su enlace histórico

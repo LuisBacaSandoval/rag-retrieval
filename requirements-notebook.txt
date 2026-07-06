@@ -1,0 +1,4 @@
+# Dependencias solo para ejecutar el cuaderno técnico (notebooks/).
+# Se instalan además de requirements.txt. Versiones validadas sobre Python 3.11.
+jupyterlab==4.2.5
+ipykernel==6.29.5

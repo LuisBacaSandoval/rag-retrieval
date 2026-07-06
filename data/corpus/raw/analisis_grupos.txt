@@ -1,0 +1,865 @@
+# titulo: Análisis de grupos
+# fuente: https://es.wikipedia.org/wiki/An%C3%A1lisis_de_grupos
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+Análisis de grupos o agrupamiento es la tarea de agrupar objetos por similitud, en grupos o conjuntos de manera que los miembros del mismo grupo tengan características similares.  Es la tarea principal de la minería de datos exploratoria y es una técnica común en el análisis de datos estadísticos.
+Además es utilizada en múltiples campos comoː 
+
+aprendizaje automático
+reconocimiento de patrones
+análisis de imágenes
+búsqueda y recuperación de información
+bioinformática
+compresión de datos
+computación gráfica.
+El análisis de grupos es un problema, es un planteamiento general, y existen miles​ de algoritmos que lo resuelven, cada uno con sus propias características.  Muchos algoritmos difieren significativamente en su idea de qué constituye un grupo y cómo encontrarlos eficientemente.
+El agrupamiento, por tanto, puede ser formulado como un problema multi-objetivo de optimización. El algoritmo apropiado y sus parámetros dependen del conjunto de datos que se analiza y el uso que se le dará a los resultados.
+El agrupamiento como tal no es una tarea con solución directa, sino un proceso iterativo o interactivo que implica ensayo y error.  Este proceso de prueba y error es iterativo en la medida que sea automático, e interactivo en la medida que requiera intervención humana.  Es una práctica usual ejecutar un algoritmo de agrupamiento (un proceso iterativo), y a partir de los resultados ajustar los parámetros y repetir la operación (resultando en un proceso interactivo).
+Las aplicaciones del agrupamiento se dividen en dos tipos principalesː
+
+aquellas en la que los grupos constituyen el resultado buscado
+es el caso de análisis de grupos, minería de datos, análisis de imágenes
+otras en las que los grupos constituyen el punto de partida para la clasificaciones de nuevas muestras de datos, desconocidas al momento de procesar el agrupamiento
+es el caso de clasificación automática en el mundo del aprendizaje de máquina
+
+
+Otras denominaciones
+Además del término agrupamiento, hay un número de términos con significados similares, incluyendo​ː
+
+análisis de grupos
+clasificación automática
+clustering (agrupamiento, en inglés)
+taxonomía numérica
+botryología (del griego βότρυς "uva")
+análisis tipológico
+tipología
+aglutinado
+análisis Q
+
+
+Historia
+El análisis de grupo estuvo originado en antropología por Driver y Kroeber en 1932 e introducido a psicología por Zubin en 1938 y Robert Tryon en 1939,​​ que también fue utilizado por Cattell al principio de 1943​ para clasificación de la personalidad psicológica basada en teoría de rasgos.  El primer uso del término moderno data clustering (agrupamiento de datos) se remonta a 1954,​
+El algoritmo de agrupamiento K-means fue publicado en 1955, y generalmente se lo considera el primer algoritmo de agrupamiento.  Si bien hay dudas sobre la existencia previa de otros algoritmos de agrupamiento, K-means es el más antiguo entre los que se utilizan en la actualidad y el más influyente.  Curiosamente, durante más de diez años, K-means fue redescubierto en diversas disciplinas científicas.  Hasta 1967 se registran cuatro publicaciones en disciplinas diferentes que proponen como novedoso el mismo algoritmo de agrupamiento.  El hecho de que varios científicos no relacionados desarrollen el mismo algoritmo da a entender la existencia de un denominador común, posiblemente el auge de la computación.
+Desde 1963 hasta 2001 se han publicado 5 libros sobre agrupamiento considerados clásicos de su época.  Aun así el interés por los algoritmos de agrupamiento se disparó en la primera década de este siglo, con un pico de búsquedas en Google Scholar en 2009.​  En esa década se desarrollaron miles de algoritmos nuevos, de creciente especificidad y complejidad, predominantemente para los ámbitos de minería de datos y de aprendizaje de máquina.​
+
+
+Definiciones
+
+
+Grupo
+La idea de un grupo de datos similares resulta incompleta y subjetiva, por el sencillo hecho de que la definición de similitud es parte del problema específico que se requiere resolver y no es parte del problema general de agrupamiento.  Éste es el principal motivo de que existan miles de algoritmos de agrupamiento.​
+Aun así, los investigadores emplean diferentes modelos de grupo, y para cada uno de estos modelos se utilizan diferentes algoritmos. La idea de un grupo, cuando es encontrado por algoritmos diferentes, varía significativamente en sus propiedades. Entender estos "modelos de grupo" es clave para entender las diferencias entre los algoritmos.
+Típicamente los modelos de grupo incluyen estos otros modelos de:
+
+Conectividad: por ejemplo, agrupamiento jerárquico construye modelos basados en la distancia de las conexiones
+Centroide: por ejemplo, el algoritmo k-means representa cada grupo por un solo vector medio
+Distribución: los grupos son modelados utilizando distribuciones estadísticas, como la distribución normal multivariada utilizada por el algoritmo Expectation-maximization
+Densidad: por ejemplo, DBSCAN y OPTICS definen grupos como regiones densas conectadas en el espacio de los datos
+Subespacios: en Bi-agrupamiento (también conocido como Co-clustering o two-mode-clustering), los grupos son modelados con ambas características, miembros del grupo y atributos relevantes
+Grupo: algunos algoritmos no proporcionan un modelo refinado para sus resultados y solo proporcionan la información de la agrupación
+Grafos: un clique, i.e., un subconjunto de nodos en un grafo tal que cada dos nodos en el subconjunto están conectados por una arista puede ser considerado como un prototipo o forma de grupo. Relajaciones del requisito de completa conectividad (una fracción de las aristas puede faltar) es conocida como quasi-cliques, como en el algoritmo HCS
+
+
+Agrupamiento
+Un agrupamiento es esencialmente un conjunto de tales grupos, normalmente conteniendo todos los objetos en el conjunto de datos. Además, puede especificar la relación de los grupos a cada uno de los otros, por ejemplo, una jerarquía de grupos contenida en cada otro. Los agrupamientos pueden ser aproximadamente clasificados como:
+
+Duro: cada objeto pertenece a un grupo o no
+Suave o difuso: cada objeto pertenece a cada grupo según un grado de pertenencia (p. ej. la probabilidad de pertenecer al grupo)
+Hay también otras distinciones posibles de agrupamientos:
+
+con partición estricta: aquí cada objeto pertenece a exactamente un grupo
+con partición estricta con ruido: los objetos también pueden no pertenecer a ningún grupo, y están considerados ruido o anomalías
+con solapamiento (También: agrupamiento alternativo, agrupamiento multi-objetivo): contrario a agrupamiento duro, los objetos pueden pertenecer a más de un grupo
+jerárquico: objetos que pertenecen a un grupo hijo también pertenecen al grupo padre
+de subespacios: contrario a agrupamiento con solapamiento, dentro de un único sub-espacio definido, los grupos deben solaparse
+
+
+Algoritmos
+Los algoritmos de agrupamiento pueden ser categorizados de varias maneras, por ejemplo por suː
+
+modelo de grupo
+eficiencia computacional o velocidad de cómputo
+eficacia en el problema específico
+En adelante se listan solamente los algoritmos más prominentes, ya que existen más de 100 publicados. No todos proporcionan modelos para sus grupos y por esto pueden no ser fácil categorizarlos. No existe un algoritmo de agrupamiento "correcto", como se pudo haber notado, "el agrupamiento está en el ojo del observador".​ El algoritmo más apropiado para un problema particular a menudo necesita ser escogido experimentalmente, a no ser que haya una razón matemática para preferir un modelo de grupo sobre otro. Se debería tener en cuenta que un algoritmo que está diseñado para determinado modelo no tiene ninguna posibilidad de obtener buenos resultados en un conjunto de datos con un modelo diferente.​ Por ejemplo, k-means no puede encontrar grupos no convexos.​
+
+
+Agrupamiento basado en conectividad (agrupamiento jerárquico)
+El agrupamiento basado en conectividad, también conocido como agrupamiento jerárquico, está basado en la idea principal de que los objetos más cercanos están más relacionados que los que están alejados. Estos algoritmos conectan "objetos" para formar "los grupos" basados en su distancia. Un grupo puede ser descrito, en gran parte, por la distancia máxima que se necesitó para conectar todas las partes del grupo. A distancias diferentes, se formarán grupos diferentes, los cuales pueden ser representados utilizando un dendrograma, el cual explica de donde proviene el nombre  "agrupamiento jerárquico": estos algoritmos no solo proporcionan una partición del conjunto de datos, sino en cambio, proporcionan una jerarquía extensa de grupos que se fusionan con cada otro a ciertas distancias. En un dendrograma, el eje "y" marca la distancia en qué los grupos se fusionan, mientras que los objetos están colocados a lo largo del eje "x", tal que los grupos se mezclan.
+
+El agrupamiento basado en conectividad es una familia entera de métodos que difiere en cómo las distancias están computadas. Aparte de la elección habitual de funciones de distancia, el usuario también necesita decidir el criterio de conexión (como un grupo consta de objetos múltiples, hay candidatos múltiples para computar la distancia) para utilizar. Las elecciones populares son conocidas como agrupamiento por enlace simple (el mínimo de distancias entre objetos), agrupamiento por enlace completo (el máximo de distancias entre objetos) o UPGMA ("Unweighted Pair Group Method with Arithmetic Mean", también conocido como agrupamiento por enlace medio). Además, agrupamiento jerárquico puede ser aglomerativo (empezando con simples elementos y agregándoles a grupos) o divisivos (empezando con el conjunto de datos completo y dividiéndolo en particiones). Estos métodos no producirán una única partición del conjunto de datos, sino una jerarquía donde el usuario puede escoger los grupos apropiados. No son muy robustos con el ruido, ya que puede que no aparezcan como grupos adicionales; pueden incluso causar que otros grupos se fusionen (conocido como "fenómeno de cadena", en particular con agrupamiento por enlace simple). En el caso general, la complejidad es 
+  
+    
+      
+        O
+        (
+        
+          n
+          
+            3
+          
+        
+        )
+      
+    
+    {\displaystyle O(n^{3})}
+  
+ para agrupamiento aglomerativo y 
+  
+    
+      
+        O
+        (
+        
+          2
+          
+            n
+          
+        
+        −
+        1
+        )
+      
+    
+    {\displaystyle O(2^{n}-1)}
+  
+ para divisivo,​ el cual les hace demasiado lentos para conjuntos de datos grande. Para algunos casos especiales, métodos óptimos más eficientes son conocidos (de complejidad 
+  
+    
+      
+        O
+        (
+        
+          n
+          
+            2
+          
+        
+        )
+      
+    
+    {\displaystyle O(n^{2})}
+  
+: SLINK​ para enlace simple y CLINK​ para agrupamiento por enlace completo. En la comunidad de minería de datos estos métodos están reconocidos como fundación teórica del análisis de grupos, pero a menudo considerados obsoletos. Aun así proporcionaron inspiración para muchos de los métodos más actuales como agrupamiento basado en densidad.
+
+
+Agrupamiento basado en centroide
+En el agrupamiento basado en centroide, los grupos están representados por un vector central, el cual puede no necesariamente ser un miembro del conjunto de datos. Cuando el número de grupos está fijado a k, k-means da una definición formal como un problema de optimización: encontrar los k centros de los grupos y asignar los objetos al centro del grupo más cercano, tal que el cuadrado de las distancias del grupo al centro están minimizadas. Este problema de optimización es NP-duro, y por ello el objetivo común es buscar solo soluciones aproximadas. Un método aproximado bien conocido es el algoritmo de Lloyd,​ a menudo referido como "k-means". Aun así solo encuentra un óptimo local, y generalmente se ejecuta varias veces con inicializaciones aleatorias. Variaciones de k-means a menudo incluyen otras optimizaciones como: escoger el mejor resultado de varias corridas, restringir el centroide a miembros del conjunto de datos (k-medoids), escoger medianas (k-medians), escoger los centros iniciales aleatoriamente (K-means++) o permitir una asignación de grupos difusa (Fuzzy c-means).
+La mayoría de los tipos de k-means requieren que el número de grupos sea especificado por adelantado, el cual está considerado una de las más grandes dificultades de estos algoritmos. Además, los algoritmos prefieren grupos de aproximadamente media similar, debido a que siempre asignarán un objeto al más cercano centroide. Esto a menudo provoca cortes incorrectos en los bordes de los grupos (lo cual no es una sorpresa ya que el algoritmo optimiza los centroides, no las fronteras).
+
+K-means tiene un número de propiedades teóricas interesantes. Primero, las particiones del espacio de datos son estructuras conocidas como esquemas de Voronoi. Segundo, está conceptualmente cerca de la clasificación de k-nearest neighborhood, y por tanto muy popular en aprendizaje de máquina. Tercero, puede ser visto como una variación de la clasificación basada en modelos, y el algoritmo de Lloyd como variación del algoritmo Expectation-maximization para el modelo que se discutirá debajo.
+
+
+Agrupamiento basado en distribuciones
+El modelo de agrupamiento más estrechamente relacionado con la estadística es el modelo basado en distribuciones. Los grupos pueden entonces fácilmente ser definidos como los objetos que pertenecen más probablemente a la misma distribución. Una propiedad conveniente de esta aproximación es que esto se parece mucho a la manera en la que los conjuntos de datos artificiales están generados: por muestreos aleatorios de objetos de una distribución.
+Mientras la fundación teórica de estos métodos es excelente, adolecen del problema clave conocido como sobreajuste u overfitting, a no ser que las restricciones estén incluidas en la complejidad del modelo. Un modelo más complejo normalmente será capaz de explicar los datos mejor, el cual hace escoger la complejidad apropiada del modelo inherentemente difícil.
+Uno de los métodos más prominentes es conocido como modelo de mezcla Gaussiana (utilizado en el algoritmo de expectation-maximization). Aquí, el conjunto de datos es normalmente modelado con un número fijo (para evitar el sobreajuste) de distribuciones Gaussianas que está inicializado aleatoriamente, y cuyos parámetros son iterativamente optimizados para clasificar mejor al conjunto de datos. Esto convergerá a un óptimo local, múltiples corridas pueden producir resultados diferentes. Para obtener un agrupamiento duro, los objetos son a menudo entonces asignados a la distribución Gaussiana con mayor probabilidad de pertenecer ; para agrupamiento suave, esto no es necesario.
+Agrupamiento basado en distribuciones produce modelos complejos para grupos que pueden capturar correlación y dependencia entre atributos. Aun así, estos algoritmos ponen una carga extra en el usuario: para muchos conjuntos de datos real, no puede haber ningún modelo matemático definido. 
+
+
+Agrupamiento basado en densidad
+En agrupamiento basado en densidad,​ los grupos están definidos como áreas de densidad más alta que en el resto del conjunto de datos. Objetos en áreas esparcidas son conocidos como ruido o puntos frontera.
+El método de agrupamiento​ más popular conocido es DBSCAN.​ En contraste con muchos métodos más nuevos, presenta un modelo de grupo bien definido llamado "densamente alcanzable". Similar a agrupamiento basado en conectividad, está basado en conectar puntos dentro de cierto umbral de distancia. Aun así, solo conecta aquellos puntos que satisfacen un criterio de densidad, en la variante original definido como número mínimo de otros objetos dentro de un radio dado. Un grupo consiste en objetos densamente conectados (los cuales pueden formar un grupo de una forma arbitraria, en contraste a muchos otros métodos) más todos los objetos que están dentro del rango de estos. Otra propiedad interesante de DBSCAN es que su complejidad es bastante baja- requiere un número lineal de consultas de rango en la base de datos - y que descubrirá esencialmente los mismos resultados ( es determinista para núcleos y puntos de ruido, pero no para puntos de frontera) en cada corrida, por tanto no hay ninguna necesidad de correrlo varias veces. OPTICS​ es una generalización de DBSCAN que elimina la necesidad de escoger un valor apropiado para el parámetro del rango, y produce un resultado jerárquico relacionado con la conexión del agrupamiento. DeLi-Clu,​ es un algoritmo de agrupamiento basado en densidad que combina ideas de agrupamiento por enlace simple y de OPTICS, eliminando el parámetro del rango enteramente y ofreciendo mejoras de rendimiento sobre OPTICS por utilizar un R-tree como índice.
+La principal dificultad de DBSCAN y OPTICS es que esperan alguna clase de caída de densidad para detectar fronteras de grupo. Además, no pueden detectar estructuras intrínsecas de grupo las cuales prevalecen en la mayoría de los conjuntos de datos de la vida real. Una variación de DBSCAN, EnDBSCAN,​ eficientemente detecta tales clases de estructuras. En conjuntos de datos con, por ejemplo, solapamiento de distribuciones Gaussianas - un caso de uso común en datos artificial - las fronteras de grupo producidas por estos algoritmos a menudo eran arbitrarias, porque las disminuciones de densidad del grupo eran continuas. En datos que contienen mezclas de Gaussianas, estos algoritmos son casi siempre batidos por métodos como EM debido a que estos son capaces de modelar esta clase de datos.
+
+Mean shift es una aproximación de agrupamiento donde cada objeto se mueve al área más densa en su proximidad, basado en una estimación de la densidad del núcleo. Finalmente, los objetos convergen a máximos locales de densidad. Similar a k-means, estos "atractores densos" pueden servir como representantes para el conjunto de datos, pero mean-shift puede detectar formas arbitrarias de los grupos similar a como lo hace DBSCAN. Debido al procedimiento iterativo costoso y estimación de densidad, mean-shift es normalmente más lento que DBSCAN o k-Means.
+
+
+Desarrollos recientes
+En años recientes el esfuerzo considerable ha sido puesto a mejorar el rendimiento de algoritmos existentes.​​ Entre ellos están CLARANS (Ng y Han, 1994),​ y ABEDUL (Zhang et al., 1996).​ Con la necesidad reciente de procesar datos más grandes y más grandes conjuntos (también conocidos como big data), la disposición para comerciar el significado semántico de los grupos generados ha sido incrementado. Esto dirigió al desarrollo de métodos de pre-agrupamiento como Canopy, los cuales pueden procesar conjuntos de datos enormes eficientemente, pero los grupos "resultantes" son meramente  ásperas pre-particiones de los datos para entonces analizar las particiones con métodos existentes más lentos como k-means. Varias aproximaciones de agrupamiento han sido probadas basándose en semillas.​
+Para alta dimensionalidad de los datos, muchos de los métodos que existen fallan, debido a las problemáticas particulares de las funciones de distancia para espacios de alta dimensionalidad. Esto llevó a la creación de nuevos algoritmos de agrupamiento para alta dimensionalidad que se enfocan en agrupamiento en subespacios (dónde solo algunos atributos serán utilizados, y los modelos de grupo incluyen los atributos pertinentes para los grupo) y agrupamiento de correlación que también busca sub-espacios de grupos rotados arbitrariamente ("correlacionados") que pueden ser modelados dada una correlación de sus atributos. Ejemplos para tales algoritmos son CLIQUE​ y SUBCLU.​
+Ideas de métodos de agrupamiento basado en densidad (en particular la familia de algoritmos DBSCAN/OPTIC) han sido adaptadas a agrupamiento de subespacios (HiSC​ y DiSH​) y agrupamiento de correlación (HiCO,​ 4C​ utilizando "conectividad por correlación" y ERIC​ que explora correlación jerárquica de grupos basada en densidad).
+Diferentes sistemas de agrupamiento basados en información mutua han sido propuestos. Uno es usando la distancia entre grupos propuesto por Marina Meilă;​ otros proporcionan agrupamiento jerárquico.​ Utilizando algoritmos genéticos, una gama ancha de diferentes funciones pueden ser optimizadas, incluyendo información mutua.​ También el algoritmo "message passing", un desarrollo reciente en Informática y Física Estadística, se ha dirigido a la creación de tipos nuevos de algoritmos de agrupamiento.​
+
+
+Otros métodos
+Esquema algorítmico secuencial básico (BSAS)
+
+
+Evaluación y valoración
+La evaluación de los resultados de un agrupamiento a veces se refiere a cómo se validan los grupos.
+Ha habido varias sugerencias para una medida de semejanza entre dos agrupamientos, tal medida puede usarse para comparar que tan bien los diferentes algoritmos crean un agrupamiento en un conjunto de datos. Esta medida esta normalmente ligada al criterio que es considerado para evaluar la calidad de un método de agrupamiento.
+
+
+Evaluación interna
+Cuando el resultado de un agrupamiento es evaluado basado en los datos agrupados por él, se llama evaluación interna. Estos métodos normalmente asignan la puntuación mejor al algoritmo que produce grupos con alta similitud entre sus componentes y baja similitud entre los grupos. Un problema de utilizar los criterios internos en evaluación de grupo es que puntuaciones altas en una medida interna no necesariamente indica un buen resultado en recuperación de información.​ Además, esta evaluación está predispuesta hacia algoritmos que usan el mismo modelo de grupo. Por ejemplo, k-means naturalmente optimiza distancias de objeto, y una criterio interno basado en distancia probablemente sobrevalore el resultado del agrupamiento. Por tanto, las medidas de evaluación internas son más convenidas para conseguir alguna idea en situaciones donde un algoritmo actúa mejor que otro, pero esto no implicará que un algoritmo produce resultados más válidos que otro.​ La validez medida por tal índice depende de la clase de estructura existente en el conjunto de datos. Un algoritmo diseñado para alguna clase de modelos no tiene ninguna posibilidad si el conjunto de dato contiene un conjunto radicalmente diferente de modelos, o si la evaluación mide un criterio radicalmente diferente.​ Por ejemplo, k-means solo puede encontrar grupos convexos, y muchos índices de evaluación suponen grupos convexos. En un conjunto de datos con grupos no convexos ni el uso de k-means, ni de un criterio de evaluación que supone convexidad, dará buenos resultados.
+Los métodos siguientes se suelen usar para evaluar la calidad de los algoritmos basados en criterio interno:
+
+
+Índice de Davies–Bouldin
+El índice de Davies–Bouldin puede ser calculado por la fórmula siguiente:
+
+  
+    
+      
+        D
+        B
+        =
+        
+          
+            1
+            n
+          
+        
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        
+          max
+          
+            j
+            ≠
+            i
+          
+        
+        
+          (
+          
+            
+              
+                
+                  σ
+                  
+                    i
+                  
+                
+                +
+                
+                  σ
+                  
+                    j
+                  
+                
+              
+              
+                d
+                (
+                
+                  c
+                  
+                    i
+                  
+                
+                ,
+                
+                  c
+                  
+                    j
+                  
+                
+                )
+              
+            
+          
+          )
+        
+      
+    
+    {\displaystyle DB={\frac {1}{n}}\sum _{i=1}^{n}\max _{j\neq i}\left({\frac {\sigma _{i}+\sigma _{j}}{d(c_{i},c_{j})}}\right)}
+  
+
+donde n es el número de grupos, 
+  
+    
+      
+        
+          c
+          
+            x
+          
+        
+      
+    
+    {\displaystyle c_{x}}
+  
+  es el centroide de grupo x, 
+  
+    
+      
+        
+          σ
+          
+            x
+          
+        
+      
+    
+    {\displaystyle \sigma _{x}}
+  
+ es la distancia media de todos los elementos en grupo al centroide x, y 
+  
+    
+      
+        d
+        (
+        
+          c
+          
+            i
+          
+        
+        ,
+        
+          c
+          
+            j
+          
+        
+        )
+      
+    
+    {\displaystyle d(c_{i},c_{j})}
+  
+ es la distancia entre centroides 
+  
+    
+      
+        
+          c
+          
+            i
+          
+        
+      
+    
+    {\displaystyle c_{i}}
+  
+ y 
+  
+    
+      
+        
+          c
+          
+            j
+          
+        
+      
+    
+    {\displaystyle c_{j}}
+  
+.
+  
+    
+      
+        
+          c
+          
+            x
+          
+        
+      
+    
+    {\displaystyle c_{x}}
+  
+ Desde algoritmos que producen grupos con bajas distancias intra-grupo(alta semejanza intra-grupo) y alta distancia inter-grupo (baja semejanza inter-grupo) tendrá un bajo índice de Davies–Bouldin, el algoritmo de agrupamiento que produce la colección de grupos con menores índices de Davies–Bouldin está considerado el algoritmo mejor basado en este criterio.
+
+
+Índice de Dunn
+El índice de Dunn tiene como objetivos identificar densos y bien separados grupos. Está definido como la proporción entre la mínima distancia inter-grupo y la máxima distancia intra-grupo. Para cada partición de grupo, el índice de Dunn puede ser calculado por la fórmula siguiente:​
+
+  
+    
+      
+        D
+        =
+        
+          
+            
+              
+                min
+                
+                  1
+                  ≤
+                  i
+                  <
+                  j
+                  ≤
+                  n
+                
+              
+              d
+              (
+              i
+              ,
+              j
+              )
+            
+            
+              
+                max
+                
+                  1
+                  ≤
+                  k
+                  ≤
+                  n
+                
+              
+              
+                d
+                
+                  ′
+                
+              
+              (
+              k
+              )
+            
+          
+        
+        
+        ,
+      
+    
+    {\displaystyle D={\frac {\min _{1\leq i<j\leq n}d(i,j)}{\max _{1\leq k\leq n}d^{\prime }(k)}}\,,}
+  
+
+donde d(i,j) representa la distancia entre grupos i y j, y d '(k) mide la distancia intra-grupo del grupo k. La distancia inter-grupo d(i,j) entre dos grupos pueden ser cualquier número de medidas de distancia, como la distancia entre los centroides de los grupos. De modo parecido, la distancia intra-grupo d '(k) puede ser medida de diferentes formas, como la distancia máxima entre cualquier par de elementos en el grupo k. El criterio interno busca grupos con alta semejanza intra-grupo y baja semejanza inter-grupo, algoritmos que producen grupos con altos índices de Dunn son más deseables.
+
+
+Coeficiente de silueta
+El coeficiente de silueta contrasta la distancia media a elementos en el mismo grupo con la distancia media a elementos en otros grupos. Los objetos con un valor de silueta alto están considerados bien agrupados, los objetos con un valor bajo pueden ser ruido o anomalías. Estos índices trabajan bien con k-means, y es también utilizado para determinar el número óptimo de grupos.
+
+
+Evaluación externa
+En evaluación externa, los resultados de un agrupamiento son evaluados basados en datos que no fueron usados para el agrupamiento, como etiquetas de clases conocidas o marcadores externos. Tales marcadores constan de un conjunto de pre-elementos clasificados, y estos conjuntos son a menudo creados por humanos (expertos). Así, los conjuntos marcados pueden ser usados como test de referencia para la evaluación.​ Estos tipos de métodos de evaluación miden qué cercano está el agrupamiento del conjunto de clases predeterminadas. Aun así, recientemente se ha hablado si esto es adecuado para datos reales, o solo en conjuntos de datos sintéticos con un factual "ground truth", donde las clases pueden contener estructura interna, los atributos presentes pueden no permitir la separación de los grupos o las clases pueden contener anomalías.​
+Además, de un punto de vista de descubrimiento del conocimiento, la reproducción de conocimiento sabido puede no necesariamente ser el resultado esperado.​ En el escenario especial de Agrupamiento con restricciones, donde meta información (como etiquetas de clase) está utilizada ya en el proceso de agrupamiento, el control de la información para propósitos de evaluación es no trivial.​
+Un número de medidas fue adoptado por las variantes utilizadas para evaluar tareas de clasificación. En lugar de contar el número de veces que una clase era correctamente asignada a un único punto de datos(conocido como ciertos positivos), lo que se hace es estimar para cada par de puntos simples que estén realmente en el mismo grupo cuanto se pronostica que estén en el mismo grupo.
+Algunas de las medidas de calidad de un algoritmo de grupo que utiliza el criterio externo incluye:
+
+
+Medida de Rand (William M. Rand 1971)​
+El índice de Rand computa qué similar los grupos (regresados por el algoritmo de agrupamiento) son a las clasificaciones de los marcadores. Uno también puede ver el índice de Rand como medida del porcentaje de decisiones correctas hechas por el algoritmo. Puede ser computado utilizando la fórmula siguiente:
+
+  
+    
+      
+        R
+        I
+        =
+        
+          
+            
+              T
+              P
+              +
+              T
+              N
+            
+            
+              T
+              P
+              +
+              F
+              P
+              +
+              F
+              N
+              +
+              T
+              N
+            
+          
+        
+      
+    
+    {\displaystyle RI={\frac {TP+TN}{TP+FP+FN+TN}}}
+  
+
+Dónde TP es el número de cierto positivos,  TN es el número de cierto negativos,  FP es el número de falso positivos, y FN es el número de falso negativos. Una característica con el índice de Rand es que falso positivos y falso negativos tienen el mismo peso. Esto puede ser una característica indeseable para alguna aplicación de un agrupamiento. La F-Medida está dirigida a resolver este problema.
+
+
+F-Medida
+La F-medida suele equilibrar la contribución de falso negativos por la ponderación recobrada a través de un parámetro 
+  
+    
+      
+        β
+        >
+        0
+      
+    
+    {\displaystyle \beta >0}
+  
+ . Precisión y recobrado pueden ser definidos como sigue:
+
+  
+    
+      
+        P
+        =
+        
+          
+            
+              T
+              P
+            
+            
+              T
+              P
+              +
+              F
+              P
+            
+          
+        
+      
+    
+    {\displaystyle P={\frac {TP}{TP+FP}}}
+  
+
+  
+    
+      
+        R
+        =
+        
+          
+            
+              T
+              P
+            
+            
+              T
+              P
+              +
+              F
+              N
+            
+          
+        
+      
+    
+    {\displaystyle R={\frac {TP}{TP+FN}}}
+  
+
+Dónde P es el índice de precisión y R el índice de recobrado. Podemos calcular la F-medida utilizando la fórmula siguiente:​
+
+  
+    
+      
+        
+          F
+          
+            β
+          
+        
+        =
+        
+          
+            
+              (
+              
+                β
+                
+                  2
+                
+              
+              +
+              1
+              )
+              ⋅
+              P
+              ⋅
+              R
+            
+            
+              
+                β
+                
+                  2
+                
+              
+              ⋅
+              P
+              +
+              R
+            
+          
+        
+      
+    
+    {\displaystyle F_{\beta }={\frac {(\beta ^{2}+1)\cdot P\cdot R}{\beta ^{2}\cdot P+R}}}
+  
+
+Notar que cuando 
+  
+    
+      
+        β
+        =
+        0
+      
+    
+    {\displaystyle \beta =0}
+  
+,
+  
+    
+      
+        
+          F
+          
+            0
+          
+        
+        =
+        P
+      
+    
+    {\displaystyle F_{0}=P}
+  
+. En otras palabras, el recobrado no tiene ningún impacto en la F-medida cuándo 
+  
+    
+      
+        β
+        =
+        0
+      
+    
+    {\displaystyle \beta =0}
+  
+ , y 
+  
+    
+      
+        β
+      
+    
+    {\displaystyle \beta }
+  
+ creciente destina una cantidad creciente de peso para recordar en el final de F-medida.
+
+
+Índice de Jaccard
+El índice de Jaccard suele cuantificar la semejanza entre dos conjuntos de datos. El índice de Jaccard toma un valor entre 0 y 1. Un índice de 1 significa que los dos conjuntos son idénticos, y un índice de 0 indica que los conjuntos no tienen elementos comunes. El índice de Jaccard está definido por la fórmula siguiente:
+
+  
+    
+      
+        J
+        (
+        A
+        ,
+        B
+        )
+        =
+        
+          
+            
+              
+                |
+              
+              A
+              ∩
+              B
+              
+                |
+              
+            
+            
+              
+                |
+              
+              A
+              ∪
+              B
+              
+                |
+              
+            
+          
+        
+        =
+        
+          
+            
+              T
+              P
+            
+            
+              T
+              P
+              +
+              F
+              P
+              +
+              F
+              N
+            
+          
+        
+      
+    
+    {\displaystyle J(A,B)={\frac {|A\cap B|}{|A\cup B|}}={\frac {TP}{TP+FP+FN}}}
+  
+
+Esto es sencillamente el número de los elementos únicos comunes a ambos conjuntos divididos por el número total de elementos únicos en ambos conjuntos.
+
+
+Índice de Fowlkes–Mallows (E. B. Fowlkes & C. L. Malvas 1983)​
+El índice de Fowlkes-Mallows computa la semejanza entre los grupos devueltos por el algoritmo de agrupamiento y las clasificaciones de los marcadores. Entre más alto el valor del índice de Fowlkes-Mallows sea más similares son los grupos y las clasificaciones de los marcadores. Puede ser computado utilizando la fórmula siguiente:
+
+  
+    
+      
+        F
+        M
+        =
+        
+          
+            
+              
+                
+                  T
+                  P
+                
+                
+                  T
+                  P
+                  +
+                  F
+                  P
+                
+              
+            
+            ⋅
+            
+              
+                
+                  T
+                  P
+                
+                
+                  T
+                  P
+                  +
+                  F
+                  N
+                
+              
+            
+          
+        
+      
+    
+    {\displaystyle FM={\sqrt {{\frac {TP}{TP+FP}}\cdot {\frac {TP}{TP+FN}}}}}
+  
+
+Dónde TP es el número de ciertos positivos,  FP es el número de falsos positivos, y FN es el número de falsos negativos.  El índice FM es la media geométrica de la precisión y recobrado P y R, mientras la F-medida es su media armónica.​ Además, precisión y recobrado son también conocidos como los índices de Wallace 
+  
+    
+      
+        
+          B
+          
+            I
+          
+        
+      
+    
+    {\displaystyle B^{I}}
+  
+ y  
+  
+    
+      
+        
+          B
+          
+            I
+            I
+          
+        
+      
+    
+    {\displaystyle B^{II}}
+  
+.​
+
+
+Información Mutua
+Es una medida de cuánta información está compartida entre un agrupamiento y una clasificación "ground truth" que puede detectar una semejanza no lineal entre dos agrupamientos. La información mutua ajustada es una variante que tiene un sesgo reducido para números de grupo variable.
+
+
+Matriz de confusión
+Una matriz de confusión puede usarse para visualizar rápidamente los resultados de un algoritmo de clasificación. Muestra qué diferente un grupo es del grupo de patrones antes creados por un experto.
+
+
+Aplicaciones
+Biología, biología computacional y bioinformáticas
+Ecología vegetal y  animal: el análisis de grupo suele usarse para describir y para hacer comparaciones espacial y temporal de comunidades de organismos en entornos heterogéneos; es también utilizado en Sistemática para generar grupos o filogenias artificiales de organismos (individual) en la especie, genus o nivel más alto que compartan un número de atributos.
+Transcriptoma: el agrupamiento es usado para construir grupos de genes con patrones de expresión relacionados (también conocidos como coexpressed genes) como en HCS. A menudo tales grupos contienen proteínas relacionadas funcionalmente, como enzimas para una vía metabólica específica, o genes que son co-regulados.
+Análisis de secuencia: el agrupamiento es usado para agrupar secuencias homólogas en familias de genes. Esto es un concepto muy importante en bioinformática, y biología evolutiva en general. Ver evolución por duplicación de gen.
+Agrupamiento en genética humana: la semejanza de datos genéticos está utilizada en agrupamiento para inferir estructuras de población.
+Medicina
+Imágenes médicas: en PET scans, el análisis de grupo puede usarse para diferenciar entre tipos diferentes de tejido y sangre en una imagen tridimensional. En esta aplicación, la posición real no importa, pero la intensidad está considerada como un vector, con una dimensión para cada imagen que fue tomada con el tiempo. Esta técnica permite, por ejemplo, la medida cuidadosa del índice de un rastro radioactivo entregado al área de interés, sin un muestreo separado de sangre arterial, una técnica intrusiva que es más común hoy.
+Análisis de actividad antimicrobial: el análisis de grupo suele usarse para analizar patrones de resistencia de antibiótica, para clasificar compuestos antimicrobiales según su mecanismo de acción y para clasificar antibióticos según su actividad antibacterial.
+Empresarial y marketing
+Búsqueda de mercado: el análisis de grupo es ampliamente utilizado en búsqueda de mercado cuando se trabaja con datos multivariados de encuestas y tableros de prueba. Investigadores de marketing usan análisis de grupo para particionar la población general de consumidores en segmentos de mercado y para entender mejor las relaciones entre grupos diferentes de consumidores/potenciales clientes, y para uso en segmentación de mercado, posicionamiento de producto, desarrollo de productos nuevos y seleccionando mercados de prueba.
+Agrupando elementos de compra: el conglomerado puede usarse para agrupar todos los elementos de compra disponibles en la web en un conjunto de productos únicos. Por ejemplo, todos los elementos en eBay pueden ser agrupados en productos únicos. (eBay no tiene el concepto de un SKU)
+World wide web
+Análisis de red social: en el estudio de redes sociales, el agrupamiento puede usarse para reconocer comunidades dentro de grupos grandes de personas.
+Agrupación de resultados de la búsqueda: en el proceso de agrupación inteligente de los archivos y sitios web, el agrupamiento puede usarse para crear un conjunto más pertinente de resultados de búsqueda comparados a motores de búsqueda normales como Google. Hay actualmente un número de herramientas de la web basadas en agrupamiento, como Clusty.
+Slippy map optimization: el mapa de fotos de Flickr y otros sitios usan el agrupamiento para reducir el número de marcadores en un mapa. Esto los hace a ambos más rápidos y reduce la cantidad de grupos visuales.
+Informática
+Segmentación de imagen: el agrupamiento puede usarse para dividir una imagen digital a regiones distintas para detección de frontera o reconocimiento de objetos.​
+Algoritmos evolutivos: el agrupamiento puede usarse para identificar nichos diferentes dentro de la población de un algoritmo evolutivo de modo que la oportunidad reproductiva puede ser distribuida más equitativamente entre la especie a evolucionar o subespecie.
+Sistemas de recomendación: los sistemas de recomendación están diseñados para recomendar los elementos nuevos basados en los gustos de un usuario. A veces utilizan algoritmos de agrupamiento para pronosticar las preferencias de un usuario basados en las preferencias de otros usuarios en el grupo del usuario.
+Detección de anomalía: las anomalías/outliers son típicamente -pueden ser explícitamente o implícitamente- definidas con respecto a la estructura de los grupos en los datos.
+Ciencia social
+Análisis de delito: el análisis de grupos puede usarse para identificar áreas donde hay incidencias más grandes de tipos particulares de delito. Para identificar estas áreas distintas o "sitios calientes" donde un delito similar ha pasado en un periodo de tiempo, es posible dirigir recursos de aplicación de la ley más eficazmente.
+Minería de datos educacional: el análisis de grupo es, por ejemplo, utilizado para identificar grupos de escuelas o alumnado con propiedades similares.
+Otros
+Robótica: los algoritmos de agrupamiento están utilizados para seguir objetos y detectar outliers en datos de los sensores.​
+Química matemática: para encontrar semejanza estructural, por ejemplo, 3000 compuestos químicos agrupados en el espacio de 90 índices topológicos.​
+Climatología: para encontrar regímenes de tiempo o patrones atmosféricos de presión y nivel del mar.​
+Geografía física: el agrupamiento de propiedades químicas en ubicaciones de muestra diferente.
+
+
+Véase también
+
+
+Tipos especializados de análisis de grupo
+Agrupamiento de datos de alta dimensionalidad
+Agrupamiento conceptual
+Agrupamiento de consenso
+Agrupamiento con restricciones
+Data stream clustering
+Agrupamiento secuencial
+Agrupamiento espectral
+HCS
+
+
+Las técnicas utilizadas en análisis de grupo
+Red neuronal artificial (ANN)
+Búsqueda de vecino más cercano
+Análisis de componentes del barrio
+Análisis de clase latente
+
+
+Proyección de dato y preprocessing
+Reducción de dimensión
+Análisis de componente principal
+Multidimensional scaling
+
+
+Otro
+Modelación ponderada de grupos
+Maldición de la dimensionalidad
+Determinando el número de grupos en un conjunto de datos
+Coordenadas paralelas
+Análisis de datos estructurados
+
+
+Referencias

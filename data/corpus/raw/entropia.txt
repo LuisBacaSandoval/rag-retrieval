@@ -1,0 +1,2798 @@
+# titulo: Entropía (información)
+# fuente: https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+En el ámbito de la teoría de la información la entropía, también llamada entropía de la información y entropía de Shannon (en honor a Claude E. Shannon), mide la incertidumbre de una fuente de información.
+La entropía también se puede considerar como la cantidad de información promedio que contienen los símbolos usados. Los símbolos con menor probabilidad son los que aportan mayor información; por ejemplo, si se considera como sistema de símbolos a las palabras en un texto, palabras frecuentes como «que», «el», «a» aportan poca información, mientras que palabras menos frecuentes como «corren», «niño», «perro» aportan más información. Si de un texto dado borramos un «que», seguramente no afectará a la comprensión y se sobreentenderá, no siendo así si borramos la palabra «niño» del mismo texto original. Cuando todos los símbolos son igualmente probables (distribución de probabilidad plana), todos aportan información relevante y la entropía es máxima.
+El concepto de entropía es usado en termodinámica, mecánica estadística, teoría de la información y seguridad entrópica. En todos los casos la entropía se concibe como una «peculiaridad de ciertas combinaciones». La entropía puede ser considerada como una medida de la incertidumbre y de la información necesaria para, en cualquier proceso, poder acotar, reducir o eliminar la incertidumbre. Resulta que el concepto de información y el de entropía están básicamente relacionados entre sí, aunque se necesitaron años de desarrollo de la mecánica estadística y de la teoría de la información antes de que esto fuera percibido.
+
+
+Relación con la entropía termodinámica
+La entropía de la teoría de la información está estrechamente relacionada con la entropía termodinámica. En la termodinámica se estudia un sistema de partículas cuyos estados X (usualmente posición y velocidad) tienen una cierta distribución de probabilidad, pudiendo ocupar varios microestados posibles (equivalentes a los símbolos en la teoría de la información). La entropía termodinámica es igual a la entropía de la teoría de la información de esa distribución (medida usando el logaritmo natural) multiplicada por la constante de Boltzmann k, la cual permite pasar de nats (unidad semejante al bit) a J/K. Cuando todos los microestados son igualmente probables, la entropía termodinámica toma la forma k log(N). En un sistema aislado, la interacción entre las partículas tiende a aumentar su dispersión, afectando sus posiciones y sus velocidades, lo que causa que la entropía de la distribución aumente con el tiempo hasta llegar a un cierto máximo (cuando el mismo sistema es lo más homogéneo y desorganizado posible); lo que es denominado segunda ley de la termodinámica. La diferencia entre la cantidad de entropía que tiene un sistema y el máximo que puede llegar a tener se denomina neguentropía, y representa la cantidad de organización interna que tiene el sistema. A partir de esta última se puede definir la energía libre de Gibbs, que indica la energía que puede liberar el sistema al aumentar la entropía hasta su máximo y puede ser transformada en trabajo (energía mecánica útil) usando una máquina ideal de Carnot. Cuando un sistema recibe un flujo de calor, las velocidades de las partículas aumentan, lo que dispersa la distribución y hace aumentar así la entropía. Así, el flujo de calor produce un flujo de entropía en la misma dirección.
+
+
+Concepto intuitivo
+
+El concepto básico de entropía en teoría de la información tiene mucho que ver con la incertidumbre que existe en cualquier experimento o señal aleatoria. Es también la cantidad de «ruido» o «desorden» que contiene o libera un sistema. De esta forma, podremos hablar de la cantidad de información que lleva una señal.
+Como ejemplo, consideremos algún texto escrito en español, codificado como una cadena de letras, espacios y signos de puntuación (nuestra señal será una cadena de caracteres). Ya que, estadísticamente, algunos caracteres no son muy comunes (por ejemplo, «w»), mientras otros sí lo son (como la «a»), la cadena de caracteres no será tan "aleatoria" como podría llegar a ser. Obviamente, no podemos predecir con exactitud cuál será el siguiente carácter en la cadena, y eso la haría aparentemente aleatoria. Pero la entropía es la encargada de medir precisamente esa aleatoriedad, y fue presentada por Shannon en su artículo de 1948 Una teoría matemática de la comunicación.​
+Shannon ofrece una definición de entropía que satisface las siguientes afirmaciones:
+
+La medida de información debe ser proporcional (lineal continua). Es decir, el cambio pequeño en una de las probabilidades de aparición de uno de los elementos de la señal debe cambiar poco la entropía.
+Si todos los elementos de la señal son equiprobables (igual de probables) a la hora de aparecer, entonces la entropía será máxima.
+Ejemplos de máxima entropía:
+Suponiendo que estamos a la espera de un texto, por ejemplo un cable con un mensaje. En dicho cable solo se reciben las letras en minúscula de la a hasta la z, entonces si el mensaje que nos llega es "qalmnbphijcdgketrsfuvxyzwño" el cual posee una longitud de 27 caracteres, se puede decir que este mensaje llega a nosotros con la máxima entropía (o desorden posible); ya que es poco probable que se pueda pronosticar la entrada de caracteres, pues estos no se repiten ni están ordenados en una forma predecible.
+
+
+Definición formal
+Supongamos que un evento (variable aleatoria) tiene un grado de indeterminación inicial igual a 
+  
+    
+      
+        k
+      
+    
+    {\displaystyle k}
+  
+ (i.e. existen 
+  
+    
+      
+        k
+      
+    
+    {\displaystyle k}
+  
+ estados posibles) y supongamos todos los estados equiprobables. Entonces la probabilidad de que se dé una de esas combinaciones será 
+  
+    
+      
+        p
+        =
+        1
+        
+          /
+        
+        k
+      
+    
+    {\displaystyle p=1/k}
+  
+. Luego podemos representar la expresión 
+  
+    
+      
+        
+          c
+          
+            i
+          
+        
+      
+    
+    {\displaystyle c_{i}}
+  
+ como:​
+
+  
+    
+      
+        
+          c
+          
+            i
+          
+        
+        =
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        k
+        )
+        =
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        [
+        1
+        
+          /
+        
+        (
+        1
+        
+          /
+        
+        k
+        )
+        ]
+        =
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        1
+        
+          /
+        
+        p
+        )
+        =
+        
+          
+            
+              
+                
+                  log
+                  
+                    2
+                  
+                
+                ⁡
+                (
+                1
+                )
+              
+              ⏟
+            
+          
+          
+            =
+            0
+          
+        
+        −
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        p
+        )
+        =
+        −
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        p
+        )
+      
+    
+    {\displaystyle c_{i}=\log _{2}(k)=\log _{2}[1/(1/k)]=\log _{2}(1/p)=\underbrace {\log _{2}(1)} _{=0}-\log _{2}(p)=-\log _{2}(p)}
+  
+
+Si ahora cada uno de los 
+  
+    
+      
+        k
+      
+    
+    {\displaystyle k}
+  
+ estados tiene una probabilidad 
+  
+    
+      
+        
+          p
+          
+            i
+          
+        
+      
+    
+    {\displaystyle p_{i}}
+  
+, entonces la entropía vendrá dada por la suma ponderada de la cantidad de información:​​
+
+  
+    
+      
+        H
+        =
+        −
+        
+          p
+          
+            1
+          
+        
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        
+          p
+          
+            1
+          
+        
+        )
+        −
+        
+          p
+          
+            2
+          
+        
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        
+          p
+          
+            2
+          
+        
+        )
+        −
+        .
+        .
+        .
+        .
+        −
+        
+          p
+          
+            k
+          
+        
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        
+          p
+          
+            k
+          
+        
+        )
+        =
+        −
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            k
+          
+        
+        
+          p
+          
+            i
+          
+        
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        
+          p
+          
+            i
+          
+        
+        )
+      
+    
+    {\displaystyle H=-p_{1}\log _{2}(p_{1})-p_{2}\log _{2}(p_{2})-....-p_{k}\log _{2}(p_{k})=-\sum _{i=1}^{k}p_{i}\log _{2}(p_{i})}
+  
+
+Por lo tanto, la entropía de un mensaje 
+  
+    
+      
+        X
+      
+    
+    {\displaystyle X}
+  
+, denotado por 
+  
+    
+      
+        H
+        (
+        X
+        )
+      
+    
+    {\displaystyle H(X)}
+  
+, es el valor medio ponderado de la cantidad de información de los diversos estados del mensaje:
+
+  
+    
+      
+        H
+        (
+        X
+        )
+        =
+        −
+        
+          ∑
+          
+            i
+          
+        
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        =
+        
+          ∑
+          
+            i
+          
+        
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        1
+        
+          /
+        
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        )
+      
+    
+    {\displaystyle H(X)=-\sum _{i}p(x_{i})\log _{2}p(x_{i})=\sum _{i}p(x_{i})\log _{2}(1/p(x_{i}))}
+  
+
+que representa una medida de la incertidumbre media acerca de una variable aleatoria y por tanto de la cantidad de información.
+
+
+Ejemplos
+La entropía de un mensaje M de longitud 1 carácter que utiliza el conjunto de caracteres ASCII, suponiendo una equiprobabilidad en los 256 caracteres ASCII, será:
+
+  
+    
+      
+        H
+        (
+        M
+        )
+        =
+        −
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            256
+          
+        
+        
+          
+            1
+            256
+          
+        
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        
+          
+            (
+          
+        
+        
+          
+            1
+            256
+          
+        
+        
+          
+            )
+          
+        
+        =
+        (
+        −
+        
+          
+            256
+            256
+          
+        
+        )
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        
+          
+            (
+          
+        
+        
+          
+            1
+            256
+          
+        
+        
+          
+            )
+          
+        
+        =
+        1
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        256
+        )
+        =
+        8
+      
+    
+    {\displaystyle H(M)=-\sum _{i=1}^{256}{\frac {1}{256}}\log _{2}{\biggl (}{\frac {1}{256}}{\biggr )}=(-{\frac {256}{256}})\log _{2}{\biggl (}{\frac {1}{256}}{\biggr )}=1\log _{2}(256)=8}
+  
+
+Supongamos que el número de estados de un mensaje es igual a 3, M1, M2 y M3 donde la probabilidad de M1 es 50 %, la de M2 25 % y la de M3 25 %. Por tanto, la entropía de la información es:
+
+  
+    
+      
+        H
+        (
+        M
+        )
+        =
+        1
+        
+          /
+        
+        2
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        2
+        )
+        +
+        1
+        
+          /
+        
+        4
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        4
+        )
+        +
+        1
+        
+          /
+        
+        4
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        4
+        )
+        =
+        1
+        ,
+        5
+      
+    
+    {\displaystyle H(M)=1/2\log _{2}(2)+1/4\log _{2}(4)+1/4\log _{2}(4)=1,5}
+  
+
+
+Información mutua
+La entropía puede verse como caso especial de la información mutua. La información mutua de dos variables aleatorias, denotado por I(X;Y), es una cantidad que mide la dependencia mutua de las dos variables; es decir, mide la reducción de la incertidumbre (entropía) de una variable aleatoria, X, debido al conocimiento del valor de otra variable aleatoria, Y.​ De la definición podemos concluir que, si X e Y son iguales, entonces I(X;Y)=H(X).
+
+
+Propiedades
+La entropía tiene las siguientes propiedades:
+
+La entropía es positiva. Esto es evidente ya que al ser 
+  
+    
+      
+        
+          p
+          
+            i
+          
+        
+      
+    
+    {\displaystyle p_{i}}
+  
+ una probabilidad entonces 
+  
+    
+      
+        0
+        <=
+        
+          p
+          
+            i
+          
+        
+        ≤
+        1
+      
+    
+    {\displaystyle 0<=p_{i}\leq 1}
+  
+. Por tanto, podemos decir que 
+  
+    
+      
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        
+          p
+          
+            i
+          
+        
+        ≤
+        0
+      
+    
+    {\displaystyle \log _{2}p_{i}\leq 0}
+  
+ y por tanto 
+  
+    
+      
+        −
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        
+          p
+          
+            i
+          
+        
+        ≥
+        0
+      
+    
+    {\displaystyle -\log _{2}p_{i}\geq 0}
+  
+
+  
+    
+      
+        H
+        ≤
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        n
+        )
+      
+    
+    {\displaystyle H\leq \log _{2}(n)}
+  
+ Es decir, la entropía H está acotada superiormente (cuando es máxima) y no supone pérdida de información.
+Dado un proceso con posibles resultados {A1,..,An} con probabilidades relativas p1,...,pn, la función 
+  
+    
+      
+        H
+        (
+        
+          p
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          p
+          
+            n
+          
+        
+        )
+        
+      
+    
+    {\displaystyle H(p_{1},\dots ,p_{n})\,}
+  
+ es máxima en el caso de que 
+  
+    
+      
+        
+          p
+          
+            1
+          
+        
+        =
+        ⋯
+        =
+        
+          p
+          
+            n
+          
+        
+        =
+        1
+        
+          /
+        
+        n
+        
+      
+    
+    {\displaystyle p_{1}=\dots =p_{n}=1/n\,}
+  
+. El resultado es intuitivo ya que tenemos la mayor incertidumbre del mensaje, cuando los valores posibles de la variable son equiprobables
+Dado un proceso con posibles resultados {A1,..,An} con probabilidades relativas p1,...,pn, la función 
+  
+    
+      
+        H
+        (
+        
+          p
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          p
+          
+            n
+          
+        
+        )
+        
+      
+    
+    {\displaystyle H(p_{1},\dots ,p_{n})\,}
+  
+ es nula en el caso de que 
+  
+    
+      
+        
+          p
+          
+            i
+          
+        
+        =
+        0
+      
+    
+    {\displaystyle p_{i}=0}
+  
+ para todo i, excepto para una clase, tal que: 
+  
+    
+      
+        
+          p
+          
+            j
+          
+        
+        =
+        1
+      
+    
+    {\displaystyle p_{j}=1}
+  
+. De forma intuitiva podemos pensar que cuando uno o más estados tienen una probabilidad alta, disminuye significativamente la entropía porque, como es lógico, existe una menor incertidumbre respecto al mensaje que se recibirá.
+
+
+Codificador óptimo
+Un codificador óptimo es aquel que utiliza el mínimo número de bits para codificar un mensaje. Un codificador óptimo usará códigos cortos para codificar mensajes frecuentes y dejará los códigos de mayor longitud para aquellos mensajes que sean menos frecuentes. De esta forma se optimiza el rendimiento del canal o zona de almacenamiento y el sistema es eficiente en términos del número de bits para representar el mensaje. 
+Por ejemplo, el código Morse se aprovecha de este principio para optimizar el número de caracteres a transmitir a partir del estudio de las letras más frecuentes del alfabeto inglés. Aunque el código Morse no es un codificador óptimo, asigna a las letras más frecuente códigos más cortos. Otro ejemplo sería el algoritmo de Huffman de codificación que sirve para compactar información.​ Este método se basa en el codificador óptimo. Para ello lo primero que hace es recorrer toda la información para encontrar la frecuencia de los caracteres y luego a partir de esta información busca el codificador óptimo por medio de árboles binarios. Algunas técnicas de compresión como LZW o deflación no usan probabilidades de los símbolos aislados, sino que usan las probabilidades conjuntas de pequeñas secuencias de símbolos para codificar el mensaje, por lo que pueden lograr un nivel de compresión mayor.
+Podemos construir un codificador óptimo basándonos en la entropía de una variable aleatoria de información X. En efecto, la entropía nos da el número medio de bits (si usamos logaritmos de base 2) necesarios para codificar el mensaje a través de un codificador óptimo y por tanto nos determina el límite máximo al que se puede comprimir un mensaje usando un enfoque símbolo a símbolo sin ninguna pérdida de información (demostrado analíticamente por Shannon), el límite de compresión (en bits) es igual a la entropía multiplicada por el largo del mensaje. 
+Reescribiendo la ecuación de cálculo de la entropía llegamos a que:
+
+  
+    
+      
+        H
+        (
+        X
+        )
+        =
+        −
+        
+          ∑
+          
+            i
+          
+        
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        =
+        
+          ∑
+          
+            i
+          
+        
+        −
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        =
+        
+          ∑
+          
+            i
+          
+        
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        [
+        l
+        o
+        
+          g
+          
+            2
+          
+        
+        (
+        1
+        )
+        −
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        )
+        ]
+        =
+        
+          ∑
+          
+            x
+          
+        
+        p
+        (
+        x
+        )
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        1
+        
+          /
+        
+        p
+        (
+        x
+        )
+        )
+      
+    
+    {\displaystyle H(X)=-\sum _{i}p(x_{i})\log _{2}p(x_{i})=\sum _{i}-p(x_{i})\log _{2}p(x_{i})=\sum _{i}p(x_{i})[log_{2}(1)-\log _{2}(p(x_{i}))]=\sum _{x}p(x)\log _{2}(1/p(x))}
+  
+
+Por lo tanto, la información (que se encuentra definida en bits, dado que la base del logaritmo es 2) que aporta un determinado valor o símbolo 
+  
+    
+      
+        
+          x
+          
+            i
+          
+        
+        
+        
+      
+    
+    {\displaystyle x_{i}\,\!}
+  
+ de una variable aleatoria discreta 
+  
+    
+      
+        X
+        
+        
+      
+    
+    {\displaystyle X\,\!}
+  
+ se define como:
+
+  
+    
+      
+        I
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        =
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        
+          
+            1
+            
+              p
+              (
+              
+                x
+                
+                  i
+                
+              
+              )
+            
+          
+        
+        =
+        −
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        
+          p
+          (
+          
+            x
+            
+              i
+            
+          
+          )
+        
+      
+    
+    {\displaystyle I(x_{i})=\log _{2}{\frac {1}{p(x_{i})}}=-\log _{2}{p(x_{i})}}
+  
+
+Esta expresión representa el número necesario de bits para codificar el mensaje x en el codificador óptimo y por tanto la entropía también se puede considerar como una medida de la información promedio contenida en cada símbolo del mensaje.
+
+
+Ejemplo
+Supongamos que el número de estados de un mensaje es igual a 3 M1, M2 y M3 donde la probabilidad de M1 es 50 %, la de M2 25 % y la de M3 25 %.
+
+Para M1 tenemos que 
+  
+    
+      
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        [
+        1
+        
+          /
+        
+        p
+        (
+        
+          M
+          
+            1
+          
+        
+        )
+        ]
+        =
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        2
+        =
+        1
+      
+    
+    {\displaystyle \log _{2}[1/p(M_{1})]=\log _{2}2=1}
+  
+
+Para M2 tenemos que 
+  
+    
+      
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        [
+        1
+        
+          /
+        
+        p
+        (
+        
+          M
+          
+            2
+          
+        
+        )
+        ]
+        =
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        4
+        =
+        2
+      
+    
+    {\displaystyle \log _{2}[1/p(M_{2})]=\log _{2}4=2}
+  
+
+Para M3 tenemos que 
+  
+    
+      
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        [
+        1
+        
+          /
+        
+        p
+        (
+        
+          M
+          
+            3
+          
+        
+        )
+        ]
+        =
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        4
+        =
+        2
+      
+    
+    {\displaystyle \log _{2}[1/p(M_{3})]=\log _{2}4=2}
+  
+
+Por tanto, en el codificador óptimo para transmitir M1 hará falta un bit y para M2 y M3 será necesario contar con dos bits. Por ejemplo, podríamos codificar M1 con "0", M2 con "10" y  M3 con "11". Usando este convenio para codificar el mensaje M1M2M1M1M3M1M2M3 usaríamos "010001101011" y por tanto 12 bits.
+El valor de la entropía sería:
+
+  
+    
+      
+        H
+        (
+        X
+        )
+        =
+        1
+        
+          /
+        
+        2
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        2
+        )
+        +
+        1
+        
+          /
+        
+        4
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        4
+        )
+        +
+        1
+        
+          /
+        
+        4
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        4
+        )
+        =
+        1
+        ,
+        5
+      
+    
+    {\displaystyle H(X)=1/2\log _{2}(2)+1/4\log _{2}(4)+1/4\log _{2}(4)=1,5}
+  
+
+Por tanto, el codificador óptimo necesita de media 1,5 bits para codificar cualquier valor de X.
+
+
+Entropía condicional
+Véase también artículo dedicado: Entropía condicional
+Supongamos que en vez de tener una única variable aleatoria X, existe otra variable Y dependientes entre sí, es decir el conocimiento de una (por ejemplo, Y) entrega información sobre la otra (por ejemplo, X). Desde el punto de vista de la entropía de la información podemos decir que la información de Y disminuirá la incertidumbre de X. Por tanto, podemos decir que la entropía de X será condicional a Y, y por tanto:
+
+  
+    
+      
+        H
+        (
+        X
+        ,
+        Y
+        )
+        =
+        −
+        
+          ∑
+          
+            x
+            ,
+            y
+          
+        
+        p
+        (
+        x
+        ,
+        y
+        )
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        p
+        (
+        x
+        ,
+        y
+        )
+      
+    
+    {\displaystyle H(X,Y)=-\sum _{x,y}p(x,y)\log _{2}p(x,y)}
+  
+
+Como por el teorema de Bayes tenemos que p(x,y)=p(y)p(x|y) donde p(x|y) es la probabilidad de que se dé un estado de X conocida Y, podemos decir:
+
+  
+    
+      
+        H
+        (
+        X
+        
+          |
+        
+        Y
+        )
+        =
+        −
+        
+          ∑
+          
+            y
+          
+        
+        p
+        (
+        y
+        )
+        
+          ∑
+          
+            x
+          
+        
+        p
+        (
+        x
+        
+          |
+        
+        y
+        )
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        p
+        (
+        x
+        
+          |
+        
+        y
+        )
+      
+    
+    {\displaystyle H(X|Y)=-\sum _{y}p(y)\sum _{x}p(x|y)\log _{2}p(x|y)}
+  
+
+
+Aplicación en criptoanálisis
+El concepto de entropía condicional es muy interesante en el campo del criptoanálisis. Proporciona una herramienta para evaluar el grado de seguridad de los sistemas. Por ejemplo, para un sistema de cifrado hay dos entropías condicionales interesantes:​
+Supongamos
+
+Un mensaje M1 es sometido a un proceso de cifrado usando la clave K1 obteniendo E(K1,M1)=C1.
+
+  
+    
+      
+        
+          P
+          
+            C
+          
+        
+        (
+        K
+        )
+      
+    
+    {\displaystyle P_{C}(K)}
+  
+ representan la probabilidad condicional de la clave K dado el criptograma recibido C. A veces también se denota por 
+  
+    
+      
+        P
+        (
+        K
+        
+          |
+        
+        C
+        )
+      
+    
+    {\displaystyle P(K|C)}
+  
+
+  
+    
+      
+        
+          P
+          
+            C
+          
+        
+        (
+        M
+        )
+      
+    
+    {\displaystyle P_{C}(M)}
+  
+ representan la probabilidad condicional del mensaje M dado el criptograma recibido C. A veces también se denota por 
+  
+    
+      
+        P
+        (
+        M
+        
+          |
+        
+        C
+        )
+      
+    
+    {\displaystyle P(M|C)}
+  
+
+Entonces:
+
+Podemos calcular la entropía del conocimiento de la clave una vez conocido el texto cifrado, y por tanto medir la equivocación del mensaje (en inglés, message equivocation), 
+  
+    
+      
+        
+          H
+          
+            C
+          
+        
+        (
+        K
+        )
+      
+    
+    {\displaystyle H_{C}(K)}
+  
+, también denotada por 
+  
+    
+      
+        H
+        (
+        K
+        
+          |
+        
+        C
+        )
+      
+    
+    {\displaystyle H(K|C)}
+  
+, mediante la fórmula:
+
+  
+    
+      
+        
+          H
+          
+            C
+          
+        
+        (
+        K
+        )
+        =
+        −
+        
+          ∑
+          
+            E
+            ,
+            K
+          
+        
+        P
+        (
+        E
+        ,
+        K
+        )
+        
+          log
+          
+            
+              P
+              
+                E
+              
+            
+          
+        
+        ⁡
+        (
+        K
+        )
+        =
+        −
+        
+          ∑
+          
+            E
+          
+        
+        P
+        (
+        E
+        )
+        
+          ∑
+          
+            K
+          
+        
+        
+          P
+          
+            E
+          
+        
+        (
+        K
+        )
+        
+          log
+          
+            
+              P
+              
+                E
+              
+            
+          
+        
+        ⁡
+        (
+        K
+        )
+      
+    
+    {\displaystyle H_{C}(K)=-\sum _{E,K}P(E,K)\log _{P_{E}}(K)=-\sum _{E}P(E)\sum _{K}P_{E}(K)\log _{P_{E}}(K)}
+  
+
+ 
+La primera igualdad es por la definición de la entropía condicional y la segunda por aplicación del teorema de Bayes.
+Observar que si 
+  
+    
+      
+        
+          H
+          
+            C
+          
+        
+        (
+        K
+        )
+        =
+        0
+      
+    
+    {\displaystyle H_{C}(K)=0}
+  
+ significa que se podrá romper el cifrado pues ya no hay incertidumbre. Esta anulación nos introduce en el concepto de distancia de unicidad.
+Podemos calcular la entropía del conocimiento del mensaje una vez conocido el texto cifrado, y por tanto medir la equivocación de la clave (en inglés, key equivocation), 
+  
+    
+      
+        
+          H
+          
+            C
+          
+        
+        (
+        M
+        )
+      
+    
+    {\displaystyle H_{C}(M)}
+  
+, también denotada por 
+  
+    
+      
+        H
+        (
+        M
+        
+          |
+        
+        C
+        )
+      
+    
+    {\displaystyle H(M|C)}
+  
+, mediante la fórmula:
+
+  
+    
+      
+        
+          H
+          
+            C
+          
+        
+        (
+        M
+        )
+        =
+        −
+        
+          ∑
+          
+            E
+            ,
+            M
+          
+        
+        P
+        (
+        E
+        ,
+        M
+        )
+        
+          log
+          
+            
+              P
+              
+                E
+              
+            
+          
+        
+        ⁡
+        (
+        M
+        )
+        =
+        −
+        
+          ∑
+          
+            E
+          
+        
+        P
+        (
+        E
+        )
+        
+          ∑
+          
+            M
+          
+        
+        
+          P
+          
+            E
+          
+        
+        (
+        M
+        )
+        
+          log
+          
+            
+              P
+              
+                E
+              
+            
+          
+        
+        ⁡
+        (
+        M
+        )
+      
+    
+    {\displaystyle H_{C}(M)=-\sum _{E,M}P(E,M)\log _{P_{E}}(M)=-\sum _{E}P(E)\sum _{M}P_{E}(M)\log _{P_{E}}(M)}
+  
+
+La primera igualdad es por la definición de la entropía condicional y la segunda por aplicación del teorema de Bayes.
+
+
+Ejemplo
+Supongamos una variable X con cuatro estados: 
+  
+    
+      
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        
+          x
+          
+            3
+          
+        
+        ,
+        
+          x
+          
+            4
+          
+        
+      
+    
+    {\displaystyle x_{1},x_{2},x_{3},x_{4}}
+  
+ todos equiprobables y por tanto 
+  
+    
+      
+        p
+        (
+        
+          x
+          
+            i
+          
+        
+        )
+        =
+        1
+        
+          /
+        
+        4
+      
+    
+    {\displaystyle p(x_{i})=1/4}
+  
+.
+Existe además otra variable Y con tres estados; 
+  
+    
+      
+        
+          y
+          
+            1
+          
+        
+        ,
+        
+          y
+          
+            2
+          
+        
+        ,
+        
+          y
+          
+            3
+          
+        
+      
+    
+    {\displaystyle y_{1},y_{2},y_{3}}
+  
+ con probabilidades 
+  
+    
+      
+        p
+        (
+        
+          y
+          
+            1
+          
+        
+        )
+        =
+        1
+        
+          /
+        
+        2
+      
+    
+    {\displaystyle p(y_{1})=1/2}
+  
+ y 
+  
+    
+      
+        p
+        (
+        
+          y
+          
+            2
+          
+        
+        )
+        =
+        p
+        (
+        
+          y
+          
+            3
+          
+        
+        )
+        =
+        1
+        
+          /
+        
+        4
+      
+    
+    {\displaystyle p(y_{2})=p(y_{3})=1/4}
+  
+.
+Se conocen, además, las siguientes dependencias:
+
+Si 
+  
+    
+      
+        Y
+        =
+        
+          y
+          
+            1
+          
+        
+      
+    
+    {\displaystyle Y=y_{1}}
+  
+ entonces los posibles valores de x son 
+  
+    
+      
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        
+          x
+          
+            3
+          
+        
+        ,
+        
+          x
+          
+            4
+          
+        
+      
+    
+    {\displaystyle x_{1},x_{2},x_{3},x_{4}}
+  
+
+Si 
+  
+    
+      
+        Y
+        =
+        
+          y
+          
+            2
+          
+        
+      
+    
+    {\displaystyle Y=y_{2}}
+  
+ entonces los posibles valores de x son 
+  
+    
+      
+        
+          x
+          
+            2
+          
+        
+        ,
+        
+          x
+          
+            3
+          
+        
+      
+    
+    {\displaystyle x_{2},x_{3}}
+  
+
+Si 
+  
+    
+      
+        Y
+        =
+        
+          y
+          
+            3
+          
+        
+      
+    
+    {\displaystyle Y=y_{3}}
+  
+ entonces los posibles valores de x son 
+  
+    
+      
+        
+          x
+          
+            3
+          
+        
+        ,
+        
+          x
+          
+            4
+          
+        
+      
+    
+    {\displaystyle x_{3},x_{4}}
+  
+
+Aplicando las fórmulas tenemos:
+
+  
+    
+      
+        H
+        (
+        X
+        )
+        =
+        2
+      
+    
+    {\displaystyle H(X)=2}
+  
+
+  
+    
+      
+        H
+        (
+        Y
+        )
+        =
+        1
+        ,
+        5
+      
+    
+    {\displaystyle H(Y)=1,5}
+  
+
+  
+    
+      
+        H
+        (
+        X
+        
+          /
+        
+        Y
+        )
+        =
+        1
+        ,
+        5
+      
+    
+    {\displaystyle H(X/Y)=1,5}
+  
+
+En este caso el conocimiento de la dependencia de X respecto Y reduce la entropía de X de 2 a 1,5.
+
+
+Entropía de un proceso estocástico
+​ Un proceso estocástico 
+  
+    
+      
+        {
+        
+          X
+          
+            i
+          
+        
+        }
+      
+    
+    {\displaystyle \{X_{i}\}}
+  
+ es una secuencia indexada de variables aleatorias. En general, puede haber dependencias entre las variables aleatorias. Para estudiar la probabilidad de cierto conjunto de valores se suele adoptar el siguiente convenio:
+
+  
+    
+      
+        P
+        r
+        [
+        (
+        
+          X
+          
+            1
+          
+        
+        ,
+        
+          X
+          
+            2
+          
+        
+        ,
+        .
+        .
+        .
+        ,
+        
+          X
+          
+            n
+          
+        
+        )
+        =
+        (
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        .
+        .
+        .
+        ,
+        
+          x
+          
+            n
+          
+        
+        )
+        ]
+        =
+        p
+        (
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        .
+        .
+        .
+        ,
+        
+          x
+          
+            n
+          
+        
+        )
+      
+    
+    {\displaystyle Pr[(X_{1},X_{2},...,X_{n})=(x_{1},x_{2},...,x_{n})]=p(x_{1},x_{2},...,x_{n})}
+  
+
+Sea 
+  
+    
+      
+        {
+        
+          X
+          
+            i
+          
+        
+        
+          }
+          
+            i
+            =
+            1
+            ,
+            .
+            .
+            n
+          
+        
+      
+    
+    {\displaystyle \{X_{i}\}_{i=1,..n}}
+  
+ un proceso estocástico de n variables aleatorias, y sea 
+  
+    
+      
+        
+          A
+          
+            n
+          
+        
+      
+    
+    {\displaystyle A^{n}}
+  
+ el conjunto de la posibles combinaciones de valores de 
+  
+    
+      
+        {
+        
+          X
+          
+            i
+          
+        
+        
+          }
+          
+            i
+            =
+            1
+            ,
+            .
+            .
+            n
+          
+        
+      
+    
+    {\displaystyle \{X_{i}\}_{i=1,..n}}
+  
+. Se define la entropía del proceso estocástico, también llamada entropía del n-grama y denotado por 
+  
+    
+      
+        
+          H
+          
+            n
+          
+        
+      
+    
+    {\displaystyle H_{n}}
+  
+, como:
+
+  
+    
+      
+        
+          H
+          
+            n
+          
+        
+        =
+        H
+        (
+        
+          X
+          
+            1
+          
+        
+        ,
+        .
+        .
+        .
+        ,
+        
+          X
+          
+            n
+          
+        
+        )
+        =
+        
+          ∑
+          
+            s
+            ∈
+            
+              A
+              
+                n
+              
+            
+          
+        
+        −
+        P
+        (
+        (
+        
+          X
+          
+            1
+          
+        
+        ,
+        .
+        .
+        .
+        ,
+        
+          X
+          
+            n
+          
+        
+        )
+        =
+        s
+        )
+        log
+        ⁡
+        P
+        (
+        (
+        
+          X
+          
+            1
+          
+        
+        ,
+        .
+        .
+        .
+        ,
+        
+          X
+          
+            n
+          
+        
+        )
+        =
+        s
+        )
+      
+    
+    {\displaystyle H_{n}=H(X_{1},...,X_{n})=\sum _{s\in A^{n}}-P((X_{1},...,X_{n})=s)\log P((X_{1},...,X_{n})=s)}
+  
+
+
+Ratio de entropía
+Véase también artículo dedicado: Ratio de entropía​ La ratio de entropía de una secuencia de n variables aleatorias (proceso estocástico) caracteriza la tasa de crecimiento de la entropía de la secuencia con el crecimiento de n.
+La ratio de entropía de un proceso estocástico 
+  
+    
+      
+        {
+        
+          X
+          
+            i
+          
+        
+        }
+      
+    
+    {\displaystyle \{X_{i}\}}
+  
+  viene definida por la ecuación:
+
+  
+    
+      
+        H
+        (
+        X
+        )
+        =
+        
+          lim
+          
+            n
+            →
+            ∞
+          
+        
+        
+          
+            
+              1
+              n
+            
+          
+        
+        H
+        (
+        
+          X
+          
+            1
+          
+        
+        ,
+        .
+        .
+        .
+        ,
+        
+          X
+          
+            n
+          
+        
+        )
+      
+    
+    {\displaystyle H(X)=\lim _{n\to \infty }{\dfrac {1}{n}}H(X_{1},...,X_{n})}
+  
+
+siempre que dicho límite exista.
+
+
+Otros tipos de entropía
+Algunas veces resulta conveniente usar otras medidas de información distintas a la definición de Shannon. Entre ellas, para un conjunto de probabilidades 
+  
+    
+      
+        
+          p
+          
+            i
+          
+        
+      
+    
+    {\displaystyle p_{i}}
+  
+ dado, se pueden definir las siguientes:
+
+Entropía lineal: 
+  
+    
+      
+        L
+        =
+        
+          ∑
+          
+            i
+          
+        
+        
+          p
+          
+            i
+          
+        
+        (
+        1
+        −
+        
+          p
+          
+            i
+          
+        
+        )
+      
+    
+    {\displaystyle L=\sum _{i}p_{i}(1-p_{i})}
+  
+
+Entropía de Rényi de orden q: 
+  
+    
+      
+        
+          R
+          
+            q
+          
+        
+        =
+        
+          
+            1
+            
+              1
+              −
+              q
+            
+          
+        
+        l
+        n
+        (
+        
+          ∑
+          
+            i
+          
+        
+        
+          p
+          
+            i
+          
+          
+            q
+          
+        
+        )
+      
+    
+    {\displaystyle R_{q}={\frac {1}{1-q}}ln(\sum _{i}p_{i}^{q})}
+  
+
+Entropía de tsallis de orden q: 
+  
+    
+      
+        
+          T
+          
+            q
+          
+        
+        (
+        
+          
+            p
+            
+              i
+            
+          
+        
+        )
+        =
+        
+          
+            k
+            
+              q
+              −
+              1
+            
+          
+        
+        
+          (
+          
+            1
+            −
+            
+              ∑
+              
+                i
+              
+            
+            
+              p
+              
+                i
+              
+              
+                q
+              
+            
+          
+          )
+        
+        ,
+      
+    
+    {\displaystyle T_{q}({p_{i}})={k \over q-1}\left(1-\sum _{i}p_{i}^{q}\right),}
+  
+
+Para todos estos tipos de entropía se verifica que:
+
+Todas son mayores o igual a cero.
+
+  
+    
+      
+        L
+        ≥
+        0
+      
+    
+    {\displaystyle L\geq 0}
+  
+ ; 
+  
+    
+      
+        
+          R
+          
+            q
+          
+        
+        ≥
+        0
+      
+    
+    {\displaystyle R_{q}\geq 0}
+  
+ ; 
+  
+    
+      
+        
+          T
+          
+            q
+          
+        
+        ≥
+        0
+      
+    
+    {\displaystyle T_{q}\geq 0}
+  
+ para todo 
+  
+    
+      
+        q
+        ≥
+        0
+      
+    
+    {\displaystyle q\geq 0}
+  
+
+Toman su valor máximo si las probabilidades 
+  
+    
+      
+        
+          p
+          
+            i
+          
+        
+      
+    
+    {\displaystyle p_{i}}
+  
+ son iguales.
+La entropía de Shannon 
+  
+    
+      
+        
+          H
+          
+            e
+          
+        
+      
+    
+    {\displaystyle H_{e}}
+  
+es mayor o igual que L. i.e.
+
+  
+    
+      
+        
+          H
+          
+            e
+          
+        
+        ≥
+        L
+      
+    
+    {\displaystyle H_{e}\geq L}
+  
+
+ocurriendo igualdad solo en caso de que 
+  
+    
+      
+        
+          H
+          
+            e
+          
+        
+        =
+        0
+      
+    
+    {\displaystyle H_{e}=0}
+  
+
+Las entropías de Rényi y Tsallis son generalizaciones de la entropía de Shannon 
+  
+    
+      
+        
+          H
+          
+            e
+          
+        
+      
+    
+    {\displaystyle H_{e}}
+  
+ dado que
+
+  
+    
+      
+        
+          lim
+          
+            q
+            →
+            1
+          
+        
+        
+          R
+          
+            q
+          
+        
+        =
+        
+          lim
+          
+            q
+            →
+            1
+          
+        
+        
+          T
+          
+            q
+          
+        
+        =
+        
+          H
+          
+            e
+          
+        
+      
+    
+    {\displaystyle \lim _{q\to 1}R_{q}=\lim _{q\to 1}T_{q}=H_{e}}
+  
+
+
+Véase también
+Seguridad entrópica
+Entropía cruzada
+Perplejidad
+Capacidad de canal
+Neguentropía o Sintropía Antónimo de entropía
+
+
+Notas
+
+
+Referencias
+
+
+Bibliografía
+Jorge Ramió Aguirre, Aplicaciones criptográficas. Libro guía de la asignatura de Seguridad Informática. Escuela Universitaria de Informática. Universidad Politécnica de Madrid. Enero de 1998.
+
+
+Enlaces externos
+Una Teoría Matemática de la Comunicación Archivado el 31 de enero de 1998 en Wayback Machine. (en inglés)
+Calculadora de la entropía de Shannon (en inglés)
+Calculadora de la entropía de Shannon para archivos (en inglés)

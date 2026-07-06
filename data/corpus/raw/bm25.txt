@@ -1,0 +1,424 @@
+# titulo: Okapi BM25
+# fuente: https://es.wikipedia.org/wiki/Okapi_BM25
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-05
+# ---
+Okapi BM25 es una función de ranking utilizada en Recuperación de información para la asignación de relevancia a los documentos en un buscador, dicho de otra forma, es una función que nos permite ordenar por relevancia los documentos que contienen las palabras que el usuario ha introducido en la caja de búsqueda de un buscador como Google, Yahoo! o Live. 
+Esta función está basada en los modelos probabilísticos de Recuperación de información, concretamente en el BIR (Binary Independent Retrieval) desarrollado por  Stephen E. Robertson y Karen Spärck Jones en los años 70.
+El nombre de Okapi viene del primer sistema que implementó esta función de ranking, el cual fue desarrollado por Stephen Walker en la City University de Londres
+
+
+La función de ranking
+BM25 se basa en el concepto de bolsa de palabras mediante al cual se representan los documentos que deseamos ordenar en función de su relevancia con una consulta dada.
+Dada una consulta 
+  
+    
+      
+        Q
+      
+    
+    {\displaystyle Q}
+  
+, que contiene las palabras clave 
+  
+    
+      
+        q
+        1
+        ,
+        .
+        .
+        .
+        ,
+        q
+        n
+      
+    
+    {\displaystyle q1,...,qn}
+  
+, el valor de relevancia asignado mediante la función BM25 para el documentos 
+  
+    
+      
+        D
+      
+    
+    {\displaystyle D}
+  
+ será:
+
+  
+    
+      
+        s
+        c
+        o
+        r
+        e
+        (
+        D
+        ,
+        Q
+        )
+        =
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        I
+        D
+        F
+        (
+        
+          q
+          
+            i
+          
+        
+        )
+        ⋅
+        
+          
+            
+              f
+              (
+              
+                q
+                
+                  i
+                
+              
+              ,
+              D
+              )
+              ⋅
+              (
+              
+                k
+                
+                  1
+                
+              
+              +
+              1
+              )
+            
+            
+              f
+              (
+              
+                q
+                
+                  i
+                
+              
+              ,
+              D
+              )
+              +
+              
+                k
+                
+                  1
+                
+              
+              ⋅
+              (
+              1
+              −
+              b
+              +
+              b
+              ⋅
+              
+                
+                  
+                    
+                      |
+                    
+                    D
+                    
+                      |
+                    
+                  
+                  
+                    a
+                    v
+                    g
+                    d
+                    l
+                  
+                
+              
+              )
+            
+          
+        
+      
+    
+    {\displaystyle score(D,Q)=\sum _{i=1}^{n}IDF(q_{i})\cdot {\frac {f(q_{i},D)\cdot (k_{1}+1)}{f(q_{i},D)+k_{1}\cdot (1-b+b\cdot {\frac {|D|}{avgdl}})}}}
+  
+
+donde 
+  
+    
+      
+        f
+        (
+        q
+        i
+        ,
+        D
+        )
+      
+    
+    {\displaystyle f(qi,D)}
+  
+ es la frecuencia de aparición en el documento 
+  
+    
+      
+        D
+      
+    
+    {\displaystyle D}
+  
+ de los términos que aparecen en la consulta 
+  
+    
+      
+        Q
+      
+    
+    {\displaystyle Q}
+  
+, 
+  
+    
+      
+        
+          |
+        
+        D
+        
+          |
+        
+      
+    
+    {\displaystyle |D|}
+  
+ es la longitud del documento 
+  
+    
+      
+        D
+      
+    
+    {\displaystyle D}
+  
+ (en número de palabras), y 
+  
+    
+      
+        a
+        v
+        g
+        d
+        l
+      
+    
+    {\displaystyle avgdl}
+  
+ es la longitud media de los documentos en la colección sobre la cual estamos realizando la búsqueda. 
+  
+    
+      
+        k
+        1
+      
+    
+    {\displaystyle k1}
+  
+ y 
+  
+    
+      
+        b
+      
+    
+    {\displaystyle b}
+  
+ son parámetros  que permiten ajustar la función a las características concretas de la colección con la que estamos trabajando. Aunque estos parámetros suelen depender de las características concretas de cada colección normalmente se asignan los valores 
+  
+    
+      
+        k
+        1
+        =
+        2.0
+      
+    
+    {\displaystyle k1=2.0}
+  
+ o 
+  
+    
+      
+        k
+        1
+        =
+        1.2
+      
+    
+    {\displaystyle k1=1.2}
+  
+ y 
+  
+    
+      
+        b
+        =
+        0.75
+      
+    
+    {\displaystyle b=0.75}
+  
+, los cuales se han establecido a partir de los experimentos que durante años se han realizado en las conferencias TREC. 
+  
+    
+      
+        I
+        D
+        F
+        (
+        q
+        i
+        )
+      
+    
+    {\displaystyle IDF(qi)}
+  
+ es el peso IDF (inverse document frequency) de las palabras clave que aparecen en la consulta 
+  
+    
+      
+        Q
+      
+    
+    {\displaystyle Q}
+  
+. Normalmente el IDF se calcula mediante la siguiente función:
+
+  
+    
+      
+        I
+        D
+        F
+        (
+        
+          q
+          
+            i
+          
+        
+        )
+        =
+        log
+        ⁡
+        
+          
+            
+              N
+              −
+              n
+              (
+              
+                q
+                
+                  i
+                
+              
+              )
+              +
+              0.5
+            
+            
+              n
+              (
+              
+                q
+                
+                  i
+                
+              
+              )
+              +
+              0.5
+            
+          
+        
+      
+    
+    {\displaystyle IDF(q_{i})=\log {\frac {N-n(q_{i})+0.5}{n(q_{i})+0.5}}}
+  
+
+donde 
+  
+    
+      
+        N
+      
+    
+    {\displaystyle N}
+  
+ es el número total de documentos en la colección, y 
+  
+    
+      
+        n
+        (
+        q
+        i
+        )
+      
+    
+    {\displaystyle n(qi)}
+  
+ es el número de documentos que contienen la palabra clave 
+  
+    
+      
+        q
+        i
+      
+    
+    {\displaystyle qi}
+  
+.
+
+
+Véase también
+Modelo de espacio vectorial
+Recuperación de información
+Implementación BM25 en Lucene [1]
+
+
+Bibliografía
+A definitive guide to the TFxIDF variants, including BMxx variants, and the evolution of BM25
+Stephen E. Robertson; Steve Walker; Susan Jones; Micheline Hancock-Beaulieu; Mike Gatford (November 1994). Okapi at TREC-3. Proceedings of the Third Text REtrieval Conference (TREC 1994). Gaithersburg, USA. 
+Stephen E. Robertson; Steve Walker; Micheline Hancock-Beaulieu (November 1998). Okapi at TREC-7. Proceedings of the Seventh Text REtrieval Conference. Gaithersburg, USA. 
+Spärck Jones, K.; Walker, S.; Robertson, S. E. (2000). «A probabilistic model of information retrieval: Development and comparative experiments: Part 1». Information Processing & Management 36 (6): 779-808. doi:10.1016/S0306-4573(00)00015-7. 
+Spärck Jones, K.; Walker, S.; Robertson, S. E. (2000). «A probabilistic model of information retrieval: Development and comparative experiments: Part 2». Information Processing & Management 36 (6): 809-840. doi:10.1016/S0306-4573(00)00016-9. 
+Stephen Robertson & Hugo Zaragoza (2009). The Probabilistic Relevance Framework: BM25 and Beyond 3 (4). Found. Trends Inf. Retr. pp. 333-389. doi:10.1561/1500000019. citeseerx 10.1.1.156.5282. 
+
+
+Enlaces externos
+Robertson, Stephen; Zaragoza, Hugo (2009). The Probabilistic Relevance Framework: BM25 and Beyond. NOW Publishers, Inc. ISBN 978-1-60198-308-4.

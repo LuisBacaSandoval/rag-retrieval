@@ -1,0 +1,35 @@
+# titulo: Índice invertido
+# fuente: https://es.wikipedia.org/wiki/%C3%8Dndice_invertido
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-05
+# ---
+Un índice invertido es una forma de estructurar la información que va a ser recuperada por un motor de búsqueda. Por tanto, el objetivo es crear la estructura de datos para llevar a cabo una búsqueda de texto completa.
+En un índice invertido, el buscador crea los índices, o términos de búsqueda, a partir de una serie de documentos, indicando el o los documentos que los contienen.
+De esta manera, cuando el usuario teclea un término de búsqueda determinado, el buscador le indica los documentos que contienen dicho término.
+
+
+Por qué se le llama índice invertido
+A diferencia de lo que sucede en una base de datos tipo SQL, donde el índice ha sido definido a priori, en el índice invertido el índice se crea a posteriori, cuando el motor ha analizado los documentos sobre los que se basará la búsqueda.
+
+
+Cómo funciona la búsqueda mediante índice invertido
+Por ejemplo, supongamos un buscador que obtiene los índices, es decir, los términos de búsqueda, a partir de 2 documentos que contienen diferentes textos. 
+
+Documento 1: "Salvador Dalí nació en Figueras."
+Documento 2: "Figueras es una ciudad de Gerona."
+El buscador creará un índice con las diferentes palabras que aparecen, indicando el documento en el que aparece. Generalmente, se excluirán algunas palabras (“en”, “de”, …). 
+
+En este tipo de índice, los términos y su Índice no están predeterminados, por el contrario se elaboran una vez el buscador ha analizado los documentos que se le han proporcionado. Esta característica diferencia un índice invertido respecto al índice de una base de datos tipo SQL.
+Este es el tipo de indexación que usan los buscadores, ya que permite una rápida búsqueda en documentos de texto.
+El índice, además de indicar el documento donde aparece un término de búsqueda dado, podría contener otra información, por ejemplo, la frecuencia de aparición del término, o el lugar del documento donde aparece.
+
+
+Aplicaciones
+La indexación basada en un índice invertido es un componente central de un típico algoritmo de un motor de búsqueda. En ellos, es muy importante optimizar la velocidad de la consulta.
+Motores de búsqueda verticales tales como Solr o Elasticsearch, emplean el índice invertido.
+
+
+Enlaces externos
+Introducción a la recuperación de información
+Recuperación de información y búsqueda en la web: índices invertidos*
+Indexado invertido con el motor de búsqueda Solr

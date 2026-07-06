@@ -1,0 +1,47 @@
+# titulo: Sistema de recomendación
+# fuente: https://es.wikipedia.org/wiki/Sistema_de_recomendaci%C3%B3n
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+Los sistemas de recomendación, o algoritmos de recomendación, forman parte de un sistema de filtrado de información, los cuales presentan al usuario de una plataforma digital distintos tipos de temas o ítems de información (películas, música, libros, noticias, imágenes, páginas web, regalos, etc.) que son de su posible interés particular. Generalmente, un sistema recomendador compara el perfil del usuario con algunas características de referencia de los temas, y busca predecir el baremo o ponderación que el usuario le daría a un ítem que aún el sistema no ha considerado. Estas características pueden basarse en la relación o acercamiento del usuario con el tema o en el ambiente social del mismo usuario.
+
+
+Descripción
+Cuando se crea un perfil del usuario, se crea utilizando dos formas o métodos en la recolección de características (implícitas o explícitas).
+Algunos ejemplos de recolección de datos de forma explícitas son: 
+
+Solicitar al usuario que pondere sobre la base de una escala proporcionada, algún tema en particular.
+Solicitar al usuario que pondere un conjunto de temas de una lista de temas favoritos.
+Presentar al usuario dos temas, y solicitarle que seleccione uno de ellos.
+Solicitar al usuario que cree una lista de temas de su preferencia.
+Algunos ejemplos de recolección de datos de forma implícitas son:
+
+Guardar un registro de los temas que el usuario ha visto en una tienda en línea.
+Analizar el número de visitas que recibe un artículo
+Guardar un registro de los artículos que el usuario ha seleccionado.
+Obtener un listado de los artículos que el usuario ha seleccionado o visto en su computadora.
+Analizar las redes sociales de las que el usuario forma parte y de esta manera conocer sus gustos y preferencias.
+Los sistemas recomendadores comparan la colección de datos de un usuario con una otra colección similar y crean un listado de artículos y temas para recomendárselos al usuario. Una gran cantidad de ejemplos comerciales y no comerciales son listados en los sistemas de filtros colaborativos. Montaner provee el primer resumen de sistemas recomendadores, y lo relaciona con los agentes inteligentes, luego Adomavicius provee un segundo resumen de sistemas recomendadores, y Herlocker muestra una descripción de técnicas de evaluación para los sistemas recomendadores.
+Recientemente, un sistema recomendador ha sido introducido para una fábrica de ladrillos y torques basado en inferencias estadísticas en oposición a las técnicas de filtros colaborativos del comercio electrónico. Los sistemas recomendadores son una alternativa eficiente para la búsqueda de algoritmos que ayudan a los usuarios a descubrir artículos que no pueden ser encontrados por sí mismos. Suficientemente interesante, estos sistemas son usualmente implementados usando procesos de búsqueda indexando datos no tradicionales.
+
+
+Algoritmos
+Uno de los algoritmos más usado comúnmente en sistemas recomendadores es el Nearest Neighborhood. En una red social, un usuario particular usa un vecino con gustos e intereses similares que pueden ser encontrados calculándolos con la Pearson Correlation, colectando la data de preferencia de los primeros N-vecinos para un usuario en particular, (pesado por su similitud), la preferencia del usuario se puede predecir calculándola usando ciertas técnicas.
+
+
+Véase también
+Cold start
+Inteligencia colectiva
+Readgeek es de recommendación de libros
+Slope One
+
+
+Bibliografía
+Franganillo, J. (2018). "El funware en los sitios de recomendación social: características, claves e inconvenientes". En: Anuario ThinkEPI: análisis de tendencias en información y documentación, vol. 12, p. 242-250.
+Ricci, F.; Rokach, L.; Shapira, B. (2011), Introduction to Recommender Systems Handbook Archivado el 2 de junio de 2016 en Wayback Machine., Recommender Systems Handbook, Springer, 2011, pp. 1-35.
+Quatse, Jesse and Najmi, Amir (2007) "Empirical Bayesian Targeting," Proceedings, WORLDCOMP'07, World Congress in Computer Science, Computer Engineering, and Applied Computing.
+Adomavicius, G.; Tuzhilin, A. (June 2005), "Toward the Next Generation of Recommender Systems: A Survey of the State-of-the-Art and Possible Extensions", IEEE Transactions on Knowledge and Data Engineering, 17(6): 734–749, doi:10.1109/TKDE.2005.99, Gaban ISSN 1041-4347, http://portal.acm.org/citation.cfm?id=1070611.1070751 .
+Parsons, J.; Ralph, P.; Gallagher, K. (July 2004), Using viewing time to infer user preference in recommender systems., AAAI Workshop in Semantic Web Personalization, San José, California .
+Herlocker, J. L.; Konstan, J. A.; Terveen, L. G.; Riedl, J. T. (January 2004), "Evaluating collaborative filtering recommender systems", ACM Trans. Inf. Syst., 22(1): 5–53, doi:10.1145/963770.963772, ISSN 1046-8188, http://portal.acm.org/citation.cfm?id=963772 .
+Montaner M.; López B; de la Rosa J. Ll; (2003) "A Taxonomy of Recommender Agents on the Internet", ISSN 0269-2821, Artificial Intelligence Review, Vol.19 pp: 285-330, June 2003, Kluwer Academic Publishers, http://www.springerlink.com/content/kk844421t5466k35/ (enlace roto disponible en Internet Archive; véase el historial, la primera versión y la última).
+Sarwar, B.; Karypis, G.; Konstan, J.; Riedl, J. (2000), Application of Dimensionality Reduction in Recommender System A Case Study, http://glaros.dtc.umn.edu/gkhome/node/122 Archivado el 14 de enero de 2019 en Wayback Machine..

@@ -1,0 +1,126 @@
+# titulo: Minería de textos
+# fuente: https://es.wikipedia.org/wiki/Miner%C3%ADa_de_textos
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+La minería de textos es una rama específica de la minería de datos que se refiere al proceso de analizar y derivar información nueva de textos.​ Por medio de la identificación de patrones o correlaciones entre los términos se logra encontrar información que no está explícita dentro del texto.​ Los textos que se usan como recursos pueden ser páginas web, libros, correos electrónicos, reseñas de clientes, artículos, entre otros. 
+La minería de textos es un área multidisciplinaria basada en la recuperación de información, aprendizaje automático, estadísticas y la lingüística computacional.​ Como la mayor parte de la información (más de un 80%) se encuentra actualmente almacenada como texto, se cree que la minería de textos tiene un gran valor comercial.
+
+
+Historia
+La minería de textos y, en general, la minería de datos no son prácticas recientes. En los años sesenta, se empezaron a llevar a cabo actividades estadísticas en empresas que se denominaban data fishing (pesca de datos) y data archaeology (arqueología de datos), que consistían en encontrar relaciones entre los datos pero sin realmente entender el alcance que se podía tener y el uso que se le podía dar a la información obtenida. A comienzos de los años ochenta surgieron los primeros esfuerzos de minería de textos que necesitaban una gran cantidad de esfuerzo humano, pero los avances tecnológicos han permitido que esta área progrese de manera rápida en la última década.​
+
+
+Proceso
+La minería de textos incluye diferentes pasos para completar el proceso deseado. Los pasos se listan a continuación: 
+
+
+Recolección de datos
+Se deben recolectar los datos que se desean estudiar. Pueden ser de diferentes recursos como páginas web, libros, correos electrónicos, reseñas de clientes, artículos, entre otros.​
+
+
+Preprocesamiento
+Los datos que se obtienen generalmente deben ser limpiados y estructurados de tal manera que puedan ser usados más adelante. El preprocesamiento incluye eliminar todas las partes del texto que no son necesarias. Por ejemplo, se pueden eliminar las palabras como “y”, “pero”, “es”, que son palabras que no aportan al contenido del texto. Además, se pueden eliminar los signos de puntuación, o incluso reducir las palabras a sus raíces.​
+
+
+Enriquecimiento
+Cada término que se encuentra dentro del texto puede ser enriquecido al agregarle una etiqueta. Esta etiqueta puede ser del tipo de Partes del Discurso o POS, por sus siglas en inglés. En este caso, las palabras obtienen una etiqueta que las define como “sustantivos”, “adjetivos”, “adverbios”, entre otros. Otro tipo de etiquetas es el de Entidades Nombradas o NE, por sus siglas en inglés. En este caso las etiquetas que se agregan pueden ser del tipo “personas”, “organizaciones”, entre otras.​
+
+
+Transformación
+Para poder analizar los textos con algoritmos que se emplean a la hora de analizar datos numéricos, como algoritmos estadísticos o de inteligencia artificial, el texto debe ser convertido a números. Esto puede llevarse a cabo convirtiendo los textos en vectores que sean de bits o numéricos.​     
+
+
+Extracción de características
+Cuando ya finalmente se tiene el texto original en una forma numérica, se pueden aplicar diferentes algoritmos para poder extraer lo que se desea.​ Algoritmos comunes incluyen aquellos que usan los principios estadísticos para extraer información clave o algoritmos de inteligencia artificial.
+
+
+Tipos de aplicaciones
+
+
+Extracción de información
+La minería de datos permite extraer de grandes cantidades de texto información que es relevante y que de otro modo puede que sea casi imposible encontrar. Esta extracción de información puede definir términos dentro del texto y sus relaciones, a la vez que puede mostrar información semántica relevante.​
+
+
+Análisis de sentimientos
+El análisis de sentimientos permite agregarle etiquetas a los términos dentro de un texto de acuerdo con un sentimiento. Por ejemplo, se pueden usar las categorías de positivo, negativo y neutral. Existen dos métodos para realizar este procedimiento:
+
+
+Modelo predictivo
+En este caso se crea un clasificador que prediga una palabra en qué categoría debe ubicarse. Esto se hace usando algoritmos de inteligencia artificial. 
+
+
+Basado en diccionario
+Si se tiene un diccionario de palabras para cada categoría, por ejemplo un diccionario para las palabras positivas del español y un diccionario para palabras negativas en español, se puede comparar el texto con ellos para que se le agregue la etiqueta a las palabras dependiendo en qué diccionario se encuentran.​
+
+
+Clasificación de textos
+La minería de textos permite agrupar textos de acuerdo con diferentes categorías, identificando características en común entre los textos, lo que facilita la búsqueda o navegación entre extensas cantidades. Generalmente, estas agrupaciones se hacen usando el Aprendizaje Supervisado de Inteligencia Artificial. Existen diferentes métodos de inteligencia artificial que se pueden aplicar en este caso, como lo son:​
+
+Árboles de decisión
+Redes Neuronales
+Naïve Bayes
+Regresión Logística
+
+
+Elaboración de resúmenes
+Por medio de la minería de textos, se puede encontrar una descripción general de lo que hablan una serie de documentos. Existen dos procesos diferentes:
+
+
+Sumarización extractiva
+Se generan resúmenes conformados por pedazos de texto extraídos directamente de los textos. 
+
+
+Sumarización abstracta
+Los resúmenes se generan por texto que no necesariamente está explícitamente contenido en los textos originales sino que se crea un texto nuevo.​  
+
+
+Visualizaciones
+La minería de textos permite extraer características de los textos que luego pueden representarse mediante diferentes tipos de visualizaciones para resaltar la información relevante que se encontró. Por ejemplo, una vizualización útil son las nubes de palabras. 
+
+
+Campos de acción
+La minería de textos tiene muchos campos en donde se pueden encontrar aplicaciones. En primer lugar, se usa en investigación, ya que permite obtener información que de otro modo sería muy difícil o casi imposible de encontrar. Además, se puede usar en negocios debido a que puede utilizarse para tomar decisiones o para responder a consultas de los clientes. Por otra parte, se puede usar en casos de seguridad. Por ejemplo, la minería de textos se utiliza para poder prevenir delitos que se hacen en línea y contra el fraude virtual. Otro campo de acción es para publicadores que tengan grandes bancos de data que requieran de indexación. Esto es el caso en particular para disciplinas científicas en las que hay una gran cantidad de información muy específica en forma de texto escrito. También se puede ver en usos diarios. Un ejemplo de uso diario de la minería de textos es la forma en la que se usa en los correos electrónicos para filtrar el spam.  
+
+
+Software comercial y aplicaciones
+DAIL Software - Desarrollos de sistemas cognitivos impulsados con Procesamiento de Lenguaje Natural e Inteligencia Artificial.
+Anderson Analytics - proveedor de análisis de texto y de contenido relacionado con el comportamiento del consumidor.
+Attensity - grupo de soluciones de minería de textos para diversas industrias.
+Autonomy - software de minería de textos, clustering y categorización.
+Clarabridge - aplicaciones de minería de textos, categorización para clientes, servicios de salud y analítica investigativa.
+Clearforest - software de minería de texto para extraer el significado de varias formas de información textual.
+Cortex Intelligence - proveedor de análisis de contenido de Web.
+Crossminder - empresa de minería de textos con búsqueda multilingüe y aproximación semántica.
+IBM Intelligent Miner for Text - software de minería de textos comercial.
+Inxight - proveedor de tecnologías de análisis de texto, búsqueda y visualization.
+Island Data - Real-time market intelligence from unstructured customer feedback.
+Lingmotif - Aplicación multiplataforma de escritorio que analiza textos desde la perspectiva del Análisis de Sentimiento. Determinar la orientación semántica (si es positivo o negativo y en qué grado) de un texto o conjunto de textos, mediante la detección de expresiones lingüísticas que indican una determinada polaridad.
+Luxid - TEMIS es un productor de software en el área de inteligencia de información. Su software Luxid proporciona herramientas para el análisis de texto: clasificación de contenidos, extracción de conceptos, análisis de sentimiento... A su vez proporciona herramientas para la gestión de tesauros, taxonomías y ontologías.
+Nstein Technologies - provider of text analytics, and asset/web content management technologies (media, e-publishing, online publishing).
+QDA Miner - software de métodos cualitativos y mixtos para la codificación, análisis y escritura del informe.
+SAS Enterprise Miner - software de minería de datos.
+SAS Text Analytics - software de minería de textos, análisis de sentimientos, clasificación de contenidos y extracción de conceptos.
+SPSS - proveedor de TextSmart, SPSS Text Analysis for Surveys y Clementine, productos que se pueden utilizar con otros de SPSS.
+TALTAC2 - TalTac2 es un software para el anàlisis de datos textuales. Tiene como objetivo describir e interpretar el contenido y / o algunas de sus propiedades.
+Textalytics - APIs en la nube para minería de textos, análisis de sentimiento, clasificación de contenidos y extracción de entidades y conceptos - en español y otros idiomas.
+TextAnalyst - software de minería comercial.
+Textalyser - herramienta de análisis en línea para ver las estadísticas de textos.
+Topicalizer - una herramienta en línea para generar estadísticas de páginas web y otros textos.
+WordStat - Software de análisis de contenido y minería de texto.
+Weka - Software de análisis de contenido y minería de texto,datos y clasificación de contenidos .
+Knime - Software para ciencia de datos y análisis de texto.
+
+
+Véase también
+Minería de datos
+Lingüística computacional
+
+
+Enlaces externos
+Minería de textos Archivado el 21 de mayo de 2008 en Wayback Machine.
+Minería de textos en español
+Nuevas técnicas en minería de textos
+
+
+Referencias

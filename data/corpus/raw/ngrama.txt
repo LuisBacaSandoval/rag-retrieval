@@ -1,0 +1,140 @@
+# titulo: N-grama
+# fuente: https://es.wikipedia.org/wiki/N-grama
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-05
+# ---
+Un n-grama es una subsecuencia de n elementos de una secuencia dada. El estudio de los n-gramas es interesante en diversas áreas del conocimiento. Por ejemplo, es usado en el estudio del lenguaje natural, en el estudio de las secuencias de genes y en el estudio de las secuencias de aminoácidos. 
+La forma en la que extraemos los gramas se tiene que adaptar al ámbito que estamos estudiando y al objetivo que tenemos en mente. Por ejemplo en el estudio del lenguaje natural podríamos construir los n-gramas sobre la base de distintos tipos de elementos como por ejemplo fonemas, sílabas, letras, palabras. Algunos sistemas procesan las cadenas de texto eliminando los espacios. Otros no. En casi todos los casos, los signos de puntuación se eliminan durante el preproceso.
+Se puede usar gramas para casi todos los ámbitos. Por ejemplo, se han usado n-gramas para extraer características comunes de grandes conjuntos de imágenes de la Tierra tomadas desde satélite, y para determinar a qué parte de la Tierra pertenece una imagen dada.
+Para ciertos valores de n los n-gramas tienen nombres especiales. Por ejemplo:
+
+Los 1-gramas también se llaman unigramas.
+Los 2-gramas también se llaman bigramas o digramas.
+Los 3-gramas también se llaman trigramas.
+
+
+Aplicaciones
+
+
+Modelo de n-grama
+Un modelo de n-grama es un tipo de modelo probabilístico que permite hacer una predicción estadística del próximo elemento de cierta secuencia de elementos sucedida hasta el momento. Un modelo de n-grama puede ser definido por una cadena de Márkov de orden n-1. 
+Más precisamente, un modelo de n-grama predice 
+  
+    
+      
+        
+          x
+          
+            i
+          
+        
+      
+    
+    {\displaystyle x_{i}}
+  
+ basándose en 
+  
+    
+      
+        
+          x
+          
+            i
+            −
+            1
+          
+        
+        ,
+        
+          x
+          
+            i
+            −
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          x
+          
+            i
+            −
+            n
+          
+        
+      
+    
+    {\displaystyle x_{i-1},x_{i-2},\dots ,x_{i-n}}
+  
+. Debido a limitaciones computacionales y a la normalmente naturaleza abierta de los problemas (suele haber infinitos elementos posibles), se suele asumir que cada elemento solo depende de los últimos n elementos de la secuencia.
+Las dos ventajas principales de este tipo de modelos son:
+
+Relativa simplicidad
+Es fácil ampliar el contexto de estudio incrementando el tamaño de n.
+El origen de este tipo de modelo se remonta a los experimentos realizados por Claude Shannon en teoría de la información para la estimación de la ratio de entropía de los idiomas. Su idea fue que dada una secuencia de letras (por ejemplo, la secuencia "por ej"), ¿cuál es la siguiente letra más probable? A partir de un conjunto de datos de aprendizaje, uno puede deducir una distribución de probabilidad para la siguiente letra dado un conjunto de datos históricos de tamaño 
+  
+    
+      
+        n
+      
+    
+    {\displaystyle n}
+  
+: a = 0.05, b = 0.00001, ..., e = 0.4, f = 0,....; donde las probabilidades de todas las posibles letras siguientes suman 1.0.
+Ha habido estudios para analizar los n-gramas más frecuentes. Por ejemplo Google​ posee una enorme cantidad de datos con información de este tipo. Parte de esa información, Google n-gram corpus, está accesible a través del Google Ngram Viewer que se puede acceder de forma pública en bruto o a través de una interfaz web. Esta información fue obtenida analizando más de cinco millones de libros de los últimos 500 años. Esta información es aprovechada, por ejemplo, para implementar su sistema de recomendación de consultas. Otra aplicación típica de esta información es descubrir tendencia analizando la presencia de ciertos sustantivos y viendo como se les va prestando más o menos atención (más o menos presencias) según la fecha de publicación e idioma del libro.​
+Ejemplos típicos de aplicación de modelos de ngrama en el lenguaje natural:
+
+En el reconocimiento de voz, los fonemas se modelan empleando una distribución de n-gramas. De esta forma los sistemas de reconocimiento de voz pueden decidir sobre cierta base entre varias interpretaciones posibles de lo que ha dicho el interlocutor. El reconocimiento de voz es un campo muy importante para los sistemas de espionaje que interceptan mensajes de voz (Ej. Echelon).​
+En los editores de textos para recomendar cual va a ser la palabra siguiente o para detectar posibles errores.
+Este tipo de modelos también son muy usados en otros ámbitos aparte de la lingüística como la teoría de la comunicación, estudios biológicos y compresión de datos.
+
+
+Técnicas de suavizado
+
+​ Para establecer un modelo de n-grama algunos sistemas se basan en el estudio de una serie de datos de entrenamiento también llamados de aprendizaje (en inglés training corpus) y a partir de ahí directamente se estiman las probabilidades. Un problema obvio de este tipo de métodos es que asigna probabilidad 0 a todos aquellos n-gramas que no aparecen en los datos de entrenamiento. Para tratar con este tipo de problemas se han desarrollado una serie de técnicas a las que llamamos técnicas de suavizado y que reducen la probabilidad asignada a algunos de los n-gramas observados y que por otra parte proveen una probabilidad distinta de cero para aquellos n-gramas no observados en los datos de entrenamiento. Lo que se persigue en que todos los n-gramas razonable tengan una probabilidad distintas de cero.
+
+
+Encajes por aproximación
+Los n-gramas también pueden emplearse para realizar eficientemente encajes por aproximación. Convirtiendo una secuencia de elementos en un conjunto de n-gramas, éste puede introducirse en un espacio vectorial (en otras palabras, representarse como un histograma), permitiendo así a la secuencia compararse con otras secuencias de una manera eficiente. Por ejemplo, si convertimos cadenas de texto con sólo letras del alfabeto español en 3-gramas, conseguiremos un espacio vectorial de 
+  
+    
+      
+        
+          27
+          
+            3
+          
+        
+      
+    
+    {\displaystyle 27^{3}}
+  
+ dimensiones (la primera dimensión mide el número de ocurrencias de "aaa", la segunda de "aab", y así para todas las posibles combinaciones de 3 letras). Empleando esta representación, perdemos información sobre la cadena de texto. Por ejemplo, las cadenas "abcba" y "bcbab" llevarán exactamente a los mismos digramas. Sin embargo, se conoce empíricamente que si dos cadenas de texto real tienen una representación vectorial similar (medida a través del producto escalar) es muy probable que sean similares. También pueden aplicarse otras métricas a los vectores de n-gramas con resultados variados (a veces, mejores). Por ejemplo la distribución normal puede emplearse para comparar documentos, examinando cuántas desviaciones típicas de cada n-grama difieren de la media en un conjunto grande de documentos (que forma el vector de fondo).
+Aplicaciones prácticas de esta técnica son:
+
+La detección de plagios de documentos.​​​
+Clasificación de textos para mejorar la búsqueda de documentos y clasificación.- Ha habido trabajos​ que utilizan análisis de n-gramas para clasificar la información. La propia NSA ha investigado sobre este tema. La patente 5.418.951 de Estados Unidos, otorgada a la NSA en 1995, patenta el uso de análisis de N-gramas para poder clasificar documentos según el tema que tratan. Se especula que la red Echelon hace uso de este tipo de tecnologías para clasificar la información que recoge.​
+
+
+Otras aplicaciones
+Los n-gramas se emplean en diversas áreas de la informática, lingüística computacional, y matemática aplicada. Son una técnica comúnmente empleada para diseñar núcleos que permiten a algoritmos automáticos de aprendizaje extraer datos a partir de cadenas de texto. Los n-gramas también pueden emplearse para encontrar candidatos probables para la correcta ortografía de una palabra mal escrita. También en algoritmos de compresión, donde una pequeña zona de datos necesita n-gramas de longitud mayor para mejorar la compresión. Los n-gramas se emplean a menudo en sistemas de reconocimiento de patrones para determinar la probabilidad de que una palabra dada aparezca en un texto. Esta capacidad puede ser útil en reconocimiento de voz, OCR (reconocimiento óptico de caracteres), reconocimiento inteligente de caracteres, traducciones automáticas, y aplicaciones similares en las que un sistema debe elegir el siguiente elemento (letra, palabra, fonema, etc.) de entre una lista de posibles candidatos. También se emplean en recompilación de información cuando es necesario encontrar "documentos" similares dado un documento y una base de datos de documentos de referencia.
+En bioinformática, y en particular en la predicción de genes, se analizan n-gramas extraídos de las largas cadenas de ácidos nucleicos del ADN (secuencias o frases de un alfabeto de cuatro letras, en definitiva), así como de aminoácidos (un alfabeto que consta, usualmente, de veinte letras), con el objetivo de detectar patrones estadísticos que permitan poner de manifiesto la posible existencia de genes.
+
+
+N-gramas sintácticos
+Los n-gramas sintácticos  son n-gramas definidos mediante caminos de un árbol sintáctico de dependencias o de constituyentes en lugar de la estructura lineal del texto.​​
+​ Por ejemplo, la oración "las noticias económicas tienen poco efecto sobre los mercados financieros" puede ser transformada a n-gramas sintácticos siguiendo la estructura de sus relaciones de dependencia : tienen-noticias, efecto-poco, tienen-sobre-mercados-los.​
+Los n-gramas sintácticos están destinadas a reflejar la estructura sintáctica más fielmente que los n-gramas lineales, y tienen muchas de las mismas aplicaciones, especialmente como características en un modelo de espacio vectorial. Los n-gramas sintácticos dan mejores resultados que el uso de n-gramas estándar para ciertas tareas, por ejemplo, para atribución de autoría.​
+
+
+Referencias
+Figueroa, Alejandro; Atkinson, John (2012). «Contextual Language Models For Ranking Answers To Natural Language Definition Questions». Computational Intelligence 28 (4): 528--548. 
+Christopher D. Manning, Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press: 1999. ISBN 0-262-13360-1.
+
+
+Enlaces externos
+Generador de N-gramas de palabras.
+Un generador de N-Gramas.
+Otro generador de texto aleatorio a partir de N-Gramas.

@@ -1,0 +1,24 @@
+# Imagen para ejecutar el cuaderno técnico con JupyterLab.
+# El código, los datos y los notebooks se montan en tiempo de ejecución
+# (ver docker-compose.yml), por eso aquí solo se instalan dependencias.
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt requirements-notebook.txt ./
+RUN pip install --no-cache-dir -r requirements.txt -r requirements-notebook.txt
+
+ENV PYTHONPATH=/app/src
+
+EXPOSE 8888
+
+CMD ["jupyter", "lab", \
+     "--ip=0.0.0.0", \
+     "--port=8888", \
+     "--no-browser", \
+     "--allow-root", \
+     "--ServerApp.root_dir=/app"]

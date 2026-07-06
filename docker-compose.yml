@@ -1,0 +1,21 @@
+# Dos formas de levantar el proyecto de forma autocontenida:
+#   docker compose up notebook   -> JupyterLab en http://localhost:8888
+#   docker compose up api        -> API FastAPI en http://localhost:8000
+services:
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile.notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app          # monta el proyecto: ediciones y salidas se guardan en el repo
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app

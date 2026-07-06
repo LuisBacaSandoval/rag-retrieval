@@ -1,0 +1,26 @@
+# titulo: Stemming
+# fuente: https://es.wikipedia.org/wiki/Stemming
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+Stemming es un método para reducir una palabra a su raíz o (en inglés) a un stem. Hay algunos algoritmos de stemming que ayudan en sistemas de recuperación de información. Stemming aumenta el recall que es una medida sobre el número de documentos que se pueden encontrar con una consulta. Por ejemplo una consulta sobre "bibliotecas" también encuentra documentos en los que solo aparezca "bibliotecario" porque el stem de las dos palabras es el mismo ("bibliotec").
+
+
+Algoritmos
+El algoritmo más común para stemming es el algoritmo de Porter. Existen además métodos basados en análisis lexicográfico y otros algoritmos similares (KSTEM, stemming con cuerpo, métodos lingüísticos...).
+
+
+Software
+Snowball es un pequeño lenguaje de programación para el manejo de strings que permite implementar fácilmente algoritmos de stemming. Se puede generar código en ANSI C y Java. Las páginas de Snowball contienen stemmers para 12 idiomas (incluido el castellano, catalán y el euskera). Todas las explicaciones, sin embargo, son dadas en inglés.
+
+
+Stemming en buscadores comerciales
+Buscadores como Google han hecho uso en su desarrollo de stemming. Aunque, en general, los buscadores comerciales no dan muchas explicaciones sobre los algoritmos utilizados.
+
+
+Enlaces externos
+Porter stemmer
+Evaluación de la recuperación de documentos
+Grupo de investigación en Recuperación de la Información Automatizada (REINA) de la Universidad de Salamanca
+Página de Snowball, donde ya está programado un stemmer para Castellano
+Buscador de Wikipedia con soporte de stemming.

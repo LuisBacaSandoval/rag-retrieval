@@ -1,0 +1,152 @@
+# titulo: Precisión y exhaustividad
+# fuente: https://es.wikipedia.org/wiki/Precisi%C3%B3n_y_exhaustividad
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-05
+# ---
+La precisión y exhaustividad (denominado a veces como exhaustividad y precisión) es una métrica empleada en la medida del rendimiento de los sistemas de búsqueda y recuperación de información y reconocimiento de patrones. En este contexto se denomina precisión (denominado igualmente valor positivo predicho) como a la fracción de instancias recuperadas que son relevantes, mientras recall (denominado igualmente sensibilidad o exhaustividad) es la fracción de instancias relevantes que han sido recuperadas.​ Tanto la precisión como la exhaustividad son entendidas como medidas de la relevancia. Para entender mejor el concepto, supongamos de la existencia de un programa que reconoce perros en fotografías, dicho programa reconoce 7 perros en una escena que contiene 9 perros y algunos gatos. Si 4 de las identificaciones han sido correctas, pero 3 eran gatos, el programa tendrá una precisión de 4/7 mientras que posee una sensibilidad de 4/9. Otro ejemplo en el que participa un motor de búsqueda que, ante una consulta dada, retorna 30 páginas de las cuales sólo 20 son relevantes dejando 40 páginas relevantes fuera de la búsqueda. Este motor tendrá entonces una precisión de 20/30 = 2/3 mientras que su sensibilidad es 20/60 = 1/3.
+Para un usuario la situación ideal es aquella en la que existe una precisión y exhaustividad alta (es decir muy cercana a 1). A esta situación se la denomina utilidad teórica. Con el objeto de ponderar y ver cual lejano se encuentran ambas medidas de la utilidad teórica, suele emplearse los valores de ambas métricas combinadas en una media armónica denominada valor-F.
+
+
+Concepto
+
+
+Precisión
+El concepto de precisión fue propuesto inicialmente por Salton en 1983.​ Algunos autores lo emplearon como un factor de pertinencia.​ La precisión es el ratio entre el número de documentos relevantes recuperados entre el número de documentos recuperados. Acorde con la definición se tiene la siguiente expresión: 
+
+  
+    
+      
+        
+          
+            Precisión
+          
+        
+        =
+        
+          
+            
+              
+                |
+              
+              {
+              
+                
+                  documentos relevantes
+                
+              
+              }
+              ∩
+              {
+              
+                
+                  documentos recuperados
+                
+              
+              }
+              
+                |
+              
+            
+            
+              
+                |
+              
+              {
+              
+                
+                  documentos recuperados
+                
+              
+              }
+              
+                |
+              
+            
+          
+        
+      
+    
+    {\displaystyle {\mbox{Precisión}}={\frac {|\{{\mbox{documentos relevantes}}\}\cap \{{\mbox{documentos recuperados}}\}|}{|\{{\mbox{documentos recuperados}}\}|}}}
+  
+
+De esta forma, cuanto más se acerque el valor de la precisión al valor nulo, mayor será el número de documentos recuperados que no consideren relevantes. Si por el contrario, el valor de la precisión es igual a uno, se entenderá que todos los documentos recuperados son relevantes. Esta forma de entender la precisión introduce el concepto de ruido informativo y de silencio informativo.
+
+
+Exhaustividad
+La exhaustividad se emplea en menor medida que la precisión. Algunos autores suelen definirlo en lengua castellana como "rellamada" procedente del término inglés "recall", en otros casos como "recobrado". Este ratio viene a expresar la proporción de documentos relevantes recuperados, comparado con el total de los documentos que son relevantes existentes en la base de datos, con total independencia de que éstos, se recuperen o no.​ Se definió por primera vez a mediados del siglo XX.​ La ecuación en este caso se expresa como:
+
+  
+    
+      
+        
+          
+            Exhaustividad
+          
+        
+        =
+        
+          
+            
+              
+                |
+              
+              {
+              
+                
+                  documentos relevantes
+                
+              
+              }
+              ∩
+              {
+              
+                
+                  documentos recuperados
+                
+              
+              }
+              
+                |
+              
+            
+            
+              
+                |
+              
+              {
+              
+                
+                  documentos relevantes
+                
+              
+              }
+              
+                |
+              
+            
+          
+        
+      
+    
+    {\displaystyle {\mbox{Exhaustividad}}={\frac {|\{{\mbox{documentos relevantes}}\}\cap \{{\mbox{documentos recuperados}}\}|}{|\{{\mbox{documentos relevantes}}\}|}}}
+  
+
+Si el resultado de esta fórmula arroja como valor 1, se tendrá la exhaustividad máxima posible, y esto viene a indicar que se ha encontrado todo documento relevante que residía en la base de datos, por lo tanto no se tendrá ni ruido, ni silencio informativo: siendo la recuperación de documentos entendida como perfecta. Por el contrario en el caso de que el valor de la exhaustividad sea igual a cero, se tiene que los documentos obtenidos no poseen relevancia alguna.
+
+
+Interpretación probabilística
+Es posible interpretar la precisión y exhaustividad no como razones, sino como probabilidades:
+
+La precisión es la probabilidad de que un documento recuperado (seleccionado al azar) sea relevante.
+Exhaustividad es la probabilidad de que un documento relevante (seleccionado al azar) sea recuperado en una búsqueda.
+Tengase en cuenta que la selección aleatoria se refiere a una distribución uniforme sobre el conjunto apropiado de documentos; es decir, mediante un documento recuperado seleccionado al azar, nos referimos a seleccionar un documento del conjunto de documentos obtenidos de forma aleatoria. La selección aleatoria debe ser tal que todos los documentos en el conjunto tengan la misma probabilidad de ser seleccionados.
+Tenga en cuenta que, en un sistema de clasificación típico, la probabilidad de que un documento recuperado sea relevante depende del documento. La interpretación anterior también se extiende a ese escenario (necesita explicación).
+Otra interpretación para la precisión y el exhaustividad es la siguiente. La precisión es la probabilidad promedio de recuperación relevante. La recuperación es la probabilidad promedio de recuperación completa. Aquí hacemos un promedio de varias consultas de recuperación.
+
+
+Referencias
+
+
+Véase también
+Sensibilidad y especificidad
+Valor-F

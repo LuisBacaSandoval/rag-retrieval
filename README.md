@@ -60,6 +60,30 @@ proyecto5-rag-retrieval/
   tests/
 ```
 
+## Datos
+
+El corpus son **595 fragmentos** de **40 artículos de Wikipedia en español**
+sobre PLN, recuperación de información y aprendizaje automático (licencia
+CC BY-SA 4.0). Las consultas de evaluación son **54**, etiquetadas en tres tipos
+(léxicas, semánticas y difíciles) con juicios de relevancia a nivel de artículo.
+Procedencia, licencia, parámetros de chunking y limitaciones en
+[`docs/datos.md`](docs/datos.md).
+
+Formatos (una línea JSON por registro):
+
+```text
+data/corpus/corpus.jsonl   {"doc_id", "source_id", "title", "text"}
+data/queries/queries.jsonl {"query_id", "query", "type", "relevant_source_ids"}
+```
+
+La relevancia se etiqueta por artículo (`source_id`); en la evaluación cada
+fragmento recuperado se mapea a su artículo de origen. Para regenerar los datos:
+
+```bash
+python scripts/fetch_sources.py     # descarga los artículos a data/corpus/raw/
+python scripts/prepare_corpus.py    # limpia y trocea -> data/corpus/corpus.jsonl
+```
+
 ## Entorno y reproducción
 
 El proyecto se desarrolla y valida sobre **Python 3.11**. Todas las
@@ -75,12 +99,29 @@ pip install -r requirements.txt
 PYTHONPATH=src pytest -q        # pruebas
 ```
 
-### Opción B — Docker
+### Opción B — Cuaderno técnico con Docker (recomendado)
 
-El [`Dockerfile`](Dockerfile) incluido construye una imagen reproducible con las
-mismas dependencias y sirve la API de despliegue (Hito 7):
+Con [`docker-compose.yml`](docker-compose.yml) el proyecto levanta su propio
+JupyterLab, sin depender de ningún entorno externo:
 
 ```bash
+docker compose up notebook
+```
+
+En los registros de la consola aparece una URL con token
+(`http://127.0.0.1:8888/lab?token=...`); ábrela en el navegador, entra a
+`notebooks/`, abre `proyecto5_rag.ipynb` y ejecuta las celdas. El proyecto se
+monta dentro del contenedor, así que las salidas y los gráficos se guardan en el
+repositorio. La primera construcción tarda (descarga `torch` vía
+`sentence-transformers`); las siguientes son inmediatas.
+
+### Opción C — API con Docker
+
+El [`Dockerfile`](Dockerfile) sirve la API de despliegue (Hito 7):
+
+```bash
+docker compose up api          # -> http://localhost:8000
+# o directamente:
 docker build -t proyecto5-rag .
 docker run --rm -p 8000:8000 proyecto5-rag
 ```
@@ -90,7 +131,7 @@ docker run --rm -p 8000:8000 proyecto5-rag
 | Hito | Contenido | Estado |
 |---|---|---|
 | 1 | Estructura + interfaz común de recuperadores | ✅ |
-| 2 | Corpus (100+ docs) y 30+ consultas etiquetadas | pendiente |
+| 2 | Corpus (595 fragmentos) y 54 consultas etiquetadas | ✅ |
 | 3 | Línea base BM25 + métricas (P@k, R@k, MRR, nDCG) | pendiente |
 | 4 | Recuperador denso + índice | pendiente |
 | 5 | Recuperador híbrido (RRF) | pendiente |

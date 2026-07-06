@@ -1,0 +1,2014 @@
+# titulo: Clasificador bayesiano ingenuo
+# fuente: https://es.wikipedia.org/wiki/Clasificador_bayesiano_ingenuo
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-06
+# ---
+En teoría de la probabilidad y minería de datos, un clasificador Naive Bayes es un clasificador probabilístico fundamentado en el teorema de Bayes y algunas hipótesis simplificadoras adicionales. Es a causa de estas simplificaciones, que se suelen resumir en la hipótesis de independencia entre las variables predictoras, que recibe el apelativo de naive, es decir, ingenuo.
+
+
+Introducción
+En términos simples, un clasificador de Naive Bayes asume que la presencia o ausencia de una característica particular no está relacionada con la presencia o ausencia de cualquier otra característica, dada la clase variable. Por ejemplo, una fruta puede ser considerada como una manzana si es roja, redonda y de alrededor de 7 cm de diámetro. Un clasificador de Naive Bayes considera que cada una de estas características contribuye de manera independiente a la probabilidad de que esta fruta sea una manzana, independientemente de la presencia o ausencia de las otras características.
+Para otros modelos de probabilidad, los clasificadores de Naive Bayes se pueden entrenar de manera muy eficiente en un entorno de aprendizaje supervisado. En muchas aplicaciones prácticas, la estimación de parámetros para los modelos Naive Bayes utiliza el método de máxima verosimilitud, en otras palabras, se puede trabajar con el modelo de Naive Bayes sin aceptar probabilidad bayesiana o cualquiera de los métodos bayesianos.
+Una ventaja del clasificador de Naive Bayes es que solo se requiere una pequeña cantidad de datos de entrenamiento para estimar los parámetros (las medias y las varianzas de las variables) necesarias para la clasificación. Como las variables independientes se asumen, solo es necesario determinar las varianzas de las variables de cada clase y no toda la matriz de covarianza.
+
+
+Concepto Probabilístico
+En abstracto, el modelo de probabilidad para un clasificador es
+
+  
+    
+      
+        p
+        (
+        C
+        |
+        
+          F
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        )
+        
+      
+    
+    {\displaystyle p(C\vert F_{1},\dots ,F_{n})\,}
+  
+
+sobre una variable dependiente 
+  
+    
+      
+        C
+      
+    
+    {\displaystyle C}
+  
+, con un pequeño número de resultados (o clases). Esta variable está condicionada por varias variables independientes desde 
+  
+    
+      
+        
+          F
+          
+            1
+          
+        
+      
+    
+    {\displaystyle F_{1}}
+  
+ a 
+  
+    
+      
+        
+          F
+          
+            n
+          
+        
+      
+    
+    {\displaystyle F_{n}}
+  
+. El problema es que si el número 
+  
+    
+      
+        n
+      
+    
+    {\displaystyle n}
+  
+ de variables independientes es grande (o cuando éstas pueden tomar muchos valores), entonces basar este modelo en tablas de probabilidad se vuelve imposible. Por lo tanto el modelo se reformula para hacerlo más manejable:
+Usando el teorema de Bayes se escribe:
+
+  
+    
+      
+        p
+        (
+        C
+        |
+        
+          F
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        )
+        =
+        
+          
+            
+              p
+              (
+              C
+              )
+               
+              p
+              (
+              
+                F
+                
+                  1
+                
+              
+              ,
+              …
+              ,
+              
+                F
+                
+                  n
+                
+              
+              |
+              C
+              )
+            
+            
+              p
+              (
+              
+                F
+                
+                  1
+                
+              
+              ,
+              …
+              ,
+              
+                F
+                
+                  n
+                
+              
+              )
+            
+          
+        
+        .
+        
+      
+    
+    {\displaystyle p(C\vert F_{1},\dots ,F_{n})={\frac {p(C)\ p(F_{1},\dots ,F_{n}\vert C)}{p(F_{1},\dots ,F_{n})}}.\,}
+  
+
+Lo anterior podría reescribirse en lenguaje común como:
+
+  
+    
+      
+        
+          P
+          o
+          s
+          t
+          e
+          r
+          i
+          o
+          r
+        
+        =
+        
+          
+            
+              
+                A
+                n
+                t
+                e
+                r
+                i
+                o
+                r
+              
+              ×
+              
+                P
+                r
+                o
+                b
+                a
+                b
+                i
+                l
+                i
+                d
+                a
+                d
+              
+            
+            
+              E
+              v
+              i
+              d
+              e
+              n
+              c
+              i
+              a
+            
+          
+        
+        .
+        
+      
+    
+    {\displaystyle \mathrm {Posterior} ={\frac {\mathrm {Anterior} \times \mathrm {Probabilidad} }{\mathrm {Evidencia} }}.\,}
+  
+
+En la práctica solo importa el numerador, ya que el denominador no depende de 
+  
+    
+      
+        C
+      
+    
+    {\displaystyle C}
+  
+ y los valores de 
+  
+    
+      
+        
+          F
+          
+            i
+          
+        
+      
+    
+    {\displaystyle F_{i}}
+  
+ son datos, por lo que el denominador es, en la práctica, constante.
+El numerador es equivalente a una probabilidad compuesta:
+
+  
+    
+      
+        p
+        (
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        )
+        
+      
+    
+    {\displaystyle p(C,F_{1},\dots ,F_{n})\,}
+  
+
+que puede ser reescrita como sigue, aplicando repetidamente la definición de probabilidad condicional:
+
+  
+    
+      
+        p
+        (
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        )
+        
+      
+    
+    {\displaystyle p(C,F_{1},\dots ,F_{n})\,}
+  
+
+  
+    
+      
+        =
+        p
+        (
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        |
+        C
+        )
+      
+    
+    {\displaystyle =p(C)\ p(F_{1},\dots ,F_{n}\vert C)}
+  
+
+  
+    
+      
+        =
+        p
+        (
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            1
+          
+        
+        |
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        |
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        )
+      
+    
+    {\displaystyle =p(C)\ p(F_{1}\vert C)\ p(F_{2},\dots ,F_{n}\vert C,F_{1})}
+  
+
+  
+    
+      
+        =
+        p
+        (
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            1
+          
+        
+        |
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            2
+          
+        
+        |
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        )
+         
+        p
+        (
+        
+          F
+          
+            3
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        |
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        ,
+        
+          F
+          
+            2
+          
+        
+        )
+      
+    
+    {\displaystyle =p(C)\ p(F_{1}\vert C)\ p(F_{2}\vert C,F_{1})\ p(F_{3},\dots ,F_{n}\vert C,F_{1},F_{2})}
+  
+
+  
+    
+      
+        =
+        p
+        (
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            1
+          
+        
+        |
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            2
+          
+        
+        |
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        )
+         
+        p
+        (
+        
+          F
+          
+            3
+          
+        
+        |
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        ,
+        
+          F
+          
+            2
+          
+        
+        )
+         
+        p
+        (
+        
+          F
+          
+            4
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        |
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        ,
+        
+          F
+          
+            2
+          
+        
+        ,
+        
+          F
+          
+            3
+          
+        
+        )
+      
+    
+    {\displaystyle =p(C)\ p(F_{1}\vert C)\ p(F_{2}\vert C,F_{1})\ p(F_{3}\vert C,F_{1},F_{2})\ p(F_{4},\dots ,F_{n}\vert C,F_{1},F_{2},F_{3})}
+  
+
+... y así sucesivamente.  Ahora es cuando el supuesto "naïve" de independencia condicional entra en juego: se asume que cada 
+  
+    
+      
+        
+          F
+          
+            i
+          
+        
+      
+    
+    {\displaystyle F_{i}}
+  
+ es independiente de cualquier otra 
+  
+    
+      
+        
+          F
+          
+            j
+          
+        
+      
+    
+    {\displaystyle F_{j}}
+  
+ para 
+  
+    
+      
+        j
+        ≠
+        i
+      
+    
+    {\displaystyle j\neq i}
+  
+ cuando están condicionadas a 
+  
+    
+      
+        C
+      
+    
+    {\displaystyle C}
+  
+.  Esto significa que
+
+  
+    
+      
+        p
+        (
+        
+          F
+          
+            i
+          
+        
+        |
+        C
+        ,
+        
+          F
+          
+            j
+          
+        
+        )
+        =
+        p
+        (
+        
+          F
+          
+            i
+          
+        
+        |
+        C
+        )
+        
+      
+    
+    {\displaystyle p(F_{i}\vert C,F_{j})=p(F_{i}\vert C)\,}
+  
+
+por lo que la probabilidad compuesta puede expresarse como
+
+  
+    
+      
+        p
+        (
+        C
+        ,
+        
+          F
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        )
+        =
+        p
+        (
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            1
+          
+        
+        |
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            2
+          
+        
+        |
+        C
+        )
+         
+        p
+        (
+        
+          F
+          
+            3
+          
+        
+        |
+        C
+        )
+         
+        ⋯
+        
+      
+    
+    {\displaystyle p(C,F_{1},\dots ,F_{n})=p(C)\ p(F_{1}\vert C)\ p(F_{2}\vert C)\ p(F_{3}\vert C)\ \cdots \,}
+  
+
+  
+    
+      
+        =
+        p
+        (
+        C
+        )
+        
+          ∏
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        p
+        (
+        
+          F
+          
+            i
+          
+        
+        |
+        C
+        )
+        .
+        
+      
+    
+    {\displaystyle =p(C)\prod _{i=1}^{n}p(F_{i}\vert C).\,}
+  
+
+Esto significa que haciendo estos supuestos, la distribución condicional de 
+  
+    
+      
+        C
+      
+    
+    {\displaystyle C}
+  
+ sobre las variables clasificatorias  puede expresarse de la siguiente manera:
+
+  
+    
+      
+        p
+        (
+        C
+        |
+        
+          F
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+        )
+        =
+        
+          
+            1
+            Z
+          
+        
+        p
+        (
+        C
+        )
+        
+          ∏
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        p
+        (
+        
+          F
+          
+            i
+          
+        
+        |
+        C
+        )
+      
+    
+    {\displaystyle p(C\vert F_{1},\dots ,F_{n})={\frac {1}{Z}}p(C)\prod _{i=1}^{n}p(F_{i}\vert C)}
+  
+
+donde 
+  
+    
+      
+        Z
+      
+    
+    {\displaystyle Z}
+  
+ es un factor que depende solo de 
+  
+    
+      
+        
+          F
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          F
+          
+            n
+          
+        
+      
+    
+    {\displaystyle F_{1},\dots ,F_{n}}
+  
+, es decir, constante si los valores de 
+  
+    
+      
+        
+          F
+          
+            i
+          
+        
+      
+    
+    {\displaystyle F_{i}}
+  
+ son conocidos.
+
+
+Estimación de parámetros y modelo de eventos
+Todos los parámetros del modelo (por ejemplo, clases prioris y características de las distribuciones de probabilidad) se puede aproximar con frecuencias relativas del conjunto de entrenamiento. Estas son las estimaciones de máxima verosimilitud de las probabilidades. Una clase priori se puede calcular asumiendo clases equiprobables (es decir, priori = 1/ (número de clases)), o mediante el cálculo de una estimación de la probabilidad de clase del conjunto de entrenamiento (es decir, (el priori de una clase dada) = (número de muestras en la clase) / (número total de muestras)). Para la estimación de los parámetros de la distribución de una característica, se debe asumir una distribución o generar modelos de estadística no paramétrica de las características del conjunto de entrenamiento.
+Las hipótesis sobre las distribuciones de características son llamadas el modelo de eventos del Clasificador Naive Bayes. La distribución multinomial y la distribución de Bernoulli son populares para características discretas como las encontradas en la clasificación de documentos (incluyendo el filtrado de spam). Estas hipótesis conducen a dos modelos distintos, que a menudo se confunden. Cuando se trata con los datos continuos, una hipótesis típica es que los valores continuos asociados con cada clase se distribuyen según una Distribución normal.
+Por ejemplo, supongamos que los datos de entrenamiento contienen un atributo continuo, 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+  
+. En primer lugar, segmentar los datos por la clase, y a continuación, calcular la media y la varianza de 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+  
+ en cada clase. Donde 
+  
+    
+      
+        
+          μ
+          
+            c
+          
+        
+      
+    
+    {\displaystyle \mu _{c}}
+  
+ es la media de 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+  
+ asociado a la clase c, y 
+  
+    
+      
+        
+          σ
+          
+            c
+          
+          
+            2
+          
+        
+      
+    
+    {\displaystyle \sigma _{c}^{2}}
+  
+ es la varianza de 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+  
+ asociado a la clase c. Entonces, la densidad de probabilidad de un cierto valor dada una clase, 
+  
+    
+      
+        P
+        (
+        x
+        =
+        v
+        
+          |
+        
+        c
+        )
+      
+    
+    {\displaystyle P(x=v|c)}
+  
+, se puede calcular agregando 
+  
+    
+      
+        v
+      
+    
+    {\displaystyle v}
+  
+ en la ecuación de una distribución Normal con parámetros 
+  
+    
+      
+        
+          μ
+          
+            c
+          
+        
+      
+    
+    {\displaystyle \mu _{c}}
+  
+ y 
+  
+    
+      
+        
+          σ
+          
+            c
+          
+          
+            2
+          
+        
+      
+    
+    {\displaystyle \sigma _{c}^{2}}
+  
+. Es decir:
+
+  
+    
+      
+        P
+        (
+        x
+        =
+        v
+        
+          |
+        
+        c
+        )
+        =
+        
+          
+            
+              1
+              
+                2
+                π
+                
+                  σ
+                  
+                    c
+                  
+                  
+                    2
+                  
+                
+              
+            
+          
+        
+        
+        
+          e
+          
+            −
+            
+              
+                
+                  (
+                  v
+                  −
+                  
+                    μ
+                    
+                      c
+                    
+                  
+                  
+                    )
+                    
+                      2
+                    
+                  
+                
+                
+                  2
+                  
+                    σ
+                    
+                      c
+                    
+                    
+                      2
+                    
+                  
+                
+              
+            
+          
+        
+      
+    
+    {\displaystyle P(x=v|c)={\tfrac {1}{\sqrt {2\pi \sigma _{c}^{2}}}}\,e^{-{\frac {(v-\mu _{c})^{2}}{2\sigma _{c}^{2}}}}}
+  
+
+Otra técnica común para la manipulación de valores continuos es usar binning para discretizar los valores de las características, obteniendo un nuevo conjunto de características de la distribución de Bernoulli. En general, el método de distribución es una mejor opción si hay pocos datos de entrenamiento, o si se conoce la distribución precisa de los datos. El método de discretización tiende a ser mejor si hay una gran cantidad de datos de entrenamiento, ya que va a aprender para adaptarse a la distribución de los datos. Naive Bayes se utiliza normalmente cuando hay disponible una gran cantidad de datos (los modelos computacionales más caros pueden lograr una mayor precisión), se prefiere generalmente el método de discretización que el método de distribución.
+
+
+Corrección de muestras
+Si el valor de la clase y de la función dada no ocurren juntas en los datos de entrenamiento, entonces la estimación basada en la probabilidad de frecuencia será cero. Esto es un problema, ya que acabará con toda la información de las otras probabilidades cuando se multiplican. Por lo tanto a menudo es necesario incorporar una pequeña corrección de muestreo, llamada pseudocontador con toda la probabilidad estimada, de tal manera que no hay probabilidad alguna para que dé exactamente cero.
+
+
+Construcción de un clasificador del modelo de probabilidad
+Hasta ahora la discusión ha derivado del modelo de características independientes, es decir, el modelo de probabilidad de Naive Bayes. El clasificador Naive Bayes combina este modelo con una regla de decisión. La primera regla en común, es para recoger la hipótesis del más probable, también conocido como el máximo a posteriori o MAP. El clasificador Bayer (la función 
+  
+    
+      
+        
+          c
+          l
+          a
+          s
+          s
+          i
+          f
+          y
+        
+      
+    
+    {\displaystyle \mathrm {classify} }
+  
+) se define como:
+
+  
+    
+      
+        
+          c
+          l
+          a
+          s
+          s
+          i
+          f
+          y
+        
+        (
+        
+          f
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          f
+          
+            n
+          
+        
+        )
+        =
+        
+          
+            argmax
+            c
+          
+        
+         
+        p
+        (
+        C
+        =
+        c
+        )
+        
+          
+            ∏
+            
+              i
+              =
+              1
+            
+            
+              n
+            
+          
+          p
+          (
+          
+            F
+            
+              i
+            
+          
+          =
+          
+            f
+            
+              i
+            
+          
+          |
+          C
+          =
+          c
+          )
+          .
+        
+      
+    
+    {\displaystyle \mathrm {classify} (f_{1},\dots ,f_{n})={\underset {c}{\operatorname {argmax} }}\ p(C=c)\displaystyle \prod _{i=1}^{n}p(F_{i}=f_{i}\vert C=c).}
+  
+
+
+Discusión
+A pesar del hecho de que los clasificadores con mayor alcance son a menudo exactos, el clasificador de Naive Bayes tiene varias propiedades que lo hacen sorprendentemente útil en la práctica. En particular, el desacoplamiento de la clase de distribuciones condicionales significa que cada distribución se puede estimar de forma independiente como una distribución dimensional. Esto ayuda a aliviar los problemas derivados de la Maldición de la dimensión, tales como la necesidad de conjuntos de datos que se escalan exponencialmente con el número de características. Mientras Naive Bayes a menudo falla a la hora de producir una buena estimación de las probabilidades de clase, puede no ser un requisito para muchas otras aplicaciones. Por ejemplo, el Naive Bayes realiza correctamente la regla de clasificación del MAP de decisión tanto como mayor sea la probabilidad de la clase correcta respecto a las demás clases. Esto es cierto independientemente de si la estimación de la probabilidad es ligeramente, o incluso completamente inexacta. De esta manera, el clasificador general puede ser lo suficientemente robusto como para ignorar deficiencias graves en su modelo de probabilidad ingenua subyacente como el Cano.
+
+
+Ejemplo
+
+
+Clasificación de sexo
+Problema: Clasificar una persona en hombre o mujer basándonos en las características de sus medidas: peso, altura y número de pie.
+
+
+Entrenamiento
+Entrenamiento previo.
+
+Haciendo una distribución Gaussiana extraemos los datos y obtenemos la media y la varianza de cada característica.
+
+En este caso nos encontramos en una distribución equiprobable, es decir que tienen la misma probabilidad. P(hombre)=0.5 y P(mujer)=0.5.
+
+
+Prueba
+Ahora recibimos unos datos para ser clasificado como hombre o mujer
+
+Ahora nos interesa saber la probabilidad a posteriori de los dos casos, según es hombre o mujer.
+hombre
+
+  
+    
+      
+        p
+        o
+        s
+        t
+        e
+        r
+        i
+        o
+        r
+        i
+        (
+        h
+        o
+        m
+        b
+        r
+        e
+        )
+        =
+        
+          
+            
+              P
+              (
+              h
+              o
+              m
+              b
+              r
+              e
+              )
+              
+              p
+              (
+              a
+              l
+              t
+              u
+              r
+              a
+              
+                |
+              
+              h
+              o
+              m
+              b
+              r
+              e
+              )
+              
+              p
+              (
+              p
+              e
+              s
+              o
+              
+                |
+              
+              h
+              o
+              m
+              b
+              r
+              e
+              )
+              
+              p
+              (
+              n
+              u
+              m
+              e
+              r
+              o
+              d
+              e
+              p
+              i
+              e
+              
+                |
+              
+              h
+              o
+              m
+              b
+              r
+              e
+              )
+            
+            
+              E
+              v
+              i
+              d
+              e
+              n
+              c
+              i
+              a
+            
+          
+        
+      
+    
+    {\displaystyle posteriori(hombre)={\frac {P(hombre)\,p(altura|hombre)\,p(peso|hombre)\,p(numerodepie|hombre)}{Evidencia}}}
+  
+
+mujer
+
+  
+    
+      
+        p
+        o
+        s
+        t
+        e
+        r
+        i
+        o
+        r
+        i
+        (
+        m
+        u
+        j
+        e
+        r
+        )
+        =
+        
+          
+            
+              P
+              (
+              m
+              u
+              j
+              e
+              r
+              )
+              
+              p
+              (
+              a
+              l
+              t
+              u
+              r
+              a
+              
+                |
+              
+              m
+              u
+              j
+              e
+              r
+              )
+              
+              p
+              (
+              p
+              e
+              s
+              o
+              
+                |
+              
+              m
+              u
+              j
+              e
+              r
+              )
+              
+              p
+              (
+              n
+              u
+              m
+              e
+              r
+              o
+              d
+              e
+              p
+              i
+              e
+              
+                |
+              
+              m
+              u
+              j
+              e
+              r
+              )
+            
+            
+              E
+              v
+              i
+              d
+              e
+              n
+              c
+              i
+              a
+            
+          
+        
+      
+    
+    {\displaystyle posteriori(mujer)={\frac {P(mujer)\,p(altura|mujer)\,p(peso|mujer)\,p(numerodepie|mujer)}{Evidencia}}}
+  
+
+La evidencia (también denominada constante de normalización) se puede calcular:
+
+  
+    
+      
+        e
+        v
+        i
+        d
+        e
+        n
+        c
+        i
+        a
+        =
+        P
+        (
+        h
+        o
+        m
+        b
+        r
+        e
+        )
+        
+        p
+        (
+        a
+        l
+        t
+        u
+        r
+        a
+        
+          |
+        
+        h
+        o
+        m
+        b
+        r
+        e
+        )
+        
+        p
+        (
+        p
+        e
+        s
+        o
+        
+          |
+        
+        h
+        o
+        m
+        b
+        r
+        e
+        )
+        
+        p
+        (
+        n
+        u
+        m
+        e
+        r
+        o
+        d
+        e
+        p
+        i
+        e
+        
+          |
+        
+        h
+        o
+        m
+        b
+        r
+        e
+        )
+      
+    
+    {\displaystyle evidencia=P(hombre)\,p(altura|hombre)\,p(peso|hombre)\,p(numerodepie|hombre)}
+  
+
+  
+    
+      
+        +
+        P
+        (
+        m
+        u
+        j
+        e
+        r
+        )
+        
+        p
+        (
+        a
+        l
+        t
+        u
+        r
+        a
+        
+          |
+        
+        m
+        u
+        j
+        e
+        r
+        )
+        
+        p
+        (
+        p
+        e
+        s
+        o
+        
+          |
+        
+        m
+        u
+        j
+        e
+        r
+        )
+        
+        p
+        (
+        n
+        u
+        m
+        e
+        r
+        o
+        d
+        e
+        p
+        i
+        e
+        
+          |
+        
+        m
+        u
+        j
+        e
+        r
+        )
+      
+    
+    {\displaystyle +P(mujer)\,p(altura|mujer)\,p(peso|mujer)\,p(numerodepie|mujer)}
+  
+
+En este caso nos encontramos en una distribución equiprobable, es decir que tienen la misma probabilidad. P(hombre)=0.5 y P(mujer)=0.5.
+
+  
+    
+      
+        P
+        (
+        
+          
+            hombre
+          
+        
+        )
+        =
+        0.5
+      
+    
+    {\displaystyle P({\mbox{hombre}})=0.5}
+  
+
+  
+    
+      
+        p
+        (
+        
+          
+            altura
+          
+        
+        
+          |
+        
+        
+          
+            hombre
+          
+        
+        )
+        =
+        
+          
+            1
+            
+              2
+              π
+              
+                σ
+                
+                  2
+                
+              
+            
+          
+        
+        exp
+        ⁡
+        
+          (
+          
+            
+              
+                −
+                (
+                6
+                −
+                μ
+                
+                  )
+                  
+                    2
+                  
+                
+              
+              
+                2
+                
+                  σ
+                  
+                    2
+                  
+                
+              
+            
+          
+          )
+        
+        ≈
+        1.5789
+      
+    
+    {\displaystyle p({\mbox{altura}}|{\mbox{hombre}})={\frac {1}{\sqrt {2\pi \sigma ^{2}}}}\exp \left({\frac {-(6-\mu )^{2}}{2\sigma ^{2}}}\right)\approx 1.5789}
+  
+,
+
+donde 
+  
+    
+      
+        μ
+        =
+        5.855
+      
+    
+    {\displaystyle \mu =5.855}
+  
+ y 
+  
+    
+      
+        
+          σ
+          
+            2
+          
+        
+        =
+        0.035033
+      
+    
+    {\displaystyle \sigma ^{2}=0.035033}
+  
+ son los parámetros de la distribución normal que han sido determinados previamente en el entrenamiento .
+
+  
+    
+      
+        p
+        (
+        
+          
+            peso
+          
+        
+        
+          |
+        
+        
+          
+            hombre
+          
+        
+        )
+        =
+        5.9881
+        e
+        −
+        06
+      
+    
+    {\displaystyle p({\mbox{peso}}|{\mbox{hombre}})=5.9881e-06}
+  
+
+  
+    
+      
+        p
+        (
+        
+          
+            NumeroDePie
+          
+        
+        
+          |
+        
+        
+          
+            hombre
+          
+        
+        )
+        =
+        1.3112
+        e
+        −
+        3
+      
+    
+    {\displaystyle p({\mbox{NumeroDePie}}|{\mbox{hombre}})=1.3112e-3}
+  
+
+  
+    
+      
+        
+          
+            posteriori (hombre)
+          
+        
+        =
+        
+          
+            el producto
+          
+        
+        =
+        6.1984
+        e
+        −
+        09
+      
+    
+    {\displaystyle {\mbox{posteriori (hombre)}}={\mbox{el producto}}=6.1984e-09}
+  
+
+  
+    
+      
+        P
+        (
+        
+          
+            mujer
+          
+        
+        )
+        =
+        0.5
+      
+    
+    {\displaystyle P({\mbox{mujer}})=0.5}
+  
+
+  
+    
+      
+        p
+        (
+        
+          
+            altura
+          
+        
+        
+          |
+        
+        
+          
+            mujer
+          
+        
+        )
+        =
+        2.2346
+        e
+        −
+        1
+      
+    
+    {\displaystyle p({\mbox{altura}}|{\mbox{mujer}})=2.2346e-1}
+  
+
+  
+    
+      
+        p
+        (
+        
+          
+            peso
+          
+        
+        
+          |
+        
+        
+          
+            mujer
+          
+        
+        )
+        =
+        1.6789
+        e
+        −
+        2
+      
+    
+    {\displaystyle p({\mbox{peso}}|{\mbox{mujer}})=1.6789e-2}
+  
+
+  
+    
+      
+        p
+        (
+        
+          
+            numero de pie
+          
+        
+        
+          |
+        
+        
+          
+            mujer
+          
+        
+        )
+        =
+        2.8669
+        e
+        −
+        1
+      
+    
+    {\displaystyle p({\mbox{numero de pie}}|{\mbox{mujer}})=2.8669e-1}
+  
+
+  
+    
+      
+        
+          
+            posteriori (mujer)
+          
+        
+        =
+        
+          
+            el producto
+          
+        
+        =
+        5.3778
+        e
+        −
+        04
+      
+    
+    {\displaystyle {\mbox{posteriori (mujer)}}={\mbox{el producto}}=5.3778e-04}
+  
+
+En este caso el numerador a posteriori más grande es el de la mujer, por eso determinamos que los datos son de mujer.
+
+
+Véase también
+Clasificador Knn
+Clasificador lineal
+Red bayesiana
+Teorema de Bayes
+Probabilidad a posteriori
+Probabilidad a priori
+
+
+Enlaces externos
+
+Book Chapter: Naive Bayes text classification, Introduction to Information Retrieval
+Naive Bayes for Text Classification with Unbalanced Classes
+ (enlace roto disponible en Internet Archive; véase el historial, la primera versión y la última).
+Hierarchical Naive Bayes Classifiers for uncertain data (an extension of the Naive Bayes classifier).
+Document Classification Using Naive Bayes Classifier with Perl

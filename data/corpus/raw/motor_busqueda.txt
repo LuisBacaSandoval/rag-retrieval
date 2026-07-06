@@ -1,0 +1,97 @@
+# titulo: Motor de búsqueda
+# fuente: https://es.wikipedia.org/wiki/Motor_de_b%C3%BAsqueda
+# licencia: CC BY-SA 4.0
+# descargado: 2026-07-05
+# ---
+Un motor de búsqueda o buscador es un sistema informático que busca archivos almacenados en servidores web gracias a su araña web.​ Un ejemplo son los buscadores de Internet (algunos buscan únicamente en la web, pero otros lo hacen además en noticias, servicios como Gopher, FTP, etc.) cuando se pide información sobre algún tema. Las búsquedas se hacen con palabras clave o con árboles jerárquicos por temas; el resultado de la búsqueda «Página de resultados del buscador» es un listado de direcciones web en los que se mencionan temas relacionados con las palabras clave buscadas.
+Como operan de forma automática, los motores de búsqueda contienen generalmente más información que los directorios web. Sin embargo, estos últimos también han de construirse a partir de búsquedas (no automatizadas) o bien a partir de avisos dados por los creadores de páginas.
+
+
+Clasificación
+Se pueden clasificar en tres tipos:
+
+Buscadores jerárquicos: interfaces de interrogación textual contra bases de datos de representaciones de páginas web, creadas según un modelo vectorial.
+Directorios: directorios de enlaces a páginas (agrupando sus enlaces por categorías) que ofrecen motores de búsqueda interna.
+Metabuscadores: interfaces de reenvío de búsqueda a múltiples buscadores.
+
+
+Buscadores jerárquicos (araña o spider')
+
+
+Directorios
+
+Una tecnología muy simple por gran cantidad de scripts disponibles, ya que no se requieren muchos recursos. En cambio, se requiere más soporte humano y mantenimiento.​
+
+
+Metabuscadores
+
+«En otras palabras para aludir al concepto más genérico de un buscador, podemos afirmar que un metabuscador es el buscador que incorpora un conjunto de buscadores. Algunos ejemplos de metabuscadores son: Dogpile, Aleyares​​ MetaCrawler, entre otros. Estos metabuscadores presentan ventajas, como ampliar el espacio de búsqueda y en algunos casos mostrar la posición de la web».​
+
+
+Buscadores verticales
+
+
+Historia
+
+
+Antes de los 90
+En 1945, Vannevar Bush , quien escribió un artículo en  The Atlantic Monthly titulado As We May Think​ en el que imaginó bibliotecas de investigación con anotaciones conectadas no muy diferentes a los hiperenlaces modernos.​ El análisis de enlaces finalmente se convertiría en un componente crucial de los motores de búsqueda a través de algoritmos como Hyper Search y PageRank.​​
+
+
+Años 90: Nacimiento de los motores de búsqueda
+Los primeros motores de búsqueda de Internet son anteriores al debut de la Web en diciembre de 1990: la búsqueda de usuarios de WHOIS se remonta a 1982,​ y la búsqueda de usuarios de redes múltiples del Knowbot Information Service se implementó por primera vez en 1989.​ La primera búsqueda bien documentada El motor que buscaba archivos de contenido, a saber, archivos FTP, era Archie, que debutó el 10 de septiembre de 1990.​
+Antes de septiembre de 1993, la World Wide Web se indexaba completamente a mano. Había una lista de servidores web editada por Tim Berners-Lee y alojada en el servidor web del CERN. Queda una instantánea de la lista en 1992,​ pero a medida que más y más servidores web se pusieron en línea, la lista central ya no pudo mantenerse al día. En el sitio de la NCSA, se anunciaron nuevos servidores bajo el título What's New!.​
+La primera herramienta utilizada para buscar contenido (a diferencia de usuarios) en Internet fue Archie.​ El nombre significa "archivo" sin la "v",​ Fue creado por Alan Emtage​​​​ estudiante de informática en la Universidad McGill en Montreal, Quebec, Canadá . El programa descargó las listas de directorios de todos los archivos ubicados en sitios públicos anónimos de FTP (Protocolo de transferencia de archivos), creando una base de datos de búsqueda de nombres de archivos; sin embargo, Archie Search Engineno indexó el contenido de estos sitios ya que la cantidad de datos era tan limitada que se podía buscar fácilmente de forma manual.
+El auge de Gopher (creado en 1991 por Mark McCahill en la Universidad de Minnesota) dio lugar a dos nuevos programas de búsqueda, Veronica y Jughead. Al igual que Archie, buscaron los nombres y títulos de los archivos almacenados en los sistemas de índice Gopher. Veronica (Very Easy Rodent - Oriented Net-wide Index to Computerized Archives) proporcionó una búsqueda de palabras clave de la mayoría de los títulos de menú de Gopher en todos los listados de Gopher. Jughead (Jonzy 's Universal Gopher Hierarchy Excavation And Display) era una herramienta para obtener información de menú de servidores Gopher específicos. Si bien el nombre del motor de búsqueda "Archie Search Engine" no era una referencia a la serie de cómics de Archie, Veronica y Jughead son personajes de la serie, haciendo así referencia a su predecesor.
+En el verano de 1993 no existía ningún motor de búsqueda para la web, aunque se mantenían a mano numerosos catálogos especializados. Oscar Nierstrasz de la Universidad de Ginebra escribió una serie de secuencias de comandos de Perl que reflejaban periódicamente estas páginas y las reescribían en un formato estándar. Esto formó la base de W3Catalog , el primer motor de búsqueda primitivo de la web, lanzado el 2 de septiembre de 1993.​
+En junio de 1993, Matthew Gray,​ entonces en el MIT, produjo lo que probablemente fue el primer robot web, el World Wide Web Wanderer basado en Perl , y lo usó para generar un índice llamado Wandex. El propósito de Wanderer era medir el tamaño de la World Wide Web, lo que hizo hasta fines de 1995. El segundo motor de búsqueda de la web, Aliweb, apareció en noviembre de 1993. Aliweb no usaba un robot web sino que dependía de ser notificado por administradores del sitio web de la existencia en cada sitio de un archivo índice en un formato particular.
+JumpStation (creada en diciembre de 1993​ por Jonathon Fletcher) usó un robot web para encontrar páginas web y construir su índice, y usó un formulario web como interfaz para su programa de consulta. Por lo tanto, fue la primera herramienta de descubrimiento de recursos WWW que combinó las tres características esenciales de un motor de búsqueda web (rastreo, indexación y búsqueda) como se describe a continuación. Debido a los recursos limitados disponibles en la plataforma en la que se ejecutaba, su indexación y, por lo tanto, las búsquedas se limitaban a los títulos y encabezados que se encontraban en las páginas web que encontraba el rastreador.
+El primer buscador fue Wandex, un índice realizado por el World Wide Web Wanderer, un robot desarrollado por Mattew Gray en el MIT, en 1993. Otro de los primeros buscadores, Aliweb, también apareció en 1993 y todavía está en funcionamiento. El primer motor de búsqueda de texto completo fue WebCrawler, que apareció en 1994. A diferencia de sus predecesores, este permitía a sus usuarios una búsqueda por palabras en cualquier página web, lo que llegó a ser un estándar para la gran mayoría de los buscadores. WebCrawler fue asimismo el primero en darse a conocer ampliamente entre el público. También apareció en 1994 Lycos (que comenzó en la Carnegie Mellon University).
+Muy pronto aparecieron muchos más buscadores, como Excite, Infoseek, Inktomi, Northern Light y Altavista. De algún modo, competían con directorios (o índices temáticos) populares tales como Yahoo!. Más tarde, los directorios se integraron o se añadieron a la tecnología de los buscadores para aumentar su funcionalidad.
+Antes del advenimiento de la Web, había motores de búsqueda para otros protocolos o usos, como el buscador Archie, para sitios FTP anónimos y el motor de búsqueda Verónica, para el protocolo Gopher.
+En 1996 Larry Page y Sergey Brin comenzaron un proyecto que llevaría a la aparición del buscador más utilizado hoy en día: Google. El proyecto inicial se llamó BackRub,​ que era el nombre de la tecnología utilizada para su desarrollo.
+BackRub basaba la importancia de los sitios web en la cantidad de enlaces que recibía. Presentaba una interfaz muy sencilla y capaz de mostrar al usuario los resultados más relevantes para cada una de las búsquedas.
+Con la llegada de Google, el modo en que los motores de búsqueda funcionaban cambió de forma radical, democratizando los resultados que se ofrecen en su buscador. Google basó el funcionamiento de su motor de búsqueda en la relevancia de los contenidos de cada sitio web para los propios usuarios, es decir, priorizando aquellos resultados que los usuarios consideraban más relevantes para una temática concreta. Para ello patentó su famoso PageRank, un conjunto de algoritmos que valoraban la relevancia de un sitio web asignándole un valor numérico del 0 al 10.
+En la mayoría de países Google.com o la versión de Google para el país concreto, es el buscador más utilizado, sin embargo, esto no ocurre en algunos países. Por ejemplo, en Rusia el buscador más utilizado es Yandex.ru​​ y en China es Baidu.​
+Conforme ha ido pasando el tiempo, miles de buscadores han ido naciendo y muriendo, entre los que podemos mencionar:
+
+Ver más información sobre esto en el Anexo:Motores de búsqueda
+
+
+Desde los años 2000 a la actualidad: Después de la burbuja de las puntocom
+Alrededor de 2000, el motor de búsqueda de  Google saltó a la fama.​ La empresa logró mejores resultados para muchas búsquedas con un algoritmo llamado PageRank, como se explicó en el artículo Anatomía de un motor de búsqueda escrito por Sergey Brin y Larry Page , los fundadores posteriores de Google.​ Este algoritmo iterativo clasifica las páginas web según el número y el PageRank de otros sitios web y páginas que enlazan allí, con la premisa de que las páginas buenas o deseables están enlazadas a más que otras. La patente de Larry Page para PageRank cita la patente anterior de RankDex de Robin Li como una influencia. Google también mantuvo una interfaz minimalista para su motor de búsqueda. En cambio, muchos de sus competidores incrustaron un motor de búsqueda en un portal web. De hecho, el motor de búsqueda de Google se hizo tan popular que surgieron motores falsos como Mystery Seeker.
+Para el año 2000, Yahoo! proporcionaba servicios de búsqueda basados en el motor de búsqueda de Inktomi. Yahoo! adquirió Inktomi en 2002 y Overture (propietaria de AlltheWeb y AltaVista) en 2003. Yahoo! cambió al motor de búsqueda de Google hasta 2004, cuando lanzó su propio motor de búsqueda basado en las tecnologías combinadas de sus adquisiciones.
+Microsoft lanzó por primera vez MSN Search en el otoño de 1998 utilizando los resultados de búsqueda de Inktomi. A principios de 1999, el sitio comenzó a mostrar listados de Looksmart, combinados con los resultados de Inktomi. Durante un breve período de tiempo en 1999, MSN Search utilizó en su lugar los resultados de AltaVista. En 2004, Microsoft inició una transición hacia su propia tecnología de búsqueda, impulsada por su propio rastreador web (llamado msnbot).
+El motor de búsqueda renombrado de Microsoft, Bing, se lanzó el 1 de junio de 2009. El 29 de julio de 2009, Yahoo! y Microsoft cerraron un trato en el que Yahoo! la búsqueda estaría impulsada por la tecnología Microsoft Bing.
+A partir de 2019, los rastreadores de motores de búsqueda activos incluyen los de Google, Petal, Sogou, Baidu, Bing, Gigablast, Mojeek, DuckDuckGo y Yandex.
+
+
+Sesgo de los motores de búsqueda
+Aunque los motores de búsqueda están programados para clasificar sitios web en función de una combinación de su popularidad y relevancia, los estudios empíricos indican varios sesgos políticos, económicos y sociales en la información que proporcionan​​ y las suposiciones subyacentes sobre la tecnología.​ Estos sesgos pueden ser el resultado directo de procesos económicos y comerciales (p. ej., las empresas que anuncian con un motor de búsqueda también pueden volverse más populares en sus resultados de búsqueda orgánicos) y procesos políticos (p. ej., la eliminación de resultados de búsqueda para cumplir con las leyes locales).​ Por ejemplo, Google no mostrará ciertos sitios web neonazis en Francia y Alemania, donde la negación del Holocausto es ilegal.
+Los sesgos también pueden ser el resultado de procesos sociales, ya que los algoritmos de los motores de búsqueda suelen estar diseñados para excluir puntos de vista no normativos en favor de resultados más populares.​ Los algoritmos de indexación de los principales motores de búsqueda se inclinan hacia la cobertura de sitios basados en los EE. UU., en lugar de sitios web de países fuera de los EE. UU.​
+Google Bombing es un ejemplo de un intento de manipular los resultados de búsqueda por motivos políticos, sociales o comerciales.
+Varios académicos han estudiado los cambios culturales desencadenados por los motores de búsqueda,​ y la representación de ciertos temas controvertidos en sus resultados, como el terrorismo en Irlanda,​ la negación del cambio climático,​ y las  teorías de la conspiración.​
+
+
+Resultados personalizados y burbujas de filtro
+Muchos motores de búsqueda como Google y Bing brindan resultados personalizados basados en el historial de actividad del usuario. Esto conduce a un efecto que se ha denominado filtro burbuja. El término describe un fenómeno en el que los sitios web usan algoritmos para adivinar selectivamente qué información le gustaría ver a un usuario, en función de la información sobre el usuario (como la ubicación, el comportamiento de clics anterior y el historial de búsqueda). Como resultado, los sitios web tienden a mostrar solo información que concuerda con el punto de vista anterior del usuario. Esto pone al usuario en un estado de aislamiento intelectual sin información contraria. Los principales ejemplos son los resultados de búsqueda personalizados de Google y el flujo de noticias personalizado de Facebook.
+Según Eli Pariser, quien acuñó el término, los usuarios están menos expuestos a puntos de vista conflictivos y están aislados intelectualmente en su propia burbuja informativa. Pariser relató un ejemplo en el que un usuario buscó en Google "BP" y obtuvo noticias de inversión sobre British Petroleum , mientras que otro buscador obtuvo información sobre el derrame de petróleo de Deepwater Horizon y que las dos páginas de resultados de búsqueda eran "sorprendentemente diferentes".​​​ El efecto burbuja puede tener implicaciones negativas para el discurso cívico, según Pariser.​ Desde que se identificó este problema, han surgido motores de búsqueda de la competencia que buscan evitar este problema al no rastrear o "burbujear" a los usuarios, como DuckDuckGo. Otros académicos no comparten el punto de vista de Pariser y consideran que la evidencia en apoyo de su tesis no es convincente.​
+
+
+Envío al motor de búsqueda
+El envío de un motor de búsqueda web es un proceso en el que un webmaster envía un sitio web directamente a un motor de búsqueda. Si bien el envío a los motores de búsqueda a veces se presenta como una forma de promocionar un sitio web, generalmente no es necesario porque los principales motores de búsqueda utilizan rastreadores web que finalmente encontrarán la mayoría de los sitios web en Internet sin ayuda. Pueden enviar una página web a la vez o pueden enviar todo el sitio usando un mapa del sitio , pero normalmente solo es necesario enviar la página de inicio.de un sitio web ya que los motores de búsqueda pueden rastrear un sitio web bien diseñado. Quedan dos razones para enviar un sitio web o una página web a un motor de búsqueda: agregar un sitio web completamente nuevo sin esperar a que un motor de búsqueda lo descubra y actualizar el registro de un sitio web después de un rediseño sustancial.
+Algunos programas de envío de motores de búsqueda no solo envían sitios web a múltiples motores de búsqueda, sino que también agregan enlaces a sitios web desde sus propias páginas. Esto podría parecer útil para aumentar la clasificación de un sitio web,​ ya que los enlaces externos son uno de los factores más importantes que determinan la clasificación de un sitio web. Sin embargo, John Mueller de Google ha declarado que esto "puede dar lugar a una gran cantidad de enlaces no naturales para su sitio" con un impacto negativo en la clasificación del sitio.​
+
+
+Véase también
+Anexo:Motores de búsqueda
+Consulta de búsqueda web
+Penalización en motores de búsqueda
+Directorio web
+
+
+Referencias
+
+
+Enlaces externos
+ Wikimedia Commons alberga una categoría multimedia sobre Motor de búsqueda.
