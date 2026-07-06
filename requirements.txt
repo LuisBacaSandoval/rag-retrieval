@@ -1,0 +1,12 @@
+# Dependencias del Proyecto 5, fijadas y validadas sobre Python 3.11.
+# Instalación y ejecución: ver README.md (entorno virtual o Docker).
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.1
+matplotlib==3.9.2
+rank-bm25==0.2.2
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0.post1
+fastapi==0.114.1
+uvicorn==0.30.6
+pytest
