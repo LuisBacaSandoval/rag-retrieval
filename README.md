@@ -84,6 +84,19 @@ python scripts/fetch_sources.py     # descarga los artículos a data/corpus/raw/
 python scripts/prepare_corpus.py    # limpia y trocea -> data/corpus/corpus.jsonl
 ```
 
+## Evaluación
+
+Cada método se evalúa con el mismo protocolo (54 consultas, k ∈ {1, 3, 5, 10},
+latencia y memoria del índice; los detalles del mapeo fragmento→artículo están
+en el cuaderno técnico y en el encabezado del script):
+
+```bash
+python scripts/run_eval.py --method bm25
+```
+
+Deja las métricas globales, por tipo de consulta y por consulta en
+`results/bm25.json`, y una tabla plana en `results/bm25_por_consulta.csv`.
+
 ## Entorno y reproducción
 
 El proyecto se desarrolla y valida sobre **Python 3.11**. Todas las
@@ -132,7 +145,7 @@ docker run --rm -p 8000:8000 proyecto5-rag
 |---|---|---|
 | 1 | Estructura + interfaz común de recuperadores | ✅ |
 | 2 | Corpus (595 fragmentos) y 54 consultas etiquetadas | ✅ |
-| 3 | Línea base BM25 + métricas (P@k, R@k, MRR, nDCG) | pendiente |
+| 3 | Línea base BM25 + métricas (P@k, R@k, MRR, nDCG) | ✅ |
 | 4 | Recuperador denso + índice | pendiente |
 | 5 | Recuperador híbrido (RRF) | pendiente |
 | 6 | Evaluación comparativa y análisis de errores | pendiente |

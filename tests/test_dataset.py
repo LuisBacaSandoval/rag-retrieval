@@ -1,10 +1,4 @@
-"""Pruebas de integridad del corpus y las consultas de evaluación.
-
-Garantizan que los datos que alimentan los hitos 3-6 cumplen el esquema y las
-cantidades mínimas, y que los juicios de relevancia son consistentes con el
-corpus (todo `relevant_source_id` existe realmente). Sigue el patrón de
-validación por líneas de la evaluación del trabajo de la semana 14.
-"""
+"""Pruebas de integridad del corpus y las consultas: esquema, mínimos y relevancia consistente."""
 
 from __future__ import annotations
 

@@ -1,0 +1,4657 @@
+{
+  "metodo": "bm25",
+  "fecha": "2026-07-07T13:13:10+00:00",
+  "config": {
+    "k1": 1.5,
+    "b": 0.75,
+    "ks": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "tokenizador": "minúsculas + sin tildes + \\w+"
+  },
+  "corpus": {
+    "fragmentos": 595,
+    "articulos": 40
+  },
+  "indice": {
+    "construccion_s": 0.178,
+    "memoria_pico_construccion_mb": 5.29,
+    "tamano_serializado_mb": 0.59
+  },
+  "latencia_ms": {
+    "media": 1.032,
+    "p50": 1.042,
+    "p95": 1.606
+  },
+  "global": {
+    "consultas": 54,
+    "mrr": 0.7938,
+    "precision@1": 0.7037,
+    "recall_articulo@1": 0.5864,
+    "ndcg@1": 0.7037,
+    "precision@3": 0.6049,
+    "recall_articulo@3": 0.7469,
+    "ndcg@3": 0.6312,
+    "precision@5": 0.5778,
+    "recall_articulo@5": 0.8241,
+    "ndcg@5": 0.6201,
+    "precision@10": 0.4944,
+    "recall_articulo@10": 0.8642,
+    "ndcg@10": 0.59
+  },
+  "por_tipo": {
+    "dificil": {
+      "consultas": 18,
+      "mrr": 0.7889,
+      "precision@1": 0.6667,
+      "recall_articulo@1": 0.3148,
+      "ndcg@1": 0.6667,
+      "precision@3": 0.6296,
+      "recall_articulo@3": 0.5463,
+      "ndcg@3": 0.6474,
+      "precision@5": 0.6556,
+      "recall_articulo@5": 0.6944,
+      "ndcg@5": 0.6618,
+      "precision@10": 0.5778,
+      "recall_articulo@10": 0.787,
+      "ndcg@10": 0.6219
+    },
+    "lexica": {
+      "consultas": 18,
+      "mrr": 0.9259,
+      "precision@1": 0.8889,
+      "recall_articulo@1": 0.8889,
+      "ndcg@1": 0.8889,
+      "precision@3": 0.7407,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.771,
+      "precision@5": 0.6222,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.7159,
+      "precision@10": 0.5333,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.7115
+    },
+    "semantica": {
+      "consultas": 18,
+      "mrr": 0.6667,
+      "precision@1": 0.5556,
+      "recall_articulo@1": 0.5556,
+      "ndcg@1": 0.5556,
+      "precision@3": 0.4444,
+      "recall_articulo@3": 0.6944,
+      "ndcg@3": 0.4751,
+      "precision@5": 0.4556,
+      "recall_articulo@5": 0.7778,
+      "ndcg@5": 0.4825,
+      "precision@10": 0.3722,
+      "recall_articulo@10": 0.8056,
+      "ndcg@10": 0.4365
+    }
+  },
+  "por_consulta": [
+    {
+      "query_id": "q01",
+      "tipo": "lexica",
+      "query": "función de ranking Okapi BM25",
+      "relevant_source_ids": [
+        "bm25"
+      ],
+      "latencia_ms": 0.451,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "bm25__c00",
+          "source_id": "bm25",
+          "score": 28.745
+        },
+        {
+          "rank": 2,
+          "doc_id": "bm25__c01",
+          "source_id": "bm25",
+          "score": 16.8128
+        },
+        {
+          "rank": 3,
+          "doc_id": "recuperacion_informacion__c13",
+          "source_id": "recuperacion_informacion",
+          "score": 10.9137
+        },
+        {
+          "rank": 4,
+          "doc_id": "recuperacion_informacion__c06",
+          "source_id": "recuperacion_informacion",
+          "score": 9.6625
+        },
+        {
+          "rank": 5,
+          "doc_id": "tfidf__c01",
+          "source_id": "tfidf",
+          "score": 9.6579
+        },
+        {
+          "rank": 6,
+          "doc_id": "recuperacion_informacion__c07",
+          "source_id": "recuperacion_informacion",
+          "score": 8.6019
+        },
+        {
+          "rank": 7,
+          "doc_id": "recuperacion_informacion__c14",
+          "source_id": "recuperacion_informacion",
+          "score": 8.0885
+        },
+        {
+          "rank": 8,
+          "doc_id": "recuperacion_informacion__c08",
+          "source_id": "recuperacion_informacion",
+          "score": 7.1424
+        },
+        {
+          "rank": 9,
+          "doc_id": "recuperacion_informacion__c15",
+          "source_id": "recuperacion_informacion",
+          "score": 6.5949
+        },
+        {
+          "rank": 10,
+          "doc_id": "red_neuronal__c32",
+          "source_id": "red_neuronal",
+          "score": 6.1869
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.7653606369886217,
+      "precision@5": 0.4,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.6366824387328317,
+      "precision@10": 0.2,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.6366824387328317
+    },
+    {
+      "query_id": "q02",
+      "tipo": "lexica",
+      "query": "tf-idf frecuencia inversa de documento",
+      "relevant_source_ids": [
+        "tfidf"
+      ],
+      "latencia_ms": 0.562,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "tfidf__c00",
+          "source_id": "tfidf",
+          "score": 31.1763
+        },
+        {
+          "rank": 2,
+          "doc_id": "tfidf__c03",
+          "source_id": "tfidf",
+          "score": 29.2358
+        },
+        {
+          "rank": 3,
+          "doc_id": "tfidf__c06",
+          "source_id": "tfidf",
+          "score": 25.7558
+        },
+        {
+          "rank": 4,
+          "doc_id": "tfidf__c04",
+          "source_id": "tfidf",
+          "score": 25.4727
+        },
+        {
+          "rank": 5,
+          "doc_id": "modelo_espacio_vectorial__c06",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 24.5812
+        },
+        {
+          "rank": 6,
+          "doc_id": "tfidf__c01",
+          "source_id": "tfidf",
+          "score": 20.5731
+        },
+        {
+          "rank": 7,
+          "doc_id": "tfidf__c05",
+          "source_id": "tfidf",
+          "score": 20.229
+        },
+        {
+          "rank": 8,
+          "doc_id": "tfidf__c02",
+          "source_id": "tfidf",
+          "score": 15.7998
+        },
+        {
+          "rank": 9,
+          "doc_id": "bm25__c01",
+          "source_id": "bm25",
+          "score": 13.2772
+        },
+        {
+          "rank": 10,
+          "doc_id": "bm25__c03",
+          "source_id": "bm25",
+          "score": 10.3801
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.8687949224876582,
+      "precision@10": 0.7,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.9803771474638899
+    },
+    {
+      "query_id": "q03",
+      "tipo": "lexica",
+      "query": "índice invertido en recuperación de información",
+      "relevant_source_ids": [
+        "indice_invertido"
+      ],
+      "latencia_ms": 1.174,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "indice_invertido__c00",
+          "source_id": "indice_invertido",
+          "score": 21.4803
+        },
+        {
+          "rank": 2,
+          "doc_id": "indice_invertido__c02",
+          "source_id": "indice_invertido",
+          "score": 20.2259
+        },
+        {
+          "rank": 3,
+          "doc_id": "indice_invertido__c01",
+          "source_id": "indice_invertido",
+          "score": 18.4686
+        },
+        {
+          "rank": 4,
+          "doc_id": "modelo_espacio_vectorial__c00",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 12.4835
+        },
+        {
+          "rank": 5,
+          "doc_id": "recuperacion_informacion__c06",
+          "source_id": "recuperacion_informacion",
+          "score": 11.9715
+        },
+        {
+          "rank": 6,
+          "doc_id": "recuperacion_informacion__c03",
+          "source_id": "recuperacion_informacion",
+          "score": 11.8885
+        },
+        {
+          "rank": 7,
+          "doc_id": "recuperacion_informacion__c00",
+          "source_id": "recuperacion_informacion",
+          "score": 11.7801
+        },
+        {
+          "rank": 8,
+          "doc_id": "recuperacion_informacion__c02",
+          "source_id": "recuperacion_informacion",
+          "score": 11.6556
+        },
+        {
+          "rank": 9,
+          "doc_id": "recuperacion_informacion__c01",
+          "source_id": "recuperacion_informacion",
+          "score": 11.3777
+        },
+        {
+          "rank": 10,
+          "doc_id": "bm25__c00",
+          "source_id": "bm25",
+          "score": 11.0308
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.3,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 1.0
+    },
+    {
+      "query_id": "q04",
+      "tipo": "lexica",
+      "query": "reconocimiento de entidades nombradas",
+      "relevant_source_ids": [
+        "ner"
+      ],
+      "latencia_ms": 0.911,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "ner__c00",
+          "source_id": "ner",
+          "score": 17.5792
+        },
+        {
+          "rank": 2,
+          "doc_id": "ner__c10",
+          "source_id": "ner",
+          "score": 16.4672
+        },
+        {
+          "rank": 3,
+          "doc_id": "ner__c04",
+          "source_id": "ner",
+          "score": 15.0957
+        },
+        {
+          "rank": 4,
+          "doc_id": "ner__c11",
+          "source_id": "ner",
+          "score": 14.4063
+        },
+        {
+          "rank": 5,
+          "doc_id": "ner__c05",
+          "source_id": "ner",
+          "score": 13.4575
+        },
+        {
+          "rank": 6,
+          "doc_id": "ner__c02",
+          "source_id": "ner",
+          "score": 12.7286
+        },
+        {
+          "rank": 7,
+          "doc_id": "ner__c09",
+          "source_id": "ner",
+          "score": 11.8321
+        },
+        {
+          "rank": 8,
+          "doc_id": "ner__c06",
+          "source_id": "ner",
+          "score": 11.7975
+        },
+        {
+          "rank": 9,
+          "doc_id": "red_neuronal__c80",
+          "source_id": "red_neuronal",
+          "score": 10.1492
+        },
+        {
+          "rank": 10,
+          "doc_id": "ner__c01",
+          "source_id": "ner",
+          "score": 10.0702
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.9,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.933745776545611
+    },
+    {
+      "query_id": "q05",
+      "tipo": "lexica",
+      "query": "similitud coseno entre dos vectores",
+      "relevant_source_ids": [
+        "similitud_coseno"
+      ],
+      "latencia_ms": 0.981,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "similitud_coseno__c01",
+          "source_id": "similitud_coseno",
+          "score": 21.6899
+        },
+        {
+          "rank": 2,
+          "doc_id": "similitud_coseno__c00",
+          "source_id": "similitud_coseno",
+          "score": 20.7769
+        },
+        {
+          "rank": 3,
+          "doc_id": "similitud_coseno__c03",
+          "source_id": "similitud_coseno",
+          "score": 17.9379
+        },
+        {
+          "rank": 4,
+          "doc_id": "word2vec__c08",
+          "source_id": "word2vec",
+          "score": 16.169
+        },
+        {
+          "rank": 5,
+          "doc_id": "word2vec__c00",
+          "source_id": "word2vec",
+          "score": 15.5198
+        },
+        {
+          "rank": 6,
+          "doc_id": "similitud_coseno__c02",
+          "source_id": "similitud_coseno",
+          "score": 13.9641
+        },
+        {
+          "rank": 7,
+          "doc_id": "modelo_espacio_vectorial__c03",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 13.3735
+        },
+        {
+          "rank": 8,
+          "doc_id": "similitud_coseno__c04",
+          "source_id": "similitud_coseno",
+          "score": 11.6562
+        },
+        {
+          "rank": 9,
+          "doc_id": "word2vec__c11",
+          "source_id": "word2vec",
+          "score": 8.7382
+        },
+        {
+          "rank": 10,
+          "doc_id": "recuperacion_informacion__c17",
+          "source_id": "recuperacion_informacion",
+          "score": 7.5722
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.7227265726449519,
+      "precision@10": 0.5,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.9505310077117097
+    },
+    {
+      "query_id": "q06",
+      "tipo": "lexica",
+      "query": "modelo word2vec skip-gram y bolsa continua de palabras",
+      "relevant_source_ids": [
+        "word2vec"
+      ],
+      "latencia_ms": 1.605,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "word2vec__c02",
+          "source_id": "word2vec",
+          "score": 38.6327
+        },
+        {
+          "rank": 2,
+          "doc_id": "word2vec__c03",
+          "source_id": "word2vec",
+          "score": 29.9966
+        },
+        {
+          "rank": 3,
+          "doc_id": "word2vec__c04",
+          "source_id": "word2vec",
+          "score": 18.1823
+        },
+        {
+          "rank": 4,
+          "doc_id": "word_embedding__c02",
+          "source_id": "word_embedding",
+          "score": 16.3187
+        },
+        {
+          "rank": 5,
+          "doc_id": "word2vec__c09",
+          "source_id": "word2vec",
+          "score": 14.6907
+        },
+        {
+          "rank": 6,
+          "doc_id": "word2vec__c05",
+          "source_id": "word2vec",
+          "score": 14.6702
+        },
+        {
+          "rank": 7,
+          "doc_id": "word2vec__c14",
+          "source_id": "word2vec",
+          "score": 13.8694
+        },
+        {
+          "rank": 8,
+          "doc_id": "word2vec__c15",
+          "source_id": "word2vec",
+          "score": 13.7265
+        },
+        {
+          "rank": 9,
+          "doc_id": "word2vec__c12",
+          "source_id": "word2vec",
+          "score": 13.6939
+        },
+        {
+          "rank": 10,
+          "doc_id": "word2vec__c00",
+          "source_id": "word2vec",
+          "score": 13.6661
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.8539316501572937,
+      "precision@10": 0.9,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.905211635630449
+    },
+    {
+      "query_id": "q07",
+      "tipo": "lexica",
+      "query": "análisis de sentimiento de opiniones",
+      "relevant_source_ids": [
+        "analisis_sentimiento"
+      ],
+      "latencia_ms": 0.642,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "analisis_sentimiento__c18",
+          "source_id": "analisis_sentimiento",
+          "score": 20.0002
+        },
+        {
+          "rank": 2,
+          "doc_id": "analisis_sentimiento__c06",
+          "source_id": "analisis_sentimiento",
+          "score": 19.7267
+        },
+        {
+          "rank": 3,
+          "doc_id": "analisis_sentimiento__c00",
+          "source_id": "analisis_sentimiento",
+          "score": 14.4039
+        },
+        {
+          "rank": 4,
+          "doc_id": "analisis_sentimiento__c17",
+          "source_id": "analisis_sentimiento",
+          "score": 13.7989
+        },
+        {
+          "rank": 5,
+          "doc_id": "analisis_sentimiento__c13",
+          "source_id": "analisis_sentimiento",
+          "score": 13.7869
+        },
+        {
+          "rank": 6,
+          "doc_id": "analisis_sentimiento__c11",
+          "source_id": "analisis_sentimiento",
+          "score": 13.4925
+        },
+        {
+          "rank": 7,
+          "doc_id": "analisis_sentimiento__c14",
+          "source_id": "analisis_sentimiento",
+          "score": 13.3288
+        },
+        {
+          "rank": 8,
+          "doc_id": "analisis_sentimiento__c16",
+          "source_id": "analisis_sentimiento",
+          "score": 13.1628
+        },
+        {
+          "rank": 9,
+          "doc_id": "analisis_sentimiento__c07",
+          "source_id": "analisis_sentimiento",
+          "score": 13.1473
+        },
+        {
+          "rank": 10,
+          "doc_id": "mineria_textos__c12",
+          "source_id": "mineria_textos",
+          "score": 13.0171
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.9,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.9363792118010481
+    },
+    {
+      "query_id": "q08",
+      "tipo": "lexica",
+      "query": "traducción automática estadística y neuronal",
+      "relevant_source_ids": [
+        "traduccion_automatica"
+      ],
+      "latencia_ms": 0.656,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "traduccion_automatica__c21",
+          "source_id": "traduccion_automatica",
+          "score": 14.9793
+        },
+        {
+          "rank": 2,
+          "doc_id": "traduccion_automatica__c20",
+          "source_id": "traduccion_automatica",
+          "score": 14.2886
+        },
+        {
+          "rank": 3,
+          "doc_id": "pln__c02",
+          "source_id": "pln",
+          "score": 14.137
+        },
+        {
+          "rank": 4,
+          "doc_id": "traduccion_automatica__c22",
+          "source_id": "traduccion_automatica",
+          "score": 13.8592
+        },
+        {
+          "rank": 5,
+          "doc_id": "pln__c03",
+          "source_id": "pln",
+          "score": 11.3313
+        },
+        {
+          "rank": 6,
+          "doc_id": "traduccion_automatica__c34",
+          "source_id": "traduccion_automatica",
+          "score": 10.6214
+        },
+        {
+          "rank": 7,
+          "doc_id": "traduccion_automatica__c25",
+          "source_id": "traduccion_automatica",
+          "score": 10.4306
+        },
+        {
+          "rank": 8,
+          "doc_id": "traduccion_automatica__c32",
+          "source_id": "traduccion_automatica",
+          "score": 10.3232
+        },
+        {
+          "rank": 9,
+          "doc_id": "traduccion_automatica__c16",
+          "source_id": "traduccion_automatica",
+          "score": 10.2108
+        },
+        {
+          "rank": 10,
+          "doc_id": "traduccion_automatica__c23",
+          "source_id": "traduccion_automatica",
+          "score": 10.168
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.7653606369886217,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.6992148198508501,
+      "precision@10": 0.8,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.8048109992093389
+    },
+    {
+      "query_id": "q09",
+      "tipo": "lexica",
+      "query": "mecanismo de atención en aprendizaje automático",
+      "relevant_source_ids": [
+        "atencion"
+      ],
+      "latencia_ms": 0.938,
+      "rr": 0.3333333333333333,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "transformador__c06",
+          "source_id": "transformador",
+          "score": 16.2351
+        },
+        {
+          "rank": 2,
+          "doc_id": "transformador__c03",
+          "source_id": "transformador",
+          "score": 15.9358
+        },
+        {
+          "rank": 3,
+          "doc_id": "atencion__c05",
+          "source_id": "atencion",
+          "score": 14.4385
+        },
+        {
+          "rank": 4,
+          "doc_id": "transformador__c05",
+          "source_id": "transformador",
+          "score": 13.8679
+        },
+        {
+          "rank": 5,
+          "doc_id": "transformador__c00",
+          "source_id": "transformador",
+          "score": 13.1645
+        },
+        {
+          "rank": 6,
+          "doc_id": "aprendizaje_automatico__c01",
+          "source_id": "aprendizaje_automatico",
+          "score": 12.4176
+        },
+        {
+          "rank": 7,
+          "doc_id": "atencion__c07",
+          "source_id": "atencion",
+          "score": 12.396
+        },
+        {
+          "rank": 8,
+          "doc_id": "atencion__c00",
+          "source_id": "atencion",
+          "score": 12.1349
+        },
+        {
+          "rank": 9,
+          "doc_id": "transformador__c01",
+          "source_id": "transformador",
+          "score": 12.0927
+        },
+        {
+          "rank": 10,
+          "doc_id": "red_neuronal__c06",
+          "source_id": "red_neuronal",
+          "score": 11.8072
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.23463936301137822,
+      "precision@5": 0.2,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.16958010263680806,
+      "precision@10": 0.3,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.2700199064638124
+    },
+    {
+      "query_id": "q10",
+      "tipo": "lexica",
+      "query": "precisión y exhaustividad como métricas de evaluación",
+      "relevant_source_ids": [
+        "precision_exhaustividad"
+      ],
+      "latencia_ms": 1.087,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "precision_exhaustividad__c00",
+          "source_id": "precision_exhaustividad",
+          "score": 20.325
+        },
+        {
+          "rank": 2,
+          "doc_id": "pln__c11",
+          "source_id": "pln",
+          "score": 19.3724
+        },
+        {
+          "rank": 3,
+          "doc_id": "recuperacion_informacion__c09",
+          "source_id": "recuperacion_informacion",
+          "score": 18.5609
+        },
+        {
+          "rank": 4,
+          "doc_id": "precision_exhaustividad__c05",
+          "source_id": "precision_exhaustividad",
+          "score": 17.9495
+        },
+        {
+          "rank": 5,
+          "doc_id": "precision_exhaustividad__c03",
+          "source_id": "precision_exhaustividad",
+          "score": 17.3094
+        },
+        {
+          "rank": 6,
+          "doc_id": "recuperacion_informacion__c08",
+          "source_id": "recuperacion_informacion",
+          "score": 16.7475
+        },
+        {
+          "rank": 7,
+          "doc_id": "precision_exhaustividad__c02",
+          "source_id": "precision_exhaustividad",
+          "score": 15.5406
+        },
+        {
+          "rank": 8,
+          "doc_id": "precision_exhaustividad__c07",
+          "source_id": "precision_exhaustividad",
+          "score": 15.1418
+        },
+        {
+          "rank": 9,
+          "doc_id": "pln__c12",
+          "source_id": "pln",
+          "score": 14.8078
+        },
+        {
+          "rank": 10,
+          "doc_id": "ner__c06",
+          "source_id": "ner",
+          "score": 14.4667
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.46927872602275644,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.6164336326286644,
+      "precision@10": 0.5,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.6238395628389074
+    },
+    {
+      "query_id": "q11",
+      "tipo": "lexica",
+      "query": "tareas del procesamiento de lenguaje natural",
+      "relevant_source_ids": [
+        "pln"
+      ],
+      "latencia_ms": 0.792,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "pln__c12",
+          "source_id": "pln",
+          "score": 18.5399
+        },
+        {
+          "rank": 2,
+          "doc_id": "bert__c02",
+          "source_id": "bert",
+          "score": 17.3557
+        },
+        {
+          "rank": 3,
+          "doc_id": "bert__c00",
+          "source_id": "bert",
+          "score": 16.6808
+        },
+        {
+          "rank": 4,
+          "doc_id": "bert__c01",
+          "source_id": "bert",
+          "score": 14.0948
+        },
+        {
+          "rank": 5,
+          "doc_id": "word_embedding__c00",
+          "source_id": "word_embedding",
+          "score": 13.8546
+        },
+        {
+          "rank": 6,
+          "doc_id": "word_embedding__c01",
+          "source_id": "word_embedding",
+          "score": 13.7647
+        },
+        {
+          "rank": 7,
+          "doc_id": "reconocimiento_habla__c04",
+          "source_id": "reconocimiento_habla",
+          "score": 13.4792
+        },
+        {
+          "rank": 8,
+          "doc_id": "pln__c00",
+          "source_id": "pln",
+          "score": 13.4583
+        },
+        {
+          "rank": 9,
+          "doc_id": "lematizacion__c02",
+          "source_id": "lematizacion",
+          "score": 13.3654
+        },
+        {
+          "rank": 10,
+          "doc_id": "modelo_espacio_vectorial__c00",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 13.3019
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.46927872602275644,
+      "precision@5": 0.2,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.3391602052736161,
+      "precision@10": 0.2,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.28952298823485745
+    },
+    {
+      "query_id": "q12",
+      "tipo": "semantica",
+      "query": "cómo puntuar la pertinencia de un texto frente a las palabras buscadas",
+      "relevant_source_ids": [
+        "bm25"
+      ],
+      "latencia_ms": 1.408,
+      "rr": 0.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "motor_busqueda__c00",
+          "source_id": "motor_busqueda",
+          "score": 20.8849
+        },
+        {
+          "rank": 2,
+          "doc_id": "entropia__c00",
+          "source_id": "entropia",
+          "score": 19.0862
+        },
+        {
+          "rank": 3,
+          "doc_id": "analisis_sentimiento__c04",
+          "source_id": "analisis_sentimiento",
+          "score": 17.4953
+        },
+        {
+          "rank": 4,
+          "doc_id": "analisis_sentimiento__c09",
+          "source_id": "analisis_sentimiento",
+          "score": 17.1346
+        },
+        {
+          "rank": 5,
+          "doc_id": "bert__c04",
+          "source_id": "bert",
+          "score": 16.6389
+        },
+        {
+          "rank": 6,
+          "doc_id": "traduccion_automatica__c00",
+          "source_id": "traduccion_automatica",
+          "score": 16.6154
+        },
+        {
+          "rank": 7,
+          "doc_id": "pln__c07",
+          "source_id": "pln",
+          "score": 16.426
+        },
+        {
+          "rank": 8,
+          "doc_id": "traduccion_automatica__c03",
+          "source_id": "traduccion_automatica",
+          "score": 16.4037
+        },
+        {
+          "rank": 9,
+          "doc_id": "traduccion_automatica__c02",
+          "source_id": "traduccion_automatica",
+          "score": 16.4026
+        },
+        {
+          "rank": 10,
+          "doc_id": "traduccion_automatica__c06",
+          "source_id": "traduccion_automatica",
+          "score": 16.3187
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.0,
+      "recall_articulo@3": 0.0,
+      "ndcg@3": 0.0,
+      "precision@5": 0.0,
+      "recall_articulo@5": 0.0,
+      "ndcg@5": 0.0,
+      "precision@10": 0.0,
+      "recall_articulo@10": 0.0,
+      "ndcg@10": 0.0
+    },
+    {
+      "query_id": "q13",
+      "tipo": "semantica",
+      "query": "representar palabras como vectores numéricos que capturan su significado",
+      "relevant_source_ids": [
+        "word2vec",
+        "word_embedding"
+      ],
+      "latencia_ms": 0.809,
+      "rr": 0.25,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "linguistica_computacional__c02",
+          "source_id": "linguistica_computacional",
+          "score": 13.9959
+        },
+        {
+          "rank": 2,
+          "doc_id": "atencion__c05",
+          "source_id": "atencion",
+          "score": 13.7472
+        },
+        {
+          "rank": 3,
+          "doc_id": "mineria_textos__c04",
+          "source_id": "mineria_textos",
+          "score": 13.4893
+        },
+        {
+          "rank": 4,
+          "doc_id": "word2vec__c09",
+          "source_id": "word2vec",
+          "score": 12.035
+        },
+        {
+          "rank": 5,
+          "doc_id": "word2vec__c00",
+          "source_id": "word2vec",
+          "score": 11.8992
+        },
+        {
+          "rank": 6,
+          "doc_id": "palabra_vacia__c00",
+          "source_id": "palabra_vacia",
+          "score": 11.0839
+        },
+        {
+          "rank": 7,
+          "doc_id": "aprendizaje_automatico__c13",
+          "source_id": "aprendizaje_automatico",
+          "score": 10.3017
+        },
+        {
+          "rank": 8,
+          "doc_id": "modelo_espacio_vectorial__c03",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 10.0898
+        },
+        {
+          "rank": 9,
+          "doc_id": "busqueda_semantica__c06",
+          "source_id": "busqueda_semantica",
+          "score": 9.8175
+        },
+        {
+          "rank": 10,
+          "doc_id": "word2vec__c08",
+          "source_id": "word2vec",
+          "score": 9.6794
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.0,
+      "recall_articulo@3": 0.0,
+      "ndcg@3": 0.0,
+      "precision@5": 0.4,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 0.27727342735504823,
+      "precision@10": 0.3,
+      "recall_articulo@10": 0.5,
+      "ndcg@10": 0.2435522702101235
+    },
+    {
+      "query_id": "q14",
+      "tipo": "semantica",
+      "query": "convertir un texto de un idioma a otro sin intervención humana",
+      "relevant_source_ids": [
+        "traduccion_automatica"
+      ],
+      "latencia_ms": 1.416,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "traduccion_automatica__c09",
+          "source_id": "traduccion_automatica",
+          "score": 21.7708
+        },
+        {
+          "rank": 2,
+          "doc_id": "analisis_sentimiento__c17",
+          "source_id": "analisis_sentimiento",
+          "score": 20.8569
+        },
+        {
+          "rank": 3,
+          "doc_id": "traduccion_automatica__c01",
+          "source_id": "traduccion_automatica",
+          "score": 19.8281
+        },
+        {
+          "rank": 4,
+          "doc_id": "traduccion_automatica__c00",
+          "source_id": "traduccion_automatica",
+          "score": 19.5172
+        },
+        {
+          "rank": 5,
+          "doc_id": "traduccion_automatica__c08",
+          "source_id": "traduccion_automatica",
+          "score": 18.9655
+        },
+        {
+          "rank": 6,
+          "doc_id": "analisis_grupos__c01",
+          "source_id": "analisis_grupos",
+          "score": 18.8901
+        },
+        {
+          "rank": 7,
+          "doc_id": "traduccion_automatica__c03",
+          "source_id": "traduccion_automatica",
+          "score": 18.3445
+        },
+        {
+          "rank": 8,
+          "doc_id": "traduccion_automatica__c04",
+          "source_id": "traduccion_automatica",
+          "score": 15.9327
+        },
+        {
+          "rank": 9,
+          "doc_id": "etiquetado_gramatical__c06",
+          "source_id": "etiquetado_gramatical",
+          "score": 15.4842
+        },
+        {
+          "rank": 10,
+          "doc_id": "linguistica_computacional__c12",
+          "source_id": "linguistica_computacional",
+          "score": 15.1555
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.7039180890341347,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.7860137352654724,
+      "precision@10": 0.6,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.6528642754944294
+    },
+    {
+      "query_id": "q15",
+      "tipo": "semantica",
+      "query": "identificar nombres de personas, lugares y organizaciones en un documento",
+      "relevant_source_ids": [
+        "ner"
+      ],
+      "latencia_ms": 1.598,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "ner__c00",
+          "source_id": "ner",
+          "score": 28.5521
+        },
+        {
+          "rank": 2,
+          "doc_id": "analisis_sentimiento__c06",
+          "source_id": "analisis_sentimiento",
+          "score": 16.6305
+        },
+        {
+          "rank": 3,
+          "doc_id": "traduccion_automatica__c02",
+          "source_id": "traduccion_automatica",
+          "score": 16.5789
+        },
+        {
+          "rank": 4,
+          "doc_id": "ner__c02",
+          "source_id": "ner",
+          "score": 16.313
+        },
+        {
+          "rank": 5,
+          "doc_id": "analisis_sentimiento__c00",
+          "source_id": "analisis_sentimiento",
+          "score": 16.3077
+        },
+        {
+          "rank": 6,
+          "doc_id": "traduccion_automatica__c01",
+          "source_id": "traduccion_automatica",
+          "score": 16.2033
+        },
+        {
+          "rank": 7,
+          "doc_id": "traduccion_automatica__c35",
+          "source_id": "traduccion_automatica",
+          "score": 15.1658
+        },
+        {
+          "rank": 8,
+          "doc_id": "analisis_grupos__c50",
+          "source_id": "analisis_grupos",
+          "score": 14.9072
+        },
+        {
+          "rank": 9,
+          "doc_id": "modelo_espacio_vectorial__c05",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 14.7289
+        },
+        {
+          "rank": 10,
+          "doc_id": "mineria_textos__c03",
+          "source_id": "mineria_textos",
+          "score": 14.5224
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.46927872602275644,
+      "precision@5": 0.4,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.48522855511632257,
+      "precision@10": 0.2,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.31488013066763093
+    },
+    {
+      "query_id": "q16",
+      "tipo": "semantica",
+      "query": "medir el parecido de dos textos por el ángulo entre sus representaciones",
+      "relevant_source_ids": [
+        "similitud_coseno"
+      ],
+      "latencia_ms": 1.648,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "similitud_coseno__c00",
+          "source_id": "similitud_coseno",
+          "score": 20.9899
+        },
+        {
+          "rank": 2,
+          "doc_id": "aprendizaje_automatico__c11",
+          "source_id": "aprendizaje_automatico",
+          "score": 16.7979
+        },
+        {
+          "rank": 3,
+          "doc_id": "analisis_grupos__c34",
+          "source_id": "analisis_grupos",
+          "score": 16.6517
+        },
+        {
+          "rank": 4,
+          "doc_id": "modelo_espacio_vectorial__c00",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 16.6476
+        },
+        {
+          "rank": 5,
+          "doc_id": "aprendizaje_profundo__c04",
+          "source_id": "aprendizaje_profundo",
+          "score": 16.12
+        },
+        {
+          "rank": 6,
+          "doc_id": "entropia__c20",
+          "source_id": "entropia",
+          "score": 15.5109
+        },
+        {
+          "rank": 7,
+          "doc_id": "similitud_coseno__c01",
+          "source_id": "similitud_coseno",
+          "score": 15.2094
+        },
+        {
+          "rank": 8,
+          "doc_id": "entropia__c21",
+          "source_id": "entropia",
+          "score": 15.1809
+        },
+        {
+          "rank": 9,
+          "doc_id": "bert__c03",
+          "source_id": "bert",
+          "score": 15.0886
+        },
+        {
+          "rank": 10,
+          "doc_id": "aprendizaje_automatico__c06",
+          "source_id": "aprendizaje_automatico",
+          "score": 15.0728
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.46927872602275644,
+      "precision@5": 0.2,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.3391602052736161,
+      "precision@10": 0.2,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.45221360703148816
+    },
+    {
+      "query_id": "q17",
+      "tipo": "semantica",
+      "query": "determinar si una reseña expresa una opinión favorable o desfavorable",
+      "relevant_source_ids": [
+        "analisis_sentimiento"
+      ],
+      "latencia_ms": 1.053,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "analisis_sentimiento__c07",
+          "source_id": "analisis_sentimiento",
+          "score": 14.1868
+        },
+        {
+          "rank": 2,
+          "doc_id": "analisis_sentimiento__c01",
+          "source_id": "analisis_sentimiento",
+          "score": 10.9018
+        },
+        {
+          "rank": 3,
+          "doc_id": "analisis_sentimiento__c00",
+          "source_id": "analisis_sentimiento",
+          "score": 10.5386
+        },
+        {
+          "rank": 4,
+          "doc_id": "tfidf__c00",
+          "source_id": "tfidf",
+          "score": 9.9517
+        },
+        {
+          "rank": 5,
+          "doc_id": "analisis_sentimiento__c05",
+          "source_id": "analisis_sentimiento",
+          "score": 9.2233
+        },
+        {
+          "rank": 6,
+          "doc_id": "naive_bayes__c02",
+          "source_id": "naive_bayes",
+          "score": 9.0167
+        },
+        {
+          "rank": 7,
+          "doc_id": "analisis_sentimiento__c15",
+          "source_id": "analisis_sentimiento",
+          "score": 8.4696
+        },
+        {
+          "rank": 8,
+          "doc_id": "aprendizaje_automatico__c03",
+          "source_id": "aprendizaje_automatico",
+          "score": 8.2869
+        },
+        {
+          "rank": 9,
+          "doc_id": "analisis_sentimiento__c19",
+          "source_id": "analisis_sentimiento",
+          "score": 8.2232
+        },
+        {
+          "rank": 10,
+          "doc_id": "red_neuronal__c62",
+          "source_id": "red_neuronal",
+          "score": 8.1608
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.8539316501572937,
+      "precision@10": 0.6,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.6937613565160449
+    },
+    {
+      "query_id": "q18",
+      "tipo": "semantica",
+      "query": "sistema que localiza páginas web pertinentes para lo que pide el usuario",
+      "relevant_source_ids": [
+        "motor_busqueda"
+      ],
+      "latencia_ms": 1.613,
+      "rr": 0.5,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "sistema_recomendacion__c00",
+          "source_id": "sistema_recomendacion",
+          "score": 21.4516
+        },
+        {
+          "rank": 2,
+          "doc_id": "motor_busqueda__c00",
+          "source_id": "motor_busqueda",
+          "score": 19.1319
+        },
+        {
+          "rank": 3,
+          "doc_id": "motor_busqueda__c07",
+          "source_id": "motor_busqueda",
+          "score": 18.9987
+        },
+        {
+          "rank": 4,
+          "doc_id": "reconocimiento_habla__c09",
+          "source_id": "reconocimiento_habla",
+          "score": 18.8721
+        },
+        {
+          "rank": 5,
+          "doc_id": "motor_busqueda__c13",
+          "source_id": "motor_busqueda",
+          "score": 18.2652
+        },
+        {
+          "rank": 6,
+          "doc_id": "motor_busqueda__c22",
+          "source_id": "motor_busqueda",
+          "score": 18.2477
+        },
+        {
+          "rank": 7,
+          "doc_id": "motor_busqueda__c09",
+          "source_id": "motor_busqueda",
+          "score": 18.1905
+        },
+        {
+          "rank": 8,
+          "doc_id": "analisis_sentimiento__c10",
+          "source_id": "analisis_sentimiento",
+          "score": 17.4982
+        },
+        {
+          "rank": 9,
+          "doc_id": "motor_busqueda__c19",
+          "source_id": "motor_busqueda",
+          "score": 17.2438
+        },
+        {
+          "rank": 10,
+          "doc_id": "motor_busqueda__c08",
+          "source_id": "motor_busqueda",
+          "score": 16.4929
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.5307212739772434,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.5147714448836774,
+      "precision@10": 0.7,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.6156886473955917
+    },
+    {
+      "query_id": "q19",
+      "tipo": "semantica",
+      "query": "asignar probabilidad a la siguiente palabra de una secuencia",
+      "relevant_source_ids": [
+        "modelo_lenguaje",
+        "ngrama"
+      ],
+      "latencia_ms": 1.119,
+      "rr": 0.5,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "etiquetado_gramatical__c06",
+          "source_id": "etiquetado_gramatical",
+          "score": 21.3552
+        },
+        {
+          "rank": 2,
+          "doc_id": "ngrama__c03",
+          "source_id": "ngrama",
+          "score": 19.7185
+        },
+        {
+          "rank": 3,
+          "doc_id": "hmm__c01",
+          "source_id": "hmm",
+          "score": 18.0744
+        },
+        {
+          "rank": 4,
+          "doc_id": "etiquetado_gramatical__c05",
+          "source_id": "etiquetado_gramatical",
+          "score": 17.5629
+        },
+        {
+          "rank": 5,
+          "doc_id": "ngrama__c11",
+          "source_id": "ngrama",
+          "score": 16.8878
+        },
+        {
+          "rank": 6,
+          "doc_id": "etiquetado_gramatical__c00",
+          "source_id": "etiquetado_gramatical",
+          "score": 16.3463
+        },
+        {
+          "rank": 7,
+          "doc_id": "ngrama__c07",
+          "source_id": "ngrama",
+          "score": 15.6706
+        },
+        {
+          "rank": 8,
+          "doc_id": "modelo_lenguaje__c09",
+          "source_id": "modelo_lenguaje",
+          "score": 15.6482
+        },
+        {
+          "rank": 9,
+          "doc_id": "modelo_lenguaje__c04",
+          "source_id": "modelo_lenguaje",
+          "score": 15.4401
+        },
+        {
+          "rank": 10,
+          "doc_id": "entropia__c24",
+          "source_id": "entropia",
+          "score": 15.1933
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 0.2960819109658652,
+      "precision@5": 0.4,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 0.34519134224686937,
+      "precision@10": 0.5,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.4330549290057019
+    },
+    {
+      "query_id": "q20",
+      "tipo": "semantica",
+      "query": "hacer que una máquina aprenda a partir de ejemplos en lugar de reglas fijas",
+      "relevant_source_ids": [
+        "aprendizaje_automatico"
+      ],
+      "latencia_ms": 1.507,
+      "rr": 0.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "traduccion_automatica__c19",
+          "source_id": "traduccion_automatica",
+          "score": 20.6096
+        },
+        {
+          "rank": 2,
+          "doc_id": "traduccion_automatica__c17",
+          "source_id": "traduccion_automatica",
+          "score": 20.5375
+        },
+        {
+          "rank": 3,
+          "doc_id": "red_neuronal__c64",
+          "source_id": "red_neuronal",
+          "score": 20.4499
+        },
+        {
+          "rank": 4,
+          "doc_id": "atencion__c03",
+          "source_id": "atencion",
+          "score": 20.0056
+        },
+        {
+          "rank": 5,
+          "doc_id": "red_neuronal__c28",
+          "source_id": "red_neuronal",
+          "score": 19.9698
+        },
+        {
+          "rank": 6,
+          "doc_id": "aprendizaje_profundo__c03",
+          "source_id": "aprendizaje_profundo",
+          "score": 19.9446
+        },
+        {
+          "rank": 7,
+          "doc_id": "lematizacion__c01",
+          "source_id": "lematizacion",
+          "score": 19.7197
+        },
+        {
+          "rank": 8,
+          "doc_id": "reconocimiento_habla__c02",
+          "source_id": "reconocimiento_habla",
+          "score": 19.6956
+        },
+        {
+          "rank": 9,
+          "doc_id": "pln__c01",
+          "source_id": "pln",
+          "score": 19.5351
+        },
+        {
+          "rank": 10,
+          "doc_id": "pln__c07",
+          "source_id": "pln",
+          "score": 19.4838
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.0,
+      "recall_articulo@3": 0.0,
+      "ndcg@3": 0.0,
+      "precision@5": 0.0,
+      "recall_articulo@5": 0.0,
+      "ndcg@5": 0.0,
+      "precision@10": 0.0,
+      "recall_articulo@10": 0.0,
+      "ndcg@10": 0.0
+    },
+    {
+      "query_id": "q21",
+      "tipo": "semantica",
+      "query": "estructura de cómputo inspirada en las neuronas del cerebro",
+      "relevant_source_ids": [
+        "red_neuronal"
+      ],
+      "latencia_ms": 0.821,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "red_neuronal__c00",
+          "source_id": "red_neuronal",
+          "score": 23.4451
+        },
+        {
+          "rank": 2,
+          "doc_id": "red_neuronal__c14",
+          "source_id": "red_neuronal",
+          "score": 16.91
+        },
+        {
+          "rank": 3,
+          "doc_id": "retropropagacion__c02",
+          "source_id": "retropropagacion",
+          "score": 16.6906
+        },
+        {
+          "rank": 4,
+          "doc_id": "aprendizaje_profundo__c00",
+          "source_id": "aprendizaje_profundo",
+          "score": 15.8521
+        },
+        {
+          "rank": 5,
+          "doc_id": "red_neuronal__c11",
+          "source_id": "red_neuronal",
+          "score": 15.369
+        },
+        {
+          "rank": 6,
+          "doc_id": "red_neuronal__c04",
+          "source_id": "red_neuronal",
+          "score": 14.523
+        },
+        {
+          "rank": 7,
+          "doc_id": "red_neuronal__c15",
+          "source_id": "red_neuronal",
+          "score": 14.2942
+        },
+        {
+          "rank": 8,
+          "doc_id": "pln__c03",
+          "source_id": "pln",
+          "score": 14.2231
+        },
+        {
+          "rank": 9,
+          "doc_id": "red_neuronal__c67",
+          "source_id": "red_neuronal",
+          "score": 14.2081
+        },
+        {
+          "rank": 10,
+          "doc_id": "red_neuronal__c03",
+          "source_id": "red_neuronal",
+          "score": 14.1343
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.7653606369886217,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.6843515475204855,
+      "precision@10": 0.7,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.7257345305446318
+    },
+    {
+      "query_id": "q22",
+      "tipo": "semantica",
+      "query": "buscar por el significado de la consulta y no por coincidencia exacta de palabras",
+      "relevant_source_ids": [
+        "busqueda_semantica"
+      ],
+      "latencia_ms": 1.167,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "busqueda_semantica__c06",
+          "source_id": "busqueda_semantica",
+          "score": 24.0841
+        },
+        {
+          "rank": 2,
+          "doc_id": "red_neuronal__c30",
+          "source_id": "red_neuronal",
+          "score": 23.7739
+        },
+        {
+          "rank": 3,
+          "doc_id": "busqueda_semantica__c04",
+          "source_id": "busqueda_semantica",
+          "score": 23.1601
+        },
+        {
+          "rank": 4,
+          "doc_id": "linguistica_computacional__c08",
+          "source_id": "linguistica_computacional",
+          "score": 22.9923
+        },
+        {
+          "rank": 5,
+          "doc_id": "busqueda_semantica__c02",
+          "source_id": "busqueda_semantica",
+          "score": 22.6785
+        },
+        {
+          "rank": 6,
+          "doc_id": "palabra_vacia__c00",
+          "source_id": "palabra_vacia",
+          "score": 22.5876
+        },
+        {
+          "rank": 7,
+          "doc_id": "pln__c08",
+          "source_id": "pln",
+          "score": 22.3223
+        },
+        {
+          "rank": 8,
+          "doc_id": "palabra_vacia__c01",
+          "source_id": "palabra_vacia",
+          "score": 22.2426
+        },
+        {
+          "rank": 9,
+          "doc_id": "busqueda_semantica__c01",
+          "source_id": "busqueda_semantica",
+          "score": 21.859
+        },
+        {
+          "rank": 10,
+          "doc_id": "linguistica_computacional__c06",
+          "source_id": "linguistica_computacional",
+          "score": 21.808
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.7039180890341347,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.639945385422766,
+      "precision@10": 0.4,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.48153499054313026
+    },
+    {
+      "query_id": "q23",
+      "tipo": "dificil",
+      "query": "diferencia entre recuperación por palabras clave y búsqueda semántica",
+      "relevant_source_ids": [
+        "busqueda_semantica",
+        "recuperacion_informacion"
+      ],
+      "latencia_ms": 1.312,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "busqueda_semantica__c01",
+          "source_id": "busqueda_semantica",
+          "score": 19.1351
+        },
+        {
+          "rank": 2,
+          "doc_id": "busqueda_semantica__c03",
+          "source_id": "busqueda_semantica",
+          "score": 15.8807
+        },
+        {
+          "rank": 3,
+          "doc_id": "busqueda_semantica__c00",
+          "source_id": "busqueda_semantica",
+          "score": 15.438
+        },
+        {
+          "rank": 4,
+          "doc_id": "busqueda_semantica__c04",
+          "source_id": "busqueda_semantica",
+          "score": 14.9155
+        },
+        {
+          "rank": 5,
+          "doc_id": "pln__c11",
+          "source_id": "pln",
+          "score": 14.6049
+        },
+        {
+          "rank": 6,
+          "doc_id": "analisis_sentimiento__c08",
+          "source_id": "analisis_sentimiento",
+          "score": 14.4026
+        },
+        {
+          "rank": 7,
+          "doc_id": "busqueda_semantica__c05",
+          "source_id": "busqueda_semantica",
+          "score": 14.3102
+        },
+        {
+          "rank": 8,
+          "doc_id": "busqueda_semantica__c02",
+          "source_id": "busqueda_semantica",
+          "score": 14.0585
+        },
+        {
+          "rank": 9,
+          "doc_id": "motor_busqueda__c09",
+          "source_id": "motor_busqueda",
+          "score": 13.24
+        },
+        {
+          "rank": 10,
+          "doc_id": "recuperacion_informacion__c17",
+          "source_id": "recuperacion_informacion",
+          "score": 12.0773
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 1.0,
+      "precision@5": 0.8,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 0.8687949224876582,
+      "precision@10": 0.7,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.7702043899253146
+    },
+    {
+      "query_id": "q24",
+      "tipo": "dificil",
+      "query": "cómo se relacionan el mecanismo de atención y la arquitectura transformador",
+      "relevant_source_ids": [
+        "atencion",
+        "transformador"
+      ],
+      "latencia_ms": 1.607,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "transformador__c06",
+          "source_id": "transformador",
+          "score": 29.8336
+        },
+        {
+          "rank": 2,
+          "doc_id": "transformador__c07",
+          "source_id": "transformador",
+          "score": 28.3951
+        },
+        {
+          "rank": 3,
+          "doc_id": "transformador__c00",
+          "source_id": "transformador",
+          "score": 28.063
+        },
+        {
+          "rank": 4,
+          "doc_id": "transformador__c05",
+          "source_id": "transformador",
+          "score": 26.8942
+        },
+        {
+          "rank": 5,
+          "doc_id": "transformador__c03",
+          "source_id": "transformador",
+          "score": 23.1192
+        },
+        {
+          "rank": 6,
+          "doc_id": "analisis_sentimiento__c04",
+          "source_id": "analisis_sentimiento",
+          "score": 21.6475
+        },
+        {
+          "rank": 7,
+          "doc_id": "atencion__c05",
+          "source_id": "atencion",
+          "score": 21.0018
+        },
+        {
+          "rank": 8,
+          "doc_id": "transformador__c01",
+          "source_id": "transformador",
+          "score": 19.9044
+        },
+        {
+          "rank": 9,
+          "doc_id": "atencion__c07",
+          "source_id": "atencion",
+          "score": 18.8261
+        },
+        {
+          "rank": 10,
+          "doc_id": "atencion__c04",
+          "source_id": "atencion",
+          "score": 18.3684
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 1.0,
+      "precision@10": 0.9,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.9216017310213246
+    },
+    {
+      "query_id": "q25",
+      "tipo": "dificil",
+      "query": "papel de los n-gramas en los modelos de lenguaje",
+      "relevant_source_ids": [
+        "modelo_lenguaje",
+        "ngrama"
+      ],
+      "latencia_ms": 1.04,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "ngrama__c00",
+          "source_id": "ngrama",
+          "score": 25.1068
+        },
+        {
+          "rank": 2,
+          "doc_id": "modelo_lenguaje__c07",
+          "source_id": "modelo_lenguaje",
+          "score": 23.9633
+        },
+        {
+          "rank": 3,
+          "doc_id": "etiquetado_gramatical__c05",
+          "source_id": "etiquetado_gramatical",
+          "score": 23.0613
+        },
+        {
+          "rank": 4,
+          "doc_id": "ngrama__c13",
+          "source_id": "ngrama",
+          "score": 22.5032
+        },
+        {
+          "rank": 5,
+          "doc_id": "ngrama__c07",
+          "source_id": "ngrama",
+          "score": 22.3761
+        },
+        {
+          "rank": 6,
+          "doc_id": "ngrama__c01",
+          "source_id": "ngrama",
+          "score": 22.3093
+        },
+        {
+          "rank": 7,
+          "doc_id": "ngrama__c05",
+          "source_id": "ngrama",
+          "score": 22.2463
+        },
+        {
+          "rank": 8,
+          "doc_id": "ngrama__c12",
+          "source_id": "ngrama",
+          "score": 21.8269
+        },
+        {
+          "rank": 9,
+          "doc_id": "ngrama__c10",
+          "source_id": "ngrama",
+          "score": 21.5365
+        },
+        {
+          "rank": 10,
+          "doc_id": "modelo_lenguaje__c08",
+          "source_id": "modelo_lenguaje",
+          "score": 21.2885
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.7653606369886217,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.830419897363192,
+      "precision@10": 0.9,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.8899541168509599
+    },
+    {
+      "query_id": "q26",
+      "tipo": "dificil",
+      "query": "métricas para evaluar la calidad de un sistema de recuperación",
+      "relevant_source_ids": [
+        "precision_exhaustividad",
+        "recuperacion_informacion"
+      ],
+      "latencia_ms": 1.079,
+      "rr": 0.2,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "word2vec__c14",
+          "source_id": "word2vec",
+          "score": 22.0045
+        },
+        {
+          "rank": 2,
+          "doc_id": "analisis_grupos__c30",
+          "source_id": "analisis_grupos",
+          "score": 21.2322
+        },
+        {
+          "rank": 3,
+          "doc_id": "ner__c04",
+          "source_id": "ner",
+          "score": 20.4477
+        },
+        {
+          "rank": 4,
+          "doc_id": "pln__c11",
+          "source_id": "pln",
+          "score": 20.0725
+        },
+        {
+          "rank": 5,
+          "doc_id": "recuperacion_informacion__c12",
+          "source_id": "recuperacion_informacion",
+          "score": 19.337
+        },
+        {
+          "rank": 6,
+          "doc_id": "recuperacion_informacion__c02",
+          "source_id": "recuperacion_informacion",
+          "score": 19.329
+        },
+        {
+          "rank": 7,
+          "doc_id": "traduccion_automatica__c08",
+          "source_id": "traduccion_automatica",
+          "score": 19.2064
+        },
+        {
+          "rank": 8,
+          "doc_id": "recuperacion_informacion__c06",
+          "source_id": "recuperacion_informacion",
+          "score": 18.3652
+        },
+        {
+          "rank": 9,
+          "doc_id": "analisis_grupos__c32",
+          "source_id": "analisis_grupos",
+          "score": 18.1747
+        },
+        {
+          "rank": 10,
+          "doc_id": "entropia__c20",
+          "source_id": "entropia",
+          "score": 17.8386
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.0,
+      "recall_articulo@3": 0.0,
+      "ndcg@3": 0.0,
+      "precision@5": 0.2,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 0.13120507751234178,
+      "precision@10": 0.3,
+      "recall_articulo@10": 0.5,
+      "ndcg@10": 0.2329726085570736
+    },
+    {
+      "query_id": "q27",
+      "tipo": "dificil",
+      "query": "relación entre los embeddings de palabras y word2vec",
+      "relevant_source_ids": [
+        "word2vec",
+        "word_embedding"
+      ],
+      "latencia_ms": 0.843,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "word2vec__c12",
+          "source_id": "word2vec",
+          "score": 21.1131
+        },
+        {
+          "rank": 2,
+          "doc_id": "word2vec__c11",
+          "source_id": "word2vec",
+          "score": 20.5502
+        },
+        {
+          "rank": 3,
+          "doc_id": "word2vec__c01",
+          "source_id": "word2vec",
+          "score": 20.2167
+        },
+        {
+          "rank": 4,
+          "doc_id": "word2vec__c00",
+          "source_id": "word2vec",
+          "score": 19.4075
+        },
+        {
+          "rank": 5,
+          "doc_id": "word2vec__c07",
+          "source_id": "word2vec",
+          "score": 19.198
+        },
+        {
+          "rank": 6,
+          "doc_id": "pln__c09",
+          "source_id": "pln",
+          "score": 17.7409
+        },
+        {
+          "rank": 7,
+          "doc_id": "word2vec__c09",
+          "source_id": "word2vec",
+          "score": 15.7639
+        },
+        {
+          "rank": 8,
+          "doc_id": "word2vec__c02",
+          "source_id": "word2vec",
+          "score": 15.5587
+        },
+        {
+          "rank": 9,
+          "doc_id": "word2vec__c10",
+          "source_id": "word2vec",
+          "score": 15.3054
+        },
+        {
+          "rank": 10,
+          "doc_id": "word2vec__c04",
+          "source_id": "word2vec",
+          "score": 14.3779
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 1.0,
+      "precision@10": 0.9,
+      "recall_articulo@10": 0.5,
+      "ndcg@10": 0.9216017310213246
+    },
+    {
+      "query_id": "q28",
+      "tipo": "dificil",
+      "query": "modelo de bolsa de palabras usado por tf-idf y BM25",
+      "relevant_source_ids": [
+        "bm25",
+        "tfidf"
+      ],
+      "latencia_ms": 1.411,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "tfidf__c01",
+          "source_id": "tfidf",
+          "score": 25.9268
+        },
+        {
+          "rank": 2,
+          "doc_id": "tfidf__c00",
+          "source_id": "tfidf",
+          "score": 24.3757
+        },
+        {
+          "rank": 3,
+          "doc_id": "bm25__c01",
+          "source_id": "bm25",
+          "score": 24.1581
+        },
+        {
+          "rank": 4,
+          "doc_id": "tfidf__c06",
+          "source_id": "tfidf",
+          "score": 24.0197
+        },
+        {
+          "rank": 5,
+          "doc_id": "bm25__c00",
+          "source_id": "bm25",
+          "score": 22.4491
+        },
+        {
+          "rank": 6,
+          "doc_id": "tfidf__c03",
+          "source_id": "tfidf",
+          "score": 20.9387
+        },
+        {
+          "rank": 7,
+          "doc_id": "word2vec__c03",
+          "source_id": "word2vec",
+          "score": 20.3404
+        },
+        {
+          "rank": 8,
+          "doc_id": "word2vec__c02",
+          "source_id": "word2vec",
+          "score": 18.3558
+        },
+        {
+          "rank": 9,
+          "doc_id": "tfidf__c04",
+          "source_id": "tfidf",
+          "score": 17.1402
+        },
+        {
+          "rank": 10,
+          "doc_id": "tfidf__c05",
+          "source_id": "tfidf",
+          "score": 16.8065
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.8,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.8572048559638626
+    },
+    {
+      "query_id": "q29",
+      "tipo": "dificil",
+      "query": "uso de redes neuronales en la traducción automática",
+      "relevant_source_ids": [
+        "red_neuronal",
+        "traduccion_automatica"
+      ],
+      "latencia_ms": 1.097,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "traduccion_automatica__c25",
+          "source_id": "traduccion_automatica",
+          "score": 19.134
+        },
+        {
+          "rank": 2,
+          "doc_id": "traduccion_automatica__c22",
+          "source_id": "traduccion_automatica",
+          "score": 19.0327
+        },
+        {
+          "rank": 3,
+          "doc_id": "pln__c04",
+          "source_id": "pln",
+          "score": 17.4439
+        },
+        {
+          "rank": 4,
+          "doc_id": "red_neuronal__c48",
+          "source_id": "red_neuronal",
+          "score": 17.0715
+        },
+        {
+          "rank": 5,
+          "doc_id": "traduccion_automatica__c02",
+          "source_id": "traduccion_automatica",
+          "score": 17.0465
+        },
+        {
+          "rank": 6,
+          "doc_id": "traduccion_automatica__c16",
+          "source_id": "traduccion_automatica",
+          "score": 16.785
+        },
+        {
+          "rank": 7,
+          "doc_id": "pln__c02",
+          "source_id": "pln",
+          "score": 16.4625
+        },
+        {
+          "rank": 8,
+          "doc_id": "traduccion_automatica__c11",
+          "source_id": "traduccion_automatica",
+          "score": 16.3973
+        },
+        {
+          "rank": 9,
+          "doc_id": "traduccion_automatica__c32",
+          "source_id": "traduccion_automatica",
+          "score": 16.1551
+        },
+        {
+          "rank": 10,
+          "doc_id": "traduccion_automatica__c36",
+          "source_id": "traduccion_automatica",
+          "score": 16.0752
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 0.7653606369886217,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.830419897363192,
+      "precision@10": 0.8,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.8165901947515999
+    },
+    {
+      "query_id": "q30",
+      "tipo": "dificil",
+      "query": "subtareas del procesamiento de lenguaje natural como el reconocimiento de entidades y el análisis de sentimiento",
+      "relevant_source_ids": [
+        "analisis_sentimiento",
+        "ner",
+        "pln"
+      ],
+      "latencia_ms": 1.413,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "analisis_sentimiento__c00",
+          "source_id": "analisis_sentimiento",
+          "score": 34.4673
+        },
+        {
+          "rank": 2,
+          "doc_id": "ner__c09",
+          "source_id": "ner",
+          "score": 33.9535
+        },
+        {
+          "rank": 3,
+          "doc_id": "word_embedding__c01",
+          "source_id": "word_embedding",
+          "score": 32.496
+        },
+        {
+          "rank": 4,
+          "doc_id": "pln__c12",
+          "source_id": "pln",
+          "score": 32.4071
+        },
+        {
+          "rank": 5,
+          "doc_id": "analisis_sentimiento__c10",
+          "source_id": "analisis_sentimiento",
+          "score": 31.2612
+        },
+        {
+          "rank": 6,
+          "doc_id": "modelo_lenguaje__c00",
+          "source_id": "modelo_lenguaje",
+          "score": 30.802
+        },
+        {
+          "rank": 7,
+          "doc_id": "analisis_sentimiento__c07",
+          "source_id": "analisis_sentimiento",
+          "score": 29.5868
+        },
+        {
+          "rank": 8,
+          "doc_id": "word_embedding__c00",
+          "source_id": "word_embedding",
+          "score": 28.8779
+        },
+        {
+          "rank": 9,
+          "doc_id": "red_neuronal_recurrente__c05",
+          "source_id": "red_neuronal_recurrente",
+          "score": 28.2451
+        },
+        {
+          "rank": 10,
+          "doc_id": "analisis_sentimiento__c11",
+          "source_id": "analisis_sentimiento",
+          "score": 27.7844
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.3333333333333333,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 0.6666666666666666,
+      "ndcg@3": 0.7653606369886217,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.830419897363192,
+      "precision@10": 0.6,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.6758704024811182
+    },
+    {
+      "query_id": "q31",
+      "tipo": "dificil",
+      "query": "vectorizar documentos para compararlos en un espacio vectorial",
+      "relevant_source_ids": [
+        "modelo_espacio_vectorial",
+        "similitud_coseno",
+        "tfidf"
+      ],
+      "latencia_ms": 0.725,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "modelo_espacio_vectorial__c07",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 19.2584
+        },
+        {
+          "rank": 2,
+          "doc_id": "modelo_espacio_vectorial__c00",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 16.7099
+        },
+        {
+          "rank": 3,
+          "doc_id": "word2vec__c01",
+          "source_id": "word2vec",
+          "score": 16.684
+        },
+        {
+          "rank": 4,
+          "doc_id": "modelo_espacio_vectorial__c03",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 15.5395
+        },
+        {
+          "rank": 5,
+          "doc_id": "ngrama__c07",
+          "source_id": "ngrama",
+          "score": 15.3813
+        },
+        {
+          "rank": 6,
+          "doc_id": "modelo_espacio_vectorial__c02",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 14.857
+        },
+        {
+          "rank": 7,
+          "doc_id": "ngrama__c08",
+          "source_id": "ngrama",
+          "score": 14.0948
+        },
+        {
+          "rank": 8,
+          "doc_id": "word_embedding__c00",
+          "source_id": "word_embedding",
+          "score": 13.6462
+        },
+        {
+          "rank": 9,
+          "doc_id": "word_embedding__c03",
+          "source_id": "word_embedding",
+          "score": 12.9471
+        },
+        {
+          "rank": 10,
+          "doc_id": "similitud_coseno__c01",
+          "source_id": "similitud_coseno",
+          "score": 12.8308
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.3333333333333333,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 0.3333333333333333,
+      "ndcg@3": 0.7653606369886217,
+      "precision@5": 0.6,
+      "recall_articulo@5": 0.3333333333333333,
+      "ndcg@5": 0.6992148198508501,
+      "precision@10": 0.5,
+      "recall_articulo@10": 0.6666666666666666,
+      "ndcg@10": 0.5957616317188125
+    },
+    {
+      "query_id": "q32",
+      "tipo": "dificil",
+      "query": "cómo un motor de búsqueda indexa grandes colecciones de documentos",
+      "relevant_source_ids": [
+        "indice_invertido",
+        "motor_busqueda"
+      ],
+      "latencia_ms": 0.855,
+      "rr": 0.3333333333333333,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "busqueda_semantica__c01",
+          "source_id": "busqueda_semantica",
+          "score": 26.9319
+        },
+        {
+          "rank": 2,
+          "doc_id": "busqueda_semantica__c00",
+          "source_id": "busqueda_semantica",
+          "score": 21.405
+        },
+        {
+          "rank": 3,
+          "doc_id": "motor_busqueda__c14",
+          "source_id": "motor_busqueda",
+          "score": 19.6513
+        },
+        {
+          "rank": 4,
+          "doc_id": "indice_invertido__c02",
+          "source_id": "indice_invertido",
+          "score": 19.5914
+        },
+        {
+          "rank": 5,
+          "doc_id": "indice_invertido__c00",
+          "source_id": "indice_invertido",
+          "score": 19.5522
+        },
+        {
+          "rank": 6,
+          "doc_id": "motor_busqueda__c21",
+          "source_id": "motor_busqueda",
+          "score": 18.689
+        },
+        {
+          "rank": 7,
+          "doc_id": "indice_invertido__c01",
+          "source_id": "indice_invertido",
+          "score": 18.2043
+        },
+        {
+          "rank": 8,
+          "doc_id": "motor_busqueda__c13",
+          "source_id": "motor_busqueda",
+          "score": 17.1464
+        },
+        {
+          "rank": 9,
+          "doc_id": "modelo_espacio_vectorial__c00",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 16.918
+        },
+        {
+          "rank": 10,
+          "doc_id": "motor_busqueda__c22",
+          "source_id": "motor_busqueda",
+          "score": 16.4456
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 0.23463936301137822,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.4468535299918563,
+      "precision@10": 0.7,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.5747915663739762
+    },
+    {
+      "query_id": "q33",
+      "tipo": "dificil",
+      "query": "aprender representaciones vectoriales de palabras con redes neuronales",
+      "relevant_source_ids": [
+        "red_neuronal",
+        "word2vec"
+      ],
+      "latencia_ms": 1.021,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "red_neuronal__c56",
+          "source_id": "red_neuronal",
+          "score": 14.9263
+        },
+        {
+          "rank": 2,
+          "doc_id": "red_neuronal__c52",
+          "source_id": "red_neuronal",
+          "score": 14.8492
+        },
+        {
+          "rank": 3,
+          "doc_id": "word2vec__c13",
+          "source_id": "word2vec",
+          "score": 14.1822
+        },
+        {
+          "rank": 4,
+          "doc_id": "aprendizaje_profundo__c04",
+          "source_id": "aprendizaje_profundo",
+          "score": 13.4621
+        },
+        {
+          "rank": 5,
+          "doc_id": "red_neuronal__c76",
+          "source_id": "red_neuronal",
+          "score": 11.9926
+        },
+        {
+          "rank": 6,
+          "doc_id": "red_neuronal__c03",
+          "source_id": "red_neuronal",
+          "score": 11.9759
+        },
+        {
+          "rank": 7,
+          "doc_id": "aprendizaje_profundo__c05",
+          "source_id": "aprendizaje_profundo",
+          "score": 11.8401
+        },
+        {
+          "rank": 8,
+          "doc_id": "aprendizaje_profundo__c00",
+          "source_id": "aprendizaje_profundo",
+          "score": 11.6541
+        },
+        {
+          "rank": 9,
+          "doc_id": "word_embedding__c00",
+          "source_id": "word_embedding",
+          "score": 11.4144
+        },
+        {
+          "rank": 10,
+          "doc_id": "word2vec__c17",
+          "source_id": "word2vec",
+          "score": 11.3943
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.8539316501572937,
+      "precision@10": 0.6,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.6961622681399229
+    },
+    {
+      "query_id": "q34",
+      "tipo": "lexica",
+      "query": "lematización de palabras a su forma base",
+      "relevant_source_ids": [
+        "lematizacion"
+      ],
+      "latencia_ms": 1.111,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "lematizacion__c01",
+          "source_id": "lematizacion",
+          "score": 14.17
+        },
+        {
+          "rank": 2,
+          "doc_id": "lematizacion__c00",
+          "source_id": "lematizacion",
+          "score": 14.0222
+        },
+        {
+          "rank": 3,
+          "doc_id": "lematizacion__c02",
+          "source_id": "lematizacion",
+          "score": 13.2535
+        },
+        {
+          "rank": 4,
+          "doc_id": "word2vec__c03",
+          "source_id": "word2vec",
+          "score": 11.8087
+        },
+        {
+          "rank": 5,
+          "doc_id": "busqueda_semantica__c04",
+          "source_id": "busqueda_semantica",
+          "score": 11.3246
+        },
+        {
+          "rank": 6,
+          "doc_id": "palabra_vacia__c01",
+          "source_id": "palabra_vacia",
+          "score": 10.785
+        },
+        {
+          "rank": 7,
+          "doc_id": "analisis_sentimiento__c04",
+          "source_id": "analisis_sentimiento",
+          "score": 10.6671
+        },
+        {
+          "rank": 8,
+          "doc_id": "linguistica_computacional__c06",
+          "source_id": "linguistica_computacional",
+          "score": 10.5167
+        },
+        {
+          "rank": 9,
+          "doc_id": "analisis_grupos__c22",
+          "source_id": "analisis_grupos",
+          "score": 10.396
+        },
+        {
+          "rank": 10,
+          "doc_id": "word2vec__c00",
+          "source_id": "word2vec",
+          "score": 10.1004
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.3,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 1.0
+    },
+    {
+      "query_id": "q35",
+      "tipo": "lexica",
+      "query": "etiquetado gramatical de las partes de la oración",
+      "relevant_source_ids": [
+        "etiquetado_gramatical"
+      ],
+      "latencia_ms": 0.985,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "etiquetado_gramatical__c00",
+          "source_id": "etiquetado_gramatical",
+          "score": 27.5682
+        },
+        {
+          "rank": 2,
+          "doc_id": "hmm__c01",
+          "source_id": "hmm",
+          "score": 18.0276
+        },
+        {
+          "rank": 3,
+          "doc_id": "transformador__c01",
+          "source_id": "transformador",
+          "score": 17.5526
+        },
+        {
+          "rank": 4,
+          "doc_id": "analisis_sentimiento__c09",
+          "source_id": "analisis_sentimiento",
+          "score": 17.1685
+        },
+        {
+          "rank": 5,
+          "doc_id": "etiquetado_gramatical__c01",
+          "source_id": "etiquetado_gramatical",
+          "score": 15.5959
+        },
+        {
+          "rank": 6,
+          "doc_id": "atencion__c00",
+          "source_id": "atencion",
+          "score": 15.5924
+        },
+        {
+          "rank": 7,
+          "doc_id": "pln__c07",
+          "source_id": "pln",
+          "score": 14.685
+        },
+        {
+          "rank": 8,
+          "doc_id": "etiquetado_gramatical__c07",
+          "source_id": "etiquetado_gramatical",
+          "score": 14.4731
+        },
+        {
+          "rank": 9,
+          "doc_id": "modelo_lenguaje__c00",
+          "source_id": "modelo_lenguaje",
+          "score": 14.4105
+        },
+        {
+          "rank": 10,
+          "doc_id": "ngrama__c12",
+          "source_id": "ngrama",
+          "score": 14.3559
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.46927872602275644,
+      "precision@5": 0.4,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.4703652827859579,
+      "precision@10": 0.3,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.4305888359652658
+    },
+    {
+      "query_id": "q36",
+      "tipo": "lexica",
+      "query": "minería de textos para extraer información",
+      "relevant_source_ids": [
+        "mineria_textos"
+      ],
+      "latencia_ms": 0.592,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "mineria_textos__c10",
+          "source_id": "mineria_textos",
+          "score": 20.6745
+        },
+        {
+          "rank": 2,
+          "doc_id": "mineria_textos__c08",
+          "source_id": "mineria_textos",
+          "score": 19.5838
+        },
+        {
+          "rank": 3,
+          "doc_id": "mineria_textos__c04",
+          "source_id": "mineria_textos",
+          "score": 19.4476
+        },
+        {
+          "rank": 4,
+          "doc_id": "analisis_sentimiento__c00",
+          "source_id": "analisis_sentimiento",
+          "score": 15.8072
+        },
+        {
+          "rank": 5,
+          "doc_id": "mineria_textos__c00",
+          "source_id": "mineria_textos",
+          "score": 15.4978
+        },
+        {
+          "rank": 6,
+          "doc_id": "mineria_textos__c07",
+          "source_id": "mineria_textos",
+          "score": 15.3992
+        },
+        {
+          "rank": 7,
+          "doc_id": "mineria_textos__c13",
+          "source_id": "mineria_textos",
+          "score": 14.5132
+        },
+        {
+          "rank": 8,
+          "doc_id": "mineria_textos__c11",
+          "source_id": "mineria_textos",
+          "score": 14.388
+        },
+        {
+          "rank": 9,
+          "doc_id": "mineria_textos__c09",
+          "source_id": "mineria_textos",
+          "score": 13.9423
+        },
+        {
+          "rank": 10,
+          "doc_id": "mineria_textos__c01",
+          "source_id": "mineria_textos",
+          "score": 13.9086
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.8539316501572937,
+      "precision@10": 0.9,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.905211635630449
+    },
+    {
+      "query_id": "q37",
+      "tipo": "lexica",
+      "query": "propagación hacia atrás para entrenar redes neuronales",
+      "relevant_source_ids": [
+        "retropropagacion"
+      ],
+      "latencia_ms": 0.675,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "retropropagacion__c00",
+          "source_id": "retropropagacion",
+          "score": 24.4692
+        },
+        {
+          "rank": 2,
+          "doc_id": "red_neuronal__c09",
+          "source_id": "red_neuronal",
+          "score": 21.9683
+        },
+        {
+          "rank": 3,
+          "doc_id": "red_neuronal__c10",
+          "source_id": "red_neuronal",
+          "score": 21.3358
+        },
+        {
+          "rank": 4,
+          "doc_id": "red_neuronal__c39",
+          "source_id": "red_neuronal",
+          "score": 20.9629
+        },
+        {
+          "rank": 5,
+          "doc_id": "red_neuronal__c12",
+          "source_id": "red_neuronal",
+          "score": 20.0187
+        },
+        {
+          "rank": 6,
+          "doc_id": "red_neuronal__c13",
+          "source_id": "red_neuronal",
+          "score": 19.5141
+        },
+        {
+          "rank": 7,
+          "doc_id": "red_neuronal__c31",
+          "source_id": "red_neuronal",
+          "score": 16.7643
+        },
+        {
+          "rank": 8,
+          "doc_id": "red_neuronal__c15",
+          "source_id": "red_neuronal",
+          "score": 16.3692
+        },
+        {
+          "rank": 9,
+          "doc_id": "red_neuronal__c08",
+          "source_id": "red_neuronal",
+          "score": 16.1365
+        },
+        {
+          "rank": 10,
+          "doc_id": "red_neuronal__c02",
+          "source_id": "red_neuronal",
+          "score": 15.7973
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.46927872602275644,
+      "precision@5": 0.2,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.3391602052736161,
+      "precision@10": 0.1,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.22009176629808017
+    },
+    {
+      "query_id": "q38",
+      "tipo": "lexica",
+      "query": "máquina de vectores de soporte",
+      "relevant_source_ids": [
+        "svm"
+      ],
+      "latencia_ms": 0.662,
+      "rr": 0.3333333333333333,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "analisis_sentimiento__c08",
+          "source_id": "analisis_sentimiento",
+          "score": 15.9579
+        },
+        {
+          "rank": 2,
+          "doc_id": "aprendizaje_automatico__c13",
+          "source_id": "aprendizaje_automatico",
+          "score": 15.222
+        },
+        {
+          "rank": 3,
+          "doc_id": "svm__c09",
+          "source_id": "svm",
+          "score": 14.9186
+        },
+        {
+          "rank": 4,
+          "doc_id": "svm__c00",
+          "source_id": "svm",
+          "score": 14.799
+        },
+        {
+          "rank": 5,
+          "doc_id": "atencion__c03",
+          "source_id": "atencion",
+          "score": 12.8096
+        },
+        {
+          "rank": 6,
+          "doc_id": "analisis_sentimiento__c09",
+          "source_id": "analisis_sentimiento",
+          "score": 12.3734
+        },
+        {
+          "rank": 7,
+          "doc_id": "word2vec__c08",
+          "source_id": "word2vec",
+          "score": 11.3935
+        },
+        {
+          "rank": 8,
+          "doc_id": "svm__c05",
+          "source_id": "svm",
+          "score": 11.3698
+        },
+        {
+          "rank": 9,
+          "doc_id": "word2vec__c09",
+          "source_id": "word2vec",
+          "score": 10.4276
+        },
+        {
+          "rank": 10,
+          "doc_id": "word2vec__c07",
+          "source_id": "word2vec",
+          "score": 10.387
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.23463936301137822,
+      "precision@5": 0.4,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.3156484524795145,
+      "precision@10": 0.3,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.2742654694553681
+    },
+    {
+      "query_id": "q39",
+      "tipo": "lexica",
+      "query": "modelo oculto de Márkov",
+      "relevant_source_ids": [
+        "hmm"
+      ],
+      "latencia_ms": 0.444,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "hmm__c00",
+          "source_id": "hmm",
+          "score": 17.9276
+        },
+        {
+          "rank": 2,
+          "doc_id": "hmm__c01",
+          "source_id": "hmm",
+          "score": 14.0492
+        },
+        {
+          "rank": 3,
+          "doc_id": "hmm__c02",
+          "source_id": "hmm",
+          "score": 13.6944
+        },
+        {
+          "rank": 4,
+          "doc_id": "hmm__c03",
+          "source_id": "hmm",
+          "score": 13.335
+        },
+        {
+          "rank": 5,
+          "doc_id": "hmm__c05",
+          "source_id": "hmm",
+          "score": 11.855
+        },
+        {
+          "rank": 6,
+          "doc_id": "hmm__c10",
+          "source_id": "hmm",
+          "score": 11.3887
+        },
+        {
+          "rank": 7,
+          "doc_id": "etiquetado_gramatical__c05",
+          "source_id": "etiquetado_gramatical",
+          "score": 9.7167
+        },
+        {
+          "rank": 8,
+          "doc_id": "hmm__c11",
+          "source_id": "hmm",
+          "score": 9.3497
+        },
+        {
+          "rank": 9,
+          "doc_id": "ngrama__c02",
+          "source_id": "ngrama",
+          "score": 8.5025
+        },
+        {
+          "rank": 10,
+          "doc_id": "aprendizaje_automatico__c20",
+          "source_id": "aprendizaje_automatico",
+          "score": 8.0855
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.7,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.7967610662472991
+    },
+    {
+      "query_id": "q40",
+      "tipo": "lexica",
+      "query": "lingüística computacional",
+      "relevant_source_ids": [
+        "linguistica_computacional"
+      ],
+      "latencia_ms": 0.251,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "linguistica_computacional__c03",
+          "source_id": "linguistica_computacional",
+          "score": 10.101
+        },
+        {
+          "rank": 2,
+          "doc_id": "linguistica_computacional__c05",
+          "source_id": "linguistica_computacional",
+          "score": 8.9767
+        },
+        {
+          "rank": 3,
+          "doc_id": "linguistica_computacional__c00",
+          "source_id": "linguistica_computacional",
+          "score": 8.7135
+        },
+        {
+          "rank": 4,
+          "doc_id": "linguistica_computacional__c01",
+          "source_id": "linguistica_computacional",
+          "score": 7.9689
+        },
+        {
+          "rank": 5,
+          "doc_id": "linguistica_computacional__c11",
+          "source_id": "linguistica_computacional",
+          "score": 7.9268
+        },
+        {
+          "rank": 6,
+          "doc_id": "etiquetado_gramatical__c00",
+          "source_id": "etiquetado_gramatical",
+          "score": 7.7034
+        },
+        {
+          "rank": 7,
+          "doc_id": "lematizacion__c02",
+          "source_id": "lematizacion",
+          "score": 7.2879
+        },
+        {
+          "rank": 8,
+          "doc_id": "linguistica_computacional__c13",
+          "source_id": "linguistica_computacional",
+          "score": 7.1154
+        },
+        {
+          "rank": 9,
+          "doc_id": "linguistica_computacional__c04",
+          "source_id": "linguistica_computacional",
+          "score": 6.8132
+        },
+        {
+          "rank": 10,
+          "doc_id": "linguistica_computacional__c12",
+          "source_id": "linguistica_computacional",
+          "score": 6.5945
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.8,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.8482378089219645
+    },
+    {
+      "query_id": "q41",
+      "tipo": "semantica",
+      "query": "reducir una palabra a su raíz recortando los sufijos",
+      "relevant_source_ids": [
+        "stemming"
+      ],
+      "latencia_ms": 1.189,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "stemming__c00",
+          "source_id": "stemming",
+          "score": 18.1135
+        },
+        {
+          "rank": 2,
+          "doc_id": "entropia__c01",
+          "source_id": "entropia",
+          "score": 11.0761
+        },
+        {
+          "rank": 3,
+          "doc_id": "word2vec__c09",
+          "source_id": "word2vec",
+          "score": 10.8831
+        },
+        {
+          "rank": 4,
+          "doc_id": "recuperacion_informacion__c01",
+          "source_id": "recuperacion_informacion",
+          "score": 10.4219
+        },
+        {
+          "rank": 5,
+          "doc_id": "bert__c04",
+          "source_id": "bert",
+          "score": 10.0142
+        },
+        {
+          "rank": 6,
+          "doc_id": "traduccion_automatica__c06",
+          "source_id": "traduccion_automatica",
+          "score": 9.9407
+        },
+        {
+          "rank": 7,
+          "doc_id": "red_neuronal__c03",
+          "source_id": "red_neuronal",
+          "score": 9.8758
+        },
+        {
+          "rank": 8,
+          "doc_id": "aprendizaje_automatico__c24",
+          "source_id": "aprendizaje_automatico",
+          "score": 9.8585
+        },
+        {
+          "rank": 9,
+          "doc_id": "traduccion_automatica__c23",
+          "source_id": "traduccion_automatica",
+          "score": 9.7998
+        },
+        {
+          "rank": 10,
+          "doc_id": "word2vec__c02",
+          "source_id": "word2vec",
+          "score": 9.5411
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.6131471927654584,
+      "precision@5": 0.2,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.6131471927654584,
+      "precision@10": 0.1,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.6131471927654584
+    },
+    {
+      "query_id": "q42",
+      "tipo": "semantica",
+      "query": "palabras muy frecuentes que se descartan al construir el índice",
+      "relevant_source_ids": [
+        "palabra_vacia"
+      ],
+      "latencia_ms": 1.333,
+      "rr": 0.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "indice_invertido__c01",
+          "source_id": "indice_invertido",
+          "score": 16.3815
+        },
+        {
+          "rank": 2,
+          "doc_id": "indice_invertido__c02",
+          "source_id": "indice_invertido",
+          "score": 15.7066
+        },
+        {
+          "rank": 3,
+          "doc_id": "entropia__c00",
+          "source_id": "entropia",
+          "score": 15.4062
+        },
+        {
+          "rank": 4,
+          "doc_id": "entropia__c13",
+          "source_id": "entropia",
+          "score": 14.4552
+        },
+        {
+          "rank": 5,
+          "doc_id": "indice_invertido__c00",
+          "source_id": "indice_invertido",
+          "score": 13.8676
+        },
+        {
+          "rank": 6,
+          "doc_id": "ngrama__c00",
+          "source_id": "ngrama",
+          "score": 13.5935
+        },
+        {
+          "rank": 7,
+          "doc_id": "motor_busqueda__c08",
+          "source_id": "motor_busqueda",
+          "score": 12.4928
+        },
+        {
+          "rank": 8,
+          "doc_id": "atencion__c03",
+          "source_id": "atencion",
+          "score": 12.4062
+        },
+        {
+          "rank": 9,
+          "doc_id": "busqueda_semantica__c05",
+          "source_id": "busqueda_semantica",
+          "score": 12.3198
+        },
+        {
+          "rank": 10,
+          "doc_id": "word2vec__c04",
+          "source_id": "word2vec",
+          "score": 12.3091
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.0,
+      "recall_articulo@3": 0.0,
+      "ndcg@3": 0.0,
+      "precision@5": 0.0,
+      "recall_articulo@5": 0.0,
+      "ndcg@5": 0.0,
+      "precision@10": 0.0,
+      "recall_articulo@10": 0.0,
+      "ndcg@10": 0.0
+    },
+    {
+      "query_id": "q43",
+      "tipo": "semantica",
+      "query": "clasificador probabilístico que supone independencia entre los atributos",
+      "relevant_source_ids": [
+        "naive_bayes"
+      ],
+      "latencia_ms": 1.136,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "naive_bayes__c00",
+          "source_id": "naive_bayes",
+          "score": 19.4607
+        },
+        {
+          "rank": 2,
+          "doc_id": "recuperacion_informacion__c18",
+          "source_id": "recuperacion_informacion",
+          "score": 17.1273
+        },
+        {
+          "rank": 3,
+          "doc_id": "naive_bayes__c02",
+          "source_id": "naive_bayes",
+          "score": 13.4458
+        },
+        {
+          "rank": 4,
+          "doc_id": "analisis_grupos__c27",
+          "source_id": "analisis_grupos",
+          "score": 10.9983
+        },
+        {
+          "rank": 5,
+          "doc_id": "naive_bayes__c01",
+          "source_id": "naive_bayes",
+          "score": 10.0205
+        },
+        {
+          "rank": 6,
+          "doc_id": "aprendizaje_automatico__c14",
+          "source_id": "aprendizaje_automatico",
+          "score": 9.9626
+        },
+        {
+          "rank": 7,
+          "doc_id": "red_neuronal__c24",
+          "source_id": "red_neuronal",
+          "score": 9.7069
+        },
+        {
+          "rank": 8,
+          "doc_id": "naive_bayes__c12",
+          "source_id": "naive_bayes",
+          "score": 9.6444
+        },
+        {
+          "rank": 9,
+          "doc_id": "naive_bayes__c11",
+          "source_id": "naive_bayes",
+          "score": 9.315
+        },
+        {
+          "rank": 10,
+          "doc_id": "atencion__c03",
+          "source_id": "atencion",
+          "score": 9.2688
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.7039180890341347,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.639945385422766,
+      "precision@10": 0.5,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.5509662124799075
+    },
+    {
+      "query_id": "q44",
+      "tipo": "semantica",
+      "query": "agrupar datos sin etiquetas en conjuntos de elementos parecidos",
+      "relevant_source_ids": [
+        "analisis_grupos"
+      ],
+      "latencia_ms": 1.023,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "analisis_grupos__c36",
+          "source_id": "analisis_grupos",
+          "score": 19.3929
+        },
+        {
+          "rank": 2,
+          "doc_id": "analisis_grupos__c41",
+          "source_id": "analisis_grupos",
+          "score": 15.8168
+        },
+        {
+          "rank": 3,
+          "doc_id": "analisis_grupos__c47",
+          "source_id": "analisis_grupos",
+          "score": 15.1098
+        },
+        {
+          "rank": 4,
+          "doc_id": "analisis_grupos__c00",
+          "source_id": "analisis_grupos",
+          "score": 14.7087
+        },
+        {
+          "rank": 5,
+          "doc_id": "analisis_grupos__c37",
+          "source_id": "analisis_grupos",
+          "score": 14.4607
+        },
+        {
+          "rank": 6,
+          "doc_id": "aprendizaje_profundo__c04",
+          "source_id": "aprendizaje_profundo",
+          "score": 13.5532
+        },
+        {
+          "rank": 7,
+          "doc_id": "analisis_sentimiento__c08",
+          "source_id": "analisis_sentimiento",
+          "score": 13.0764
+        },
+        {
+          "rank": 8,
+          "doc_id": "analisis_grupos__c45",
+          "source_id": "analisis_grupos",
+          "score": 12.705
+        },
+        {
+          "rank": 9,
+          "doc_id": "analisis_grupos__c14",
+          "source_id": "analisis_grupos",
+          "score": 12.3864
+        },
+        {
+          "rank": 10,
+          "doc_id": "red_neuronal__c43",
+          "source_id": "red_neuronal",
+          "score": 12.0987
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.7,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.7846170207230129
+    },
+    {
+      "query_id": "q45",
+      "tipo": "semantica",
+      "query": "convertir la voz hablada en texto escrito automáticamente",
+      "relevant_source_ids": [
+        "reconocimiento_habla"
+      ],
+      "latencia_ms": 0.765,
+      "rr": 0.5,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "analisis_sentimiento__c17",
+          "source_id": "analisis_sentimiento",
+          "score": 16.8133
+        },
+        {
+          "rank": 2,
+          "doc_id": "reconocimiento_habla__c00",
+          "source_id": "reconocimiento_habla",
+          "score": 16.1994
+        },
+        {
+          "rank": 3,
+          "doc_id": "red_neuronal__c47",
+          "source_id": "red_neuronal",
+          "score": 13.1703
+        },
+        {
+          "rank": 4,
+          "doc_id": "reconocimiento_habla__c10",
+          "source_id": "reconocimiento_habla",
+          "score": 13.1578
+        },
+        {
+          "rank": 5,
+          "doc_id": "reconocimiento_habla__c04",
+          "source_id": "reconocimiento_habla",
+          "score": 12.6879
+        },
+        {
+          "rank": 6,
+          "doc_id": "traduccion_automatica__c22",
+          "source_id": "traduccion_automatica",
+          "score": 12.2464
+        },
+        {
+          "rank": 7,
+          "doc_id": "reconocimiento_habla__c02",
+          "source_id": "reconocimiento_habla",
+          "score": 11.7076
+        },
+        {
+          "rank": 8,
+          "doc_id": "modelo_lenguaje__c01",
+          "source_id": "modelo_lenguaje",
+          "score": 11.1027
+        },
+        {
+          "rank": 9,
+          "doc_id": "reconocimiento_habla__c09",
+          "source_id": "reconocimiento_habla",
+          "score": 10.9525
+        },
+        {
+          "rank": 10,
+          "doc_id": "pln__c07",
+          "source_id": "pln",
+          "score": 10.8654
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 0.2960819109658652,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.4912596920895758,
+      "precision@10": 0.5,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.45841207143847534
+    },
+    {
+      "query_id": "q46",
+      "tipo": "semantica",
+      "query": "medida de la incertidumbre o cantidad de información de una fuente",
+      "relevant_source_ids": [
+        "entropia"
+      ],
+      "latencia_ms": 1.272,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "entropia__c00",
+          "source_id": "entropia",
+          "score": 25.9992
+        },
+        {
+          "rank": 2,
+          "doc_id": "entropia__c01",
+          "source_id": "entropia",
+          "score": 23.6796
+        },
+        {
+          "rank": 3,
+          "doc_id": "entropia__c09",
+          "source_id": "entropia",
+          "score": 23.4733
+        },
+        {
+          "rank": 4,
+          "doc_id": "entropia__c05",
+          "source_id": "entropia",
+          "score": 23.0305
+        },
+        {
+          "rank": 5,
+          "doc_id": "recuperacion_informacion__c03",
+          "source_id": "recuperacion_informacion",
+          "score": 22.3679
+        },
+        {
+          "rank": 6,
+          "doc_id": "recuperacion_informacion__c04",
+          "source_id": "recuperacion_informacion",
+          "score": 22.1042
+        },
+        {
+          "rank": 7,
+          "doc_id": "entropia__c04",
+          "source_id": "entropia",
+          "score": 21.4065
+        },
+        {
+          "rank": 8,
+          "doc_id": "entropia__c11",
+          "source_id": "entropia",
+          "score": 19.906
+        },
+        {
+          "rank": 9,
+          "doc_id": "word2vec__c15",
+          "source_id": "word2vec",
+          "score": 19.3854
+        },
+        {
+          "rank": 10,
+          "doc_id": "tfidf__c00",
+          "source_id": "tfidf",
+          "score": 18.634
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 1.0,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 0.8,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.8687949224876582,
+      "precision@10": 0.6,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.7065836017263628
+    },
+    {
+      "query_id": "q47",
+      "tipo": "semantica",
+      "query": "red neuronal que procesa secuencias recordando estados anteriores",
+      "relevant_source_ids": [
+        "red_neuronal_recurrente"
+      ],
+      "latencia_ms": 1.045,
+      "rr": 0.25,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "red_neuronal__c00",
+          "source_id": "red_neuronal",
+          "score": 11.6367
+        },
+        {
+          "rank": 2,
+          "doc_id": "red_neuronal__c77",
+          "source_id": "red_neuronal",
+          "score": 11.4658
+        },
+        {
+          "rank": 3,
+          "doc_id": "word_embedding__c02",
+          "source_id": "word_embedding",
+          "score": 10.1295
+        },
+        {
+          "rank": 4,
+          "doc_id": "red_neuronal_recurrente__c00",
+          "source_id": "red_neuronal_recurrente",
+          "score": 10.0082
+        },
+        {
+          "rank": 5,
+          "doc_id": "atencion__c02",
+          "source_id": "atencion",
+          "score": 9.9826
+        },
+        {
+          "rank": 6,
+          "doc_id": "hmm__c08",
+          "source_id": "hmm",
+          "score": 9.9386
+        },
+        {
+          "rank": 7,
+          "doc_id": "red_neuronal__c75",
+          "source_id": "red_neuronal",
+          "score": 9.6902
+        },
+        {
+          "rank": 8,
+          "doc_id": "red_neuronal__c76",
+          "source_id": "red_neuronal",
+          "score": 9.5785
+        },
+        {
+          "rank": 9,
+          "doc_id": "retropropagacion__c19",
+          "source_id": "retropropagacion",
+          "score": 9.4124
+        },
+        {
+          "rank": 10,
+          "doc_id": "red_neuronal__c55",
+          "source_id": "red_neuronal",
+          "score": 8.9242
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.0,
+      "recall_articulo@3": 0.0,
+      "ndcg@3": 0.0,
+      "precision@5": 0.2,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.14606834984270645,
+      "precision@10": 0.1,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.13032376591037065
+    },
+    {
+      "query_id": "q48",
+      "tipo": "dificil",
+      "query": "representar documentos como vectores para calcular su relevancia",
+      "relevant_source_ids": [
+        "modelo_espacio_vectorial",
+        "tfidf"
+      ],
+      "latencia_ms": 0.923,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "modelo_espacio_vectorial__c00",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 13.6412
+        },
+        {
+          "rank": 2,
+          "doc_id": "modelo_espacio_vectorial__c03",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 13.5929
+        },
+        {
+          "rank": 3,
+          "doc_id": "recuperacion_informacion__c18",
+          "source_id": "recuperacion_informacion",
+          "score": 11.8896
+        },
+        {
+          "rank": 4,
+          "doc_id": "word2vec__c07",
+          "source_id": "word2vec",
+          "score": 10.9872
+        },
+        {
+          "rank": 5,
+          "doc_id": "tfidf__c01",
+          "source_id": "tfidf",
+          "score": 10.5357
+        },
+        {
+          "rank": 6,
+          "doc_id": "similitud_coseno__c03",
+          "source_id": "similitud_coseno",
+          "score": 10.4519
+        },
+        {
+          "rank": 7,
+          "doc_id": "transformador__c02",
+          "source_id": "transformador",
+          "score": 10.4464
+        },
+        {
+          "rank": 8,
+          "doc_id": "bm25__c00",
+          "source_id": "bm25",
+          "score": 10.3084
+        },
+        {
+          "rank": 9,
+          "doc_id": "recuperacion_informacion__c07",
+          "source_id": "recuperacion_informacion",
+          "score": 10.2755
+        },
+        {
+          "rank": 10,
+          "doc_id": "aprendizaje_automatico__c15",
+          "source_id": "aprendizaje_automatico",
+          "score": 10.2079
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 0.7653606369886217,
+      "precision@5": 0.6,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 0.6843515475204855,
+      "precision@10": 0.3,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.4440973278132557
+    },
+    {
+      "query_id": "q49",
+      "tipo": "dificil",
+      "query": "redes neuronales profundas con muchas capas ocultas",
+      "relevant_source_ids": [
+        "aprendizaje_profundo",
+        "perceptron_multicapa",
+        "red_neuronal"
+      ],
+      "latencia_ms": 0.716,
+      "rr": 0.5,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "aprendizaje_automatico__c21",
+          "source_id": "aprendizaje_automatico",
+          "score": 20.8269
+        },
+        {
+          "rank": 2,
+          "doc_id": "red_neuronal__c13",
+          "source_id": "red_neuronal",
+          "score": 16.3503
+        },
+        {
+          "rank": 3,
+          "doc_id": "red_neuronal__c01",
+          "source_id": "red_neuronal",
+          "score": 14.5992
+        },
+        {
+          "rank": 4,
+          "doc_id": "red_neuronal__c71",
+          "source_id": "red_neuronal",
+          "score": 13.4878
+        },
+        {
+          "rank": 5,
+          "doc_id": "perceptron_multicapa__c01",
+          "source_id": "perceptron_multicapa",
+          "score": 12.5512
+        },
+        {
+          "rank": 6,
+          "doc_id": "red_neuronal__c14",
+          "source_id": "red_neuronal",
+          "score": 12.3182
+        },
+        {
+          "rank": 7,
+          "doc_id": "red_neuronal__c56",
+          "source_id": "red_neuronal",
+          "score": 12.1759
+        },
+        {
+          "rank": 8,
+          "doc_id": "red_neuronal__c54",
+          "source_id": "red_neuronal",
+          "score": 10.4684
+        },
+        {
+          "rank": 9,
+          "doc_id": "red_neuronal__c16",
+          "source_id": "red_neuronal",
+          "score": 10.4011
+        },
+        {
+          "rank": 10,
+          "doc_id": "red_neuronal__c73",
+          "source_id": "red_neuronal",
+          "score": 10.3611
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.6666666666666666,
+      "recall_articulo@3": 0.3333333333333333,
+      "ndcg@3": 0.5307212739772434,
+      "precision@5": 0.8,
+      "recall_articulo@5": 0.6666666666666666,
+      "ndcg@5": 0.6608397947263839,
+      "precision@10": 0.9,
+      "recall_articulo@10": 0.6666666666666666,
+      "ndcg@10": 0.7799082337019198
+    },
+    {
+      "query_id": "q50",
+      "tipo": "dificil",
+      "query": "modelos de lenguaje basados en la arquitectura transformador como BERT",
+      "relevant_source_ids": [
+        "bert",
+        "transformador"
+      ],
+      "latencia_ms": 1.307,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "transformador__c00",
+          "source_id": "transformador",
+          "score": 24.1755
+        },
+        {
+          "rank": 2,
+          "doc_id": "transformador__c07",
+          "source_id": "transformador",
+          "score": 20.0951
+        },
+        {
+          "rank": 3,
+          "doc_id": "bert__c02",
+          "source_id": "bert",
+          "score": 19.9169
+        },
+        {
+          "rank": 4,
+          "doc_id": "bert__c05",
+          "source_id": "bert",
+          "score": 19.1549
+        },
+        {
+          "rank": 5,
+          "doc_id": "bert__c01",
+          "source_id": "bert",
+          "score": 18.7113
+        },
+        {
+          "rank": 6,
+          "doc_id": "bert__c03",
+          "source_id": "bert",
+          "score": 18.0889
+        },
+        {
+          "rank": 7,
+          "doc_id": "pln__c09",
+          "source_id": "pln",
+          "score": 17.4895
+        },
+        {
+          "rank": 8,
+          "doc_id": "bert__c00",
+          "source_id": "bert",
+          "score": 17.3148
+        },
+        {
+          "rank": 9,
+          "doc_id": "bert__c04",
+          "source_id": "bert",
+          "score": 16.9107
+        },
+        {
+          "rank": 10,
+          "doc_id": "modelo_lenguaje__c02",
+          "source_id": "modelo_lenguaje",
+          "score": 16.0747
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 1.0,
+      "recall_articulo@3": 1.0,
+      "ndcg@3": 1.0,
+      "precision@5": 1.0,
+      "recall_articulo@5": 1.0,
+      "ndcg@5": 1.0,
+      "precision@10": 0.8,
+      "recall_articulo@10": 1.0,
+      "ndcg@10": 0.8630152897016882
+    },
+    {
+      "query_id": "q51",
+      "tipo": "dificil",
+      "query": "normalización de palabras: lematización frente a extracción de raíces",
+      "relevant_source_ids": [
+        "lematizacion",
+        "stemming"
+      ],
+      "latencia_ms": 0.769,
+      "rr": 1.0,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "lematizacion__c02",
+          "source_id": "lematizacion",
+          "score": 20.7387
+        },
+        {
+          "rank": 2,
+          "doc_id": "modelo_espacio_vectorial__c04",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 18.143
+        },
+        {
+          "rank": 3,
+          "doc_id": "pln__c08",
+          "source_id": "pln",
+          "score": 17.7895
+        },
+        {
+          "rank": 4,
+          "doc_id": "lematizacion__c01",
+          "source_id": "lematizacion",
+          "score": 16.8085
+        },
+        {
+          "rank": 5,
+          "doc_id": "mineria_textos__c03",
+          "source_id": "mineria_textos",
+          "score": 15.1444
+        },
+        {
+          "rank": 6,
+          "doc_id": "lematizacion__c00",
+          "source_id": "lematizacion",
+          "score": 14.2451
+        },
+        {
+          "rank": 7,
+          "doc_id": "word2vec__c10",
+          "source_id": "word2vec",
+          "score": 13.8792
+        },
+        {
+          "rank": 8,
+          "doc_id": "mineria_textos__c04",
+          "source_id": "mineria_textos",
+          "score": 13.3712
+        },
+        {
+          "rank": 9,
+          "doc_id": "modelo_espacio_vectorial__c07",
+          "source_id": "modelo_espacio_vectorial",
+          "score": 13.2915
+        },
+        {
+          "rank": 10,
+          "doc_id": "ner__c09",
+          "source_id": "ner",
+          "score": 13.1832
+        }
+      ],
+      "precision@1": 1.0,
+      "recall_articulo@1": 0.5,
+      "ndcg@1": 1.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 0.46927872602275644,
+      "precision@5": 0.4,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 0.48522855511632257,
+      "precision@10": 0.3,
+      "recall_articulo@10": 0.5,
+      "ndcg@10": 0.6060398578158167
+    },
+    {
+      "query_id": "q52",
+      "tipo": "dificil",
+      "query": "distribución de la frecuencia de las palabras en un texto",
+      "relevant_source_ids": [
+        "ley_zipf",
+        "palabra_vacia"
+      ],
+      "latencia_ms": 1.223,
+      "rr": 0.5,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "tfidf__c00",
+          "source_id": "tfidf",
+          "score": 22.0372
+        },
+        {
+          "rank": 2,
+          "doc_id": "ley_zipf__c00",
+          "source_id": "ley_zipf",
+          "score": 21.8929
+        },
+        {
+          "rank": 3,
+          "doc_id": "tfidf__c03",
+          "source_id": "tfidf",
+          "score": 20.9409
+        },
+        {
+          "rank": 4,
+          "doc_id": "naive_bayes__c11",
+          "source_id": "naive_bayes",
+          "score": 19.7889
+        },
+        {
+          "rank": 5,
+          "doc_id": "red_neuronal__c36",
+          "source_id": "red_neuronal",
+          "score": 19.6667
+        },
+        {
+          "rank": 6,
+          "doc_id": "entropia__c00",
+          "source_id": "entropia",
+          "score": 19.3189
+        },
+        {
+          "rank": 7,
+          "doc_id": "word2vec__c06",
+          "source_id": "word2vec",
+          "score": 19.2128
+        },
+        {
+          "rank": 8,
+          "doc_id": "mineria_textos__c06",
+          "source_id": "mineria_textos",
+          "score": 19.1952
+        },
+        {
+          "rank": 9,
+          "doc_id": "tfidf__c02",
+          "source_id": "tfidf",
+          "score": 19.189
+        },
+        {
+          "rank": 10,
+          "doc_id": "analisis_sentimiento__c04",
+          "source_id": "analisis_sentimiento",
+          "score": 18.767
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 0.2960819109658652,
+      "precision@5": 0.2,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 0.24630238874073,
+      "precision@10": 0.1,
+      "recall_articulo@10": 0.5,
+      "ndcg@10": 0.24630238874073
+    },
+    {
+      "query_id": "q53",
+      "tipo": "dificil",
+      "query": "algoritmos supervisados para clasificar textos",
+      "relevant_source_ids": [
+        "aprendizaje_automatico",
+        "naive_bayes",
+        "svm"
+      ],
+      "latencia_ms": 0.706,
+      "rr": 0.16666666666666666,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "retropropagacion__c14",
+          "source_id": "retropropagacion",
+          "score": 14.6197
+        },
+        {
+          "rank": 2,
+          "doc_id": "ngrama__c09",
+          "source_id": "ngrama",
+          "score": 9.2864
+        },
+        {
+          "rank": 3,
+          "doc_id": "mineria_textos__c04",
+          "source_id": "mineria_textos",
+          "score": 9.0578
+        },
+        {
+          "rank": 4,
+          "doc_id": "mineria_textos__c06",
+          "source_id": "mineria_textos",
+          "score": 8.6417
+        },
+        {
+          "rank": 5,
+          "doc_id": "ngrama__c10",
+          "source_id": "ngrama",
+          "score": 8.19
+        },
+        {
+          "rank": 6,
+          "doc_id": "aprendizaje_automatico__c06",
+          "source_id": "aprendizaje_automatico",
+          "score": 7.3437
+        },
+        {
+          "rank": 7,
+          "doc_id": "red_neuronal__c78",
+          "source_id": "red_neuronal",
+          "score": 7.3043
+        },
+        {
+          "rank": 8,
+          "doc_id": "analisis_grupos__c46",
+          "source_id": "analisis_grupos",
+          "score": 7.0745
+        },
+        {
+          "rank": 9,
+          "doc_id": "red_neuronal__c18",
+          "source_id": "red_neuronal",
+          "score": 6.8623
+        },
+        {
+          "rank": 10,
+          "doc_id": "mineria_textos__c10",
+          "source_id": "mineria_textos",
+          "score": 6.8169
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.0,
+      "recall_articulo@3": 0.0,
+      "ndcg@3": 0.0,
+      "precision@5": 0.0,
+      "recall_articulo@5": 0.0,
+      "ndcg@5": 0.0,
+      "precision@10": 0.1,
+      "recall_articulo@10": 0.3333333333333333,
+      "ndcg@10": 0.07839826897867533
+    },
+    {
+      "query_id": "q54",
+      "tipo": "dificil",
+      "query": "sistemas que recomiendan contenido según las preferencias del usuario",
+      "relevant_source_ids": [
+        "mineria_textos",
+        "sistema_recomendacion"
+      ],
+      "latencia_ms": 1.229,
+      "rr": 0.5,
+      "top": [
+        {
+          "rank": 1,
+          "doc_id": "analisis_grupos__c49",
+          "source_id": "analisis_grupos",
+          "score": 20.2385
+        },
+        {
+          "rank": 2,
+          "doc_id": "sistema_recomendacion__c02",
+          "source_id": "sistema_recomendacion",
+          "score": 17.9839
+        },
+        {
+          "rank": 3,
+          "doc_id": "reconocimiento_habla__c06",
+          "source_id": "reconocimiento_habla",
+          "score": 12.6151
+        },
+        {
+          "rank": 4,
+          "doc_id": "busqueda_semantica__c05",
+          "source_id": "busqueda_semantica",
+          "score": 11.913
+        },
+        {
+          "rank": 5,
+          "doc_id": "sistema_recomendacion__c00",
+          "source_id": "sistema_recomendacion",
+          "score": 11.6374
+        },
+        {
+          "rank": 6,
+          "doc_id": "aprendizaje_profundo__c07",
+          "source_id": "aprendizaje_profundo",
+          "score": 11.3027
+        },
+        {
+          "rank": 7,
+          "doc_id": "analisis_sentimiento__c18",
+          "source_id": "analisis_sentimiento",
+          "score": 11.2827
+        },
+        {
+          "rank": 8,
+          "doc_id": "red_neuronal__c52",
+          "source_id": "red_neuronal",
+          "score": 11.2379
+        },
+        {
+          "rank": 9,
+          "doc_id": "motor_busqueda__c19",
+          "source_id": "motor_busqueda",
+          "score": 11.1535
+        },
+        {
+          "rank": 10,
+          "doc_id": "analisis_sentimiento__c11",
+          "source_id": "analisis_sentimiento",
+          "score": 11.0201
+        }
+      ],
+      "precision@1": 0.0,
+      "recall_articulo@1": 0.0,
+      "ndcg@1": 0.0,
+      "precision@3": 0.3333333333333333,
+      "recall_articulo@3": 0.5,
+      "ndcg@3": 0.2960819109658652,
+      "precision@5": 0.4,
+      "recall_articulo@5": 0.5,
+      "ndcg@5": 0.34519134224686937,
+      "precision@10": 0.2,
+      "recall_articulo@10": 0.5,
+      "ndcg@10": 0.22400556151517553
+    }
+  ]
+}

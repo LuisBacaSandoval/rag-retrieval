@@ -1,9 +1,4 @@
-"""Pruebas de contrato de la interfaz común de recuperadores.
-
-Verifican que el esqueleto del proyecto es coherente antes de implementar los
-métodos: la interfaz importa, las tres variantes la heredan y comparten la firma
-esperada, y el dato ``Retrieved`` tiene los campos que la comparación necesita.
-"""
+"""Pruebas de contrato de la interfaz común de recuperadores."""
 
 from __future__ import annotations
 
@@ -18,23 +13,24 @@ from rag_retrieval.retrieval.hybrid import HybridRetriever
 
 VARIANTES = [BM25Retriever, DenseRetriever, HybridRetriever]
 
+# Variantes aún no implementadas (sus stubs deben avisar con NotImplementedError).
+PENDIENTES = [DenseRetriever, HybridRetriever]
+
 
 def test_retrieved_tiene_campos_esperados():
     r = Retrieved(doc_id="d1", score=1.5, rank=1)
-    assert r.doc_id == "d1"
-    assert r.score == 1.5
-    assert r.rank == 1
+    assert (r.doc_id, r.score, r.rank) == ("d1", 1.5, 1)
 
 
 def test_retrieved_es_inmutable():
     r = Retrieved(doc_id="d1", score=1.5, rank=1)
     with pytest.raises(Exception):
-        r.score = 2.0  # frozen dataclass
+        r.score = 2.0
 
 
 def test_retriever_es_abstracto():
     with pytest.raises(TypeError):
-        Retriever()  # no se puede instanciar la interfaz directamente
+        Retriever()
 
 
 @pytest.mark.parametrize("cls", VARIANTES)
@@ -50,7 +46,7 @@ def test_firma_de_retrieve(cls):
     assert sig.parameters["k"].default == 10
 
 
-@pytest.mark.parametrize("cls", VARIANTES)
+@pytest.mark.parametrize("cls", PENDIENTES)
 def test_stubs_lanzan_not_implemented(cls):
     retriever = cls()
     with pytest.raises(NotImplementedError):
