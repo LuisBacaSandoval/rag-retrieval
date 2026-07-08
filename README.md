@@ -112,15 +112,17 @@ python scripts/build_index.py            # -> data/indexes/dense_*.{npy,json}
 
 ### Resultados (54 consultas)
 
-| método | MRR | P@5 | R@5 | nDCG@10 | latencia (ms) | índice (MB) |
+| método | MRR | P@5 | R@5 | nDCG@10 | latencia p50 (ms) | índice (MB) |
 |---|---|---|---|---|---|---|
-| BM25 (base) | 0.794 | 0.578 | 0.824 | 0.590 | 1.0 | 0.59 |
-| denso | 0.781 | 0.585 | 0.855 | 0.555 | 16.2 | 0.88 |
-| **híbrido (RRF)** | **0.849** | **0.659** | 0.833 | **0.635** | 24.0 | 1.47 |
+| BM25 (base) | 0.794 | 0.578 | 0.824 | 0.590 | 0.8 | 0.59 |
+| denso | 0.781 | 0.585 | 0.855 | 0.555 | 17.1 | 0.88 |
+| **híbrido (RRF)** | **0.849** | **0.659** | 0.833 | **0.635** | 18.7 | 1.47 |
 
 El híbrido gana en las consultas semánticas y difíciles combinando la precisión
 léxica de BM25 con la cobertura del denso, al costo de mayor latencia y memoria.
-El análisis por tipo de consulta y los casos de error se detallan en el Hito 6.
+Las métricas de calidad son deterministas; la latencia depende del entorno, por lo
+que se reporta la **mediana (p50)**, robusta ante picos puntuales. El análisis por
+tipo de consulta y los casos de error se detallan en el Hito 6.
 
 ## Entorno y reproducción
 
