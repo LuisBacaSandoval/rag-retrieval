@@ -14,7 +14,8 @@ from rag_retrieval.retrieval.hybrid import HybridRetriever
 VARIANTES = [BM25Retriever, DenseRetriever, HybridRetriever]
 
 # Variantes aún no implementadas (sus stubs deben avisar con NotImplementedError).
-PENDIENTES = [DenseRetriever, HybridRetriever]
+# DenseRetriever ya se implementó en el Hito 4 (parte 1); el híbrido llega en la parte 2.
+PENDIENTES = [HybridRetriever]
 
 
 def test_retrieved_tiene_campos_esperados():

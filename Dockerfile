@@ -5,12 +5,15 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Cachea el modelo de embeddings en la imagen (reproducibilidad offline).
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')"
+
 COPY . .
 
 ENV PYTHONPATH=/app/src
 
-# El índice se construye en el Hito 4; hasta entonces esta línea queda comentada.
-# RUN python scripts/build_index.py
+# data/indexes está en .dockerignore, así que el índice se construye aquí.
+RUN python scripts/build_index.py
 
 EXPOSE 8000
 

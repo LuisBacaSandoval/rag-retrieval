@@ -29,6 +29,7 @@ from rag_retrieval.evaluation.metrics import (  # noqa: E402
 )
 from rag_retrieval.retrieval.base import Retriever  # noqa: E402
 from rag_retrieval.retrieval.bm25 import BM25Retriever  # noqa: E402
+from rag_retrieval.retrieval.dense import DenseRetriever  # noqa: E402
 
 CORPUS_PATH = PROJECT_ROOT / "data" / "corpus" / "corpus.jsonl"
 QUERIES_PATH = PROJECT_ROOT / "data" / "queries" / "queries.jsonl"
@@ -37,13 +38,30 @@ RESULTS_DIR = PROJECT_ROOT / "results"
 KS_DEFAULT = [1, 3, 5, 10]
 
 
+def config_del_metodo(retriever: Retriever, ks: list[int]) -> dict[str, Any]:
+    """Configuración específica de cada método para el reporte (sin campos ajenos)."""
+    config: dict[str, Any] = {"ks": ks}
+    if isinstance(retriever, BM25Retriever):
+        config["k1"] = retriever.k1
+        config["b"] = retriever.b
+        config["tokenizador"] = "minúsculas + sin tildes + \\w+"
+    elif isinstance(retriever, DenseRetriever):
+        config["model_name"] = retriever.model_name
+        config["dim"] = retriever._dim
+        config["similitud"] = "coseno (IndexFlatIP sobre vectores normalizados)"
+
+    return config
+
+
 def build_retriever(method: str) -> Retriever:
-    """Instancia el método pedido; las variantes se agregan en los Hitos 4+."""
+    """Instancia el método pedido; el híbrido se agrega en el Hito 4, parte 2."""
     if method == "bm25":
         return BM25Retriever()
+    if method == "dense":
+        return DenseRetriever()
 
     raise SystemExit(
-        f"Método desconocido o aún no implementado: {method!r} (disponibles: bm25)"
+        f"Método desconocido o aún no implementado: {method!r} (disponibles: bm25, dense)"
     )
 
 
@@ -197,12 +215,7 @@ def main() -> None:
     report = {
         "metodo": retriever.name,
         "fecha": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "config": {
-            "k1": getattr(retriever, "k1", None),
-            "b": getattr(retriever, "b", None),
-            "ks": ks,
-            "tokenizador": "minúsculas + sin tildes + \\w+",
-        },
+        "config": config_del_metodo(retriever, ks),
         "corpus": {
             "fragmentos": len(corpus),
             "articulos": len(relevant_chunks_of),
