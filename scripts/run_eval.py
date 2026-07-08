@@ -30,6 +30,7 @@ from rag_retrieval.evaluation.metrics import (  # noqa: E402
 from rag_retrieval.retrieval.base import Retriever  # noqa: E402
 from rag_retrieval.retrieval.bm25 import BM25Retriever  # noqa: E402
 from rag_retrieval.retrieval.dense import DenseRetriever  # noqa: E402
+from rag_retrieval.retrieval.hybrid import HybridRetriever  # noqa: E402
 
 CORPUS_PATH = PROJECT_ROOT / "data" / "corpus" / "corpus.jsonl"
 QUERIES_PATH = PROJECT_ROOT / "data" / "queries" / "queries.jsonl"
@@ -49,19 +50,26 @@ def config_del_metodo(retriever: Retriever, ks: list[int]) -> dict[str, Any]:
         config["model_name"] = retriever.model_name
         config["dim"] = retriever._dim
         config["similitud"] = "coseno (IndexFlatIP sobre vectores normalizados)"
+    elif isinstance(retriever, HybridRetriever):
+        config["c_rrf"] = retriever.c
+        config["pool"] = retriever.pool
+        config["model_name"] = retriever.dense.model_name
+        config["fusion"] = "Reciprocal Rank Fusion sobre BM25 + denso"
 
     return config
 
 
 def build_retriever(method: str) -> Retriever:
-    """Instancia el método pedido; el híbrido se agrega en el Hito 4, parte 2."""
+    """Instancia el método pedido."""
     if method == "bm25":
         return BM25Retriever()
     if method == "dense":
         return DenseRetriever()
+    if method == "hybrid":
+        return HybridRetriever()
 
     raise SystemExit(
-        f"Método desconocido o aún no implementado: {method!r} (disponibles: bm25, dense)"
+        f"Método desconocido: {method!r} (disponibles: bm25, dense, hybrid)"
     )
 
 

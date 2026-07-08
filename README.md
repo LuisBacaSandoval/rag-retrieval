@@ -92,10 +92,35 @@ en el cuaderno técnico y en el encabezado del script):
 
 ```bash
 python scripts/run_eval.py --method bm25
+python scripts/run_eval.py --method dense
+python scripts/run_eval.py --method hybrid
 ```
 
-Deja las métricas globales, por tipo de consulta y por consulta en
-`results/bm25.json`, y una tabla plana en `results/bm25_por_consulta.csv`.
+Cada corrida deja las métricas globales, por tipo de consulta y por consulta en
+`results/<metodo>.json`, y una tabla plana en `results/<metodo>_por_consulta.csv`.
+`run_eval.py` reconstruye el índice en memoria en cada corrida (mide su costo),
+así que no necesita paso previo. El denso y el híbrido usan embeddings (modelo
+multilingüe `paraphrase-multilingual-MiniLM-L12-v2`), por lo que conviene
+correrlos dentro del contenedor, donde el modelo queda cacheado.
+
+Aparte, para persistir el índice denso en disco (lo consume la API del Hito 7)
+con su manifiesto de reproducibilidad (modelo, dimensión, hash, versión):
+
+```bash
+python scripts/build_index.py            # -> data/indexes/dense_*.{npy,json}
+```
+
+### Resultados (54 consultas)
+
+| método | MRR | P@5 | R@5 | nDCG@10 | latencia (ms) | índice (MB) |
+|---|---|---|---|---|---|---|
+| BM25 (base) | 0.794 | 0.578 | 0.824 | 0.590 | 1.0 | 0.59 |
+| denso | 0.781 | 0.585 | 0.855 | 0.555 | 16.2 | 0.88 |
+| **híbrido (RRF)** | **0.849** | **0.659** | 0.833 | **0.635** | 24.0 | 1.47 |
+
+El híbrido gana en las consultas semánticas y difíciles combinando la precisión
+léxica de BM25 con la cobertura del denso, al costo de mayor latencia y memoria.
+El análisis por tipo de consulta y los casos de error se detallan en el Hito 6.
 
 ## Entorno y reproducción
 
@@ -146,8 +171,8 @@ docker run --rm -p 8000:8000 proyecto5-rag
 | 1 | Estructura + interfaz común de recuperadores | ✅ |
 | 2 | Corpus (595 fragmentos) y 54 consultas etiquetadas | ✅ |
 | 3 | Línea base BM25 + métricas (P@k, R@k, MRR, nDCG) | ✅ |
-| 4 | Recuperador denso + índice | pendiente |
-| 5 | Recuperador híbrido (RRF) | pendiente |
+| 4 | Recuperador denso (embeddings) + índice persistido con manifiesto | ✅ |
+| 5 | Recuperador híbrido (fusión RRF de BM25 + denso) | ✅ |
 | 6 | Evaluación comparativa y análisis de errores | pendiente |
 | 7 | API de búsqueda comparativa + despliegue | pendiente |
 | 8 | Documentación final + video | pendiente |

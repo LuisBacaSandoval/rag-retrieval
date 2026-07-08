@@ -13,10 +13,6 @@ from rag_retrieval.retrieval.hybrid import HybridRetriever
 
 VARIANTES = [BM25Retriever, DenseRetriever, HybridRetriever]
 
-# Variantes aún no implementadas (sus stubs deben avisar con NotImplementedError).
-# DenseRetriever ya se implementó en el Hito 4 (parte 1); el híbrido llega en la parte 2.
-PENDIENTES = [HybridRetriever]
-
 
 def test_retrieved_tiene_campos_esperados():
     r = Retrieved(doc_id="d1", score=1.5, rank=1)
@@ -45,12 +41,3 @@ def test_firma_de_retrieve(cls):
     sig = inspect.signature(cls.retrieve)
     assert list(sig.parameters) == ["self", "query", "k"]
     assert sig.parameters["k"].default == 10
-
-
-@pytest.mark.parametrize("cls", PENDIENTES)
-def test_stubs_lanzan_not_implemented(cls):
-    retriever = cls()
-    with pytest.raises(NotImplementedError):
-        retriever.index([])
-    with pytest.raises(NotImplementedError):
-        retriever.retrieve("consulta de prueba", k=5)
