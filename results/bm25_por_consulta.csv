@@ -1,55 +1,55 @@
 query_id,tipo,query,relevant_source_ids,latencia_ms,rr,precision@1,recall_articulo@1,ndcg@1,precision@3,recall_articulo@3,ndcg@3,precision@5,recall_articulo@5,ndcg@5,precision@10,recall_articulo@10,ndcg@10
-q01,lexica,función de ranking Okapi BM25,bm25,0.372,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7653606369886217,0.4,1.0,0.6366824387328317,0.2,1.0,0.6366824387328317
-q02,lexica,tf-idf frecuencia inversa de documento,tfidf,0.531,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8687949224876582,0.7,1.0,0.9803771474638899
-q03,lexica,índice invertido en recuperación de información,indice_invertido,0.532,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.6,1.0,1.0,0.3,1.0,1.0
-q04,lexica,reconocimiento de entidades nombradas,ner,0.348,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9,1.0,0.933745776545611
-q05,lexica,similitud coseno entre dos vectores,similitud_coseno,0.395,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.6,1.0,0.7227265726449519,0.5,1.0,0.9505310077117098
-q06,lexica,modelo word2vec skip-gram y bolsa continua de palabras,word2vec,0.811,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8539316501572937,0.9,1.0,0.9052116356304493
-q07,lexica,análisis de sentimiento de opiniones,analisis_sentimiento,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9,1.0,0.9363792118010483
-q08,lexica,traducción automática estadística y neuronal,traduccion_automatica,0.533,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7653606369886217,0.6,1.0,0.6992148198508501,0.8,1.0,0.804810999209339
-q09,lexica,mecanismo de atención en aprendizaje automático,atencion,0.665,0.3333333333333333,0.0,0.0,0.0,0.3333333333333333,1.0,0.23463936301137822,0.2,1.0,0.16958010263680806,0.3,1.0,0.2700199064638123
-q10,lexica,precisión y exhaustividad como métricas de evaluación,precision_exhaustividad,0.898,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.6,1.0,0.6164336326286644,0.5,1.0,0.6238395628389073
-q11,lexica,tareas del procesamiento de lenguaje natural,pln,0.907,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.2,1.0,0.3391602052736161,0.2,1.0,0.28952298823485745
-q12,semantica,cómo puntuar la pertinencia de un texto frente a las palabras buscadas,bm25,1.238,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-q13,semantica,representar palabras como vectores numéricos que capturan su significado,word2vec|word_embedding,0.941,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.5,0.27727342735504823,0.3,0.5,0.2435522702101235
-q14,semantica,convertir un texto de un idioma a otro sin intervención humana,traduccion_automatica,1.099,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7039180890341347,0.8,1.0,0.7860137352654724,0.6,1.0,0.6528642754944294
-q15,semantica,"identificar nombres de personas, lugares y organizaciones en un documento",ner,0.86,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.4,1.0,0.48522855511632257,0.2,1.0,0.31488013066763093
-q16,semantica,medir el parecido de dos textos por el ángulo entre sus representaciones,similitud_coseno,1.038,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.2,1.0,0.3391602052736161,0.2,1.0,0.45221360703148816
-q17,semantica,determinar si una reseña expresa una opinión favorable o desfavorable,analisis_sentimiento,0.892,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8539316501572937,0.6,1.0,0.693761356516045
-q18,semantica,sistema que localiza páginas web pertinentes para lo que pide el usuario,motor_busqueda,1.081,0.5,0.0,0.0,0.0,0.6666666666666666,1.0,0.5307212739772434,0.6,1.0,0.5147714448836774,0.7,1.0,0.6156886473955918
-q19,semantica,asignar probabilidad a la siguiente palabra de una secuencia,modelo_lenguaje|ngrama,0.924,0.5,0.0,0.0,0.0,0.3333333333333333,0.5,0.2960819109658652,0.4,0.5,0.34519134224686937,0.5,1.0,0.4330549290057019
-q20,semantica,hacer que una máquina aprenda a partir de ejemplos en lugar de reglas fijas,aprendizaje_automatico,1.634,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-q21,semantica,estructura de cómputo inspirada en las neuronas del cerebro,red_neuronal,0.912,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7653606369886217,0.6,1.0,0.6843515475204855,0.7,1.0,0.7257345305446319
-q22,semantica,buscar por el significado de la consulta y no por coincidencia exacta de palabras,busqueda_semantica,1.199,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7039180890341347,0.6,1.0,0.639945385422766,0.4,1.0,0.48153499054313026
-q23,dificil,diferencia entre recuperación por palabras clave y búsqueda semántica,busqueda_semantica|recuperacion_informacion,0.712,1.0,1.0,0.5,1.0,1.0,0.5,1.0,0.8,0.5,0.8687949224876582,0.7,1.0,0.7702043899253147
-q24,dificil,cómo se relacionan el mecanismo de atención y la arquitectura transformador,atencion|transformador,0.806,1.0,1.0,0.5,1.0,1.0,0.5,1.0,1.0,0.5,1.0,0.9,1.0,0.9216017310213247
-q25,dificil,papel de los n-gramas en los modelos de lenguaje,modelo_lenguaje|ngrama,1.256,1.0,1.0,0.5,1.0,0.6666666666666666,1.0,0.7653606369886217,0.8,1.0,0.830419897363192,0.9,1.0,0.8899541168509599
-q26,dificil,métricas para evaluar la calidad de un sistema de recuperación,precision_exhaustividad|recuperacion_informacion,1.431,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.5,0.13120507751234178,0.3,0.5,0.23297260855707355
-q27,dificil,relación entre los embeddings de palabras y word2vec,word2vec|word_embedding,0.861,1.0,1.0,0.5,1.0,1.0,0.5,1.0,1.0,0.5,1.0,0.9,0.5,0.9216017310213247
-q28,dificil,modelo de bolsa de palabras usado por tf-idf y BM25,bm25|tfidf,0.941,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8572048559638628
-q29,dificil,uso de redes neuronales en la traducción automática,red_neuronal|traduccion_automatica,0.686,1.0,1.0,0.5,1.0,0.6666666666666666,0.5,0.7653606369886217,0.8,1.0,0.830419897363192,0.8,1.0,0.8165901947515999
-q30,dificil,subtareas del procesamiento de lenguaje natural como el reconocimiento de entidades y el análisis de sentimiento,analisis_sentimiento|ner|pln,1.426,1.0,1.0,0.3333333333333333,1.0,0.6666666666666666,0.6666666666666666,0.7653606369886217,0.8,1.0,0.830419897363192,0.6,1.0,0.6758704024811183
-q31,dificil,vectorizar documentos para compararlos en un espacio vectorial,modelo_espacio_vectorial|similitud_coseno|tfidf,0.741,1.0,1.0,0.3333333333333333,1.0,0.6666666666666666,0.3333333333333333,0.7653606369886217,0.6,0.3333333333333333,0.6992148198508501,0.5,0.6666666666666666,0.5957616317188126
-q32,dificil,cómo un motor de búsqueda indexa grandes colecciones de documentos,indice_invertido|motor_busqueda,0.957,0.3333333333333333,0.0,0.0,0.0,0.3333333333333333,0.5,0.23463936301137822,0.6,1.0,0.4468535299918563,0.7,1.0,0.5747915663739762
-q33,dificil,aprender representaciones vectoriales de palabras con redes neuronales,red_neuronal|word2vec,0.915,1.0,1.0,0.5,1.0,1.0,1.0,1.0,0.8,1.0,0.8539316501572937,0.6,1.0,0.696162268139923
-q34,lexica,lematización de palabras a su forma base,lematizacion,0.674,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.6,1.0,1.0,0.3,1.0,1.0
-q35,lexica,etiquetado gramatical de las partes de la oración,etiquetado_gramatical,0.683,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.4,1.0,0.4703652827859579,0.3,1.0,0.43058883596526576
-q36,lexica,minería de textos para extraer información,mineria_textos,0.581,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8539316501572937,0.9,1.0,0.9052116356304493
-q37,lexica,propagación hacia atrás para entrenar redes neuronales,retropropagacion,0.625,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.2,1.0,0.3391602052736161,0.1,1.0,0.22009176629808017
-q38,lexica,máquina de vectores de soporte,svm,0.415,0.3333333333333333,0.0,0.0,0.0,0.3333333333333333,1.0,0.23463936301137822,0.4,1.0,0.3156484524795145,0.3,1.0,0.2742654694553681
-q39,lexica,modelo oculto de Márkov,hmm,0.342,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.7,1.0,0.7967610662472993
-q40,lexica,lingüística computacional,linguistica_computacional,0.264,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8482378089219645
-q41,semantica,reducir una palabra a su raíz recortando los sufijos,stemming,0.781,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.6131471927654584,0.2,1.0,0.6131471927654584,0.1,1.0,0.6131471927654584
-q42,semantica,palabras muy frecuentes que se descartan al construir el índice,palabra_vacia,0.809,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-q43,semantica,clasificador probabilístico que supone independencia entre los atributos,naive_bayes,0.656,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7039180890341347,0.6,1.0,0.639945385422766,0.5,1.0,0.5509662124799075
-q44,semantica,agrupar datos sin etiquetas en conjuntos de elementos parecidos,analisis_grupos,1.204,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.7,1.0,0.7846170207230129
-q45,semantica,convertir la voz hablada en texto escrito automáticamente,reconocimiento_habla,1.014,0.5,0.0,0.0,0.0,0.3333333333333333,1.0,0.2960819109658652,0.6,1.0,0.4912596920895758,0.5,1.0,0.45841207143847534
-q46,semantica,medida de la incertidumbre o cantidad de información de una fuente,entropia,1.175,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8687949224876582,0.6,1.0,0.7065836017263629
-q47,semantica,red neuronal que procesa secuencias recordando estados anteriores,red_neuronal_recurrente,0.955,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.2,1.0,0.14606834984270645,0.1,1.0,0.13032376591037062
-q48,dificil,representar documentos como vectores para calcular su relevancia,modelo_espacio_vectorial|tfidf,0.891,1.0,1.0,0.5,1.0,0.6666666666666666,0.5,0.7653606369886217,0.6,1.0,0.6843515475204855,0.3,1.0,0.4440973278132557
-q49,dificil,redes neuronales profundas con muchas capas ocultas,aprendizaje_profundo|perceptron_multicapa|red_neuronal,0.779,0.5,0.0,0.0,0.0,0.6666666666666666,0.3333333333333333,0.5307212739772434,0.8,0.6666666666666666,0.6608397947263839,0.9,0.6666666666666666,0.7799082337019199
-q50,dificil,modelos de lenguaje basados en la arquitectura transformador como BERT,bert|transformador,0.815,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8630152897016883
-q51,dificil,normalización de palabras: lematización frente a extracción de raíces,lematizacion|stemming,0.686,1.0,1.0,0.5,1.0,0.3333333333333333,0.5,0.46927872602275644,0.4,0.5,0.48522855511632257,0.3,0.5,0.6060398578158167
-q52,dificil,distribución de la frecuencia de las palabras en un texto,ley_zipf|palabra_vacia,1.131,0.5,0.0,0.0,0.0,0.3333333333333333,0.5,0.2960819109658652,0.2,0.5,0.24630238874073,0.1,0.5,0.24630238874073
-q53,dificil,algoritmos supervisados para clasificar textos,aprendizaje_automatico|naive_bayes|svm,0.781,0.16666666666666666,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.3333333333333333,0.07839826897867533
-q54,dificil,sistemas que recomiendan contenido según las preferencias del usuario,mineria_textos|sistema_recomendacion,1.155,0.5,0.0,0.0,0.0,0.3333333333333333,0.5,0.2960819109658652,0.4,0.5,0.34519134224686937,0.2,0.5,0.22400556151517553
+q01,lexica,función de ranking Okapi BM25,bm25,0.379,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7653606369886217,0.4,1.0,0.6366824387328317,0.2,1.0,0.6366824387328317
+q02,lexica,tf-idf frecuencia inversa de documento,tfidf,0.859,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8687949224876582,0.7,1.0,0.9803771474638899
+q03,lexica,índice invertido en recuperación de información,indice_invertido,0.585,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.6,1.0,1.0,0.3,1.0,1.0
+q04,lexica,reconocimiento de entidades nombradas,ner,0.399,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9,1.0,0.933745776545611
+q05,lexica,similitud coseno entre dos vectores,similitud_coseno,0.576,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.6,1.0,0.7227265726449519,0.5,1.0,0.9505310077117098
+q06,lexica,modelo word2vec skip-gram y bolsa continua de palabras,word2vec,0.778,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8539316501572937,0.9,1.0,0.9052116356304493
+q07,lexica,análisis de sentimiento de opiniones,analisis_sentimiento,0.425,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9,1.0,0.9363792118010483
+q08,lexica,traducción automática estadística y neuronal,traduccion_automatica,0.516,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7653606369886217,0.6,1.0,0.6992148198508501,0.8,1.0,0.804810999209339
+q09,lexica,mecanismo de atención en aprendizaje automático,atencion,0.502,0.3333333333333333,0.0,0.0,0.0,0.3333333333333333,1.0,0.23463936301137822,0.2,1.0,0.16958010263680806,0.3,1.0,0.2700199064638123
+q10,lexica,precisión y exhaustividad como métricas de evaluación,precision_exhaustividad,0.553,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.6,1.0,0.6164336326286644,0.5,1.0,0.6238395628389073
+q11,lexica,tareas del procesamiento de lenguaje natural,pln,0.473,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.2,1.0,0.3391602052736161,0.2,1.0,0.28952298823485745
+q12,semantica,cómo puntuar la pertinencia de un texto frente a las palabras buscadas,bm25,1.014,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+q13,semantica,representar palabras como vectores numéricos que capturan su significado,word2vec|word_embedding,0.819,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.5,0.27727342735504823,0.3,0.5,0.2435522702101235
+q14,semantica,convertir un texto de un idioma a otro sin intervención humana,traduccion_automatica,0.851,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7039180890341347,0.8,1.0,0.7860137352654724,0.6,1.0,0.6528642754944294
+q15,semantica,"identificar nombres de personas, lugares y organizaciones en un documento",ner,0.801,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.4,1.0,0.48522855511632257,0.2,1.0,0.31488013066763093
+q16,semantica,medir el parecido de dos textos por el ángulo entre sus representaciones,similitud_coseno,0.981,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.2,1.0,0.3391602052736161,0.2,1.0,0.45221360703148816
+q17,semantica,determinar si una reseña expresa una opinión favorable o desfavorable,analisis_sentimiento,0.822,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8539316501572937,0.6,1.0,0.693761356516045
+q18,semantica,sistema que localiza páginas web pertinentes para lo que pide el usuario,motor_busqueda,0.978,0.5,0.0,0.0,0.0,0.6666666666666666,1.0,0.5307212739772434,0.6,1.0,0.5147714448836774,0.7,1.0,0.6156886473955918
+q19,semantica,asignar probabilidad a la siguiente palabra de una secuencia,modelo_lenguaje|ngrama,0.696,0.5,0.0,0.0,0.0,0.3333333333333333,0.5,0.2960819109658652,0.4,0.5,0.34519134224686937,0.5,1.0,0.4330549290057019
+q20,semantica,hacer que una máquina aprenda a partir de ejemplos en lugar de reglas fijas,aprendizaje_automatico,1.092,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+q21,semantica,estructura de cómputo inspirada en las neuronas del cerebro,red_neuronal,0.767,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7653606369886217,0.6,1.0,0.6843515475204855,0.7,1.0,0.7257345305446319
+q22,semantica,buscar por el significado de la consulta y no por coincidencia exacta de palabras,busqueda_semantica,1.45,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7039180890341347,0.6,1.0,0.639945385422766,0.4,1.0,0.48153499054313026
+q23,dificil,diferencia entre recuperación por palabras clave y búsqueda semántica,busqueda_semantica|recuperacion_informacion,0.811,1.0,1.0,0.5,1.0,1.0,0.5,1.0,0.8,0.5,0.8687949224876582,0.7,1.0,0.7702043899253147
+q24,dificil,cómo se relacionan el mecanismo de atención y la arquitectura transformador,atencion|transformador,0.889,1.0,1.0,0.5,1.0,1.0,0.5,1.0,1.0,0.5,1.0,0.9,1.0,0.9216017310213247
+q25,dificil,papel de los n-gramas en los modelos de lenguaje,modelo_lenguaje|ngrama,0.946,1.0,1.0,0.5,1.0,0.6666666666666666,1.0,0.7653606369886217,0.8,1.0,0.830419897363192,0.9,1.0,0.8899541168509599
+q26,dificil,métricas para evaluar la calidad de un sistema de recuperación,precision_exhaustividad|recuperacion_informacion,0.937,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.5,0.13120507751234178,0.3,0.5,0.23297260855707355
+q27,dificil,relación entre los embeddings de palabras y word2vec,word2vec|word_embedding,0.628,1.0,1.0,0.5,1.0,1.0,0.5,1.0,1.0,0.5,1.0,0.9,0.5,0.9216017310213247
+q28,dificil,modelo de bolsa de palabras usado por tf-idf y BM25,bm25|tfidf,0.815,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8572048559638628
+q29,dificil,uso de redes neuronales en la traducción automática,red_neuronal|traduccion_automatica,0.683,1.0,1.0,0.5,1.0,0.6666666666666666,0.5,0.7653606369886217,0.8,1.0,0.830419897363192,0.8,1.0,0.8165901947515999
+q30,dificil,subtareas del procesamiento de lenguaje natural como el reconocimiento de entidades y el análisis de sentimiento,analisis_sentimiento|ner|pln,1.216,1.0,1.0,0.3333333333333333,1.0,0.6666666666666666,0.6666666666666666,0.7653606369886217,0.8,1.0,0.830419897363192,0.6,1.0,0.6758704024811183
+q31,dificil,vectorizar documentos para compararlos en un espacio vectorial,modelo_espacio_vectorial|similitud_coseno|tfidf,0.603,1.0,1.0,0.3333333333333333,1.0,0.6666666666666666,0.3333333333333333,0.7653606369886217,0.6,0.3333333333333333,0.6992148198508501,0.5,0.6666666666666666,0.5957616317188126
+q32,dificil,cómo un motor de búsqueda indexa grandes colecciones de documentos,indice_invertido|motor_busqueda,0.798,0.3333333333333333,0.0,0.0,0.0,0.3333333333333333,0.5,0.23463936301137822,0.6,1.0,0.4468535299918563,0.7,1.0,0.5747915663739762
+q33,dificil,aprender representaciones vectoriales de palabras con redes neuronales,red_neuronal|word2vec,0.646,1.0,1.0,0.5,1.0,1.0,1.0,1.0,0.8,1.0,0.8539316501572937,0.6,1.0,0.696162268139923
+q34,lexica,lematización de palabras a su forma base,lematizacion,0.567,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.6,1.0,1.0,0.3,1.0,1.0
+q35,lexica,etiquetado gramatical de las partes de la oración,etiquetado_gramatical,0.709,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.4,1.0,0.4703652827859579,0.3,1.0,0.43058883596526576
+q36,lexica,minería de textos para extraer información,mineria_textos,0.519,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8539316501572937,0.9,1.0,0.9052116356304493
+q37,lexica,propagación hacia atrás para entrenar redes neuronales,retropropagacion,0.532,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.46927872602275644,0.2,1.0,0.3391602052736161,0.1,1.0,0.22009176629808017
+q38,lexica,máquina de vectores de soporte,svm,0.389,0.3333333333333333,0.0,0.0,0.0,0.3333333333333333,1.0,0.23463936301137822,0.4,1.0,0.3156484524795145,0.3,1.0,0.2742654694553681
+q39,lexica,modelo oculto de Márkov,hmm,0.363,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.7,1.0,0.7967610662472993
+q40,lexica,lingüística computacional,linguistica_computacional,0.198,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8482378089219645
+q41,semantica,reducir una palabra a su raíz recortando los sufijos,stemming,0.766,1.0,1.0,1.0,1.0,0.3333333333333333,1.0,0.6131471927654584,0.2,1.0,0.6131471927654584,0.1,1.0,0.6131471927654584
+q42,semantica,palabras muy frecuentes que se descartan al construir el índice,palabra_vacia,1.014,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+q43,semantica,clasificador probabilístico que supone independencia entre los atributos,naive_bayes,0.85,1.0,1.0,1.0,1.0,0.6666666666666666,1.0,0.7039180890341347,0.6,1.0,0.639945385422766,0.5,1.0,0.5509662124799075
+q44,semantica,agrupar datos sin etiquetas en conjuntos de elementos parecidos,analisis_grupos,0.787,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.7,1.0,0.7846170207230129
+q45,semantica,convertir la voz hablada en texto escrito automáticamente,reconocimiento_habla,0.716,0.5,0.0,0.0,0.0,0.3333333333333333,1.0,0.2960819109658652,0.6,1.0,0.4912596920895758,0.5,1.0,0.45841207143847534
+q46,semantica,medida de la incertidumbre o cantidad de información de una fuente,entropia,0.994,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8687949224876582,0.6,1.0,0.7065836017263629
+q47,semantica,red neuronal que procesa secuencias recordando estados anteriores,red_neuronal_recurrente,0.693,0.25,0.0,0.0,0.0,0.0,0.0,0.0,0.2,1.0,0.14606834984270645,0.1,1.0,0.13032376591037062
+q48,dificil,representar documentos como vectores para calcular su relevancia,modelo_espacio_vectorial|tfidf,0.739,1.0,1.0,0.5,1.0,0.6666666666666666,0.5,0.7653606369886217,0.6,1.0,0.6843515475204855,0.3,1.0,0.4440973278132557
+q49,dificil,redes neuronales profundas con muchas capas ocultas,aprendizaje_profundo|perceptron_multicapa|red_neuronal,0.632,0.5,0.0,0.0,0.0,0.6666666666666666,0.3333333333333333,0.5307212739772434,0.8,0.6666666666666666,0.6608397947263839,0.9,0.6666666666666666,0.7799082337019199
+q50,dificil,modelos de lenguaje basados en la arquitectura transformador como BERT,bert|transformador,0.87,1.0,1.0,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.8630152897016883
+q51,dificil,normalización de palabras: lematización frente a extracción de raíces,lematizacion|stemming,0.7,1.0,1.0,0.5,1.0,0.3333333333333333,0.5,0.46927872602275644,0.4,0.5,0.48522855511632257,0.3,0.5,0.6060398578158167
+q52,dificil,distribución de la frecuencia de las palabras en un texto,ley_zipf|palabra_vacia,0.833,0.5,0.0,0.0,0.0,0.3333333333333333,0.5,0.2960819109658652,0.2,0.5,0.24630238874073,0.1,0.5,0.24630238874073
+q53,dificil,algoritmos supervisados para clasificar textos,aprendizaje_automatico|naive_bayes|svm,0.397,0.16666666666666666,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.3333333333333333,0.07839826897867533
+q54,dificil,sistemas que recomiendan contenido según las preferencias del usuario,mineria_textos|sistema_recomendacion,0.756,0.5,0.0,0.0,0.0,0.3333333333333333,0.5,0.2960819109658652,0.4,0.5,0.34519134224686937,0.2,0.5,0.22400556151517553

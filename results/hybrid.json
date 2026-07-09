@@ -1,6 +1,6 @@
 {
   "metodo": "hybrid",
-  "fecha": "2026-07-08T22:43:50+00:00",
+  "fecha": "2026-07-08T23:02:39+00:00",
   "config": {
     "ks": [
       1,
@@ -18,14 +18,14 @@
     "articulos": 40
   },
   "indice": {
-    "construccion_s": 17.768,
+    "construccion_s": 17.843,
     "memoria_pico_construccion_mb": 84.25,
     "tamano_serializado_mb": 1.47
   },
   "latencia_ms": {
-    "media": 19.276,
-    "p50": 18.708,
-    "p95": 24.653
+    "media": 16.627,
+    "p50": 16.268,
+    "p95": 20.441
   },
   "global": {
     "consultas": 54,
@@ -101,7 +101,7 @@
       "relevant_source_ids": [
         "bm25"
       ],
-      "latencia_ms": 13.679,
+      "latencia_ms": 16.878,
       "rr": 1.0,
       "top": [
         {
@@ -185,7 +185,7 @@
       "relevant_source_ids": [
         "tfidf"
       ],
-      "latencia_ms": 15.787,
+      "latencia_ms": 16.086,
       "rr": 1.0,
       "top": [
         {
@@ -269,7 +269,7 @@
       "relevant_source_ids": [
         "indice_invertido"
       ],
-      "latencia_ms": 18.661,
+      "latencia_ms": 17.88,
       "rr": 0.5,
       "top": [
         {
@@ -353,7 +353,7 @@
       "relevant_source_ids": [
         "ner"
       ],
-      "latencia_ms": 15.703,
+      "latencia_ms": 15.118,
       "rr": 1.0,
       "top": [
         {
@@ -437,7 +437,7 @@
       "relevant_source_ids": [
         "similitud_coseno"
       ],
-      "latencia_ms": 16.965,
+      "latencia_ms": 15.048,
       "rr": 1.0,
       "top": [
         {
@@ -521,7 +521,7 @@
       "relevant_source_ids": [
         "word2vec"
       ],
-      "latencia_ms": 18.394,
+      "latencia_ms": 18.598,
       "rr": 1.0,
       "top": [
         {
@@ -605,7 +605,7 @@
       "relevant_source_ids": [
         "analisis_sentimiento"
       ],
-      "latencia_ms": 14.589,
+      "latencia_ms": 15.848,
       "rr": 1.0,
       "top": [
         {
@@ -689,7 +689,7 @@
       "relevant_source_ids": [
         "traduccion_automatica"
       ],
-      "latencia_ms": 17.641,
+      "latencia_ms": 15.607,
       "rr": 0.5,
       "top": [
         {
@@ -773,7 +773,7 @@
       "relevant_source_ids": [
         "atencion"
       ],
-      "latencia_ms": 18.111,
+      "latencia_ms": 15.872,
       "rr": 1.0,
       "top": [
         {
@@ -857,7 +857,7 @@
       "relevant_source_ids": [
         "precision_exhaustividad"
       ],
-      "latencia_ms": 19.5,
+      "latencia_ms": 16.516,
       "rr": 1.0,
       "top": [
         {
@@ -941,7 +941,7 @@
       "relevant_source_ids": [
         "pln"
       ],
-      "latencia_ms": 14.028,
+      "latencia_ms": 14.101,
       "rr": 0.5,
       "top": [
         {
@@ -1025,7 +1025,7 @@
       "relevant_source_ids": [
         "bm25"
       ],
-      "latencia_ms": 18.333,
+      "latencia_ms": 20.072,
       "rr": 0.0,
       "top": [
         {
@@ -1110,7 +1110,7 @@
         "word2vec",
         "word_embedding"
       ],
-      "latencia_ms": 19.119,
+      "latencia_ms": 16.214,
       "rr": 1.0,
       "top": [
         {
@@ -1194,7 +1194,7 @@
       "relevant_source_ids": [
         "traduccion_automatica"
       ],
-      "latencia_ms": 25.208,
+      "latencia_ms": 16.255,
       "rr": 1.0,
       "top": [
         {
@@ -1278,7 +1278,7 @@
       "relevant_source_ids": [
         "ner"
       ],
-      "latencia_ms": 19.497,
+      "latencia_ms": 15.026,
       "rr": 1.0,
       "top": [
         {
@@ -1362,7 +1362,7 @@
       "relevant_source_ids": [
         "similitud_coseno"
       ],
-      "latencia_ms": 24.388,
+      "latencia_ms": 18.578,
       "rr": 1.0,
       "top": [
         {
@@ -1446,7 +1446,7 @@
       "relevant_source_ids": [
         "analisis_sentimiento"
       ],
-      "latencia_ms": 24.095,
+      "latencia_ms": 17.085,
       "rr": 1.0,
       "top": [
         {
@@ -1530,7 +1530,7 @@
       "relevant_source_ids": [
         "motor_busqueda"
       ],
-      "latencia_ms": 24.771,
+      "latencia_ms": 23.476,
       "rr": 0.5,
       "top": [
         {
@@ -1615,7 +1615,7 @@
         "modelo_lenguaje",
         "ngrama"
       ],
-      "latencia_ms": 20.734,
+      "latencia_ms": 19.426,
       "rr": 1.0,
       "top": [
         {
@@ -1699,7 +1699,7 @@
       "relevant_source_ids": [
         "aprendizaje_automatico"
       ],
-      "latencia_ms": 24.917,
+      "latencia_ms": 20.247,
       "rr": 0.3333333333333333,
       "top": [
         {
@@ -1783,7 +1783,7 @@
       "relevant_source_ids": [
         "red_neuronal"
       ],
-      "latencia_ms": 23.176,
+      "latencia_ms": 16.452,
       "rr": 1.0,
       "top": [
         {
@@ -1867,7 +1867,7 @@
       "relevant_source_ids": [
         "busqueda_semantica"
       ],
-      "latencia_ms": 23.142,
+      "latencia_ms": 21.654,
       "rr": 1.0,
       "top": [
         {
@@ -1952,7 +1952,7 @@
         "busqueda_semantica",
         "recuperacion_informacion"
       ],
-      "latencia_ms": 22.165,
+      "latencia_ms": 17.803,
       "rr": 1.0,
       "top": [
         {
@@ -2037,7 +2037,7 @@
         "atencion",
         "transformador"
       ],
-      "latencia_ms": 24.589,
+      "latencia_ms": 17.786,
       "rr": 1.0,
       "top": [
         {
@@ -2122,7 +2122,7 @@
         "modelo_lenguaje",
         "ngrama"
       ],
-      "latencia_ms": 22.183,
+      "latencia_ms": 15.654,
       "rr": 1.0,
       "top": [
         {
@@ -2207,7 +2207,7 @@
         "precision_exhaustividad",
         "recuperacion_informacion"
       ],
-      "latencia_ms": 22.704,
+      "latencia_ms": 16.062,
       "rr": 1.0,
       "top": [
         {
@@ -2292,7 +2292,7 @@
         "word2vec",
         "word_embedding"
       ],
-      "latencia_ms": 21.129,
+      "latencia_ms": 16.002,
       "rr": 1.0,
       "top": [
         {
@@ -2377,7 +2377,7 @@
         "bm25",
         "tfidf"
       ],
-      "latencia_ms": 22.619,
+      "latencia_ms": 16.589,
       "rr": 1.0,
       "top": [
         {
@@ -2462,7 +2462,7 @@
         "red_neuronal",
         "traduccion_automatica"
       ],
-      "latencia_ms": 21.634,
+      "latencia_ms": 17.314,
       "rr": 1.0,
       "top": [
         {
@@ -2548,7 +2548,7 @@
         "ner",
         "pln"
       ],
-      "latencia_ms": 23.506,
+      "latencia_ms": 20.801,
       "rr": 1.0,
       "top": [
         {
@@ -2634,7 +2634,7 @@
         "similitud_coseno",
         "tfidf"
       ],
-      "latencia_ms": 20.735,
+      "latencia_ms": 15.842,
       "rr": 1.0,
       "top": [
         {
@@ -2719,7 +2719,7 @@
         "indice_invertido",
         "motor_busqueda"
       ],
-      "latencia_ms": 17.188,
+      "latencia_ms": 14.945,
       "rr": 0.5,
       "top": [
         {
@@ -2804,7 +2804,7 @@
         "red_neuronal",
         "word2vec"
       ],
-      "latencia_ms": 17.848,
+      "latencia_ms": 13.419,
       "rr": 0.5,
       "top": [
         {
@@ -2888,7 +2888,7 @@
       "relevant_source_ids": [
         "lematizacion"
       ],
-      "latencia_ms": 16.634,
+      "latencia_ms": 15.021,
       "rr": 1.0,
       "top": [
         {
@@ -2972,7 +2972,7 @@
       "relevant_source_ids": [
         "etiquetado_gramatical"
       ],
-      "latencia_ms": 18.755,
+      "latencia_ms": 14.67,
       "rr": 1.0,
       "top": [
         {
@@ -3056,7 +3056,7 @@
       "relevant_source_ids": [
         "mineria_textos"
       ],
-      "latencia_ms": 17.503,
+      "latencia_ms": 15.083,
       "rr": 1.0,
       "top": [
         {
@@ -3140,7 +3140,7 @@
       "relevant_source_ids": [
         "retropropagacion"
       ],
-      "latencia_ms": 14.765,
+      "latencia_ms": 16.726,
       "rr": 0.5,
       "top": [
         {
@@ -3224,7 +3224,7 @@
       "relevant_source_ids": [
         "svm"
       ],
-      "latencia_ms": 16.326,
+      "latencia_ms": 16.186,
       "rr": 1.0,
       "top": [
         {
@@ -3308,7 +3308,7 @@
       "relevant_source_ids": [
         "hmm"
       ],
-      "latencia_ms": 16.063,
+      "latencia_ms": 16.281,
       "rr": 1.0,
       "top": [
         {
@@ -3392,7 +3392,7 @@
       "relevant_source_ids": [
         "linguistica_computacional"
       ],
-      "latencia_ms": 15.726,
+      "latencia_ms": 13.783,
       "rr": 1.0,
       "top": [
         {
@@ -3476,7 +3476,7 @@
       "relevant_source_ids": [
         "stemming"
       ],
-      "latencia_ms": 19.585,
+      "latencia_ms": 15.459,
       "rr": 1.0,
       "top": [
         {
@@ -3560,7 +3560,7 @@
       "relevant_source_ids": [
         "palabra_vacia"
       ],
-      "latencia_ms": 20.027,
+      "latencia_ms": 16.776,
       "rr": 0.0,
       "top": [
         {
@@ -3644,7 +3644,7 @@
       "relevant_source_ids": [
         "naive_bayes"
       ],
-      "latencia_ms": 19.895,
+      "latencia_ms": 16.034,
       "rr": 1.0,
       "top": [
         {
@@ -3728,7 +3728,7 @@
       "relevant_source_ids": [
         "analisis_grupos"
       ],
-      "latencia_ms": 17.287,
+      "latencia_ms": 17.519,
       "rr": 1.0,
       "top": [
         {
@@ -3812,7 +3812,7 @@
       "relevant_source_ids": [
         "reconocimiento_habla"
       ],
-      "latencia_ms": 18.253,
+      "latencia_ms": 13.052,
       "rr": 0.3333333333333333,
       "top": [
         {
@@ -3896,7 +3896,7 @@
       "relevant_source_ids": [
         "entropia"
       ],
-      "latencia_ms": 19.538,
+      "latencia_ms": 16.673,
       "rr": 1.0,
       "top": [
         {
@@ -3980,7 +3980,7 @@
       "relevant_source_ids": [
         "red_neuronal_recurrente"
       ],
-      "latencia_ms": 17.452,
+      "latencia_ms": 18.351,
       "rr": 1.0,
       "top": [
         {
@@ -4065,7 +4065,7 @@
         "modelo_espacio_vectorial",
         "tfidf"
       ],
-      "latencia_ms": 17.17,
+      "latencia_ms": 18.462,
       "rr": 1.0,
       "top": [
         {
@@ -4151,7 +4151,7 @@
         "perceptron_multicapa",
         "red_neuronal"
       ],
-      "latencia_ms": 17.082,
+      "latencia_ms": 16.282,
       "rr": 1.0,
       "top": [
         {
@@ -4236,7 +4236,7 @@
         "bert",
         "transformador"
       ],
-      "latencia_ms": 20.135,
+      "latencia_ms": 14.246,
       "rr": 1.0,
       "top": [
         {
@@ -4321,7 +4321,7 @@
         "lematizacion",
         "stemming"
       ],
-      "latencia_ms": 19.831,
+      "latencia_ms": 16.523,
       "rr": 1.0,
       "top": [
         {
@@ -4406,7 +4406,7 @@
         "ley_zipf",
         "palabra_vacia"
       ],
-      "latencia_ms": 17.965,
+      "latencia_ms": 15.025,
       "rr": 0.3333333333333333,
       "top": [
         {
@@ -4492,7 +4492,7 @@
         "naive_bayes",
         "svm"
       ],
-      "latencia_ms": 16.005,
+      "latencia_ms": 14.83,
       "rr": 0.3333333333333333,
       "top": [
         {
@@ -4577,7 +4577,7 @@
         "mineria_textos",
         "sistema_recomendacion"
       ],
-      "latencia_ms": 18.147,
+      "latencia_ms": 16.63,
       "rr": 1.0,
       "top": [
         {

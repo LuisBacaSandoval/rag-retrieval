@@ -52,7 +52,7 @@ proyecto5-rag-retrieval/
     retrieval/   base.py (interfaz), bm25.py, dense.py, hybrid.py
     evaluation/  metrics.py (P@k, R@k, MRR, nDCG)
     api/         app.py (búsqueda comparativa, FastAPI)
-  scripts/       prepare_corpus.py, build_index.py, run_eval.py
+  scripts/       prepare_corpus.py, build_index.py, run_eval.py, compare_methods.py
   data/          corpus/, queries/, indexes/
   notebooks/     proyecto5_rag.ipynb (cuaderno técnico)
   results/       métricas, tablas, análisis de errores
@@ -114,15 +114,31 @@ python scripts/build_index.py            # -> data/indexes/dense_*.{npy,json}
 
 | método | MRR | P@5 | R@5 | nDCG@10 | latencia p50 (ms) | índice (MB) |
 |---|---|---|---|---|---|---|
-| BM25 (base) | 0.794 | 0.578 | 0.824 | 0.590 | 0.8 | 0.59 |
-| denso | 0.781 | 0.585 | 0.855 | 0.555 | 17.1 | 0.88 |
-| **híbrido (RRF)** | **0.849** | **0.659** | 0.833 | **0.635** | 18.7 | 1.47 |
+| BM25 (base) | 0.794 | 0.578 | 0.824 | 0.590 | 0.7 | 0.59 |
+| denso | 0.781 | 0.585 | 0.855 | 0.555 | 14.9 | 0.88 |
+| **híbrido (RRF)** | **0.849** | **0.659** | 0.833 | **0.635** | 16.3 | 1.47 |
 
 El híbrido gana en las consultas semánticas y difíciles combinando la precisión
 léxica de BM25 con la cobertura del denso, al costo de mayor latencia y memoria.
 Las métricas de calidad son deterministas; la latencia depende del entorno, por lo
-que se reporta la **mediana (p50)**, robusta ante picos puntuales. El análisis por
-tipo de consulta y los casos de error se detallan en el Hito 6.
+que se reporta la **mediana (p50)**, robusta ante picos puntuales.
+
+### Comparación y análisis de errores
+
+`scripts/compare_methods.py` consolida los tres reportes en
+`results/comparacion.csv` (métricas y costos por método) y
+`results/comparacion_por_consulta.csv` (RR de cada método por consulta):
+
+```bash
+python scripts/compare_methods.py
+```
+
+El análisis de errores por tipo de consulta, con casos concretos y evidencia
+textual, está en [`results/analisis_errores.md`](results/analisis_errores.md) y en
+la sección 5 del cuaderno. En síntesis: el híbrido logra el mayor número de
+aciertos en primera posición (41/54) y el menor de fallos totales (2), aunque
+degrada algunos aciertos fuertes individuales por dos efectos de la fusión
+(dilución y consenso sobre especialización).
 
 ## Entorno y reproducción
 
@@ -175,7 +191,7 @@ docker run --rm -p 8000:8000 proyecto5-rag
 | 3 | Línea base BM25 + métricas (P@k, R@k, MRR, nDCG) | ✅ |
 | 4 | Recuperador denso (embeddings) + índice persistido con manifiesto | ✅ |
 | 5 | Recuperador híbrido (fusión RRF de BM25 + denso) | ✅ |
-| 6 | Evaluación comparativa y análisis de errores | pendiente |
+| 6 | Evaluación comparativa de los 3 métodos y análisis de errores por tipo | ✅ |
 | 7 | API de búsqueda comparativa + despliegue | pendiente |
 | 8 | Documentación final + video | pendiente |
 
