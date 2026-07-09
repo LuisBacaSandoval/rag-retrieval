@@ -1,0 +1,32 @@
+{
+    "method": "hybrid",
+    "explicacion": "Híbrido: fusiona los rankings léxico y denso con Reciprocal Rank Fusion.",
+    "query": "hacer que una maquina aprenda a partir de ejemplos",
+    "k": 3,
+    "hits": [
+        {
+            "rank": 1,
+            "doc_id": "reconocimiento_habla__c02",
+            "source_id": "reconocimiento_habla",
+            "title": "Reconocimiento del habla",
+            "score": 0.0313,
+            "snippet": "sferencia de los conocimientos de un experto humano a un sistema informático. Un ejemplo paradigmático de las metodologías que utilizan tales técnicas lo constituyen los sistemas basados en el conocim…"
+        },
+        {
+            "rank": 2,
+            "doc_id": "aprendizaje_automatico__c09",
+            "source_id": "aprendizaje_automatico",
+            "title": "Aprendizaje automático",
+            "score": 0.0306,
+            "snippet": "e supervisado, pero no construye de forma explícita una función. Trata de predecir las categorías de los futuros ejemplos basándose en los ejemplos de entrada, sus respectivas categorías y los ejemplo…"
+        },
+        {
+            "rank": 3,
+            "doc_id": "aprendizaje_automatico__c05",
+            "source_id": "aprendizaje_automatico",
+            "title": "Aprendizaje automático",
+            "score": 0.0293,
+            "snippet": "una función que establece una correspondencia entre las entradas y las salidas deseadas del sistema. Un ejemplo de este tipo de algoritmo es el problema de clasificación, donde el sistema de aprendiza…"
+        }
+    ]
+}

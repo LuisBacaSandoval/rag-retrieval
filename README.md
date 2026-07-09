@@ -171,9 +171,10 @@ monta dentro del contenedor, así que las salidas y los gráficos se guardan en 
 repositorio. La primera construcción tarda (descarga `torch` vía
 `sentence-transformers`); las siguientes son inmediatas.
 
-### Opción C — API con Docker
+### Opción C — API de despliegue con Docker
 
-El [`Dockerfile`](Dockerfile) sirve la API de despliegue (Hito 7):
+El [`Dockerfile`](Dockerfile) construye el índice denso y sirve el buscador
+comparativo:
 
 ```bash
 docker compose up api          # -> http://localhost:8000
@@ -181,6 +182,24 @@ docker compose up api          # -> http://localhost:8000
 docker build -t proyecto5-rag .
 docker run --rm -p 8000:8000 proyecto5-rag
 ```
+
+Abre `http://localhost:8000/` para el **buscador comparativo** (introduce una
+consulta y ve BM25, denso e híbrido lado a lado) o `http://localhost:8000/docs`
+para la interfaz Swagger.
+
+**Endpoints** ([`src/rag_retrieval/api/app.py`](src/rag_retrieval/api/app.py)):
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| `GET` | `/` | Buscador HTML: caja de búsqueda + `k`, resultados de los tres métodos en columnas. |
+| `POST` | `/search` | Cuerpo `{"query", "method": "bm25\|dense\|hybrid", "k"}` → top-k con `score`, `rank` y fragmento. |
+| `GET` | `/compare?q=...&k=...` | Top-k de **los tres métodos lado a lado** para la misma consulta. |
+| `GET` | `/health` | Estado del servicio. |
+| `GET` | `/metrics` | Corpus, métodos, modelo denso y manifiesto del índice. |
+
+Cada resultado trae el `score` y una explicación del método, así que el ranking
+es interpretable. Evidencia de las respuestas en
+[`results/evidencia_despliegue/`](results/evidencia_despliegue/).
 
 ## Estado por hitos
 
@@ -192,7 +211,7 @@ docker run --rm -p 8000:8000 proyecto5-rag
 | 4 | Recuperador denso (embeddings) + índice persistido con manifiesto | ✅ |
 | 5 | Recuperador híbrido (fusión RRF de BM25 + denso) | ✅ |
 | 6 | Evaluación comparativa de los 3 métodos y análisis de errores por tipo | ✅ |
-| 7 | API de búsqueda comparativa + despliegue | pendiente |
+| 7 | API de búsqueda comparativa + despliegue con Docker | ✅ |
 | 8 | Documentación final + video | pendiente |
 
 ## Atribución y reutilización

@@ -17,5 +17,4 @@ RUN python scripts/build_index.py
 
 EXPOSE 8000
 
-# El objeto `app` de FastAPI se define en el Hito 7.
 CMD ["uvicorn", "rag_retrieval.api.app:app", "--host", "0.0.0.0", "--port", "8000"]

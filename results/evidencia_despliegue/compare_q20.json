@@ -1,0 +1,93 @@
+{
+    "query": "hacer que una maquina aprenda a partir de ejemplos",
+    "k": 3,
+    "resultados": {
+        "bm25": {
+            "explicacion": "Léxico: puntúa por coincidencia de términos (IDF, saturación y longitud).",
+            "hits": [
+                {
+                    "rank": 1,
+                    "doc_id": "aprendizaje_profundo__c03",
+                    "source_id": "aprendizaje_profundo",
+                    "title": "Aprendizaje profundo",
+                    "score": 15.0408,
+                    "snippet": "je profundo, el concepto central implica el uso de múltiples capas de procesamiento para extraer características y patrones de los datos. Las diferentes definiciones suelen destacar aspectos como: Uso…"
+                },
+                {
+                    "rank": 2,
+                    "doc_id": "red_neuronal__c64",
+                    "source_id": "red_neuronal",
+                    "title": "Red neuronal artificial",
+                    "score": 14.9848,
+                    "snippet": "prendizaje necesita suficientes ejemplos representativos con el fin de capturar la estructura subyacente que le permite generalizar a nuevos casos. Dean A. Powerless, en su investigación presentada en…"
+                },
+                {
+                    "rank": 3,
+                    "doc_id": "red_neuronal__c44",
+                    "source_id": "red_neuronal",
+                    "title": "Red neuronal artificial",
+                    "score": 14.6344,
+                    "snippet": "las hacen bastante apropiadas para aplicaciones en las que no se dispone a priori de un modelo identificable que pueda ser programado, pero se dispone de un conjunto básico de ejemplos de entrada (pre…"
+                }
+            ]
+        },
+        "dense": {
+            "explicacion": "Denso: similitud coseno entre embeddings multilingües; capta paráfrasis.",
+            "hits": [
+                {
+                    "rank": 1,
+                    "doc_id": "reconocimiento_habla__c02",
+                    "source_id": "reconocimiento_habla",
+                    "title": "Reconocimiento del habla",
+                    "score": 0.7462,
+                    "snippet": "sferencia de los conocimientos de un experto humano a un sistema informático. Un ejemplo paradigmático de las metodologías que utilizan tales técnicas lo constituyen los sistemas basados en el conocim…"
+                },
+                {
+                    "rank": 2,
+                    "doc_id": "aprendizaje_automatico__c21",
+                    "source_id": "aprendizaje_automatico",
+                    "title": "Aprendizaje automático",
+                    "score": 0.7088,
+                    "snippet": "algunos investigadores se interesaron en hacer que las máquinas aprendiesen. Trataron de resolver el problema con diversos métodos simbólicos, así como lo que ellos llamaron 'redes neurales' que eran…"
+                },
+                {
+                    "rank": 3,
+                    "doc_id": "aprendizaje_automatico__c10",
+                    "source_id": "aprendizaje_automatico",
+                    "title": "Aprendizaje automático",
+                    "score": 0.6994,
+                    "snippet": "ros que ni nos damos cuenta de cómo se realiza y todo lo que implica. Desde que nacemos hasta que morimos los seres humanos llevamos a cabo diferentes procesos, entre ellos encontramos el de aprendiza…"
+                }
+            ]
+        },
+        "hybrid": {
+            "explicacion": "Híbrido: fusiona los rankings léxico y denso con Reciprocal Rank Fusion.",
+            "hits": [
+                {
+                    "rank": 1,
+                    "doc_id": "reconocimiento_habla__c02",
+                    "source_id": "reconocimiento_habla",
+                    "title": "Reconocimiento del habla",
+                    "score": 0.0313,
+                    "snippet": "sferencia de los conocimientos de un experto humano a un sistema informático. Un ejemplo paradigmático de las metodologías que utilizan tales técnicas lo constituyen los sistemas basados en el conocim…"
+                },
+                {
+                    "rank": 2,
+                    "doc_id": "aprendizaje_automatico__c09",
+                    "source_id": "aprendizaje_automatico",
+                    "title": "Aprendizaje automático",
+                    "score": 0.0306,
+                    "snippet": "e supervisado, pero no construye de forma explícita una función. Trata de predecir las categorías de los futuros ejemplos basándose en los ejemplos de entrada, sus respectivas categorías y los ejemplo…"
+                },
+                {
+                    "rank": 3,
+                    "doc_id": "aprendizaje_automatico__c05",
+                    "source_id": "aprendizaje_automatico",
+                    "title": "Aprendizaje automático",
+                    "score": 0.0293,
+                    "snippet": "una función que establece una correspondencia entre las entradas y las salidas deseadas del sistema. Un ejemplo de este tipo de algoritmo es el problema de clasificación, donde el sistema de aprendiza…"
+                }
+            ]
+        }
+    }
+}

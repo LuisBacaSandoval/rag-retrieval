@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Búsqueda comparativa RAG — Proyecto 5</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, sans-serif; margin: 0; padding: 1.5rem;
+         max-width: 1200px; margin-inline: auto; line-height: 1.4; }
+  h1 { font-size: 1.3rem; }
+  form { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  input[type=text] { flex: 1 1 320px; padding: .55rem .7rem; font-size: 1rem; }
+  input[type=number] { width: 5rem; padding: .55rem; font-size: 1rem; }
+  button { padding: .55rem 1rem; font-size: 1rem; cursor: pointer; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .col { border: 1px solid #8884; border-radius: 8px; padding: .75rem; }
+  .col h2 { font-size: 1rem; margin: 0 0 .25rem; }
+  .col .desc { font-size: .8rem; opacity: .75; margin-bottom: .6rem; }
+  .hit { border-top: 1px solid #8883; padding: .4rem 0; font-size: .88rem; }
+  .hit .t { font-weight: 600; }
+  .hit .m { font-size: .78rem; opacity: .7; }
+  .snip { font-size: .8rem; opacity: .85; }
+  .loading { opacity: .6; }
+</style>
+</head>
+<body>
+<h1>Búsqueda comparativa RAG</h1>
+<p>Compara recuperación <b>léxica (BM25)</b>, <b>densa</b> e <b>híbrida (RRF)</b> sobre el mismo corpus.</p>
+<form id="f">
+  <input type="text" id="q" placeholder="p. ej.: aprender a partir de ejemplos" required>
+  <input type="number" id="k" value="5" min="1" max="20" title="resultados por método">
+  <button type="submit">Buscar</button>
+</form>
+<div class="cols" id="out"></div>
+<script>
+const nombres = { bm25: "BM25 (léxico)", dense: "Denso", hybrid: "Híbrido (RRF)" };
+document.getElementById("f").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const q = document.getElementById("q").value.trim();
+  const k = document.getElementById("k").value;
+  const out = document.getElementById("out");
+  if (!q) return;
+  out.innerHTML = "<p class='loading'>Buscando…</p>";
+  const resp = await fetch(`/compare?q=${encodeURIComponent(q)}&k=${k}`);
+  if (!resp.ok) { out.innerHTML = "<p>Error en la búsqueda.</p>"; return; }
+  const data = await resp.json();
+  out.innerHTML = "";
+  for (const metodo of ["bm25", "dense", "hybrid"]) {
+    const r = data.resultados[metodo];
+    const col = document.createElement("div");
+    col.className = "col";
+    col.innerHTML = `<h2>${nombres[metodo]}</h2><div class="desc">${r.explicacion}</div>`;
+    for (const h of r.hits) {
+      const div = document.createElement("div");
+      div.className = "hit";
+      div.innerHTML = `<div class="t">#${h.rank} · ${h.title}</div>`
+        + `<div class="m">${h.source_id} · score ${h.score}</div>`
+        + `<div class="snip">${h.snippet}</div>`;
+      col.appendChild(div);
+    }
+    out.appendChild(col);
+  }
+});
+</script>
+</body>
+</html>
