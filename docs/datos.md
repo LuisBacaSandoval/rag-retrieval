@@ -121,15 +121,3 @@ Motivo del nivel de artículo: etiquetar 595 fragmentos × 54 consultas a mano e
 inviable y, además, se rompería al cambiar los parámetros de chunking. Juzgar
 qué artículo responde es manejable y robusto frente al re-troceado.
 
-## Limitaciones
-
-- **Anotador único:** los juicios de relevancia los hizo una sola persona; no hay
-  acuerdo entre anotadores.
-- **Tamaño moderado:** 40 artículos y 595 fragmentos; suficiente para comparar
-  métodos, pero no un corpus a gran escala.
-- **Desbalance de fuentes:** algunos artículos son mucho más largos (p. ej.
-  *Red neuronal artificial*, 82 fragmentos) que otros (*Stemming*, 2).
-- **Relevancia binaria y a nivel de artículo:** no distingue fragmentos más o
-  menos útiles dentro de un mismo artículo relevante.
-- **Dominio único (PLN/IR/ML):** los resultados no se extrapolan directamente a
-  otros dominios.

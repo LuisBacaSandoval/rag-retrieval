@@ -12,23 +12,16 @@ Proyecto del Examen Final de **CC0C2 — Procesamiento de Lenguaje Natural**.
 
 ## El problema
 
-Un sistema RAG solo responde tan bien como recupera. Este proyecto no asume que
-un método sea mejor: **mide** tres estrategias de recuperación sobre el mismo
-corpus y las mismas consultas, y estudia *dónde* y *por qué* gana cada una.
+Un sistema RAG solo responde tan bien como recupera. En este proyecto se comparan tres estrategias de recuperación usando el mismo corpus y las mismas consultas para analizar cuál ofrece mejores resultados.
 
-- **Línea base — léxica (BM25):** puntúa por coincidencia de términos, frecuencia
-  inversa de documento y longitud. Fuerte cuando la consulta usa las mismas
-  palabras que el documento.
-- **Variante 1 — densa (embeddings):** representa consulta y documentos como
-  vectores y mide similitud coseno. Fuerte en paráfrasis y sinónimos, sin
-  coincidencia literal.
-- **Variante 2 — híbrida (RRF):** fusiona los rankings léxico y denso por
-  Reciprocal Rank Fusion para intentar heredar lo mejor de ambos.
+- **Línea base (BM25):** recuperación léxica basada en coincidencia de términos.
+- **Variante 1 (embeddings):** recuperación densa mediante similitud entre vectores, capaz de encontrar sinónimos y paráfrasis.
+- **Variante 2 (RRF):** recuperación híbrida que combina los rankings de BM25 y embeddings mediante Reciprocal Rank Fusion..
 
 ## Interfaz común de recuperadores
 
 La decisión de diseño central del proyecto es que **los tres métodos comparten
-el mismo contrato**, definido en
+la misma interfaz**, definida en
 [`src/rag_retrieval/retrieval/base.py`](src/rag_retrieval/retrieval/base.py):
 
 ```python
@@ -52,11 +45,11 @@ proyecto5-rag-retrieval/
     retrieval/   base.py (interfaz), bm25.py, dense.py, hybrid.py
     evaluation/  metrics.py (P@k, R@k, MRR, nDCG)
     api/         app.py (búsqueda comparativa, FastAPI)
-  scripts/       prepare_corpus.py, build_index.py, run_eval.py, compare_methods.py
+  scripts/       prepare_corpus.py, build_index.py, run_eval.py, compare_methods.py, fetch_sources.py
   data/          corpus/, queries/, indexes/
   notebooks/     proyecto5_rag.ipynb (cuaderno técnico)
   results/       métricas, tablas, análisis de errores
-  docs/          datos.md, arquitectura.md
+  docs/          datos.md, arquitectura.md, limitaciones.md, relacion_cuadernos.md
   tests/
 ```
 
@@ -66,8 +59,9 @@ El corpus son **595 fragmentos** de **40 artículos de Wikipedia en español**
 sobre PLN, recuperación de información y aprendizaje automático (licencia
 CC BY-SA 4.0). Las consultas de evaluación son **54**, etiquetadas en tres tipos
 (léxicas, semánticas y difíciles) con juicios de relevancia a nivel de artículo.
-Procedencia, licencia, parámetros de chunking y limitaciones en
-[`docs/datos.md`](docs/datos.md).
+Procedencia, licencia y parámetros de chunking en
+[`docs/datos.md`](docs/datos.md); limitaciones en
+[`docs/limitaciones.md`](docs/limitaciones.md).
 
 Formatos (una línea JSON por registro):
 
@@ -201,6 +195,16 @@ Cada resultado trae el `score` y una explicación del método, así que el ranki
 es interpretable. Evidencia de las respuestas en
 [`results/evidencia_despliegue/`](results/evidencia_despliegue/).
 
+## Documentación técnica
+
+- [`docs/arquitectura.md`](docs/arquitectura.md) — pipeline completo, explicación
+  de cada algoritmo (BM25, embeddings + coseno, RRF) y decisiones de diseño.
+- [`docs/datos.md`](docs/datos.md) — procedencia, licencia, chunking y consultas.
+- [`docs/limitaciones.md`](docs/limitaciones.md) — qué **no** demuestra el
+  proyecto: métodos, evaluación, alcance y despliegue.
+- [`docs/relacion_cuadernos.md`](docs/relacion_cuadernos.md) — mapeo explícito
+  componente → cuaderno del curso, con lo reutilizado y lo agregado.
+
 ## Estado por hitos
 
 | Hito | Contenido | Estado |
@@ -212,16 +216,17 @@ es interpretable. Evidencia de las respuestas en
 | 5 | Recuperador híbrido (fusión RRF de BM25 + denso) | ✅ |
 | 6 | Evaluación comparativa de los 3 métodos y análisis de errores por tipo | ✅ |
 | 7 | API de búsqueda comparativa + despliegue con Docker | ✅ |
-| 8 | Documentación final + video | pendiente |
+| 8 | Documentación final (docs/, conclusiones del cuaderno) | ✅ |
+| 9 | Video (> 10 min) | pendiente |
 
 ## Atribución y reutilización
 
-Este proyecto adopta el patrón probado en el curso **CC0C2** durante la
-**semana 14** (trabajo propio del autor sobre MLOps para RAG): la estructura
+Este proyecto adopta el patrón del curso **CC0C2** durante la
+**semana 14** (trabajo sobre MLOps para RAG): la estructura
 `src/` + `scripts/` + `tests/`, la idea de índice con manifiesto reproducible,
 las métricas de recuperación base y el patrón de API con FastAPI. Los archivos
 que reutilizan ese patrón lo indican en su encabezado.
 
 ## Video
 
-Enlace al video (> 10 min): _pendiente (Hito 8)_.
+Enlace al video (> 10 min): .

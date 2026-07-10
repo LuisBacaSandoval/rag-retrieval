@@ -1,13 +1,8 @@
-"""Consolida la comparación de los tres métodos: ``python scripts/compare_methods.py``.
+"""Consolida los tres métodos: ``python scripts/compare_methods.py``.
 
-Lee ``results/{bm25,dense,hybrid}.json`` (generados por run_eval.py) y produce:
-
-- ``results/comparacion.csv``: una fila por método con métricas globales, MRR por
-  tipo y costos.
-- ``results/comparacion_por_consulta.csv``: RR y recall@10 de cada método por
-  consulta, con el ganador individual y si el híbrido mejora o empeora la fusión.
-
-Además imprime los casos notables que alimentan ``results/analisis_errores.md``.
+Lee ``results/{bm25,dense,hybrid}.json`` y escribe ``comparacion.csv`` (una fila por
+método) y ``comparacion_por_consulta.csv`` (RR/recall@10 y efecto de la fusión).
+Imprime además los casos notables que alimentan ``results/analisis_errores.md``.
 """
 
 from __future__ import annotations
@@ -24,10 +19,12 @@ TIPOS = ["lexica", "semantica", "dificil"]
 
 
 def load(metodo: str) -> dict:
+    # Carga el reporte JSON de un método desde results/.
     return json.loads((RESULTS_DIR / f"{metodo}.json").read_text(encoding="utf-8"))
 
 
 def tabla_global(reportes: dict[str, dict]) -> pd.DataFrame:
+    # Una fila por método: métricas globales, MRR por tipo y costos.
     filas = []
     for clave, nombre in METODOS.items():
         r = reportes[clave]
@@ -49,6 +46,7 @@ def tabla_global(reportes: dict[str, dict]) -> pd.DataFrame:
 
 
 def tabla_por_consulta(reportes: dict[str, dict]) -> pd.DataFrame:
+    # Une RR/recall@10 de los tres métodos por consulta y mide el efecto del híbrido.
     base = None
     for clave in METODOS:
         registros = reportes[clave]["por_consulta"]
@@ -73,6 +71,7 @@ def tabla_por_consulta(reportes: dict[str, dict]) -> pd.DataFrame:
 
 
 def main() -> None:
+    # Genera los CSV de comparación e imprime los casos notables.
     reportes = {clave: load(clave) for clave in METODOS}
 
     global_df = tabla_global(reportes)

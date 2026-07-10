@@ -1,21 +1,8 @@
-"""Construye el corpus troceado a partir del texto fuente.
+"""Trocea ``data/corpus/raw/*.txt`` en fragmentos solapados y escribe ``corpus.jsonl``.
 
-Lee los artículos de ``data/corpus/raw/*.txt`` (descargados con
-``fetch_sources.py``), les quita la cabecera de procedencia, limpia el texto y lo
-divide en fragmentos solapados. El resultado se guarda en
-``data/corpus/corpus.jsonl``, una línea por fragmento::
-
-    {"doc_id": "bm25__c03", "source_id": "bm25", "title": "Okapi BM25", "text": "..."}
-
-``doc_id`` es la unidad que indexan y devuelven los recuperadores; ``source_id``
-identifica el artículo de origen y se usa para mapear los juicios de relevancia
-(que se etiquetan a nivel de artículo). El troceado por caracteres con solape
-sigue el patrón de índice del trabajo de MLOps para RAG del curso CC0C2
-(semana 14). Solo usa la biblioteca estándar, así que corre igual en local y en
-Docker; el orden de salida es determinista para que el corpus sea reproducible.
-
-Uso:
-    python scripts/prepare_corpus.py
+Cada línea: ``{"doc_id": "bm25__c03", "source_id": "bm25", "title": ..., "text": ...}``;
+``source_id`` mapea los juicios de relevancia (etiquetados por artículo). Salida
+determinista, solo stdlib. Uso: ``python scripts/prepare_corpus.py``.
 """
 
 from __future__ import annotations
@@ -111,6 +98,7 @@ def chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = OVERLAP) 
 
 
 def build_corpus() -> list[dict[str, str]]:
+    """Lee, limpia y trocea cada .txt en registros con doc_id secuencial."""
     if not RAW_DIR.exists():
         raise RuntimeError(f"No existe {RAW_DIR}. Ejecuta antes scripts/fetch_sources.py")
 
@@ -138,6 +126,7 @@ def build_corpus() -> list[dict[str, str]]:
 
 
 def main() -> None:
+    # Escribe corpus.jsonl e imprime un resumen del troceado.
     registros = build_corpus()
 
     CORPUS_PATH.parent.mkdir(parents=True, exist_ok=True)

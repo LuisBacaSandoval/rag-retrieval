@@ -1,9 +1,7 @@
 """Evalúa un recuperador sobre las 54 consultas: ``python scripts/run_eval.py --method bm25``.
 
-Guarda métricas globales, por tipo y por consulta en ``results/<metodo>.json`` y
-``results/<metodo>_por_consulta.csv``. P@k/nDCG/MRR se miden a nivel de fragmento
-(relevancia heredada del artículo) y Recall@k a nivel de artículo; detalle en el
-cuaderno, sección 2.2. Estructura adaptada de ``evaluate_rag.py`` (semana 14).
+Guarda métricas globales, por tipo y por consulta en ``results/<metodo>.{json,csv}``.
+P@k/nDCG/MRR van a nivel de fragmento y Recall@k a nivel de artículo (cuaderno 2.2).
 """
 
 from __future__ import annotations
@@ -74,6 +72,7 @@ def build_retriever(method: str) -> Retriever:
 
 
 def load_jsonl(path: Path, required: set[str]) -> list[dict[str, Any]]:
+    # Carga un .jsonl validando que cada fila traiga los campos requeridos.
     if not path.exists():
         raise FileNotFoundError(f"No existe el archivo: {path}")
 
@@ -97,10 +96,12 @@ def load_jsonl(path: Path, required: set[str]) -> list[dict[str, Any]]:
 
 
 def unique_in_order(values: list[str]) -> list[str]:
+    # Elimina duplicados preservando el orden de aparición.
     return list(dict.fromkeys(values))
 
 
 def mean(values: list[float]) -> float:
+    # Media aritmética; 0.0 si la lista está vacía.
     if not values:
         return 0.0
 
@@ -166,6 +167,7 @@ def evaluate_query(
 
 
 def aggregate(records: list[dict[str, Any]], ks: list[int]) -> dict[str, float]:
+    # Promedia MRR y las métricas por corte k sobre un conjunto de consultas.
     summary = {"consultas": len(records), "mrr": round(mean([r["rr"] for r in records]), 4)}
     for k in ks:
         for metric in (f"precision@{k}", f"recall_articulo@{k}", f"ndcg@{k}"):
@@ -175,6 +177,7 @@ def aggregate(records: list[dict[str, Any]], ks: list[int]) -> dict[str, float]:
 
 
 def main() -> None:
+    # Indexa, mide costo y calidad del método pedido y guarda el reporte.
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--method", default="bm25", help="Método a evaluar (bm25)")
     parser.add_argument(

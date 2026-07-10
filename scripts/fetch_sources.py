@@ -1,16 +1,7 @@
-"""Descarga los artículos fuente del corpus desde Wikipedia en español.
+"""Descarga los artículos fuente a ``data/corpus/raw/`` desde Wikipedia en español.
 
-Obtiene el extracto en texto plano de una lista curada de artículos sobre
-procesamiento de lenguaje natural y recuperación de información, y los guarda en
-``data/corpus/raw/<source_id>.txt`` con una cabecera de procedencia (título, URL
-y licencia). Solo usa la biblioteca estándar.
-
-Los archivos de ``raw/`` se versionan en el repositorio: una vez descargados, el
-resto del pipeline (``prepare_corpus.py``) funciona sin conexión. Este script
-solo hace falta para regenerar o ampliar el corpus.
-
-Uso:
-    python scripts/fetch_sources.py
+Solo stdlib; ``raw/`` se versiona, así que solo hace falta para regenerar el corpus.
+Uso: ``python scripts/fetch_sources.py``.
 """
 
 from __future__ import annotations
@@ -75,10 +66,7 @@ ARTICLES: dict[str, str] = {
 
 
 def fetch_extract(title: str, max_retries: int = 5) -> tuple[str, str]:
-    """Devuelve (texto_plano, url_canónica) del extracto del artículo.
-
-    Reintenta con espera creciente ante límites de tasa (HTTP 429) del servidor.
-    """
+    # Devuelve (texto_plano, url) del extracto, reintentando ante HTTP 429.
     params = {
         "action": "query",
         "format": "json",
@@ -115,6 +103,7 @@ def fetch_extract(title: str, max_retries: int = 5) -> tuple[str, str]:
 
 
 def build_header(title: str, url: str) -> str:
+    # Cabecera de procedencia (título, fuente, licencia, fecha) al inicio del .txt.
     return (
         f"# titulo: {title}\n"
         f"# fuente: {url}\n"
@@ -125,6 +114,7 @@ def build_header(title: str, url: str) -> str:
 
 
 def main() -> None:
+    # Descarga cada artículo faltante y lo guarda con su cabecera.
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
     descargados = 0

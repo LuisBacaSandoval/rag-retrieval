@@ -20,6 +20,7 @@ INDEX_DIR = PROJECT_ROOT / "data" / "indexes"
 
 
 def load_corpus(path: Path) -> list[dict]:
+    # Carga corpus.jsonl como lista de registros, validando que no esté vacío.
     if not path.exists():
         raise FileNotFoundError(f"No existe el corpus: {path}")
 
@@ -35,6 +36,7 @@ def load_corpus(path: Path) -> list[dict]:
 
 
 def main() -> None:
+    # Indexa el corpus con DenseRetriever y persiste vectores + manifiesto.
     corpus = load_corpus(CORPUS_PATH)
     corpus_hash = corpus_sha256([doc["text"] for doc in corpus])
 
