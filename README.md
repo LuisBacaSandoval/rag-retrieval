@@ -217,7 +217,7 @@ es interpretable. Evidencia de las respuestas en
 | 6 | Evaluación comparativa de los 3 métodos y análisis de errores por tipo | ✅ |
 | 7 | API de búsqueda comparativa + despliegue con Docker | ✅ |
 | 8 | Documentación final (docs/, conclusiones del cuaderno) | ✅ |
-| 9 | Video (> 10 min) | pendiente |
+| 9 | Video (> 10 min) | ✅ |
 
 ## Atribución y reutilización
 
@@ -229,4 +229,5 @@ que reutilizan ese patrón lo indican en su encabezado.
 
 ## Video
 
-Enlace al video (> 10 min): .
+Enlace al video:
+<https://drive.google.com/drive/folders/1and13OuiajvY9yF5YqczZrd0yF5DW1Uh>
